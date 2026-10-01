@@ -1,0 +1,489 @@
+schema_version: "0.1"
+
+artifact:
+  name: golden_questions
+  purpose: >-
+    Controlled evaluation set for retrieval, evidence selection, grounded generation,
+    document authority, versioning, conflict resolution, semantic distractors, and abstention.
+  indexed_by_rag: false
+
+evaluation_contract:
+  primary_set: "Golden Set A — Enterprise Knowledge"
+  question_count: 36
+  principles:
+    - "Expected evidence identifies documents that should support the answer."
+    - "Distractors are intentionally plausible but should not replace authoritative evidence."
+    - "A correct answer is not sufficient if retrieval relies on the wrong authority or version."
+    - "Q29 must abstain because the controlled universe intentionally lacks the requested policy."
+    - "Q30 must preserve the human/decision boundary and avoid inventing an authoritative carrier selection."
+    - "Q31-Q36 test semantic disambiguation among multiple documents containing AI-related language."
+
+questions:
+  - question_id: Q01
+    question: "Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?"
+    class: knowledge
+    retrieval_challenge: procedure
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-003"
+    distractors:
+      - "DOC-014"
+      - "DOC-015"
+      - "DOC-016"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q02
+    question: "Qual é o SLA de entrega estabelecido para cada categoria de transporte?"
+    class: knowledge
+    retrieval_challenge: current_policy
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-001"
+    distractors:
+      - "DOC-002"
+      - "DOC-013"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q03
+    question: "Quais documentos precisam ser apresentados para homologação de uma nova transportadora?"
+    class: knowledge
+    retrieval_challenge: multi_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-008"
+      - "DOC-022"
+    distractors:
+      - "DOC-004"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q04
+    question: "Quem é responsável por aprovar a contratação emergencial de uma transportadora?"
+    class: knowledge
+    retrieval_challenge: multi_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-012"
+      - "DOC-003"
+    distractors:
+      - "DOC-022"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q05
+    question: "Qual é o limite financeiro para contratação sem aprovação da diretoria?"
+    class: knowledge
+    retrieval_challenge: structured_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-012"
+    distractors:
+      - "DOC-022"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q06
+    question: "Em quais situações uma entrega pode ser classificada como crítica?"
+    class: knowledge
+    retrieval_challenge: definition
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-001"
+      - "DOC-009"
+    distractors:
+      - "DOC-003"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q07
+    question: "Qual é o procedimento previsto para uma entrega crítica atrasada?"
+    class: knowledge
+    retrieval_challenge: procedure
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-009"
+    distractors:
+      - "DOC-001"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q08
+    question: "Quais KPIs são utilizados para avaliar o desempenho das transportadoras?"
+    class: knowledge
+    retrieval_challenge: multi_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-003"
+      - "DOC-013"
+    distractors:
+      - "DOC-001"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q09
+    question: "Como é calculado o indicador OTIF segundo a documentação da empresa?"
+    class: knowledge
+    retrieval_challenge: definition
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-013"
+    distractors:
+      - "DOC-001"
+      - "DOC-002"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q10
+    question: "Qual é a meta vigente de OTIF para operações nacionais?"
+    class: knowledge
+    retrieval_challenge: versioning
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-001"
+    distractors:
+      - "DOC-002"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q11
+    question: "A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?"
+    class: knowledge
+    retrieval_challenge: historical_synthesis
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-001"
+      - "DOC-002"
+      - "DOC-019"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q12
+    question: "Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?"
+    class: knowledge
+    retrieval_challenge: multi_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-014"
+      - "DOC-015"
+      - "DOC-016"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q13
+    question: "Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova."
+    class: knowledge
+    retrieval_challenge: contract_comparison
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-014"
+      - "DOC-015"
+    distractors:
+      - "DOC-016"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q14
+    question: "Existe alguma exceção contratual às penalidades em caso de eventos de força maior?"
+    class: knowledge
+    retrieval_challenge: contract_comparison
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-014"
+      - "DOC-015"
+      - "DOC-016"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q15
+    question: "Quais são os critérios para classificar uma transportadora como de alto risco?"
+    class: knowledge
+    retrieval_challenge: policy_retrieval
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-004"
+    distractors:
+      - "DOC-003"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q16
+    question: "O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?"
+    class: knowledge
+    retrieval_challenge: escalation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-003"
+    distractors:
+      - "DOC-014"
+      - "DOC-015"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q17
+    question: "Houve algum incidente semelhante anteriormente? Como ele foi tratado?"
+    class: knowledge
+    retrieval_challenge: historical_precedent
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-017"
+      - "DOC-019"
+    distractors:
+      - "DOC-018"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q18
+    question: "Quais decisões foram tomadas após o último incidente grave de transporte?"
+    class: knowledge
+    retrieval_challenge: historical_synthesis
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-018"
+      - "DOC-020"
+    distractors:
+      - "DOC-017"
+      - "DOC-019"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q19
+    question: "Alguma recomendação daquele incidente ainda está pendente?"
+    class: knowledge
+    retrieval_challenge: cross_document_follow_up
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-021"
+      - "DOC-020"
+    distractors:
+      - "DOC-017"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q20
+    question: "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?"
+    class: knowledge
+    retrieval_challenge: multi_document
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-005"
+      - "DOC-006"
+    distractors:
+      - "DOC-011"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q21
+    question: "Quais informações são classificadas como confidenciais nos documentos logísticos?"
+    class: knowledge
+    retrieval_challenge: policy_retrieval
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-006"
+    distractors:
+      - "DOC-005"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q22
+    question: "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?"
+    class: knowledge
+    retrieval_challenge: authority_conflict
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-005"
+      - "DOC-006"
+    distractors:
+      - "DOC-011"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q23
+    question: "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?"
+    class: knowledge
+    retrieval_challenge: procedure
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-010"
+    distractors:
+      - "DOC-005"
+      - "DOC-006"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q24
+    question: "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?"
+    class: knowledge
+    retrieval_challenge: conflict_detection
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-006"
+      - "DOC-011"
+      - "DOC-007"
+    distractors:
+      - "DOC-005"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q25
+    question: "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?"
+    class: knowledge
+    retrieval_challenge: authority_resolution
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-007"
+    distractors:
+      - "DOC-011"
+      - "DOC-006"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q26
+    question: "Qual é atualmente a versão vigente da política de gestão de fornecedores?"
+    class: knowledge
+    retrieval_challenge: version_lookup
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-022"
+    distractors:
+      - "DOC-008"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q27
+    question: "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?"
+    class: knowledge
+    retrieval_challenge: lifecycle_resolution
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-011"
+      - "DOC-007"
+      - "DOC-006"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q28
+    question: "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?"
+    class: knowledge
+    retrieval_challenge: version_comparison
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-001"
+      - "DOC-002"
+      - "DOC-019"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q29
+    question: "Qual é a política da empresa para transporte de material radioativo?"
+    class: abstention
+    retrieval_challenge: intentional_unknown
+    expected_behavior: abstain_insufficient_evidence
+    expected_evidence: []
+    distractors:
+      - "DOC-001"
+      - "DOC-009"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q30
+    question: "Qual transportadora devemos contratar para a próxima operação?"
+    class: combined_boundary
+    retrieval_challenge: decision_boundary
+    expected_behavior: provide_evidence_without_unsupported_decision
+    expected_evidence:
+      - "DOC-014"
+      - "DOC-015"
+      - "DOC-016"
+      - "DOC-003"
+    distractors: []
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q31
+    question: "Posso usar IA para analisar contratos de fornecedores?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-023"
+      - "DOC-024"
+    distractors:
+      - "DOC-025"
+      - "DOC-027"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q32
+    question: "Quais aprovações são necessárias para usar IA com dados de fornecedores?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-023"
+      - "DOC-005"
+      - "DOC-012"
+    distractors:
+      - "DOC-025"
+      - "DOC-026"
+      - "DOC-027"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q33
+    question: "Quais requisitos de segurança se aplicam ao uso de IA?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-024"
+      - "DOC-006"
+    distractors:
+      - "DOC-023"
+      - "DOC-025"
+      - "DOC-026"
+      - "DOC-027"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q34
+    question: "Quem aprova uma nova ferramenta de IA?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-023"
+      - "DOC-012"
+    distractors:
+      - "DOC-025"
+      - "DOC-026"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q35
+    question: "Posso inserir dados confidenciais em uma ferramenta de IA?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-023"
+      - "DOC-024"
+      - "DOC-006"
+    distractors:
+      - "DOC-025"
+      - "DOC-027"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+  - question_id: Q36
+    question: "Que treinamento é obrigatório para colaboradores que utilizam IA?"
+    class: knowledge
+    retrieval_challenge: ai_context_disambiguation
+    expected_behavior: answer_with_citations
+    expected_evidence:
+      - "DOC-026"
+      - "DOC-023"
+    distractors:
+      - "DOC-024"
+      - "DOC-027"
+    expected_answer_specification: "To be finalized from canonical facts and generated corpus content."
+
+coverage_summary:
+  knowledge_questions: 34
+  abstention_questions: 1
+  combined_boundary_questions: 1
+  total_questions: 36
+  major_dimensions:
+    - direct_retrieval
+    - multi_document_retrieval
+    - historical_synthesis
+    - versioning
+    - document_lifecycle
+    - authority_resolution
+    - conflict_detection
+    - contract_comparison
+    - entity_specific_retrieval
+    - semantic_distractors
+    - ai_context_disambiguation
+    - abstention
+    - decision_boundary
+
+future_extension:
+  golden_set_b:
+    status: planned
+    purpose: >-
+      Evaluate cross-source questions combining structured operational facts from generic
+      database/API sources with enterprise knowledge retrieved from the RAG corpus.
+    dependency_rule: >-
+      Golden Set B must not introduce technical coupling to the AI Supply Chain Copilot.

@@ -1,0 +1,341 @@
+schema_version: "0.1"
+artifact:
+  name: canonical_facts
+  purpose: >-
+    Controlled source of truth for the synthetic enterprise universe used to
+    generate and evaluate enterprise knowledge artifacts. This file is not an
+    operational database and must not duplicate source-system records.
+  indexed_by_rag: false
+
+provenance_model:
+  allowed_origins:
+    - existing
+    - synthetic_canonical
+    - intentional_unknown
+  definitions:
+    existing: "Fact or source capability already present in the initial structured source."
+    synthetic_canonical: "New controlled fact deliberately defined for the enterprise knowledge corpus."
+    intentional_unknown: "Information deliberately absent to test evidence boundaries and abstention."
+
+enterprise_universe:
+  id: synthetic_enterprise_001
+  name: "Synthetic Enterprise Universe"
+  description: >-
+    Shared conceptual business reality across independent portfolio systems.
+    Shared facts do not imply shared application code or technical coupling.
+
+source_strategy:
+  architecture: source_agnostic
+  initial_structured_source:
+    id: ai_supply_chain_copilot
+    role: initial_structured_data_source
+    coupling: none
+    origin: existing
+  structured_authority:
+    inventory:
+      origin: existing
+      source_type: database_or_api
+      authoritative_for:
+        - inventory_operational_records
+        - inventory_metrics
+        - inventory_scores
+        - inventory_recommended_actions
+    transportation:
+      origin: existing
+      source_type: database_or_api
+      authoritative_for:
+        - routes
+        - vehicle_types
+        - route_vehicle_options
+        - route_vehicle_rates
+        - transportation_forecasts
+        - demand_forecasts
+        - planned_trips
+        - transportation_cost_analytics
+        - capacity_and_utilization_analytics
+  rule: >-
+    Operational records remain in their structured source. Only controlled
+    enterprise facts required to generate or evaluate the knowledge corpus are
+    represented below.
+
+existing_structured_universe:
+  inventory:
+    origin: existing
+    uploaded_source_snapshot:
+      erp_inventory:
+        records: 300
+        grain: "one inventory record per uploaded row"
+      inventory_analysis:
+        records: 300
+        grain: "one analyzed inventory record per uploaded row"
+      product_master:
+        records: 5
+        fields:
+          - sku
+          - descricao
+          - grupo_gerencial
+          - unidade_medida
+          - peso_kg
+      warehouse_master:
+        records: 3
+        warehouses:
+          - code: DEP01
+            description: "Centro de Distribuição Santos"
+            city: Santos
+            state: SP
+          - code: DEP02
+            description: "Centro de Distribuição Campinas"
+            city: Campinas
+            state: SP
+          - code: DEP03
+            description: "Centro de Distribuição Curitiba"
+            city: Curitiba
+            state: PR
+  transportation:
+    origin: existing
+    uploaded_source_snapshot:
+      routes:
+        records: 12
+      vehicle_types:
+        records: 5
+      route_vehicle_options:
+        records: 32
+      route_vehicle_rates:
+        records: 32
+      forecast_raw:
+        records: 96
+        period:
+          year: 2026
+          weeks: [35, 36, 37, 38, 39, 40, 41, 42]
+    known_examples:
+      route_r001:
+        route_id: R001
+        origin_id: DC01
+        destination_id: DEST001
+        distance_km: 95
+      route_r003:
+        route_id: R003
+        origin_id: DC01
+        destination_id: DEST003
+        distance_km: 285
+      vehicle_v001:
+        vehicle_type_id: V001
+        vehicle_name: VAN
+        capacity_pieces: 2500
+      vehicle_v002:
+        vehicle_type_id: V002
+        vehicle_name: LIGHT_TRUCK
+        capacity_pieces: 5000
+      vehicle_v003:
+        vehicle_type_id: V003
+        vehicle_name: MEDIUM_TRUCK
+        capacity_pieces: 10000
+
+canonical_knowledge:
+  document_governance:
+    origin: synthetic_canonical
+    authority_hierarchy:
+      - rank: 1
+        document_type: corporate_policy
+      - rank: 2
+        document_type: standard
+      - rank: 3
+        document_type: sop
+      - rank: 4
+        document_type: work_instruction
+    rules:
+      superseded_documents_have_operational_authority: false
+      active_higher_authority_document_prevails_over_conflicting_lower_authority_document: true
+
+  transportation:
+    origin: synthetic_canonical
+    otif:
+      definition:
+        name: OTIF
+        meaning: "On Time In Full"
+        numerator: deliveries_on_time_and_in_full
+        denominator: total_deliveries
+      targets:
+        - value: 0.95
+          effective_from: "2024-01-01"
+          effective_until: "2025-12-31"
+          status: superseded
+        - value: 0.97
+          effective_from: "2026-01-01"
+          effective_until: null
+          status: active
+      change_event:
+        approved_during: 2025
+        old_value: 0.95
+        new_value: 0.97
+        effective_from: "2026-01-01"
+        rationale: "Controlled synthetic governance decision for versioning and historical retrieval tests."
+    critical_delivery:
+      definition: >-
+        A delivery explicitly classified as business-critical under the active
+        Critical Delivery SOP. Detailed qualifying criteria must be sourced from
+        the generated SOP rather than inferred from general model knowledge.
+      delayed_delivery_requires_defined_escalation_process: true
+    carrier_management:
+      repeated_sla_breach:
+        threshold_consecutive_weeks: 3
+        requires_escalation: true
+        exact_required_actions_source: carrier_management_policy
+      performance_kpis:
+        includes:
+          - OTIF
+        additional_kpis_source: logistics_kpi_dictionary
+      high_risk_classification:
+        exact_criteria_source: supplier_risk_policy
+
+  supplier_management:
+    origin: synthetic_canonical
+    onboarding:
+      required_documents_source: supplier_onboarding_sop
+    current_policy_version:
+      title: "Supplier Management Policy"
+      version: "3.0"
+      effective_year: 2026
+      status: active
+    emergency_contracting:
+      approval_source: approval_authority_matrix
+    financial_authority:
+      exact_thresholds_source: approval_authority_matrix
+
+  contracts:
+    origin: synthetic_canonical
+    carriers:
+      - carrier_id: CAR-ATLAS
+        name: "Atlas Transportes"
+        contract_status: active
+        contract_year: 2026
+        has_delay_penalty_clause: true
+        has_force_majeure_exception: true
+      - carrier_id: CAR-NOVA
+        name: "Nova Logística"
+        contract_status: active
+        contract_year: 2026
+        has_delay_penalty_clause: true
+        has_force_majeure_exception: true
+      - carrier_id: CAR-ORION
+        name: "Orion Transportes"
+        contract_status: active
+        contract_year: 2025
+        has_delay_penalty_clause: false
+        has_force_majeure_exception: true
+    rule: >-
+      Exact penalty mechanics, percentages, thresholds, and exceptions must be
+      defined in and retrieved from the corresponding synthetic contracts.
+
+  information_security:
+    origin: synthetic_canonical
+    customer_data:
+      classification: confidential
+    external_sharing:
+      confidential_customer_information_requires_approved_secure_channel: true
+      ordinary_email_is_approved_for_confidential_customer_information: false
+    accidental_disclosure:
+      requires_security_incident_process: true
+      exact_process_source: security_incident_sop
+    legacy_conflict:
+      legacy_sop_year: 2024
+      legacy_sop_status: superseded
+      legacy_rule: >-
+        External operational partners may receive customer information through
+        corporate email.
+      current_rule: >-
+        Confidential customer information may only be shared through approved
+        secure channels.
+      expected_resolution: "Current Information Security Policy prevails."
+
+  ai_governance:
+    origin: synthetic_canonical
+    supplier_contract_analysis:
+      governed_use_case: true
+      exact_conditions_source:
+        - ai_governance_policy
+        - ai_security_standard
+    supplier_data_use:
+      approval_requirements_source:
+        - ai_governance_policy
+        - approval_authority_matrix
+        - data_sharing_policy
+    security_requirements_source:
+      - ai_security_standard
+      - information_security_policy
+    new_ai_tool_approval_source:
+      - ai_governance_policy
+      - approval_authority_matrix
+    confidential_data:
+      unrestricted_entry_into_ai_tools_allowed: false
+      exact_conditions_source:
+        - ai_governance_policy
+        - ai_security_standard
+        - information_security_policy
+    workforce_training:
+      mandatory_for_in_scope_ai_users: true
+      exact_training_requirements_source: ai_workforce_enablement_guide
+
+historical_events:
+  - event_id: EVT-OTIF-2025-01
+    origin: synthetic_canonical
+    type: policy_change_approval
+    year: 2025
+    description: "Approval to increase the national OTIF target from 95% to 97%, effective January 2026."
+    expected_evidence_sources:
+      - operations_committee_minutes_2025
+      - transportation_policy_2024
+      - transportation_policy_2026
+
+  - event_id: EVT-INC-R001-2025
+    origin: synthetic_canonical
+    type: transportation_incident
+    year: 2025
+    route_id: R001
+    description: >-
+      Controlled historical transportation incident used to test retrieval of
+      precedent, post-incident decisions, and corrective actions.
+    detailed_facts_source: incident_report_r001_2025
+
+  - event_id: EVT-INC-R003-2026
+    origin: synthetic_canonical
+    type: transportation_incident
+    year: 2026
+    route_id: R003
+    description: >-
+      Controlled transportation incident used as a second case for semantic
+      similarity and distractor testing.
+    detailed_facts_source: incident_report_r003_2026
+
+intentional_unknowns:
+  radioactive_material_transport_policy:
+    origin: intentional_unknown
+    exists: false
+    expected_behavior: abstain
+    reason: >-
+      No policy governing radioactive-material transportation exists in the
+      controlled enterprise corpus. The system must not substitute general LLM
+      knowledge for missing enterprise evidence.
+
+  carrier_selection_decision:
+    origin: intentional_unknown
+    exists_as_single_authoritative_answer: false
+    expected_behavior: evidence_without_unsupported_decision
+    reason: >-
+      Enterprise sources may provide operational facts, policies, risks, and
+      contractual evidence, but the system must not invent an authoritative
+      carrier-selection decision when the controlled sources do not establish one.
+
+corpus_generation_constraints:
+  - "Generated documents must not contradict canonical facts unless the contradiction is deliberate and documented as historical or superseded content."
+  - "Historical documents may contain facts that were valid in their effective period but are no longer operationally authoritative."
+  - "Distractor documents may be semantically similar but must remain internally coherent."
+  - "Operational source records must not be copied wholesale into the RAG corpus merely to make them retrievable."
+  - "Unknown facts must remain unknown unless explicitly promoted to synthetic_canonical in a future version of this file."
+
+evaluation_constraints:
+  grounding: "Answers must be supported by retrieved enterprise evidence when the question requires enterprise knowledge."
+  versioning: "Active and authoritative evidence must take precedence over superseded evidence."
+  conflict_resolution: "Document authority and effective status must be considered when sources conflict."
+  abstention: "Missing enterprise evidence must produce an explicit evidence limitation rather than hallucinated policy."
+  source_independence: "Evaluation must not assume that the AI Supply Chain Copilot is always available."

@@ -1,0 +1,603 @@
+schema_version: "0.1"
+
+artifact:
+  name: document_registry
+  purpose: >-
+    Registry of controlled enterprise documents used by the Enterprise Knowledge
+    AI System corpus. It defines document identity, authority, lifecycle,
+    relationships, canonical-fact coverage, and expected evaluation role.
+  indexed_by_rag: false
+
+registry_rules:
+  document_id_format: "DOC-###"
+  authority_scale:
+    4: corporate_policy
+    3: standard
+    2: sop_or_governance_record
+    1: reference_or_operational_record
+  lifecycle_status:
+    - active
+    - superseded
+    - historical
+  notes:
+    - "Authority level is used together with lifecycle status and effective dates."
+    - "A superseded document may remain retrievable for historical questions."
+    - "Registry metadata is evaluation/control data and is not itself part of the RAG corpus."
+    - "Exact business details not fixed in canonical_facts.yaml must be defined consistently when corpus documents are generated."
+
+documents:
+
+  - document_id: DOC-001
+    key: transportation_policy_2026
+    title: "Transportation Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: transportation
+    version: "3.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: DOC-002
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.otif
+      - canonical_knowledge.transportation.critical_delivery
+    evaluation_roles:
+      - current_authority
+      - versioning
+      - historical_comparison
+
+  - document_id: DOC-002
+    key: transportation_policy_2024
+    title: "Transportation Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: transportation
+    version: "2.0"
+    effective_date: "2024-01-01"
+    status: superseded
+    authority_level: 4
+    supersedes: null
+    superseded_by: DOC-001
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.otif.targets
+    evaluation_roles:
+      - historical_authority
+      - versioning
+      - deliberate_distractor
+
+  - document_id: DOC-003
+    key: carrier_management_policy
+    title: "Carrier Management Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: transportation
+    version: "2.1"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.carrier_management.repeated_sla_breach
+      - canonical_knowledge.transportation.carrier_management.performance_kpis
+    evaluation_roles:
+      - procedure
+      - escalation
+      - current_authority
+
+  - document_id: DOC-004
+    key: supplier_risk_policy
+    title: "Supplier Risk Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: supplier_management
+    version: "1.4"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.carrier_management.high_risk_classification
+    evaluation_roles:
+      - risk_classification
+      - cross_domain_retrieval
+
+  - document_id: DOC-005
+    key: data_sharing_policy
+    title: "Data Sharing Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: information_security
+    version: "2.2"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.information_security.external_sharing
+      - canonical_knowledge.ai_governance.supplier_data_use
+    evaluation_roles:
+      - data_sharing
+      - multi_document
+      - ai_context_disambiguation
+
+  - document_id: DOC-006
+    key: information_security_policy
+    title: "Information Security Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: information_security
+    version: "4.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.information_security.customer_data
+      - canonical_knowledge.information_security.external_sharing
+      - canonical_knowledge.information_security.legacy_conflict
+      - canonical_knowledge.ai_governance.security_requirements_source
+      - canonical_knowledge.ai_governance.confidential_data
+    evaluation_roles:
+      - current_authority
+      - conflict_resolution
+      - multi_document
+      - ai_context_disambiguation
+
+  - document_id: DOC-007
+    key: document_governance_policy
+    title: "Document Governance Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: governance
+    version: "1.2"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.document_governance
+    evaluation_roles:
+      - authority_resolution
+      - versioning
+      - conflict_resolution
+
+  - document_id: DOC-008
+    key: supplier_onboarding_sop
+    title: "Supplier Onboarding SOP"
+    document_type: sop
+    format: docx
+    domain: supplier_management
+    version: "3.1"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.supplier_management.onboarding
+    evaluation_roles:
+      - procedure
+      - supplier_onboarding
+
+  - document_id: DOC-009
+    key: critical_delivery_sop
+    title: "Critical Delivery SOP"
+    document_type: sop
+    format: docx
+    domain: transportation
+    version: "2.3"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.critical_delivery
+    evaluation_roles:
+      - procedure
+      - escalation
+      - definition
+
+  - document_id: DOC-010
+    key: security_incident_sop
+    title: "Security Incident SOP"
+    document_type: sop
+    format: docx
+    domain: information_security
+    version: "2.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.information_security.accidental_disclosure
+    evaluation_roles:
+      - procedure
+      - incident_response
+
+  - document_id: DOC-011
+    key: legacy_data_sharing_sop
+    title: "Legacy Data Sharing SOP"
+    document_type: sop
+    format: docx
+    domain: information_security
+    version: "1.0"
+    effective_date: "2024-01-01"
+    status: superseded
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.information_security.legacy_conflict
+    evaluation_roles:
+      - deliberate_conflict
+      - historical_authority
+      - deliberate_distractor
+
+  - document_id: DOC-012
+    key: approval_authority_matrix
+    title: "Approval Authority Matrix"
+    document_type: governance_record
+    format: xlsx
+    domain: governance
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.supplier_management.emergency_contracting
+      - canonical_knowledge.supplier_management.financial_authority
+      - canonical_knowledge.ai_governance.supplier_data_use
+      - canonical_knowledge.ai_governance.new_ai_tool_approval_source
+    evaluation_roles:
+      - structured_document
+      - approval_lookup
+      - multi_document
+
+  - document_id: DOC-013
+    key: logistics_kpi_dictionary
+    title: "Logistics KPI Dictionary"
+    document_type: reference
+    format: xlsx
+    domain: transportation
+    version: "2.4"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.otif.definition
+      - canonical_knowledge.transportation.carrier_management.performance_kpis
+    evaluation_roles:
+      - definition
+      - structured_document
+      - exact_term_retrieval
+
+  - document_id: DOC-014
+    key: carrier_atlas_contract
+    title: "Carrier Atlas Contract"
+    document_type: contract
+    format: pdf
+    domain: transportation
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 3
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.contracts.carriers
+    entity_refs:
+      - CAR-ATLAS
+    evaluation_roles:
+      - contract_retrieval
+      - penalty_comparison
+      - force_majeure
+      - entity_specific_retrieval
+
+  - document_id: DOC-015
+    key: carrier_nova_contract
+    title: "Carrier Nova Contract"
+    document_type: contract
+    format: pdf
+    domain: transportation
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 3
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.contracts.carriers
+    entity_refs:
+      - CAR-NOVA
+    evaluation_roles:
+      - contract_retrieval
+      - penalty_comparison
+      - force_majeure
+      - entity_specific_retrieval
+
+  - document_id: DOC-016
+    key: carrier_orion_contract
+    title: "Carrier Orion Contract"
+    document_type: contract
+    format: pdf
+    domain: transportation
+    version: "2025"
+    effective_date: "2025-01-01"
+    status: active
+    authority_level: 3
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.contracts.carriers
+    entity_refs:
+      - CAR-ORION
+    evaluation_roles:
+      - contract_retrieval
+      - negative_clause_test
+      - entity_specific_retrieval
+
+  - document_id: DOC-017
+    key: incident_report_r001_2025
+    title: "Transportation Incident Report R001"
+    document_type: incident_report
+    format: pdf
+    domain: transportation
+    version: "2025"
+    effective_date: "2025-01-01"
+    status: historical
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - historical_events
+    entity_refs:
+      - R001
+      - EVT-INC-R001-2025
+    evaluation_roles:
+      - historical_retrieval
+      - precedent
+      - route_specific_retrieval
+
+  - document_id: DOC-018
+    key: incident_report_r003_2026
+    title: "Transportation Incident Report R003"
+    document_type: incident_report
+    format: pdf
+    domain: transportation
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: historical
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - historical_events
+    entity_refs:
+      - R003
+      - EVT-INC-R003-2026
+    evaluation_roles:
+      - semantic_distractor
+      - route_specific_retrieval
+      - incident_comparison
+
+  - document_id: DOC-019
+    key: operations_committee_minutes_2025
+    title: "Operations Committee Minutes 2025"
+    document_type: committee_minutes
+    format: docx
+    domain: governance
+    version: "2025"
+    effective_date: "2025-01-01"
+    status: historical
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.transportation.otif.change_event
+      - historical_events
+    evaluation_roles:
+      - historical_retrieval
+      - policy_change_evidence
+      - multi_document
+
+  - document_id: DOC-020
+    key: operations_committee_minutes_2026
+    title: "Operations Committee Minutes 2026"
+    document_type: committee_minutes
+    format: pptx
+    domain: governance
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: historical
+    authority_level: 2
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - historical_events
+    evaluation_roles:
+      - committee_decision
+      - multi_format_retrieval
+      - multi_document
+
+  - document_id: DOC-021
+    key: corrective_action_tracker
+    title: "Corrective Action Tracker"
+    document_type: tracker
+    format: xlsx
+    domain: governance
+    version: "2026"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - historical_events
+    evaluation_roles:
+      - open_action_lookup
+      - structured_document
+      - incident_follow_up
+
+  - document_id: DOC-022
+    key: supplier_management_policy
+    title: "Supplier Management Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: supplier_management
+    version: "3.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.supplier_management.current_policy_version
+      - canonical_knowledge.supplier_management.onboarding
+    evaluation_roles:
+      - current_authority
+      - version_lookup
+      - supplier_management
+
+  - document_id: DOC-023
+    key: ai_governance_policy
+    title: "AI Governance Policy"
+    document_type: corporate_policy
+    format: pdf
+    domain: ai_governance
+    version: "1.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 4
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.ai_governance.supplier_contract_analysis
+      - canonical_knowledge.ai_governance.supplier_data_use
+      - canonical_knowledge.ai_governance.new_ai_tool_approval_source
+      - canonical_knowledge.ai_governance.confidential_data
+    evaluation_roles:
+      - ai_context_disambiguation
+      - current_authority
+      - multi_document
+
+  - document_id: DOC-024
+    key: ai_security_standard
+    title: "AI Security Standard"
+    document_type: standard
+    format: pdf
+    domain: ai_governance
+    version: "1.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 3
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.ai_governance.supplier_contract_analysis
+      - canonical_knowledge.ai_governance.security_requirements_source
+      - canonical_knowledge.ai_governance.confidential_data
+    evaluation_roles:
+      - ai_context_disambiguation
+      - security
+      - multi_document
+
+  - document_id: DOC-025
+    key: ai_procurement_guidelines
+    title: "AI Procurement Guidelines"
+    document_type: guideline
+    format: md
+    domain: ai_governance
+    version: "1.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths: []
+    evaluation_roles:
+      - semantic_distractor
+      - ai_context_disambiguation
+      - procurement_context
+
+  - document_id: DOC-026
+    key: ai_workforce_enablement_guide
+    title: "AI Workforce Enablement Guide"
+    document_type: guideline
+    format: pptx
+    domain: ai_governance
+    version: "1.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths:
+      - canonical_knowledge.ai_governance.workforce_training
+    evaluation_roles:
+      - ai_context_disambiguation
+      - training
+      - multi_format_retrieval
+
+  - document_id: DOC-027
+    key: ai_supply_chain_usage_guidelines
+    title: "AI Supply Chain Usage Guidelines"
+    document_type: guideline
+    format: txt
+    domain: ai_governance
+    version: "1.0"
+    effective_date: "2026-01-01"
+    status: active
+    authority_level: 1
+    supersedes: null
+    superseded_by: null
+    canonical_fact_paths: []
+    evaluation_roles:
+      - semantic_distractor
+      - ai_context_disambiguation
+      - supply_chain_context
+
+intentional_absences:
+  radioactive_material_transport_policy:
+    exists_in_registry: false
+    canonical_origin: intentional_unknown
+    expected_behavior: abstain
+
+  authoritative_carrier_selection_decision:
+    exists_in_registry: false
+    canonical_origin: intentional_unknown
+    expected_behavior: evidence_without_unsupported_decision
+
+coverage_summary:
+  total_documents: 27
+  by_format:
+    pdf: 15
+    docx: 5
+    xlsx: 3
+    pptx: 2
+    md: 1
+    txt: 1
+  primary_test_dimensions:
+    - direct_retrieval
+    - semantic_retrieval
+    - lexical_entity_retrieval
+    - metadata_filtering
+    - versioning
+    - document_authority
+    - conflict_resolution
+    - multi_document_synthesis
+    - multi_format_parsing
+    - semantic_distractors
+    - ai_context_disambiguation
+    - abstention
