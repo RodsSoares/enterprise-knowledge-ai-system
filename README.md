@@ -45,6 +45,14 @@ The corpus will include policies, SOPs, contracts, KPI definitions,
 approval matrices, incident reports, meeting minutes, action trackers,
 governance documents, and AI-related corporate documentation.
 
+## System Overview
+
+![Enterprise Knowledge AI System — Conceptual Overview](docs/images/art-system-overview.png)
+
+The Enterprise Knowledge AI System transforms fragmented enterprise information from multiple sources and formats into grounded, traceable, and governed knowledge.
+
+It connects heterogeneous enterprise sources, processes and standardizes their content, preserves document authority and version context, and retrieves evidence to support trustworthy AI-generated answers.
+
 ## Target Architecture
 
 ``` text
