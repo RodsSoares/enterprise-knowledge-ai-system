@@ -1,16 +1,15 @@
 Enterprise Knowledge AI System
 Enterprise Universe and Source Strategy
 Status: Initial Architecture
-Version: 0.1
+Version: 0.2
 Architecture: Source-Agnostic Enterprise Knowledge Intelligence
 1. Purpose
-This document defines the relationship between the Enterprise Knowledge
-AI System, the synthetic enterprise universe, and external data and
-knowledge sources.
-The central architectural principle is:
-Build independently. Connect generically. Use the AI Supply Chain
-Copilot as the initial structured enterprise data source.
-
+   This document defines the relationship between the Enterprise Knowledge
+   AI System, the synthetic enterprise universe, and external data and
+   knowledge sources.
+   The central architectural principle is:
+   Build independently. Connect generically. Use the AI Supply Chain
+   Copilot as the initial structured enterprise data source.
 The Enterprise Knowledge AI System must remain independent from the AI
 Supply Chain Copilot.
 The Copilot is an initial source of structured enterprise data, not a
@@ -30,29 +29,29 @@ Potential sources include:
 - data warehouses;
 - cloud storage;
 - knowledge platforms.
-The architecture must therefore model sources generically rather than
-around a specific application.
+  The architecture must therefore model sources generically rather than
+  around a specific application.
 3. Independence from the AI Supply Chain Copilot
-The Enterprise Knowledge AI System:
-- does not import Copilot application code;
-- does not depend on Copilot internal architecture;
-- does not embed Copilot business logic;
-- does not require the Copilot to operate;
-- does not use Copilot-specific concepts inside its core architecture.
-Instead, interaction occurs through generic source interfaces.
-Conceptually:
-Enterprise Knowledge AI System
-              │
-              ▼
-        Source Interfaces
-              │
-     ┌────────┼────────┐
-     ▼        ▼        ▼
-   Files   Databases   APIs
-              │
-              ▼
-     AI Supply Chain Copilot
-       [initial data source]
+   The Enterprise Knowledge AI System:
+   - does not import Copilot application code;
+   - does not depend on Copilot internal architecture;
+   - does not embed Copilot business logic;
+   - does not require the Copilot to operate;
+   - does not use Copilot-specific concepts inside its core architecture.
+     Instead, interaction occurs through generic source interfaces.
+     Conceptually:
+     Enterprise Knowledge AI System
+             │
+             ▼
+       Source Interfaces
+             │
+        ┌────────┼────────┐
+        ▼        ▼        ▼
+      Files   Databases   APIs
+             │
+             ▼
+        AI Supply Chain Copilot
+      [initial data source]
 If the AI Supply Chain Copilot were replaced by another structured
 enterprise system, the core Enterprise Knowledge AI System should remain
 valid.
@@ -90,8 +89,8 @@ The existing model includes structured information related to:
 - inventory metrics;
 - inventory scoring;
 - recommended actions.
-Transportation
-The existing model includes structured information related to:
+  Transportation
+  The existing model includes structured information related to:
 - routes;
 - vehicle types;
 - route-vehicle options;
@@ -107,61 +106,60 @@ The existing model includes structured information related to:
 - cost rankings;
 - recent trends;
 - operational changes.
-These assets form the first structured enterprise dataset available to
-the Enterprise Knowledge AI System.
-They do not define the system's architecture.
+  These assets form the first structured enterprise dataset available to
+  the Enterprise Knowledge AI System.
+  They do not define the system's architecture.
 6. Structured Data vs Enterprise Knowledge
-A central modeling rule is the separation between operational facts and
-enterprise knowledge.
-Structured Data
-Information belongs naturally to the structured layer when it represents
-explicit operational facts that are naturally tabular, measurable,
-filterable, or aggregatable.
-Examples:
-- route;
-- SKU;
-- warehouse;
-- vehicle;
-- forecast;
-- volume;
-- cost;
-- capacity;
-- utilization;
-- inventory balance;
-- operational performance;
-- delivery event;
-- incident occurrence.
-Typical access mechanisms:
-- SQL;
-- database queries;
-- APIs;
-- analytics services.
-Enterprise Knowledge
-Information belongs naturally to the knowledge layer when its meaning
-depends on interpretation of organizational content.
-Examples:
-- corporate policies;
-- contractual clauses;
-- procedures;
-- governance rules;
-- escalation requirements;
-- definitions;
-- document authority;
-- regulatory guidance;
-- committee decisions;
-- security requirements.
-Typical access mechanisms:
-- document parsing;
-- chunking;
-- indexing;
-- retrieval;
-- RAG.
-Combined Intelligence
-Some questions require both.
-Example:
-A carrier has remained below its applicable SLA for three consecutive
-periods. What action does the organization require?
-
+   A central modeling rule is the separation between operational facts and
+   enterprise knowledge.
+   Structured Data
+   Information belongs naturally to the structured layer when it represents
+   explicit operational facts that are naturally tabular, measurable,
+   filterable, or aggregatable.
+   Examples:
+   - route;
+   - SKU;
+   - warehouse;
+   - vehicle;
+   - forecast;
+   - volume;
+   - cost;
+   - capacity;
+   - utilization;
+   - inventory balance;
+   - operational performance;
+   - delivery event;
+   - incident occurrence.
+     Typical access mechanisms:
+   - SQL;
+   - database queries;
+   - APIs;
+   - analytics services.
+     Enterprise Knowledge
+     Information belongs naturally to the knowledge layer when its meaning
+     depends on interpretation of organizational content.
+     Examples:
+   - corporate policies;
+   - contractual clauses;
+   - procedures;
+   - governance rules;
+   - escalation requirements;
+   - definitions;
+   - document authority;
+   - regulatory guidance;
+   - committee decisions;
+   - security requirements.
+     Typical access mechanisms:
+   - document parsing;
+   - chunking;
+   - indexing;
+   - retrieval;
+   - RAG.
+     Combined Intelligence
+     Some questions require both.
+     Example:
+     A carrier has remained below its applicable SLA for three consecutive
+     periods. What action does the organization require?
 The performance history is structured operational evidence.
 The required action is enterprise knowledge.
 The answer therefore requires synthesis across sources.
@@ -171,24 +169,20 @@ STRUCTURED
 The answer can be derived from structured operational data.
 Example:
 What was the forecast volume for route R001 last week?
-
 KNOWLEDGE
 The answer depends on enterprise documents or other unstructured
 knowledge.
 Example:
 What procedure applies after repeated SLA violations?
-
 COMBINED
 The answer requires both structured facts and enterprise knowledge.
 Example:
 Based on the current operational performance, which escalation rule
 applies?
-
 ABSTENTION
 The available enterprise sources do not contain sufficient evidence.
 Example:
 What is the company's policy for transporting radioactive materials?
-
 If no such policy exists in the available enterprise corpus, the correct
 behavior is to report insufficient evidence rather than generate a
 plausible policy from model knowledge.
@@ -209,13 +203,11 @@ FILES
 ├── PPTX
 ├── Markdown
 └── TXT
-
 DATABASES
 ├── SQLite
 ├── PostgreSQL
 ├── SQL Server
 └── other relational sources
-
 APIs
 ├── REST
 ├── ERP interfaces
@@ -229,14 +221,35 @@ Potential examples include:
 - object storage;
 - enterprise knowledge platforms;
 - data warehouses.
-These are architectural possibilities, not current implementation
-commitments.
-9. Connector Boundary
-Source-specific logic should remain at the system boundary.
+  These are architectural possibilities, not current implementation
+  commitments.
+  8.1 Structure-Preserving Source Normalization
+  Source independence does not require all sources to be reduced to the
+  same physical representation.
+The normalized internal model may preserve multiple forms of content
+when they are required to retain enterprise meaning.
+Examples include:
+- text and hierarchy for policies and procedures;
+- page and table structure for PDF documents;
+- slide boundaries and content hierarchy for presentations;
+- worksheets, tables, rows, columns, cells, formulas, and relevant
+  workbook relationships for spreadsheets.
+Normalization therefore means convergence toward predictable internal
+contracts, not forced conversion of heterogeneous sources into a single
+flat text representation.
+This principle allows the system to remain source-agnostic while
+preserving source semantics required for retrieval and evidence.
+9. Connector and Parser Boundary
+   Source-specific and parser-specific logic should remain at the system
+   boundary.
 Conceptually:
 SOURCE
    ↓
-CONNECTOR / ADAPTER
+CONNECTOR
+   ↓
+PARSER / SOURCE-SPECIFIC PROCESSOR
+   ↓
+CANONICAL ADAPTER
    ↓
 NORMALIZED INTERNAL REPRESENTATION
    ↓
@@ -245,11 +258,20 @@ KNOWLEDGE / DATA PROCESSING
 RETRIEVAL
    ↓
 SYNTHESIS
-The objective is to prevent source-specific implementation details from
-propagating through the core system.
-For example, whether structured information originates from SQLite,
+The objective is to prevent source-specific implementation details and
+third-party parser models from propagating through the core system.
+For document sources, Docling is the initial general-purpose parsing
+technology. Complex spreadsheets may use specialized XLSX processing
+when workbook-specific structures require additional preservation.
+These technologies are implementation choices behind the system
+boundary. Neither Docling nor a spreadsheet-processing library defines
+the core enterprise knowledge model.
+For structured sources, whether information originates from SQLite,
 PostgreSQL, or an API should not fundamentally change the downstream
 enterprise intelligence model.
+For document sources, whether content is parsed by Docling or a
+specialized format processor should likewise not fundamentally change
+the downstream retrieval architecture.
 10. Initial Source Strategy
 The initial development environment will use the AI Supply Chain Copilot
 as the first structured enterprise source because it already provides a
@@ -261,50 +283,49 @@ This provides several advantages:
 - existing SQL and analytics;
 - controlled synthetic information;
 - consistency across portfolio projects.
-However, the implementation must treat this source through generic
-database or API boundaries.
-No architectural component should be named or designed as a dedicated
-copilot_connector unless it exists purely as an external adapter
-implementation.
-The core system should understand source types and capabilities, not
-portfolio project identities.
+  However, the implementation must treat this source through generic
+  database or API boundaries.
+  No architectural component should be named or designed as a dedicated
+  copilot_connector unless it exists purely as an external adapter
+  implementation.
+  The core system should understand source types and capabilities, not
+  portfolio project identities.
 11. Independent Product Evolution
-The AI Supply Chain Copilot and Enterprise Knowledge AI System should
-evolve independently.
-A feature should not be added to the Copilot merely because the
-Enterprise Knowledge AI System needs convenient test data.
-Likewise, the Enterprise Knowledge AI System should not be designed
-around existing Copilot limitations.
-If future enterprise scenarios reveal missing structured information,
-the decision to extend the Copilot should be based on whether that
-information represents a legitimate extension of the Copilot's own
-Supply Chain domain.
-This preserves architectural integrity on both sides.
+    The AI Supply Chain Copilot and Enterprise Knowledge AI System should
+    evolve independently.
+    A feature should not be added to the Copilot merely because the
+    Enterprise Knowledge AI System needs convenient test data.
+    Likewise, the Enterprise Knowledge AI System should not be designed
+    around existing Copilot limitations.
+    If future enterprise scenarios reveal missing structured information,
+    the decision to extend the Copilot should be based on whether that
+    information represents a legitimate extension of the Copilot's own
+    Supply Chain domain.
+    This preserves architectural integrity on both sides.
 12. Future Structured Domain Extensions
-One possible future extension of the synthetic enterprise universe is
-Carrier Management.
-Potential entities may include:
-carriers
-carrier_route_assignments
-carrier_service_levels
-carrier_performance
-transportation_incidents
-These entities are not part of the current Enterprise Knowledge AI
-System implementation commitment.
-They should be introduced only if they represent legitimate structured
-operational concepts for the Supply Chain universe.
-Contractual obligations, policy rules, escalation procedures, and
-document authority should remain in the enterprise knowledge layer
-rather than being duplicated unnecessarily as operational database
-fields.
+    One possible future extension of the synthetic enterprise universe is
+    Carrier Management.
+    Potential entities may include:
+    carriers
+    carrier_route_assignments
+    carrier_service_levels
+    carrier_performance
+    transportation_incidents
+    These entities are not part of the current Enterprise Knowledge AI
+    System implementation commitment.
+    They should be introduced only if they represent legitimate structured
+    operational concepts for the Supply Chain universe.
+    Contractual obligations, policy rules, escalation procedures, and
+    document authority should remain in the enterprise knowledge layer
+    rather than being duplicated unnecessarily as operational database
+    fields.
 13. Evaluation Strategy: Two Golden Sets
-The evaluation architecture should distinguish pure enterprise knowledge
-retrieval from future cross-source intelligence.
-Golden Set A --- Enterprise Knowledge
-Primary objective:
-Evaluate the Enterprise RAG architecture independently from the AI
-Supply Chain Copilot.
-
+    The evaluation architecture should distinguish pure enterprise knowledge
+    retrieval from future cross-source intelligence.
+    Golden Set A --- Enterprise Knowledge
+    Primary objective:
+    Evaluate the Enterprise RAG architecture independently from the AI
+    Supply Chain Copilot.
 The initial set contains approximately 36 controlled questions covering:
 - direct retrieval;
 - procedures;
@@ -316,21 +337,20 @@ The initial set contains approximately 36 controlled questions covering:
 - contextual AI disambiguation;
 - insufficient evidence;
 - abstention.
-This set primarily evaluates:
-Documents
+  This set primarily evaluates:
+  Documents
     ↓
-Retrieval
+  Retrieval
     ↓
-Reranking
+  Reranking
     ↓
-Evidence
+  Evidence
     ↓
-Grounded Generation
-Golden Set B --- Cross-Source Intelligence
-Future objective:
-Evaluate questions that require structured operational facts and
-enterprise knowledge simultaneously.
-
+  Grounded Generation
+  Golden Set B --- Cross-Source Intelligence
+  Future objective:
+  Evaluate questions that require structured operational facts and
+  enterprise knowledge simultaneously.
 Conceptually:
                   USER QUESTION
                         │
@@ -355,12 +375,10 @@ AI Supply Chain Copilot
 Primary role:
 Transform structured Supply Chain data into operational facts,
 analytics, scenarios, and decision support.
-
 Enterprise Knowledge AI System
 Primary role:
 Transform heterogeneous corporate knowledge into a trustworthy,
 searchable, and evidence-backed intelligence layer.
-
 Their relationship can be summarized as:
 Data       → Facts
 Analytics  → Scenarios
@@ -375,17 +393,14 @@ portfolio-specific RAG implementation.
 A future organization might connect:
 Company A
 SharePoint + SQL Server + internal APIs
-
 Company B
 Google Drive + PostgreSQL + ERP
-
 Company C
 Object Storage + Data Warehouse + REST APIs
 The enterprise sources differ.
 The central problem remains the same:
 Transform heterogeneous and fragmented corporate knowledge into a
 trustworthy and searchable enterprise intelligence layer.
-
 Therefore, source independence is not an implementation detail.
 It is part of the product thesis.
 16. Architectural Decisions Frozen by This Document
@@ -408,21 +423,43 @@ The following decisions are established at this stage:
     business domain.
 11. Shared synthetic business reality does not imply shared technical
     architecture.
-17. Next Design Step
-The next step is to formalize the controlled enterprise ground truth.
-This includes:
+12. Document parsing technologies remain behind application-controlled
+    adapters and must not define the core domain model.
+13. Docling is the initial general-purpose parser for supported document
+    formats.
+14. Complex XLSX sources may use specialized spreadsheet processing when
+    required to preserve workbook semantics.
+15. Normalization is structure-preserving and may retain multiple
+    complementary representations rather than flatten every source to
+    text.
+16. Next Design Step
+    The controlled enterprise ground truth is now established through:
 canonical_facts.yaml
 document_registry.yaml
 golden_questions.yaml
-Before generating the synthetic document corpus, these artifacts will
-define:
-- authoritative enterprise facts;
-- document identities and relationships;
-- expected evidence;
-- distractors;
-- version history;
-- expected retrieval behavior;
-- abstention cases.
-This creates a reproducible evaluation environment while preserving the
-independence of the Enterprise Knowledge AI System from any specific
-source.
+The next design step is to formalize the ingestion contracts that
+connect heterogeneous source parsing to downstream chunking and
+retrieval.
+This includes defining:
+- the canonical document representation;
+- structure-preserving normalized content models;
+- provenance and structural location models;
+- the boundary between general-purpose parsing and specialized
+  spreadsheet processing;
+- canonical chunk contracts;
+- adapter responsibilities between parser-native representations and
+  application-controlled schemas.
+The implementation sequence should remain:
+Source Requirements
+        ↓
+Canonical Contracts
+        ↓
+Parser Adapters
+        ↓
+Structure-Aware Chunking
+        ↓
+Retrieval
+        ↓
+Evaluation
+Code should follow these architectural contracts rather than determine
+them implicitly.

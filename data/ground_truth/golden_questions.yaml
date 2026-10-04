@@ -1,4 +1,4 @@
-schema_version: "0.1"
+schema_version: "0.2"
 
 artifact:
   name: golden_questions
@@ -17,6 +17,36 @@ evaluation_contract:
     - "Q29 must abstain because the controlled universe intentionally lacks the requested policy."
     - "Q30 must preserve the human/decision boundary and avoid inventing an authoritative carrier selection."
     - "Q31-Q36 test semantic disambiguation among multiple documents containing AI-related language."
+
+structural_evidence_contract:
+  purpose: >-
+    Define which evaluation scenarios depend on preservation of source structure
+    so that ingestion quality can be tested independently from answer fluency.
+  principles:
+    - "Expected evidence remains document-level until reliable source locations exist in the generated physical corpus."
+    - "Page, section, slide, worksheet, table, row, column, cell, or range locators must not be invented."
+    - "When physical corpus locations are stable, structure-sensitive questions should gain explicit expected evidence locators."
+    - "A correct answer retrieved from structurally corrupted evidence should not be treated as equivalent to correct structure-aware retrieval."
+  structure_sensitive_questions:
+    xlsx: [Q04, Q05, Q08, Q09, Q19, Q32, Q34]
+    pptx: [Q18, Q19, Q36]
+    version_and_lifecycle: [Q10, Q11, Q24, Q25, Q26, Q27, Q28]
+    contract_structure: [Q12, Q13, Q14, Q30]
+  future_evidence_locator_fields:
+    - page
+    - section
+    - subsection
+    - clause
+    - slide
+    - worksheet
+    - table
+    - row
+    - column
+    - cell
+    - range
+  activation_rule: >-
+    Add locator-level ground truth only after the corresponding physical source
+    document exists and its normalized structure has been validated.
 
 questions:
   - question_id: Q01
@@ -478,6 +508,9 @@ coverage_summary:
     - ai_context_disambiguation
     - abstention
     - decision_boundary
+    - structure_preservation
+    - structural_provenance
+    - multi_format_ingestion
 
 future_extension:
   golden_set_b:

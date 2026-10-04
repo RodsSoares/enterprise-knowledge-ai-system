@@ -1,4 +1,4 @@
-schema_version: "0.1"
+schema_version: "0.2"
 
 artifact:
   name: document_registry
@@ -24,6 +24,44 @@ registry_rules:
     - "A superseded document may remain retrievable for historical questions."
     - "Registry metadata is evaluation/control data and is not itself part of the RAG corpus."
     - "Exact business details not fixed in canonical_facts.yaml must be defined consistently when corpus documents are generated."
+
+
+ingestion_contract:
+  purpose: >-
+    Define format-level preservation expectations used to guide parser routing,
+    canonical normalization, chunking, and evidence provenance without coupling
+    registry records to a specific parsing library.
+  principles:
+    - "Document format identifies preservation requirements, not a single flattened output representation."
+    - "Parser-native models must be adapted into application-controlled canonical contracts."
+    - "Docling is the initial general-purpose parser for supported document formats."
+    - "Specialized processing may complement the general parser when source semantics require it."
+    - "XLSX content must not be flattened when doing so destroys workbook, table, row, column, cell, formula, or range relationships."
+    - "Structural provenance should be preserved at the finest reliable level needed for retrieval and citation."
+  format_expectations:
+    pdf:
+      preserve: [text, page_boundaries, headings, sections, paragraphs, tables]
+      parser_strategy: docling_first
+    docx:
+      preserve: [text, headings, section_hierarchy, paragraphs, lists, tables]
+      parser_strategy: docling_first
+    xlsx:
+      preserve: [workbook_structure, worksheets, tables, headers, rows, columns, cells, formulas_when_relevant, ranges_when_relevant]
+      parser_strategy: docling_plus_specialized_processing_when_required
+    pptx:
+      preserve: [slide_boundaries, slide_titles, text_blocks, bullet_hierarchy, tables, contextual_element_relationships_when_reliable]
+      parser_strategy: docling_first
+    md:
+      preserve: [headings, sections, paragraphs, lists, text]
+      parser_strategy: docling_first
+    txt:
+      preserve: [text, paragraphs_when_detectable, explicit_section_boundaries_when_detectable]
+      parser_strategy: docling_first
+  canonical_boundary:
+    rule: >-
+      Downstream retrieval components consume application-controlled canonical
+      document and chunk contracts rather than parser-native objects.
+    parser_library_is_domain_model: false
 
 documents:
 
@@ -601,3 +639,9 @@ coverage_summary:
     - semantic_distractors
     - ai_context_disambiguation
     - abstention
+  ingestion_dimensions:
+    - multi_format_parsing
+    - structure_preservation
+    - parser_adapter_boundary
+    - specialized_xlsx_processing
+    - structural_provenance
