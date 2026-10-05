@@ -22,6 +22,7 @@ from typing import Literal
 
 DocumentFormat = Literal["pdf", "docx", "xlsx", "pptx", "md", "txt"]
 LifecycleStatus = Literal["active", "superseded", "historical"]
+SourceRelationshipStatus = Literal["resolved", "unresolved"]
 TextBlockKind = Literal[
     "title",
     "heading",
@@ -191,7 +192,110 @@ class SpreadsheetBlock:
             raise ValueError("A spreadsheet block cannot be its own parent.")
 
 
-ContentBlock = TextBlock | TableBlock | SpreadsheetBlock
+@dataclass(frozen=True, slots=True)
+class ChartSourceReference:
+    """Reference from presented chart data to its internal source structure."""
+
+    resource: str
+    sheet_name: str | None = None
+    cell_range: str | None = None
+    status: SourceRelationshipStatus = "unresolved"
+
+    def __post_init__(self) -> None:
+        if not self.resource.strip():
+            raise ValueError("resource must not be empty.")
+
+        if self.sheet_name is not None and not self.sheet_name.strip():
+            raise ValueError("sheet_name must not be empty when provided.")
+
+        if self.cell_range is not None and not self.cell_range.strip():
+            raise ValueError("cell_range must not be empty when provided.")
+
+        if self.status == "resolved" and (
+            self.sheet_name is None or self.cell_range is None
+        ):
+            raise ValueError(
+                "Resolved chart source references require sheet_name and cell_range."
+            )
+
+
+@dataclass(frozen=True, slots=True)
+class ChartSeries:
+    """One ordered data series presented by a chart."""
+
+    name: str | None = None
+    values: tuple[str | int | float | bool | None, ...] = ()
+    source_reference: ChartSourceReference | None = None
+
+    def __post_init__(self) -> None:
+        if self.name is not None and not self.name.strip():
+            raise ValueError("name must not be empty when provided.")
+
+        if not self.values and self.source_reference is None:
+            raise ValueError(
+                "A chart series must contain values or a source_reference."
+            )
+
+
+@dataclass(frozen=True, slots=True)
+class ChartBlock:
+    """Presented chart with deterministic structure and source relationships."""
+
+    block_id: str
+    order: int
+    chart_type: str
+    series: tuple[ChartSeries, ...]
+    location: SourceLocation = SourceLocation()
+    title: str | None = None
+    categories: tuple[str | int | float | bool | None, ...] = ()
+    category_source_reference: ChartSourceReference | None = None
+    parent_id: str | None = None
+
+    def __post_init__(self) -> None:
+        if not self.block_id.strip():
+            raise ValueError("block_id must not be empty.")
+
+        if self.order < 0:
+            raise ValueError("order must be greater than or equal to 0.")
+
+        if not self.chart_type.strip():
+            raise ValueError("chart_type must not be empty.")
+
+        if not self.series:
+            raise ValueError("series must not be empty.")
+
+        if self.title is not None and not self.title.strip():
+            raise ValueError("title must not be empty when provided.")
+
+        if self.parent_id == self.block_id:
+            raise ValueError("A chart block cannot be its own parent.")
+
+
+@dataclass(frozen=True, slots=True)
+class ImageBlock:
+    """Visual evidence preserved from the source document."""
+
+    block_id: str
+    order: int
+    location: SourceLocation = SourceLocation()
+    caption: str | None = None
+    parent_id: str | None = None
+
+    def __post_init__(self) -> None:
+        if not self.block_id.strip():
+            raise ValueError("block_id must not be empty.")
+
+        if self.order < 0:
+            raise ValueError("order must be greater than or equal to 0.")
+
+        if self.caption is not None and not self.caption.strip():
+            raise ValueError("caption must not be empty when provided.")
+
+        if self.parent_id == self.block_id:
+            raise ValueError("An image block cannot be its own parent.")
+
+
+ContentBlock = TextBlock | TableBlock | SpreadsheetBlock | ChartBlock | ImageBlock
 
 
 @dataclass(frozen=True, slots=True)

@@ -37,94 +37,94 @@ Architecture: Enterprise Retrieval-Augmented Generation (RAG)
    multiple documents and formats.
    For example:
    Can AI be used to analyze confidential supplier contracts?
-Relevant evidence may exist across:
-- AI Governance Policy;
-- Information Security Policy;
-- Data Sharing Policy;
-- Supplier Management Policy;
-- AI Supply Chain Usage Guidelines.
-  At the same time, many other documents may contain terms such as "AI",
-  "supplier", or "contract" without actually providing relevant evidence.
-  Therefore:
-  High lexical or semantic similarity does not necessarily imply high
-  contextual relevance.
-The system must retrieve evidence based on the complete meaning and
-context of the question rather than relying on isolated repeated
-terminology.
+   Relevant evidence may exist across:
+   - AI Governance Policy;
+   - Information Security Policy;
+   - Data Sharing Policy;
+   - Supplier Management Policy;
+   - AI Supply Chain Usage Guidelines.
+     At the same time, many other documents may contain terms such as "AI",
+     "supplier", or "contract" without actually providing relevant evidence.
+     Therefore:
+     High lexical or semantic similarity does not necessarily imply high
+     contextual relevance.
+     The system must retrieve evidence based on the complete meaning and
+     context of the question rather than relying on isolated repeated
+     terminology.
 3. Design Principles
-3.1 Evidence Before Generation
-Answers must be grounded in retrieved enterprise evidence.
-The system should not substitute general model knowledge for missing
-enterprise knowledge.
-3.2 Retrieval Before Fluency
-A fluent answer based on incorrect evidence is still incorrect.
-Retrieval quality must therefore be evaluated independently from
-generation quality.
-3.3 Source Traceability
-Users should be able to identify the documents supporting an answer.
-Relevant source metadata should be preserved throughout the pipeline.
-3.4 Authority Awareness
-Not all documents have equal authority.
-A corporate policy may override an SOP, while an active document may
-override a superseded version.
-Retrieval relevance alone is insufficient for resolving document
-authority.
-3.5 Temporal Awareness
-The corpus may intentionally contain current and historical versions of
-the same information.
-The system must distinguish between current, historical, superseded, and
-future-effective knowledge where applicable.
-3.6 Explicit Abstention
-If sufficient enterprise evidence does not exist, the system should
-indicate that the available corpus does not support an answer.
-Absence of evidence must not automatically trigger unsupported model
-generation.
-3.7 Deterministic Controls Where Appropriate
-Semantic interpretation should use AI where it provides value.
-Rules involving metadata, document status, authority, validation, and
-other explicit constraints should remain deterministic where practical.
+   3.1 Evidence Before Generation
+   Answers must be grounded in retrieved enterprise evidence.
+   The system should not substitute general model knowledge for missing
+   enterprise knowledge.
+   3.2 Retrieval Before Fluency
+   A fluent answer based on incorrect evidence is still incorrect.
+   Retrieval quality must therefore be evaluated independently from
+   generation quality.
+   3.3 Source Traceability
+   Users should be able to identify the documents supporting an answer.
+   Relevant source metadata should be preserved throughout the pipeline.
+   3.4 Authority Awareness
+   Not all documents have equal authority.
+   A corporate policy may override an SOP, while an active document may
+   override a superseded version.
+   Retrieval relevance alone is insufficient for resolving document
+   authority.
+   3.5 Temporal Awareness
+   The corpus may intentionally contain current and historical versions of
+   the same information.
+   The system must distinguish between current, historical, superseded, and
+   future-effective knowledge where applicable.
+   3.6 Explicit Abstention
+   If sufficient enterprise evidence does not exist, the system should
+   indicate that the available corpus does not support an answer.
+   Absence of evidence must not automatically trigger unsupported model
+   generation.
+   3.7 Deterministic Controls Where Appropriate
+   Semantic interpretation should use AI where it provides value.
+   Rules involving metadata, document status, authority, validation, and
+   other explicit constraints should remain deterministic where practical.
 4. Enterprise Knowledge Sources
-The synthetic enterprise corpus will intentionally contain multiple
-document formats.
-Initial target formats include:
-- PDF;
-- DOCX;
-- XLSX;
-- PPTX;
-- Markdown;
-- plain text.
-  Document format should reflect realistic business usage rather than
-  exist only to demonstrate technical compatibility.
-  Information                    Natural Format
-  Corporate Policy               PDF
-  Standard Operating Procedure   DOCX
-  Approval Authority Matrix      XLSX
-  Corrective Action Tracker      XLSX
-  Operations Committee Review    PPTX
-  Incident Report                PDF / DOCX
-  Internal Guideline             Markdown / text
-  This heterogeneity is intentional and forms part of the ingestion
-  challenge.
+   The synthetic enterprise corpus will intentionally contain multiple
+   document formats.
+   Initial target formats include:
+   - PDF;
+   - DOCX;
+   - XLSX;
+   - PPTX;
+   - Markdown;
+   - plain text.
+     Document format should reflect realistic business usage rather than
+     exist only to demonstrate technical compatibility.
+     Information                    Natural Format
+     Corporate Policy               PDF
+     Standard Operating Procedure   DOCX
+     Approval Authority Matrix      XLSX
+     Corrective Action Tracker      XLSX
+     Operations Committee Review    PPTX
+     Incident Report                PDF / DOCX
+     Internal Guideline             Markdown / text
+     This heterogeneity is intentional and forms part of the ingestion
+     challenge.
 5. High-Level Architecture
-                ENTERPRISE KNOWLEDGE SOURCES
-                          │
-         PDF / DOCX / XLSX / PPTX / MD / TXT
-                          │
-                          ▼
-                MULTI-FORMAT INGESTION
-                          │
-                          ▼
-                PARSING & NORMALIZATION
-                          │
-                          ▼
-                 METADATA EXTRACTION
-                          │
-                          ▼
-                      CHUNKING
-                          │
-                          ▼
-                EMBEDDINGS & INDEXING
-                          │
+            ENTERPRISE KNOWLEDGE SOURCES
+                      │
+     PDF / DOCX / XLSX / PPTX / MD / TXT
+                      │
+                      ▼
+            MULTI-FORMAT INGESTION
+                      │
+                      ▼
+            PARSING & NORMALIZATION
+                      │
+                      ▼
+             METADATA EXTRACTION
+                      │
+                      ▼
+                  CHUNKING
+                      │
+                      ▼
+            EMBEDDINGS & INDEXING
+                      │
 ══════════════════════════════╪════════════════════════════
                               │
                          USER QUERY
@@ -179,13 +179,16 @@ Embedding
 Indexes
 Each document format may require format-specific parsing behavior.
 The initial parsing strategy is Docling-first for supported enterprise
-document formats. Specialized parsing or enrichment may be introduced
-when a source contains structures that require capabilities beyond the
-general document parser.
-Complex spreadsheets are the primary initial case for specialized
-treatment. XLSX documents may use a dedicated spreadsheet-processing
-library alongside the general parsing layer when workbook-specific
-structures must be preserved.
+document formats. Specialized parsing or enrichment is used when a source
+contains structures that require capabilities beyond the general document
+parser.
+XLSX documents use dedicated openpyxl-based processing to preserve native
+worksheet, cell, range, value, formula, and data-type structure without
+flattening spreadsheet semantics into text.
+PPTX documents use Docling as the general-purpose parser for textual and
+document structure. Native PPTX enrichment may complement Docling when
+presentation-specific structures such as charts, chart-source
+relationships, and embedded workbooks must be preserved.
 Parsing technology must remain behind an application-controlled adapter
 boundary.
 Downstream components must depend on the Enterprise Knowledge AI
@@ -214,14 +217,14 @@ representations, including:
 - worksheet references;
 - cell and range relationships;
 - source-specific structural metadata when required.
-The canonical representation defines a common contract for downstream
-components without requiring every document format to expose identical
-content structures.
-The external parser's native representation must not become the
-application's canonical domain model.
-Conceptually:
-Source Document
-      ↓
+  The canonical representation defines a common contract for downstream
+  components without requiring every document format to expose identical
+  content structures.
+  The external parser's native representation must not become the
+  application's canonical domain model.
+  Conceptually:
+  Source Document
+  ↓
 Docling / Specialized Parser
       ↓
 Parser-Native Representation
@@ -235,16 +238,31 @@ DOCX
 Preserve headings, paragraphs, lists, tables, and section hierarchy.
 XLSX
 Preserve relationships between workbooks, worksheets, tables, headers,
-rows, columns, cells, and relevant ranges.
-Spreadsheet content should not automatically be flattened into
-unstructured text if doing so destroys relationships between values.
-Complex XLSX sources may receive specialized processing or enrichment
-to preserve workbook-specific structures such as formulas, named
-ranges, table definitions, and other relevant spreadsheet semantics.
+rows, columns, cells, formulas, data types, and relevant ranges.
+XLSX ingestion uses specialized openpyxl-based processing behind the
+canonical adapter boundary. Spreadsheet content should not automatically
+be flattened into unstructured text if doing so destroys relationships
+between values.
+Additional workbook semantics such as merged ranges, named ranges, table
+definitions, and other relevant structures may be introduced when required
+by retrieval and evidence requirements.
 PPTX
 Preserve slide boundaries, slide titles, bullet hierarchy, relevant text
 blocks, tables, and contextual relationships between slide elements
 where feasible.
+Docling remains responsible for the general textual/document representation
+of PPTX sources. Native enrichment may additionally preserve presentation
+objects whose enterprise meaning is not fully represented by the general
+parser, including charts, chart-source relationships, and embedded
+workbooks.
+Embedded content is not automatically indexable content. Internal workbooks,
+cached chart data, and other embedded resources should become retrievable
+evidence only when their relationship to presented content or another
+explicit knowledge requirement is established.
+Source relationships may be resolvable, unresolved, or stale. The ingestion
+layer must preserve that distinction rather than fabricate missing evidence
+or fail the complete document because an internal reference cannot be
+resolved.
 PDF
 Preserve page references, headings, sections, paragraphs, relevant
 tables, and structural relationships where feasible.
@@ -276,15 +294,15 @@ Examples:
 - spreadsheet → logical row, table, or table region;
 - presentation → slide or coherent slide section;
 - FAQ → question and answer pair.
-Fixed-size token chunking may still be used where appropriate,
-potentially with overlap, but should not be assumed to be optimal for
-every source.
-Initial chunking implementations may use capabilities provided by
-Docling where they fit the required behavior. These implementations
-should remain behind an application-controlled chunking boundary and
-produce canonical chunk contracts for downstream retrieval.
-Chunking effectively defines the retrieval granularity of the knowledge
-system.
+  Fixed-size token chunking may still be used where appropriate,
+  potentially with overlap, but should not be assumed to be optimal for
+  every source.
+  Initial chunking implementations may use capabilities provided by
+  Docling where they fit the required behavior. These implementations
+  should remain behind an application-controlled chunking boundary and
+  produce canonical chunk contracts for downstream retrieval.
+  Chunking effectively defines the retrieval granularity of the knowledge
+  system.
 9. Embeddings and Vector Retrieval
    Each retrievable chunk can be transformed into an embedding.
    The user query is transformed into an embedding using a compatible
@@ -299,80 +317,80 @@ system.
    Embeddings
    ↓
    Vector Space
-User Question
+   User Question
    ↓
-Embedding
+   Embedding
    ↓
-Nearest Semantic Neighbors
-This allows retrieval even when the query and source evidence use
-different vocabulary.
-Vector similarity, however, does not guarantee contextual correctness or
-document authority.
-Therefore vector retrieval is only one component of the target retrieval
-architecture.
+   Nearest Semantic Neighbors
+   This allows retrieval even when the query and source evidence use
+   different vocabulary.
+   Vector similarity, however, does not guarantee contextual correctness or
+   document authority.
+   Therefore vector retrieval is only one component of the target retrieval
+   architecture.
 10. Hybrid Retrieval
-The target architecture combines multiple retrieval signals.
-Vector Retrieval
-Optimized for semantic similarity:
-Which chunks mean something similar to the question?
-Lexical Retrieval
-Optimized for textual signals and exact terminology.
-This is useful for route IDs, supplier names, document identifiers,
-technical terminology, contract clauses, and acronyms.
-BM25 or an equivalent lexical retrieval approach may be evaluated.
-Metadata Filtering
-Metadata provides explicit structured constraints.
-Example:
-document_id: DOC-01
-document_type: policy
-version: "3.0"
-status: active
-effective_date: 2026-01-01
-department: supply_chain
-authority_level: 4
-Metadata can help distinguish semantic relevance from operational
-validity.
+    The target architecture combines multiple retrieval signals.
+    Vector Retrieval
+    Optimized for semantic similarity:
+    Which chunks mean something similar to the question?
+    Lexical Retrieval
+    Optimized for textual signals and exact terminology.
+    This is useful for route IDs, supplier names, document identifiers,
+    technical terminology, contract clauses, and acronyms.
+    BM25 or an equivalent lexical retrieval approach may be evaluated.
+    Metadata Filtering
+    Metadata provides explicit structured constraints.
+    Example:
+    document_id: DOC-01
+    document_type: policy
+    version: "3.0"
+    status: active
+    effective_date: 2026-01-01
+    department: supply_chain
+    authority_level: 4
+    Metadata can help distinguish semantic relevance from operational
+    validity.
 11. Candidate Fusion
-Vector retrieval, lexical retrieval, and metadata-aware retrieval may
-produce different candidate sets.
-These results must be combined into a candidate pool before deeper
-relevance evaluation.
-The exact fusion strategy remains an implementation decision.
-The objective is high evidence recall without immediately sending
-excessive context to the generation model.
+    Vector retrieval, lexical retrieval, and metadata-aware retrieval may
+    produce different candidate sets.
+    These results must be combined into a candidate pool before deeper
+    relevance evaluation.
+    The exact fusion strategy remains an implementation decision.
+    The objective is high evidence recall without immediately sending
+    excessive context to the generation model.
 12. Reranking
-Initial retrieval prioritizes efficient candidate discovery.
-Reranking performs a more precise evaluation of a smaller candidate set
-against the complete user question.
-Enterprise Corpus
+    Initial retrieval prioritizes efficient candidate discovery.
+    Reranking performs a more precise evaluation of a smaller candidate set
+    against the complete user question.
+    Enterprise Corpus
       ↓
-Initial Retrieval
+    Initial Retrieval
       ↓
-Top Candidate Chunks
+    Top Candidate Chunks
       ↓
-Reranker
+    Reranker
       ↓
-Most Relevant Evidence
-This architecture is particularly important when many documents contain
-similar terminology.
-For example, a query involving AI + confidential supplier data should
-prioritize evidence concerning security, governance, and data sharing
-rather than documents that merely contain frequent references to AI.
+    Most Relevant Evidence
+    This architecture is particularly important when many documents contain
+    similar terminology.
+    For example, a query involving AI + confidential supplier data should
+    prioritize evidence concerning security, governance, and data sharing
+    rather than documents that merely contain frequent references to AI.
 13. Context Assembly
-Retrieved chunks should not automatically be concatenated and sent to
-the generation model without additional processing.
-Context assembly is responsible for preparing coherent evidence for
-generation.
-Potential responsibilities include:
-- removing duplicate evidence;
-- preserving source identity;
-- preserving section references;
-- ordering evidence;
-- considering document authority;
-- considering temporal validity;
-- managing context size;
-- preserving relationships between related chunks.
-  The exact strategy remains open for experimentation.
+    Retrieved chunks should not automatically be concatenated and sent to
+    the generation model without additional processing.
+    Context assembly is responsible for preparing coherent evidence for
+    generation.
+    Potential responsibilities include:
+    - removing duplicate evidence;
+    - preserving source identity;
+    - preserving section references;
+    - ordering evidence;
+    - considering document authority;
+    - considering temporal validity;
+    - managing context size;
+    - preserving relationships between related chunks.
+      The exact strategy remains open for experimentation.
 14. Grounded Generation
     The generation model should answer based on assembled enterprise
     evidence.
@@ -433,11 +451,11 @@ The corpus will intentionally contain:
     distinguish repeated terminology from contextual relevance.
     Example query:
     Can AI be used to analyze confidential supplier contracts?
-The presence of the term "AI" alone should not determine retrieval
-ranking.
-Relevant semantic dimensions may include:
-AI
-+
+    The presence of the term "AI" alone should not determine retrieval
+    ranking.
+    Relevant semantic dimensions may include:
+    AI
+-
 supplier contracts
 +
 confidential information
@@ -485,7 +503,7 @@ Potential metrics may include:
   Primary question:
   Given the available evidence, did the system produce a correct and
   grounded answer?
-Potential dimensions include:
+  Potential dimensions include:
 - factual correctness;
 - evidence support;
 - citation correctness;
@@ -524,49 +542,54 @@ Potential dimensions include:
       │          Enterprise RAG
       │             │
       └──────┬──────┘
-         ↓
+     ↓
        AI Synthesis
-         ↓
+     ↓
        Human Decision
     Example:
     Structured analytics:
     Route R001 has remained below SLA for three consecutive weeks.
-Enterprise knowledge:
-The active Carrier Management Policy requires a corrective action
-process after three consecutive SLA breaches.
-The systems provide complementary forms of intelligence.
+    Enterprise knowledge:
+    The active Carrier Management Policy requires a corrective action
+    process after three consecutive SLA breaches.
+    The systems provide complementary forms of intelligence.
 23. Current Architectural Boundaries
-The following ingestion decisions are established:
-- Docling is the initial general-purpose parsing technology;
-- specialized spreadsheet processing may complement Docling for complex
-  XLSX structures;
-- parser-native models must remain behind application-controlled adapter
-  boundaries;
-- normalization must preserve multiple meaningful representations rather
-  than force every source into flattened text;
-- downstream components should consume canonical application contracts;
-- chunking should be structure-aware and remain replaceable behind an
-  application-controlled boundary.
-The following decisions remain intentionally open:
-- exact specialized XLSX implementation details;
-- final canonical content and chunk schema details;
-- embedding model;
-- vector database;
-- lexical search implementation;
-- metadata storage;
-- retrieval fusion algorithm;
-- reranking model;
-- orchestration framework;
-- generation model;
-- citation implementation;
-- frontend;
-- deployment architecture.
-These decisions should follow requirements and experiments rather than
-precede them.
+    The following ingestion decisions are established:
+    - Docling is the initial general-purpose parsing technology;
+    - XLSX uses specialized openpyxl-based processing behind the canonical
+      adapter boundary;
+    - PPTX uses Docling for general textual/document structure and may receive
+      deterministic native enrichment for presentation-specific structures;
+    - embedded content is not automatically indexable content;
+    - unresolved or stale internal source relationships must remain explicit
+      rather than be converted into unsupported evidence;
+    - parser-native models must remain behind application-controlled adapter
+      boundaries;
+    - normalization must preserve multiple meaningful representations rather
+      than force every source into flattened text;
+    - downstream components should consume canonical application contracts;
+    - chunking should be structure-aware and remain replaceable behind an
+      application-controlled boundary.
+      The following decisions remain intentionally open:
+    - exact PPTX native-enrichment implementation details;
+    - final canonical content and chunk schema details;
+    - embedding model;
+    - vector database;
+    - lexical search implementation;
+    - metadata storage;
+    - retrieval fusion algorithm;
+    - reranking model;
+    - orchestration framework;
+    - generation model;
+    - citation implementation;
+    - frontend;
+    - deployment architecture.
+      These decisions should follow requirements and experiments rather than
+      precede them.
 24. Development Philosophy
-The project will follow the sequence:
-Business Questions
-        ↓
+    The project will follow the sequence:
+    Business Questions
+    ↓
 Required Evidence
         ↓
 Synthetic Knowledge Corpus

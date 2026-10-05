@@ -1,181 +1,206 @@
-"""Docling-backed parsing adapter for enterprise source documents.
-
-Docling is an external parsing dependency. Its native document model is kept
-behind this module and converted into application-controlled ingestion schemas.
-"""
+"""Docling-backed parsing adapter for narrative enterprise documents."""
 
 from __future__ import annotations
 
 import re
-import tempfile
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from docling.document_converter import DocumentConverter
 from docling_core.types.doc import (
     DocItemLabel,
+    PictureItem,
     SectionHeaderItem,
     TableItem,
     TextItem,
 )
 
 from app.ingestion.schemas import (
+    ImageBlock,
     NormalizedContent,
     SourceLocation,
     TableBlock,
     TextBlock,
 )
 
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
-_TEXT_KIND_BY_LABEL = {
-    DocItemLabel.TITLE: "title",
-    DocItemLabel.SECTION_HEADER: "heading",
-    DocItemLabel.LIST_ITEM: "list_item",
-    DocItemLabel.CAPTION: "caption",
-    DocItemLabel.PARAGRAPH: "paragraph",
-    DocItemLabel.TEXT: "paragraph",
-}
 
-_MARKDOWN_INLINE_PATTERNS = (
-    re.compile(r"(?<!\\)\*\*(?=\S)(.+?)(?<=\S)\*\*"),
-    re.compile(r"(?<!\\)__(?=\S)(.+?)(?<=\S)__"),
-    re.compile(r"(?<!\\)~~(?=\S)(.+?)(?<=\S)~~"),
-    re.compile(r"(?<!\\)(?<!\*)\*(?=\S)(.+?)(?<=\S)\*(?!\*)"),
-    re.compile(r"(?<!\\)(?<!_)_(?=\S)(.+?)(?<=\S)_(?!_)"),
-)
+_INLINE_MARKDOWN_RE = re.compile(r"(\*\*|__)(.+?)\1|(?<!\*)\*([^*\n]+?)\*(?!\*)|(?<!_)_([^_\n]+?)_(?!_)")
+_SUPPORTED_SUFFIXES = {".md", ".docx", ".pdf", ".pptx"}
 
 
 def _normalize_markdown_inline(source: str) -> str:
-    """Remove inline Markdown emphasis markers without changing text spacing."""
-    normalized = source
-    for pattern in _MARKDOWN_INLINE_PATTERNS:
-        normalized = pattern.sub(r"\1", normalized)
-    return normalized
+    """Remove lightweight inline emphasis markers without changing block structure."""
+
+    def replacement(match: re.Match[str]) -> str:
+        return next(group for group in match.groups()[1:] if group is not None)
+
+    return _INLINE_MARKDOWN_RE.sub(replacement, source)
 
 
-def _provenance_number(item: TextItem | TableItem) -> int | None:
-    """Return Docling's reliable one-based page/slide ordinal when available."""
-    if not item.prov:
+def _text_kind(label: DocItemLabel) -> str:
+    mapping = {
+        DocItemLabel.TITLE: "title",
+        DocItemLabel.SECTION_HEADER: "heading",
+        DocItemLabel.LIST_ITEM: "list_item",
+        DocItemLabel.CAPTION: "caption",
+        DocItemLabel.PARAGRAPH: "paragraph",
+        DocItemLabel.TEXT: "paragraph",
+    }
+    return mapping.get(label, "other")
+
+
+def _provenance_number(item: object) -> int | None:
+    provenance = getattr(item, "prov", None)
+    if not provenance:
         return None
-
-    page_no = item.prov[0].page_no
+    page_no = getattr(provenance[0], "page_no", None)
     return int(page_no) if page_no is not None else None
 
 
 def _source_location(
-    item: TextItem | TableItem,
+    item: object,
     source_path: Path,
-    section_path: tuple[str, ...] = (),
+    section_path: Sequence[str] = (),
 ) -> SourceLocation:
-    """Map Docling provenance to source-format-specific canonical provenance."""
     ordinal = _provenance_number(item)
-
-    if source_path.suffix.lower() == ".pptx":
-        return SourceLocation(
-            slide_number=ordinal,
-            section_path=section_path,
-        )
+    suffix = source_path.suffix.lower()
 
     return SourceLocation(
-        page_number=ordinal,
-        section_path=section_path,
+        page_number=ordinal if suffix != ".pptx" else None,
+        slide_number=ordinal if suffix == ".pptx" else None,
+        section_path=tuple(section_path),
     )
 
 
 def _table_rows(item: TableItem) -> tuple[tuple[str | None, ...], ...]:
-    """Convert Docling table data into a rectangular canonical row matrix."""
     grid = item.data.grid
-    if not grid:
-        raise ValueError("Docling table contains no grid data.")
-
     return tuple(
         tuple(cell.text if cell.text != "" else None for cell in row)
         for row in grid
     )
 
 
+def _section_path(
+    headings_by_level: dict[int, str],
+    level: int,
+    heading: str,
+) -> tuple[str, ...]:
+    """Update heading state and return the active semantic section path.
+
+    Docling heading levels are identifiers of hierarchy depth, not zero-based
+    indexes into a stack. Siblings at the same level replace one another,
+    deeper headings inherit active shallower headings, and skipped levels do
+    not create synthetic ancestors.
+    """
+    for existing_level in tuple(headings_by_level):
+        if existing_level >= level:
+            del headings_by_level[existing_level]
+
+    headings_by_level[level] = heading
+
+    return tuple(
+        headings_by_level[existing_level]
+        for existing_level in sorted(headings_by_level)
+    )
+
+
 class DoclingParser:
-    """Parse supported files and adapt Docling output to canonical content."""
+    """Parse narrative source files into the application canonical model."""
 
     def __init__(self, converter: DocumentConverter | None = None) -> None:
         self._converter = converter or DocumentConverter()
 
     def parse(self, source_path: Path) -> NormalizedContent:
-        """Parse a physical source document into normalized canonical content."""
         if not isinstance(source_path, Path):
-            raise TypeError("source_path must be a pathlib.Path.")
-
-        if not source_path.is_file():
+            raise TypeError("source_path must be a pathlib.Path")
+        if not source_path.exists():
             raise FileNotFoundError(source_path)
+        if source_path.suffix.lower() not in _SUPPORTED_SUFFIXES:
+            raise ValueError(
+                f"Unsupported Docling source format: {source_path.suffix.lower()}"
+            )
+
+        parse_path = source_path
+        normalized_markdown_path: Path | None = None
 
         if source_path.suffix.lower() == ".md":
-            document = self._convert_normalized_markdown(source_path)
-        else:
-            document = self._converter.convert(source_path).document
+            normalized_source = _normalize_markdown_inline(
+                source_path.read_text(encoding="utf-8")
+            )
+            normalized_markdown_path = source_path.with_name(
+                f".{source_path.stem}.docling-normalized.md"
+            )
+            normalized_markdown_path.write_text(normalized_source, encoding="utf-8")
+            parse_path = normalized_markdown_path
 
-        blocks: list[TextBlock | TableBlock] = []
-        section_stack: list[str] = []
-        order = 0
+        try:
+            result = self._converter.convert(parse_path)
+        finally:
+            if normalized_markdown_path is not None:
+                normalized_markdown_path.unlink(missing_ok=True)
+
+        document = result.document
+        blocks: list[TextBlock | TableBlock | ImageBlock] = []
+        headings_by_level: dict[int, str] = {}
+        section_path: tuple[str, ...] = ()
 
         for item, _tree_level in document.iterate_items():
             if isinstance(item, SectionHeaderItem):
-                level = int(item.level)
-                section_stack = section_stack[: max(level - 1, 0)]
-                section_stack.append(item.text.strip())
+                heading = item.text.strip()
+                if heading:
+                    section_path = _section_path(
+                        headings_by_level,
+                        int(item.level),
+                        heading,
+                    )
 
             if isinstance(item, TextItem):
                 text = item.text.strip()
                 if not text:
                     continue
 
-                kind = _TEXT_KIND_BY_LABEL.get(item.label, "other")
                 blocks.append(
                     TextBlock(
-                        block_id=f"text-{order:05d}",
-                        order=order,
-                        kind=kind,
+                        block_id=f"text-{len(blocks):05d}",
+                        order=len(blocks),
+                        kind=_text_kind(item.label),
                         text=text,
-                        location=_source_location(
-                            item,
-                            source_path,
-                            tuple(section_stack),
-                        ),
+                        location=_source_location(item, source_path, section_path),
                     )
                 )
-                order += 1
                 continue
 
             if isinstance(item, TableItem):
                 rows = _table_rows(item)
+                if not rows:
+                    continue
+
                 blocks.append(
                     TableBlock(
-                        block_id=f"table-{order:05d}",
-                        order=order,
+                        block_id=f"table-{len(blocks):05d}",
+                        order=len(blocks),
                         rows=rows,
-                        location=_source_location(
-                            item,
-                            source_path,
-                            tuple(section_stack),
-                        ),
+                        location=_source_location(item, source_path, section_path),
                     )
                 )
-                order += 1
+
+                continue
+
+            if isinstance(item, PictureItem):
+                caption = item.caption_text(document).strip() or None
+                blocks.append(
+                    ImageBlock(
+                        block_id=f"image-{len(blocks):05d}",
+                        order=len(blocks),
+                        location=_source_location(item, source_path, section_path),
+                        caption=caption,
+                    )
+                )
 
         if not blocks:
-            raise ValueError(
-                f"Docling produced no supported canonical content for {source_path}."
-            )
+            raise ValueError(f"No canonical content extracted from {source_path}")
 
         return NormalizedContent(blocks=tuple(blocks))
-
-    def _convert_normalized_markdown(self, source_path: Path):
-        """Normalize inline Markdown presentation before Docling conversion."""
-        source = source_path.read_text(encoding="utf-8")
-        normalized = _normalize_markdown_inline(source)
-
-        if normalized == source:
-            return self._converter.convert(source_path).document
-
-        with tempfile.TemporaryDirectory(prefix="enterprise-rag-md-") as temp_dir:
-            normalized_path = Path(temp_dir) / source_path.name
-            normalized_path.write_text(normalized, encoding="utf-8")
-            return self._converter.convert(normalized_path).document

@@ -7,6 +7,10 @@ import pytest
 
 from app.ingestion.schemas import (
     CanonicalDocument,
+    ChartBlock,
+    ChartSeries,
+    ChartSourceReference,
+    ImageBlock,
     NormalizedContent,
     SourceLocation,
     SpreadsheetBlock,
@@ -178,6 +182,311 @@ def test_spreadsheet_block_rejects_duplicate_coordinates() -> None:
             ),
         )
 
+
+
+def test_chart_source_reference_preserves_resolved_lineage() -> None:
+    reference = ChartSourceReference(
+        resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+        sheet_name="Planilha2",
+        cell_range="$A$1:$A$5",
+        status="resolved",
+    )
+
+    assert reference.resource == "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx"
+    assert reference.sheet_name == "Planilha2"
+    assert reference.cell_range == "$A$1:$A$5"
+    assert reference.status == "resolved"
+
+
+def test_chart_source_reference_preserves_unresolved_lineage() -> None:
+    reference = ChartSourceReference(
+        resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+        sheet_name="Planilha3",
+        cell_range="$B$1:$B$3",
+        status="unresolved",
+    )
+
+    assert reference.sheet_name == "Planilha3"
+    assert reference.cell_range == "$B$1:$B$3"
+    assert reference.status == "unresolved"
+
+
+@pytest.mark.parametrize(
+    ("sheet_name", "cell_range"),
+    [
+        (None, "$A$1:$A$5"),
+        ("Planilha2", None),
+    ],
+)
+def test_resolved_chart_source_requires_sheet_and_range(
+    sheet_name: str | None,
+    cell_range: str | None,
+) -> None:
+    with pytest.raises(ValueError, match="require sheet_name and cell_range"):
+        ChartSourceReference(
+            resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+            sheet_name=sheet_name,
+            cell_range=cell_range,
+            status="resolved",
+        )
+
+
+def test_chart_source_reference_rejects_empty_resource() -> None:
+    with pytest.raises(ValueError, match="resource must not be empty"):
+        ChartSourceReference(resource="   ")
+
+
+def test_chart_series_accepts_presented_values_without_source_reference() -> None:
+    series = ChartSeries(
+        name="Realizado",
+        values=(-0.0714, -0.0006, 0.0381, 0.1246, None),
+    )
+
+    assert series.name == "Realizado"
+    assert series.values[3] == 0.1246
+    assert series.source_reference is None
+
+
+def test_chart_series_accepts_source_reference_without_materialized_values() -> None:
+    reference = ChartSourceReference(
+        resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+        sheet_name="Planilha3",
+        cell_range="$B$1:$B$3",
+        status="unresolved",
+    )
+    series = ChartSeries(name="Forecast", source_reference=reference)
+
+    assert series.values == ()
+    assert series.source_reference is reference
+    assert series.source_reference.status == "unresolved"
+
+
+def test_chart_series_rejects_missing_values_and_source_reference() -> None:
+    with pytest.raises(ValueError, match="values or a source_reference"):
+        ChartSeries(name="Forecast")
+
+
+def test_chart_block_preserves_presented_chart_structure_and_slide_provenance() -> None:
+    source = ChartSourceReference(
+        resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+        sheet_name="Planilha2",
+        cell_range="$B$1:$B$5",
+        status="resolved",
+    )
+    chart = ChartBlock(
+        block_id="chart-001",
+        order=3,
+        chart_type="COLUMN_CLUSTERED",
+        title="Variabilidade Realizado vs. FCT visão Semanal",
+        categories=("w44", "w45", "w46", "w47", "Total"),
+        series=(
+            ChartSeries(
+                name="Forecast",
+                values=(-0.0714, -0.0006, 0.0381, 0.1246, None),
+                source_reference=source,
+            ),
+        ),
+        location=SourceLocation(slide_number=10),
+    )
+
+    assert chart.location.slide_number == 10
+    assert chart.location.page_number is None
+    assert chart.categories == ("w44", "w45", "w46", "w47", "Total")
+    assert chart.series[0].source_reference is source
+
+
+def test_chart_block_rejects_empty_series() -> None:
+    with pytest.raises(ValueError, match="series must not be empty"):
+        ChartBlock(
+            block_id="chart-001",
+            order=0,
+            chart_type="LINE",
+            series=(),
+        )
+
+
+@pytest.mark.parametrize(
+    ("block_id", "order", "chart_type", "match"),
+    [
+        ("", 0, "LINE", "block_id must not be empty"),
+        ("chart-001", -1, "LINE", "order must be greater than or equal to 0"),
+        ("chart-001", 0, "   ", "chart_type must not be empty"),
+    ],
+)
+def test_chart_block_rejects_invalid_required_fields(
+    block_id: str,
+    order: int,
+    chart_type: str,
+    match: str,
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        ChartBlock(
+            block_id=block_id,
+            order=order,
+            chart_type=chart_type,
+            series=(ChartSeries(values=(1,)),),
+        )
+
+
+def test_chart_block_rejects_self_parent() -> None:
+    with pytest.raises(ValueError, match="cannot be its own parent"):
+        ChartBlock(
+            block_id="chart-001",
+            order=0,
+            chart_type="LINE",
+            series=(ChartSeries(values=(1,)),),
+            parent_id="chart-001",
+        )
+
+
+def test_normalized_content_accepts_chart_block_and_orders_it_deterministically() -> None:
+    content = NormalizedContent(
+        blocks=(
+            ChartBlock(
+                block_id="chart-second",
+                order=2,
+                chart_type="LINE",
+                series=(ChartSeries(values=(2,)),),
+                location=SourceLocation(slide_number=16),
+            ),
+            _text_block(block_id="first", order=1, text="Presented context"),
+        )
+    )
+
+    assert tuple(block.block_id for block in content.ordered_blocks) == (
+        "first",
+        "chart-second",
+    )
+    chart = content.ordered_blocks[1]
+    assert isinstance(chart, ChartBlock)
+    assert chart.location.slide_number == 16
+
+
+def test_text_projection_does_not_flatten_chart_data_implicitly() -> None:
+    content = NormalizedContent(
+        blocks=(
+            _text_block(
+                block_id="context",
+                order=0,
+                text="Variabilidade da Demanda",
+            ),
+            ChartBlock(
+                block_id="chart-001",
+                order=1,
+                chart_type="LINE",
+                title="Realizado vs. FCT",
+                categories=("w44", "w45"),
+                series=(ChartSeries(name="Forecast", values=(0.1, 0.2)),),
+                location=SourceLocation(slide_number=10),
+            ),
+        )
+    )
+
+    assert content.text_projection == "Variabilidade da Demanda"
+    assert "Forecast" not in content.text_projection
+    assert "0.1" not in content.text_projection
+
+
+def test_unresolved_chart_relationship_is_valid_canonical_evidence_state() -> None:
+    unresolved = ChartSourceReference(
+        resource="ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+        sheet_name="Planilha3",
+        cell_range="$B$1:$B$3",
+        status="unresolved",
+    )
+    content = NormalizedContent(
+        blocks=(
+            ChartBlock(
+                block_id="chart-004",
+                order=0,
+                chart_type="COLUMN_CLUSTERED",
+                series=(
+                    ChartSeries(
+                        name="Presented series",
+                        source_reference=unresolved,
+                    ),
+                ),
+                location=SourceLocation(slide_number=14),
+            ),
+        )
+    )
+
+    chart = content.blocks[0]
+    assert isinstance(chart, ChartBlock)
+    assert chart.series[0].source_reference is unresolved
+    assert chart.series[0].source_reference.status == "unresolved"
+
+
+def test_image_block_preserves_visual_evidence_and_provenance() -> None:
+    block = ImageBlock(
+        block_id="image-001",
+        order=1,
+        location=SourceLocation(
+            page_number=18,
+            section_path=("CAPÍTULO I",),
+        ),
+        caption="Alice follows the White Rabbit.",
+        parent_id="heading-001",
+    )
+
+    assert block.location.page_number == 18
+    assert block.location.section_path == ("CAPÍTULO I",)
+    assert block.caption == "Alice follows the White Rabbit."
+    assert block.parent_id == "heading-001"
+
+
+@pytest.mark.parametrize(
+    ("block_id", "order", "caption", "match"),
+    [
+        ("", 0, None, "block_id must not be empty"),
+        ("image-001", -1, None, "order must be greater than or equal to 0"),
+        ("image-001", 0, "   ", "caption must not be empty when provided"),
+    ],
+)
+def test_image_block_rejects_invalid_fields(
+    block_id: str,
+    order: int,
+    caption: str | None,
+    match: str,
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        ImageBlock(
+            block_id=block_id,
+            order=order,
+            caption=caption,
+        )
+
+
+def test_image_block_rejects_self_parent() -> None:
+    with pytest.raises(ValueError, match="cannot be its own parent"):
+        ImageBlock(
+            block_id="image-001",
+            order=0,
+            parent_id="image-001",
+        )
+
+
+def test_normalized_content_accepts_image_without_flattening_it_to_text() -> None:
+    content = NormalizedContent(
+        blocks=(
+            _text_block(
+                block_id="context",
+                order=0,
+                text="Visual evidence follows.",
+            ),
+            ImageBlock(
+                block_id="image-001",
+                order=1,
+                caption="Operational diagram",
+                location=SourceLocation(page_number=3),
+            ),
+        )
+    )
+
+    assert isinstance(content.ordered_blocks[1], ImageBlock)
+    assert content.ordered_blocks[1].location.page_number == 3
+    assert content.text_projection == "Visual evidence follows."
+    assert "Operational diagram" not in content.text_projection
 
 def test_normalized_content_orders_blocks_deterministically() -> None:
     content = NormalizedContent(

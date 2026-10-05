@@ -10,7 +10,7 @@ from app.ingestion.docling_parser import (
     _normalize_markdown_inline,
     _source_location,
 )
-from app.ingestion.schemas import TableBlock, TextBlock
+from app.ingestion.schemas import ImageBlock, TableBlock, TextBlock
 
 
 @pytest.fixture
@@ -136,3 +136,195 @@ def test_docling_parser_rejects_non_path_input() -> None:
 def test_markdown_baseline_does_not_create_spreadsheet_blocks(markdown_file: Path) -> None:
     content = DoclingParser().parse(markdown_file)
     assert all(not isinstance(block, TableBlock) for block in content.blocks)
+
+def test_docling_parser_builds_section_path_by_heading_level(tmp_path: Path) -> None:
+    """Sibling headings must replace peers while deeper headings inherit parents."""
+    from docling_core.types.doc import DocItemLabel, SectionHeaderItem, TextItem
+
+    source = tmp_path / "hierarchy.docx"
+    source.write_bytes(b"placeholder")
+
+    item_index = 0
+
+    def next_self_ref() -> str:
+        nonlocal item_index
+        self_ref = f"#/texts/{item_index}"
+        item_index += 1
+        return self_ref
+
+    def heading(text: str, level: int) -> SectionHeaderItem:
+        return SectionHeaderItem(
+            self_ref=next_self_ref(),
+            parent=None,
+            children=[],
+            label=DocItemLabel.SECTION_HEADER,
+            prov=[],
+            orig=text,
+            text=text,
+            level=level,
+        )
+
+    def paragraph(text: str) -> TextItem:
+        return TextItem(
+            self_ref=next_self_ref(),
+            parent=None,
+            children=[],
+            label=DocItemLabel.PARAGRAPH,
+            prov=[],
+            orig=text,
+            text=text,
+        )
+
+    items = [
+        heading("", 1),
+        heading("Section A", 2),
+        paragraph("A body"),
+        heading("Section B", 2),
+        paragraph("B body"),
+        heading("Topic B.1", 4),
+        paragraph("B.1 body"),
+        heading("Detail B.1.1", 5),
+        paragraph("B.1.1 body"),
+        heading("", 5),
+        heading("Detail B.1.2", 5),
+        paragraph("B.1.2 body"),
+        heading("Section C", 2),
+        paragraph("C body"),
+    ]
+
+    document = SimpleNamespace(iterate_items=lambda: ((item, 0) for item in items))
+    converter = SimpleNamespace(
+        convert=lambda _path: SimpleNamespace(document=document)
+    )
+
+    content = DoclingParser(converter=converter).parse(source)
+
+    paths = {
+        block.text: block.location.section_path
+        for block in content.ordered_blocks
+        if isinstance(block, TextBlock)
+    }
+
+    assert paths["A body"] == ("Section A",)
+    assert paths["B body"] == ("Section B",)
+    assert paths["B.1 body"] == ("Section B", "Topic B.1")
+    assert paths["B.1.1 body"] == (
+        "Section B",
+        "Topic B.1",
+        "Detail B.1.1",
+    )
+    assert paths["B.1.2 body"] == (
+        "Section B",
+        "Topic B.1",
+        "Detail B.1.2",
+    )
+    assert paths["C body"] == ("Section C",)
+
+def test_docling_parser_preserves_picture_as_image_block(tmp_path: Path) -> None:
+    """PictureItems must survive canonical adaptation as visual evidence."""
+    from docling_core.types.doc import DocItemLabel, PictureItem, ProvenanceItem
+    from docling_core.types.doc.base import BoundingBox, CoordOrigin
+
+    source = tmp_path / "visual.pdf"
+    source.write_bytes(b"placeholder")
+
+    picture = PictureItem(
+        self_ref="#/pictures/0",
+        parent=None,
+        children=[],
+        label=DocItemLabel.PICTURE,
+        prov=[
+            ProvenanceItem(
+                page_no=7,
+                bbox=BoundingBox(
+                    l=10.0,
+                    t=20.0,
+                    r=110.0,
+                    b=120.0,
+                    coord_origin=CoordOrigin.TOPLEFT,
+                ),
+                charspan=(0, 0),
+            )
+        ],
+        captions=[],
+        footnotes=[],
+        references=[],
+        image=None,
+    )
+
+    document = SimpleNamespace(iterate_items=lambda: iter(((picture, 0),)))
+    converter = SimpleNamespace(
+        convert=lambda _path: SimpleNamespace(document=document)
+    )
+
+    content = DoclingParser(converter=converter).parse(source)
+
+    assert len(content.blocks) == 1
+    block = content.blocks[0]
+    assert isinstance(block, ImageBlock)
+    assert block.block_id == "image-00000"
+    assert block.order == 0
+    assert block.location.page_number == 7
+    assert block.location.slide_number is None
+    assert block.location.section_path == ()
+    assert block.caption is None
+    assert content.text_projection == ""
+
+def test_docling_parser_preserves_resolved_picture_caption(tmp_path: Path) -> None:
+    """A source caption explicitly linked to a PictureItem must be preserved."""
+    from docling_core.types.doc import (
+        DocItemLabel,
+        DoclingDocument,
+        PictureItem,
+        RefItem,
+        TextItem,
+    )
+
+    source = tmp_path / "captioned.pdf"
+    source.write_bytes(b"placeholder")
+
+    caption = TextItem(
+        self_ref="#/texts/0",
+        parent=None,
+        children=[],
+        label=DocItemLabel.CAPTION,
+        prov=[],
+        orig="Source figure caption",
+        text="Source figure caption",
+    )
+    picture = PictureItem(
+        self_ref="#/pictures/0",
+        parent=None,
+        children=[],
+        label=DocItemLabel.PICTURE,
+        prov=[],
+        captions=[RefItem(cref="#/texts/0")],
+        footnotes=[],
+        references=[],
+        image=None,
+    )
+    docling_document = DoclingDocument(
+        name="captioned",
+        texts=[caption],
+        pictures=[picture],
+    )
+
+    class DocumentProxy:
+        texts = docling_document.texts
+        pictures = docling_document.pictures
+
+        def iterate_items(self):
+            return iter(((picture, 0),))
+
+    document = DocumentProxy()
+    converter = SimpleNamespace(
+        convert=lambda _path: SimpleNamespace(document=document)
+    )
+
+    content = DoclingParser(converter=converter).parse(source)
+
+    image = next(
+        block for block in content.ordered_blocks if isinstance(block, ImageBlock)
+    )
+    assert image.caption == "Source figure caption"
+    assert "Source figure caption" not in content.text_projection
