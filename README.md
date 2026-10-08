@@ -66,12 +66,10 @@ answers.
                                      experiments
   ---------------------------------------------------------------------
 
-```{=html}
 <p align="center">
 ```
-`<img     src="docs/images/architecture-overview.png"     alt="Enterprise Knowledge AI System — end-to-end architecture"     width="1100"   >`{=html}
+`<img     src="docs/images/architecture-overview.png"     alt="Enterprise Knowledge AI System — end-to-end architecture"     width="1100"   >`
 
-```{=html}
 </p>
 ```
 The architecture overview represents the complete engineering direction
