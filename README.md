@@ -66,12 +66,8 @@ answers.
                                      experiments
   ---------------------------------------------------------------------
 
-<p align="center">
-```
-`<img     src="docs/images/architecture-overview.png"     alt="Enterprise Knowledge AI System — end-to-end architecture"     width="1100"   >`
+![Enterprise Knowledge AI System — Engineering Architecture](docs/images/architecture-overview.png)
 
-</p>
-```
 The architecture overview represents the complete engineering direction
 of the system. The **Current Status** section below distinguishes
 implemented and validated capabilities from the remaining target
@@ -131,7 +127,7 @@ of the Enterprise Knowledge AI System and its role as a trustworthy
 intelligence layer over heterogeneous corporate knowledge.
 
 ![Enterprise Knowledge AI System --- Product and System
-Overview](docs/images/art-architecture-overview.png)
+Overview](docs/images/art-system-overview.png)
 
 ## Table of Contents
 
