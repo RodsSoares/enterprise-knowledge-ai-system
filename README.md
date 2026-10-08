@@ -26,54 +26,51 @@ into structure-aware retrieval units, indexed for complementary
 retrieval strategies, and used as controlled evidence for grounded
 answers.
 
-  -----------------------------------------------------------------------
-  Layer                               Implementation / Direction
-  ----------------------------------- -----------------------------------
-  Enterprise Sources                  PDF, DOCX, XLSX, PPTX, Markdown /
-                                      Text
+  ---------------------------------------------------------------------
+  Layer                              Implementation / Direction
+  ---------------------------------- ----------------------------------
+  Enterprise Sources                 PDF, DOCX, XLSX, PPTX, Markdown /
+                                     Text
 
-  Parsing                             Docling + specialized format
-                                      parsers
+  Parsing                            Docling + specialized format
+                                     parsers
 
-  Canonical Model                     Structure-preserving document
-                                      representation
+  Canonical Model                    Structure-preserving document
+                                     representation
 
-  Chunking                            Structure-aware retrieval chunks
+  Chunking                           Structure-aware retrieval chunks
 
-  Search Text                         Retrieval-oriented representation
-                                      derived from chunks
+  Search Text                        Retrieval-oriented representation
+                                     derived from chunks
 
-  Embeddings                          OpenAI embeddings
+  Embeddings                         OpenAI embeddings
 
-  Vector Retrieval                    NumPy vector index + cosine
-                                      similarity
+  Vector Retrieval                   NumPy vector index + cosine
+                                     similarity
 
-  Lexical Retrieval                   BM25 --- target architecture
+  Lexical Retrieval                  BM25 --- target architecture
 
-  Metadata Retrieval                  Structured filters --- target
-                                      architecture
+  Metadata Retrieval                 Structured filters --- target
+                                     architecture
 
-  Fusion & Reranking                  Hybrid candidate fusion + reranking
-                                      --- target architecture
+  Fusion & Reranking                 Hybrid candidate fusion +
+                                     reranking --- target architecture
 
-  Ground Truth                        Canonical facts + document
-                                      registry + golden questions
+  Ground Truth                       Canonical facts + document
+                                     registry + golden questions
 
-  Evaluation                          Retrieval, answer quality,
-                                      citations, governance
+  Evaluation                         Retrieval, answer quality,
+                                     citations, governance
 
-  Validation                          Pytest + recorded real retrieval
-                                      experiments
-  -----------------------------------------------------------------------
+  Validation                         Pytest + recorded real retrieval
+                                     experiments
+  ---------------------------------------------------------------------
 
 ```{=html}
 <p align="center">
 ```
-`<img
-    src="docs/images/architecture-overview.png"
-    alt="Enterprise Knowledge AI System — end-to-end architecture"
-    width="1100"
-  >`{=html}
+`<img     src="docs/images/architecture-overview.png"     alt="Enterprise Knowledge AI System — end-to-end architecture"     width="1100"   >`{=html}
+
 ```{=html}
 </p>
 ```
@@ -127,6 +124,16 @@ answer came from.
 This project therefore treats retrieval, provenance, document structure,
 evaluation, and governance as first-class architectural concerns rather
 than secondary features around an LLM.
+
+## System Overview
+
+The engineering architecture above explains **how the system is
+structured**. The visual below complements it with a product-level view
+of the Enterprise Knowledge AI System and its role as a trustworthy
+intelligence layer over heterogeneous corporate knowledge.
+
+![Enterprise Knowledge AI System --- Product and System
+Overview](docs/images/art-architecture-overview.png)
 
 ## Table of Contents
 
