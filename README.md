@@ -26,45 +26,21 @@ into structure-aware retrieval units, indexed for complementary
 retrieval strategies, and used as controlled evidence for grounded
 answers.
 
-  ---------------------------------------------------------------------
-  Layer                              Implementation / Direction
-  ---------------------------------- ----------------------------------
-  Enterprise Sources                 PDF, DOCX, XLSX, PPTX, Markdown /
-                                     Text
-
-  Parsing                            Docling + specialized format
-                                     parsers
-
-  Canonical Model                    Structure-preserving document
-                                     representation
-
-  Chunking                           Structure-aware retrieval chunks
-
-  Search Text                        Retrieval-oriented representation
-                                     derived from chunks
-
-  Embeddings                         OpenAI embeddings
-
-  Vector Retrieval                   NumPy vector index + cosine
-                                     similarity
-
-  Lexical Retrieval                  BM25 --- target architecture
-
-  Metadata Retrieval                 Structured filters --- target
-                                     architecture
-
-  Fusion & Reranking                 Hybrid candidate fusion +
-                                     reranking --- target architecture
-
-  Ground Truth                       Canonical facts + document
-                                     registry + golden questions
-
-  Evaluation                         Retrieval, answer quality,
-                                     citations, governance
-
-  Validation                         Pytest + recorded real retrieval
-                                     experiments
-  ---------------------------------------------------------------------
+| Layer | Implementation / Direction |
+|---|---|
+| Enterprise Sources | PDF, DOCX, XLSX, PPTX, Markdown / Text |
+| Parsing | Docling + specialized format parsers |
+| Canonical Model | Structure-preserving document representation |
+| Chunking | Structure-aware retrieval chunks |
+| Search Text | Retrieval-oriented representation derived from chunks |
+| Embeddings | OpenAI embeddings |
+| Vector Retrieval | NumPy vector index + cosine similarity |
+| Lexical Retrieval | BM25 — target architecture |
+| Metadata Retrieval | Structured filters — target architecture |
+| Fusion & Reranking | Hybrid candidate fusion + reranking — target architecture |
+| Ground Truth | Canonical facts + document registry + golden questions |
+| Evaluation | Retrieval, answer quality, citations, governance |
+| Validation | Pytest + recorded real retrieval experiments |
 
 ![Enterprise Knowledge AI System — Engineering Architecture](docs/images/architecture-overview.png)
 
@@ -194,35 +170,35 @@ The project has moved beyond architecture and dataset design into a
 working **retrieval foundation** with real document processing and
 semantic retrieval validation.
 
-  Capability                              Status
-  -------------------------------------- --------
-  Enterprise corpus design                  ✅
-  PDF ingestion / parsing                   ✅
-  DOCX ingestion                            ✅
-  XLSX native parsing                       ✅
-  PPTX parsing / enrichment                 ✅
-  Markdown / text ingestion                 ✅
-  Canonical document representation         ✅
-  Metadata preservation                     ✅
-  Structure-aware chunking                  ✅
-  Retrieval search-text construction        ✅
-  OpenAI embeddings                         ✅
-  Vector indexing                           ✅
-  Single-document semantic retrieval        ✅
-  Real retrieval smoke validation           ✅
-  Ground-truth assets                       ✅
-  Retrieval validation log                  ✅
-  Global multi-document chunk identity      🚧
-  Multi-document vector retrieval           🚧
-  Lexical / BM25 retrieval                  📋
-  Metadata filtering                        📋
-  Candidate fusion                          📋
-  Reranking                                 📋
-  Context assembly                          📋
-  Grounded answer generation                📋
-  Citation validation                       📋
-  Explicit answer abstention                📋
-  Systematic evaluation layer               🚧
+| Capability | Status |
+|---|:---:|
+| Enterprise corpus design | ✅ |
+| PDF ingestion / parsing | ✅ |
+| DOCX ingestion | ✅ |
+| XLSX native parsing | ✅ |
+| PPTX parsing / enrichment | ✅ |
+| Markdown / text ingestion | ✅ |
+| Canonical document representation | ✅ |
+| Metadata preservation | ✅ |
+| Structure-aware chunking | ✅ |
+| Retrieval search-text construction | ✅ |
+| OpenAI embeddings | ✅ |
+| Vector indexing | ✅ |
+| Single-document semantic retrieval | ✅ |
+| Real retrieval smoke validation | ✅ |
+| Ground-truth assets | ✅ |
+| Retrieval validation log | ✅ |
+| Global multi-document chunk identity | 🚧 |
+| Multi-document vector retrieval | 🚧 |
+| Lexical / BM25 retrieval | 📋 |
+| Metadata filtering | 📋 |
+| Candidate fusion | 📋 |
+| Reranking | 📋 |
+| Context assembly | 📋 |
+| Grounded answer generation | 📋 |
+| Citation validation | 📋 |
+| Explicit answer abstention | 📋 |
+| Systematic evaluation layer | 🚧 |
 
 **Legend:** ✅ implemented / validated · 🚧 current or near-term
 development · 📋 target architecture
