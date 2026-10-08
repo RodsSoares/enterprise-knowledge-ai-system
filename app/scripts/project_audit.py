@@ -412,11 +412,6 @@ def evaluate_snapshot_integrity(
 # ============================================================
 
 
-def get_tests() -> str:
-    """Executa a suíte de testes."""
-    return run_command([sys.executable, "-m", "pytest", "-q"], timeout=180)
-
-
 def get_collected_tests() -> str:
     """Lista testes descobertos pelo pytest."""
     return run_command(
@@ -547,7 +542,6 @@ def build_audit() -> str:
     corpus = get_corpus_inventory()
     ground_truth = get_ground_truth_inventory()
 
-    tests = get_tests()
     collected_tests = get_collected_tests()
 
     branch = get_git_branch()
@@ -634,11 +628,21 @@ Generated: {finished_text}
 
 {ground_truth_section}
 
-## 9. Test Execution
+## 9. Test Suite
+
+Execution mode: **DISCOVERY ONLY**
+
+Full test execution is intentionally not performed by the project audit.
+
+Validation command:
 
 ```text
-{tests}
+python -m pytest
 ```
+
+The audit maps the discovered test suite and behavioral contracts. Full regression
+execution remains an explicit validation step outside the audit so long-running
+integration tests do not make snapshot generation slow or timeout-prone.
 
 ## 10. Test Discovery / Behavioral Contracts
 

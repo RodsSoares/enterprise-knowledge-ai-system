@@ -1,7 +1,7 @@
 # PROJECT AUDIT — Enterprise Knowledge AI System
 
 Version: 1.0
-Generated: 2026-10-06 20:49:51
+Generated: 2026-10-08 03:27:30
 
 > This file is generated automatically by `app/scripts/project_audit.py`.
 > Do not edit it manually.
@@ -11,16 +11,16 @@ Generated: 2026-10-06 20:49:51
 ```text
 PASS
 
-- HEAD before: 9bce47f
-- HEAD after: 9bce47f
-- Fingerprint before: 8e3bf4f63f45954ae225601c187ff016553f9ef429207a0937b2f31fc9d4f7e4
-- Fingerprint after: 8e3bf4f63f45954ae225601c187ff016553f9ef429207a0937b2f31fc9d4f7e4
+- HEAD before: e6f8769
+- HEAD after: e6f8769
+- Fingerprint before: c6d71022c8d8ca1a210bbe386ee68993ed607453ed0297cab9f9ed8d73f8c63d
+- Fingerprint after: c6d71022c8d8ca1a210bbe386ee68993ed607453ed0297cab9f9ed8d73f8c63d
 - Repository content remained stable during audit collection.
 ```
 
-- Audit started: 2026-10-06 20:47:45
-- Audit finished: 2026-10-06 20:49:51
-- Duration: 125.96 seconds
+- Audit started: 2026-10-08 03:26:44
+- Audit finished: 2026-10-08 03:27:30
+- Duration: 46.10 seconds
 
 ## 2. Environment
 
@@ -31,26 +31,41 @@ PASS
 ## 3. Git State
 
 - Branch: `main`
-- Commit: `9bce47f`
+- Commit: `e6f8769`
 
 ### Status
 
 ```text
-M docs/project_audit/PROJECT_AUDIT.md
-?? app/chunking/
-?? docs/images/art-featured-product.png
-?? tests/unit/test_block_serializer.py
-?? tests/unit/test_chunking_schemas.py
-?? tests/unit/test_structure_aware_chunker.py
+A  app/retrieval/embeddings.py
+A  app/retrieval/openai_embeddings.py
+A  app/retrieval/schemas.py
+A  app/retrieval/search_text.py
+A  app/retrieval/vector_index.py
+A  app/retrieval/vector_indexer.py
+A  app/retrieval/vector_retriever.py
+ M app/scripts/project_audit.py
+ M docs/project_audit/PROJECT_AUDIT.md
+A  docs/validation/RETRIEVAL_VALIDATION.md
+M  requirements.txt
+A  tests/smoke/smoke_openai_embeddings.py
+A  tests/smoke/smoke_vector_retrieval.py
+A  tests/unit/test_embedding_contract.py
+A  tests/unit/test_openai_embeddings.py
+A  tests/unit/test_retrieval_schemas.py
+A  tests/unit/test_search_text.py
+A  tests/unit/test_vector_index.py
+A  tests/unit/test_vector_indexer.py
+A  tests/unit/test_vector_retriever.py
+?? docs/images/architecture-overview.png
 ```
 
 ## 4. Code Metrics
 
-- Python files: **25**
-- Total Python lines: **5581**
-- Effective Python lines: **4286**
-- Functions: **298**
-- Classes: **21**
+- Python files: **41**
+- Total Python lines: **6727**
+- Effective Python lines: **5137**
+- Functions: **377**
+- Classes: **40**
 - TODO/FIXME occurrences: **2**
 - Files with syntax errors: **0**
 
@@ -73,7 +88,15 @@ enterprise-knowledge-ai-system/
             [FILE] registry.py
             [FILE] schemas.py
             [FILE] xlsx_parser.py
+        [DIR] retriev/
         [DIR] retrieval/
+            [FILE] embeddings.py
+            [FILE] openai_embeddings.py
+            [FILE] schemas.py
+            [FILE] search_text.py
+            [FILE] vector_index.py
+            [FILE] vector_indexer.py
+            [FILE] vector_retriever.py
         [DIR] scripts/
             [FILE] project_audit.py
     [DIR] data/
@@ -110,10 +133,13 @@ enterprise-knowledge-ai-system/
             [FILE] 01_system_overview.md
             [FILE] 02_enterprise_universe_and_source_strategy.md
         [DIR] images/
+            [FILE] architecture-overview.png
             [FILE] art-featured-product.png
             [FILE] art-featured.png
             [FILE] art-system-overview.png
         [DIR] project_audit/
+        [DIR] validation/
+            [FILE] RETRIEVAL_VALIDATION.md
     [FILE] README.md
     [FILE] requirements.txt
     [DIR] tests/
@@ -124,15 +150,25 @@ enterprise-knowledge-ai-system/
             [FILE] test_docling_pptx_integration.py
             [FILE] test_document_parser_pptx_integration.py
             [FILE] test_xlsx_corpus_integration.py
+        [DIR] smoke/
+            [FILE] smoke_openai_embeddings.py
+            [FILE] smoke_vector_retrieval.py
         [DIR] unit/
             [FILE] test_block_serializer.py
             [FILE] test_chunking_schemas.py
             [FILE] test_docling_parser.py
             [FILE] test_document_parser.py
+            [FILE] test_embedding_contract.py
             [FILE] test_ingestion_registry.py
             [FILE] test_ingestion_schemas.py
+            [FILE] test_openai_embeddings.py
             [FILE] test_pptx_native_enricher.py
+            [FILE] test_retrieval_schemas.py
+            [FILE] test_search_text.py
             [FILE] test_structure_aware_chunker.py
+            [FILE] test_vector_index.py
+            [FILE] test_vector_indexer.py
+            [FILE] test_vector_retriever.py
             [FILE] test_xlsx_parser.py
 ```
 
@@ -149,21 +185,37 @@ enterprise-knowledge-ai-system/
 | `app/ingestion/registry.py` | 254 | 10 | 2 | 0 | OK |
 | `app/ingestion/schemas.py` | 441 | 14 | 11 | 0 | OK |
 | `app/ingestion/xlsx_parser.py` | 93 | 4 | 1 | 0 | OK |
-| `app/scripts/project_audit.py` | 708 | 28 | 0 | 2 | OK |
+| `app/retrieval/embeddings.py` | 17 | 2 | 1 | 0 | OK |
+| `app/retrieval/openai_embeddings.py` | 74 | 4 | 1 | 0 | OK |
+| `app/retrieval/schemas.py` | 26 | 1 | 1 | 0 | OK |
+| `app/retrieval/search_text.py` | 13 | 1 | 0 | 0 | OK |
+| `app/retrieval/vector_index.py` | 91 | 5 | 2 | 0 | OK |
+| `app/retrieval/vector_indexer.py` | 36 | 2 | 1 | 0 | OK |
+| `app/retrieval/vector_retriever.py` | 58 | 2 | 1 | 0 | OK |
+| `app/scripts/project_audit.py` | 712 | 27 | 0 | 2 | OK |
 | `tests/integration/test_docling_corpus_integration.py` | 111 | 9 | 0 | 0 | OK |
 | `tests/integration/test_docling_docx_integration.py` | 138 | 11 | 0 | 0 | OK |
 | `tests/integration/test_docling_pdf_integration.py` | 150 | 14 | 0 | 0 | OK |
 | `tests/integration/test_docling_pptx_integration.py` | 97 | 10 | 0 | 0 | OK |
 | `tests/integration/test_document_parser_pptx_integration.py` | 92 | 8 | 0 | 0 | OK |
 | `tests/integration/test_xlsx_corpus_integration.py` | 113 | 11 | 0 | 0 | OK |
+| `tests/smoke/smoke_openai_embeddings.py` | 33 | 1 | 0 | 0 | OK |
+| `tests/smoke/smoke_vector_retrieval.py` | 106 | 1 | 0 | 0 | OK |
 | `tests/unit/test_block_serializer.py` | 182 | 6 | 0 | 0 | OK |
 | `tests/unit/test_chunking_schemas.py` | 171 | 10 | 0 | 0 | OK |
 | `tests/unit/test_docling_parser.py` | 330 | 20 | 1 | 0 | OK |
 | `tests/unit/test_document_parser.py` | 266 | 12 | 0 | 0 | OK |
+| `tests/unit/test_embedding_contract.py` | 37 | 5 | 1 | 0 | OK |
 | `tests/unit/test_ingestion_registry.py` | 226 | 19 | 0 | 0 | OK |
 | `tests/unit/test_ingestion_schemas.py` | 670 | 38 | 0 | 0 | OK |
+| `tests/unit/test_openai_embeddings.py` | 175 | 17 | 8 | 0 | OK |
 | `tests/unit/test_pptx_native_enricher.py` | 280 | 16 | 0 | 0 | OK |
+| `tests/unit/test_retrieval_schemas.py` | 85 | 6 | 0 | 0 | OK |
+| `tests/unit/test_search_text.py` | 53 | 5 | 0 | 0 | OK |
 | `tests/unit/test_structure_aware_chunker.py` | 174 | 11 | 0 | 0 | OK |
+| `tests/unit/test_vector_index.py` | 115 | 10 | 0 | 0 | OK |
+| `tests/unit/test_vector_indexer.py` | 100 | 8 | 2 | 0 | OK |
+| `tests/unit/test_vector_retriever.py` | 123 | 10 | 1 | 0 | OK |
 | `tests/unit/test_xlsx_parser.py` | 132 | 10 | 0 | 0 | OK |
 
 ## 7. Enterprise Knowledge Corpus
@@ -209,32 +261,21 @@ enterprise-knowledge-ai-system/
 - `data/ground_truth/document_registry.yaml`
 - `data/ground_truth/golden_questions.yaml`
 
-## 9. Test Execution
+## 9. Test Suite
+
+Execution mode: **DISCOVERY ONLY**
+
+Full test execution is intentionally not performed by the project audit.
+
+Validation command:
 
 ```text
-........................................................................ [ 33%]
-........................................................................ [ 66%]
-........................................................................ [100%]
-============================== warnings summary ===============================
-tests/integration/test_docling_pdf_integration.py::test_doc_005_is_parsed_from_physical_corpus
-  C:\Users\rods_\Desktop\AI - LAB\enterprise-knowledge-ai-system\.venv\Lib\site-packages\pydantic\main.py:542: DeprecationWarning: `force_full_page_ocr` is deprecated; set `mode=OcrMode.FULL_PAGE` instead.
-    return self.__pydantic_serializer__.to_json(
-
-tests/integration/test_docling_pdf_integration.py::test_doc_005_is_parsed_from_physical_corpus
-  C:\Users\rods_\Desktop\AI - LAB\enterprise-knowledge-ai-system\.venv\Lib\site-packages\docling\pipeline\standard_pdf_pipeline.py:607: DeprecationWarning: This field is deprecated. Use `generate_page_images=True` and call `TableItem.get_image()` to extract table images from page images.
-    or self.pipeline_options.generate_table_images
-
-tests/integration/test_docling_pdf_integration.py::test_doc_005_is_parsed_from_physical_corpus
-  C:\Users\rods_\Desktop\AI - LAB\enterprise-knowledge-ai-system\.venv\Lib\site-packages\docling\models\stages\ocr\rapid_ocr_model.py:653: DeprecationWarning: deprecated
-    if self.options.rec_font_path is not None:
-
-tests/integration/test_docling_pdf_integration.py::test_doc_005_is_parsed_from_physical_corpus
-  C:\Users\rods_\Desktop\AI - LAB\enterprise-knowledge-ai-system\.venv\Lib\site-packages\torch\nn\modules\conv.py:560: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1105.)
-    return F.conv2d(
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-216 passed, 4 warnings in 62.15s (0:01:02)
+python -m pytest
 ```
+
+The audit maps the discovered test suite and behavioral contracts. Full regression
+execution remains an explicit validation step outside the audit so long-running
+integration tests do not make snapshot generation slow or timeout-prone.
 
 ## 10. Test Discovery / Behavioral Contracts
 
@@ -355,6 +396,9 @@ tests/unit/test_document_parser.py::test_document_parser_rejects_non_path_input
 tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document.txt]
 tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document.csv]
 tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document]
+tests/unit/test_embedding_contract.py::test_fake_provider_satisfies_embedding_provider_protocol
+tests/unit/test_embedding_contract.py::test_embedding_provider_preserves_document_order
+tests/unit/test_embedding_contract.py::test_embedding_provider_returns_single_query_embedding
 tests/unit/test_ingestion_registry.py::test_real_registry_loads_all_27_controlled_documents
 tests/unit/test_ingestion_registry.py::test_real_registry_supports_lookup_by_id_and_key
 tests/unit/test_ingestion_registry.py::test_real_registry_preserves_lifecycle_relationship
@@ -425,6 +469,18 @@ tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_au
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_authority_level[5]
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_authority_level[-1]
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_self_supersession
+tests/unit/test_openai_embeddings.py::test_openai_provider_satisfies_embedding_provider_protocol
+tests/unit/test_openai_embeddings.py::test_embed_documents_calls_openai_with_expected_contract
+tests/unit/test_openai_embeddings.py::test_embed_documents_restores_response_order_using_openai_index
+tests/unit/test_openai_embeddings.py::test_embed_documents_returns_empty_tuple_without_api_call
+tests/unit/test_openai_embeddings.py::test_embed_query_calls_openai_with_single_text
+tests/unit/test_openai_embeddings.py::test_provider_supports_explicit_model_configuration
+tests/unit/test_openai_embeddings.py::test_embed_query_rejects_empty_text[]
+tests/unit/test_openai_embeddings.py::test_embed_query_rejects_empty_text[ ]
+tests/unit/test_openai_embeddings.py::test_embed_query_rejects_empty_text[\n\t]
+tests/unit/test_openai_embeddings.py::test_embed_documents_rejects_empty_document_text
+tests/unit/test_openai_embeddings.py::test_provider_rejects_empty_model_name
+tests/unit/test_openai_embeddings.py::test_embed_documents_rejects_incomplete_openai_response
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_preserves_native_chart_structure
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_preserves_slide_provenance
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_assigns_deterministic_ids_and_global_order
@@ -436,6 +492,21 @@ tests/unit/test_pptx_native_enricher.py::test_extract_charts_does_not_materializ
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_rejects_missing_file
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_rejects_non_pptx_file
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_requires_path_instance
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_preserves_chunk_and_search_result_metadata
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_accepts_supported_methods[vector]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_accepts_supported_methods[lexical]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_rejects_unsupported_methods[]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_rejects_unsupported_methods[semantic]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_rejects_unsupported_methods[bm25]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_rejects_unsupported_methods[VECTOR]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_based_positive_rank[0]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_based_positive_rank[-1]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_based_positive_rank[-10]
+tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_is_immutable
+tests/unit/test_search_text.py::test_build_search_text_returns_original_text_without_section_context
+tests/unit/test_search_text.py::test_build_search_text_adds_single_section_context
+tests/unit/test_search_text.py::test_build_search_text_preserves_section_hierarchy
+tests/unit/test_search_text.py::test_build_search_text_does_not_mutate_canonical_chunk_text
 tests/unit/test_structure_aware_chunker.py::test_chunker_groups_text_blocks_from_same_section
 tests/unit/test_structure_aware_chunker.py::test_chunker_starts_new_chunk_when_section_changes
 tests/unit/test_structure_aware_chunker.py::test_chunker_splits_same_section_before_exceeding_max_size
@@ -446,6 +517,31 @@ tests/unit/test_structure_aware_chunker.py::test_chunker_starts_new_chunk_after_
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_zero_target_chars
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_zero_max_chars
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_target_chars_greater_than_max_chars
+tests/unit/test_vector_index.py::test_vector_index_returns_candidates_by_cosine_similarity
+tests/unit/test_vector_index.py::test_vector_index_uses_cosine_similarity_not_vector_magnitude
+tests/unit/test_vector_index.py::test_vector_index_limits_results_to_top_k
+tests/unit/test_vector_index.py::test_vector_index_returns_all_available_results_when_top_k_is_larger
+tests/unit/test_vector_index.py::test_vector_index_breaks_equal_score_ties_by_insertion_order
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_index_data[chunk_ids0-embeddings0-chunk_ids]
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_index_data[chunk_ids1-embeddings1-same number]
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_index_data[chunk_ids2-embeddings2-duplicates]
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_index_data[chunk_ids3-embeddings3-consistent dimensions]
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_index_data[chunk_ids4-embeddings4-zero vectors]
+tests/unit/test_vector_index.py::test_vector_index_rejects_search_before_indexing
+tests/unit/test_vector_index.py::test_vector_index_rejects_invalid_top_k
+tests/unit/test_vector_index.py::test_vector_index_rejects_query_with_wrong_dimension
+tests/unit/test_vector_index.py::test_vector_index_rejects_zero_query_vector
+tests/unit/test_vector_indexer.py::test_vector_indexer_builds_search_text_and_indexes_embeddings
+tests/unit/test_vector_indexer.py::test_vector_indexer_rejects_empty_chunk_collection
+tests/unit/test_vector_indexer.py::test_vector_indexer_rejects_embedding_count_mismatch
+tests/unit/test_vector_retriever.py::test_vector_retriever_returns_canonical_retrieval_candidates
+tests/unit/test_vector_retriever.py::test_vector_retriever_returns_original_canonical_chunk_objects
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_empty_query[]
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_empty_query[ ]
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_empty_query[\n\t]
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_empty_chunk_collection
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_duplicate_chunk_ids
+tests/unit/test_vector_retriever.py::test_vector_retriever_rejects_unknown_chunk_id_from_index
 tests/unit/test_xlsx_parser.py::test_parser_preserves_worksheet_boundaries
 tests/unit/test_xlsx_parser.py::test_parser_preserves_sheet_ranges
 tests/unit/test_xlsx_parser.py::test_parser_preserves_cell_coordinates_values_and_types
@@ -456,12 +552,14 @@ tests/unit/test_xlsx_parser.py::test_parser_rejects_missing_file
 tests/unit/test_xlsx_parser.py::test_parser_rejects_non_xlsx_source
 tests/unit/test_xlsx_parser.py::test_parser_rejects_workbook_without_content
 
-216 tests collected in 17.70s
+271 tests collected in 12.84s
 ```
 
 ## 11. Recent Commits
 
 ```text
+e6f8769 | 2026-10-06 21:19:54 -0300 | docs: add featured product artwork
+e13a446 | 2026-10-06 21:19:09 -0300 | feat: add deterministic structure-aware chunking foundation
 9bce47f | 2026-10-04 22:51:34 -0300 | feat: complete multi-source parsing and canonical normalization
 21fafa8 | 2026-10-04 01:12:51 -0300 | feat: add multi-format canonical ingestion baseline
 1b2b410 | 2026-10-03 01:40:27 -0300 | fix: correct declared project dependencies
@@ -470,7 +568,6 @@ tests/unit/test_xlsx_parser.py::test_parser_rejects_workbook_without_content
 36caaa7 | 2026-10-03 01:24:50 -0300 | chore: establish project audit and development baseline
 f19fad3 | 2026-10-01 18:25:11 -0300 | docs: add conceptual system overview to README
 390b18e | 2026-10-01 18:01:13 -0300 | feat: establish enterprise knowledge universe and ground truth
-3142cc7 | 2026-10-01 15:35:58 -0300 | docs: initialize Enterprise Knowledge AI System
 ```
 
 ## 12. Working Tree
@@ -479,16 +576,53 @@ f19fad3 | 2026-10-01 18:25:11 -0300 | docs: add conceptual system overview to RE
 State: DIRTY
 
 Files:
-M docs/project_audit/PROJECT_AUDIT.md
-?? app/chunking/
-?? docs/images/art-featured-product.png
-?? tests/unit/test_block_serializer.py
-?? tests/unit/test_chunking_schemas.py
-?? tests/unit/test_structure_aware_chunker.py
+A  app/retrieval/embeddings.py
+A  app/retrieval/openai_embeddings.py
+A  app/retrieval/schemas.py
+A  app/retrieval/search_text.py
+A  app/retrieval/vector_index.py
+A  app/retrieval/vector_indexer.py
+A  app/retrieval/vector_retriever.py
+ M app/scripts/project_audit.py
+ M docs/project_audit/PROJECT_AUDIT.md
+A  docs/validation/RETRIEVAL_VALIDATION.md
+M  requirements.txt
+A  tests/smoke/smoke_openai_embeddings.py
+A  tests/smoke/smoke_vector_retrieval.py
+A  tests/unit/test_embedding_contract.py
+A  tests/unit/test_openai_embeddings.py
+A  tests/unit/test_retrieval_schemas.py
+A  tests/unit/test_search_text.py
+A  tests/unit/test_vector_index.py
+A  tests/unit/test_vector_indexer.py
+A  tests/unit/test_vector_retriever.py
+?? docs/images/architecture-overview.png
 
 Unstaged diff:
-docs/project_audit/PROJECT_AUDIT.md | 460 ++++++++++++++++++++++++++++++++++--
- 1 file changed, 438 insertions(+), 22 deletions(-)
+app/scripts/project_audit.py        |  20 ++--
+ docs/project_audit/PROJECT_AUDIT.md | 226 +++++++++++++++++++++++++++---------
+ 2 files changed, 184 insertions(+), 62 deletions(-)
+
+Staged diff:
+app/retrieval/embeddings.py             |  17 +++
+ app/retrieval/openai_embeddings.py      |  74 ++++++++++++
+ app/retrieval/schemas.py                |  26 +++++
+ app/retrieval/search_text.py            |  13 +++
+ app/retrieval/vector_index.py           |  91 +++++++++++++++
+ app/retrieval/vector_indexer.py         |  36 ++++++
+ app/retrieval/vector_retriever.py       |  58 ++++++++++
+ docs/validation/RETRIEVAL_VALIDATION.md | 193 ++++++++++++++++++++++++++++++++
+ requirements.txt                        |   4 +-
+ tests/smoke/smoke_openai_embeddings.py  |  33 ++++++
+ tests/smoke/smoke_vector_retrieval.py   | 106 ++++++++++++++++++
+ tests/unit/test_embedding_contract.py   |  37 ++++++
+ tests/unit/test_openai_embeddings.py    | 175 +++++++++++++++++++++++++++++
+ tests/unit/test_retrieval_schemas.py    |  85 ++++++++++++++
+ tests/unit/test_search_text.py          |  53 +++++++++
+ tests/unit/test_vector_index.py         | 115 +++++++++++++++++++
+ tests/unit/test_vector_indexer.py       | 100 +++++++++++++++++
+ tests/unit/test_vector_retriever.py     | 123 ++++++++++++++++++++
+ 18 files changed, 1338 insertions(+), 1 deletion(-)
 ```
 
 ## 13. Declared Dependencies
@@ -497,6 +631,8 @@ docs/project_audit/PROJECT_AUDIT.md | 460 ++++++++++++++++++++++++++++++++++--
 pytest==9.1.1
 PyYAML==6.0.3
 docling==2.133.0
+numpy==2.5.3
+openai==3.26.0
 ```
 
 ## 14. Installed Dependencies
@@ -530,11 +666,14 @@ fsspec==2026.9.0
 h11==0.16.0
 hf-xet==1.6.0
 httpcore==1.0.9
+httpcore2==2.13.1
 httpx==0.28.1
+httpx2==2.13.1
 huggingface_hub==1.33.0
 idna==3.20
 iniconfig==2.3.0
 Jinja2==3.1.6
+jiter==0.17.0
 jsonref==1.1.0
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
@@ -553,6 +692,7 @@ networkx==3.7
 numpy==2.5.3
 olefile==0.47
 omegaconf==2.3.1
+openai==3.26.0
 opencv-python==5.0.0.93
 openpyxl==3.1.5
 packaging==26.3
@@ -590,6 +730,7 @@ setuptools==84.0.0
 shapely==2.1.2
 shellingham==1.5.4
 six==1.17.0
+sniffio==1.3.1
 soupsieve==2.10
 sympy==1.14.0
 tabulate==0.10.0
@@ -603,6 +744,7 @@ tree-sitter-c==0.24.2
 tree-sitter-javascript==0.25.0
 tree-sitter-python==0.25.0
 tree-sitter-typescript==0.23.2
+truststore==0.10.4
 typer==0.26.8
 typing-inspection==0.4.4
 typing_extensions==4.16.0
