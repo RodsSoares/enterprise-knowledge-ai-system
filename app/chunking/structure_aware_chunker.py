@@ -28,7 +28,11 @@ class StructureAwareChunker:
         self,
         content: NormalizedContent,
         source_path: Path,
+        document_id: str,
     ) -> tuple[RetrievalChunk, ...]:
+        if not document_id.strip():
+            raise ValueError("document_id must not be empty.")
+
         text_blocks = tuple(
             block
             for block in content.ordered_blocks
@@ -92,6 +96,7 @@ class StructureAwareChunker:
                 blocks=tuple(blocks),
                 chunk_order=chunk_order,
                 source_path=source_path,
+                document_id=document_id,
             )
             for chunk_order, blocks in enumerate(grouped_blocks)
         )
@@ -127,6 +132,7 @@ class StructureAwareChunker:
         blocks: tuple[TextBlock, ...],
         chunk_order: int,
         source_path: Path,
+        document_id: str,
     ) -> RetrievalChunk:
         page_numbers = tuple(
             dict.fromkeys(
@@ -153,7 +159,8 @@ class StructureAwareChunker:
         )
 
         return RetrievalChunk(
-            chunk_id=f"chunk-{chunk_order + 1:05d}",
+            chunk_id=f"{document_id}::chunk-{chunk_order + 1:05d}",
+            document_id=document_id,
             order=chunk_order,
             text=self._join_text(blocks),
             source_block_ids=tuple(

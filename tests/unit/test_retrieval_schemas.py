@@ -8,7 +8,8 @@ from app.retrieval.schemas import RetrievalCandidate
 
 def _chunk() -> RetrievalChunk:
     return RetrievalChunk(
-        chunk_id="chunk-00001",
+        chunk_id="DOC-TEST::chunk-00001",
+        document_id="DOC-TEST",
         order=0,
         text="External AI vendors require security assessment.",
         source_block_ids=("text-00001",),

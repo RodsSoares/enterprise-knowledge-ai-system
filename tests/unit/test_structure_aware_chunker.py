@@ -36,11 +36,12 @@ def test_chunker_groups_text_blocks_from_same_section() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=200, max_chars=300)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 1
     chunk = chunks[0]
-    assert chunk.chunk_id == "chunk-00001"
+    assert chunk.chunk_id == "DOC-005::chunk-00001"
+    assert chunk.document_id == "DOC-005"
     assert chunk.order == 0
     assert chunk.text == "Evidence before generation.\n\nRetrieval before fluency."
     assert chunk.source_block_ids == ("text-00001", "text-00002")
@@ -58,7 +59,7 @@ def test_chunker_starts_new_chunk_when_section_changes() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=200, max_chars=300)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 2
     assert chunks[0].text == "First section evidence."
@@ -77,7 +78,7 @@ def test_chunker_splits_same_section_before_exceeding_max_size() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=80, max_chars=100)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 2
     assert chunks[0].text == "A" * 60
@@ -94,7 +95,7 @@ def test_chunker_preserves_multi_page_provenance() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=200, max_chars=300)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 1
     assert chunks[0].page_numbers == (1, 2)
@@ -109,10 +110,14 @@ def test_chunker_preserves_source_order() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=200, max_chars=300)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert [chunk.order for chunk in chunks] == [0, 1, 2]
-    assert [chunk.chunk_id for chunk in chunks] == ["chunk-00001", "chunk-00002", "chunk-00003"]
+    assert [chunk.chunk_id for chunk in chunks] == [
+        "DOC-005::chunk-00001",
+        "DOC-005::chunk-00002",
+        "DOC-005::chunk-00003",
+    ]
     assert [chunk.text for chunk in chunks] == ["First.", "Second.", "Third."]
 
 
@@ -123,7 +128,7 @@ def test_chunker_splits_single_text_block_that_exceeds_max_size() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=80, max_chars=100)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 3
     assert [len(chunk.text) for chunk in chunks] == [100, 100, 50]
@@ -141,7 +146,7 @@ def test_chunker_starts_new_chunk_after_reaching_target_size() -> None:
         )
     )
     chunker = StructureAwareChunker(target_chars=100, max_chars=150)
-    chunks = chunker.chunk(content, SOURCE_PATH)
+    chunks = chunker.chunk(content, SOURCE_PATH, document_id="DOC-005")
 
     assert len(chunks) == 2
     assert chunks[0].source_block_ids == ("text-00001", "text-00002")
@@ -172,3 +177,32 @@ def test_chunker_rejects_target_chars_greater_than_max_chars() -> None:
         match="target_chars must be less than or equal to max_chars",
     ):
         StructureAwareChunker(target_chars=101, max_chars=100)
+
+
+def test_chunker_generates_globally_unique_ids_across_documents() -> None:
+    content = NormalizedContent(
+        blocks=(
+            _text_block("text-00001", 0, "Shared local position.", ("Section A",)),
+        )
+    )
+    chunker = StructureAwareChunker(target_chars=200, max_chars=300)
+
+    doc_a = chunker.chunk(content, Path("data/source/a.pdf"), document_id="DOC-005")
+    doc_b = chunker.chunk(content, Path("data/source/b.pdf"), document_id="DOC-010")
+
+    assert doc_a[0].chunk_id == "DOC-005::chunk-00001"
+    assert doc_b[0].chunk_id == "DOC-010::chunk-00001"
+    assert doc_a[0].chunk_id != doc_b[0].chunk_id
+
+
+@pytest.mark.parametrize("document_id", ["", "   "])
+def test_chunker_rejects_empty_document_id(document_id: str) -> None:
+    content = NormalizedContent(
+        blocks=(
+            _text_block("text-00001", 0, "Evidence.", ("Section A",)),
+        )
+    )
+    chunker = StructureAwareChunker(target_chars=200, max_chars=300)
+
+    with pytest.raises(ValueError, match="document_id must not be empty"):
+        chunker.chunk(content, SOURCE_PATH, document_id=document_id)

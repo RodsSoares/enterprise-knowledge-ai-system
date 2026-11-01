@@ -8,6 +8,8 @@ from app.chunking.schemas import RetrievalChunk
 def test_retrieval_chunk_preserves_content_and_source_traceability() -> None:
     chunk = RetrievalChunk(
         chunk_id="chunk-00001",
+
+        document_id="DOC-TEST",
         order=0,
         text="Evidence before generation.",
         source_block_ids=("text-00001", "text-00002"),
@@ -18,6 +20,7 @@ def test_retrieval_chunk_preserves_content_and_source_traceability() -> None:
     )
 
     assert chunk.chunk_id == "chunk-00001"
+    assert chunk.document_id == "DOC-TEST"
     assert chunk.order == 0
     assert chunk.text == "Evidence before generation."
     assert chunk.source_block_ids == ("text-00001", "text-00002")
@@ -32,6 +35,8 @@ def test_retrieval_chunk_preserves_content_and_source_traceability() -> None:
 def test_retrieval_chunk_supports_multi_block_and_multi_page_provenance() -> None:
     chunk = RetrievalChunk(
         chunk_id="chunk-00002",
+
+        document_id="DOC-TEST",
         order=1,
         text="Evidence spanning two pages.",
         source_block_ids=("text-00010", "image-00011", "text-00012"),
@@ -53,6 +58,8 @@ def test_retrieval_chunk_supports_multi_block_and_multi_page_provenance() -> Non
 def test_retrieval_chunk_supports_slide_provenance() -> None:
     chunk = RetrievalChunk(
         chunk_id="chunk-00003",
+
+        document_id="DOC-TEST",
         order=2,
         text="Quarterly demand analysis.",
         source_block_ids=("text-00020", "pptx-chart-s010-001"),
@@ -70,6 +77,8 @@ def test_retrieval_chunk_supports_slide_provenance() -> None:
 def test_retrieval_chunk_supports_worksheet_provenance() -> None:
     chunk = RetrievalChunk(
         chunk_id="chunk-00004",
+
+        document_id="DOC-TEST",
         order=3,
         text="Transportation rate card.",
         source_block_ids=("xlsx-sheet-1",),
@@ -88,6 +97,8 @@ def test_retrieval_chunk_supports_worksheet_provenance() -> None:
     [
         ("chunk_id", ""),
         ("chunk_id", "   "),
+        ("document_id", ""),
+        ("document_id", "   "),
         ("text", ""),
         ("text", "   "),
     ],
@@ -98,6 +109,7 @@ def test_retrieval_chunk_rejects_empty_required_text_fields(
 ) -> None:
     kwargs = {
         "chunk_id": "chunk-00001",
+        "document_id": "DOC-TEST",
         "order": 0,
         "text": "Valid evidence.",
         "source_block_ids": ("text-00001",),
@@ -114,6 +126,8 @@ def test_retrieval_chunk_rejects_negative_order() -> None:
     with pytest.raises(ValueError):
         RetrievalChunk(
             chunk_id="chunk-00001",
+
+            document_id="DOC-TEST",
             order=-1,
             text="Valid evidence.",
             source_block_ids=("text-00001",),
@@ -126,6 +140,8 @@ def test_retrieval_chunk_requires_source_blocks() -> None:
     with pytest.raises(ValueError):
         RetrievalChunk(
             chunk_id="chunk-00001",
+
+            document_id="DOC-TEST",
             order=0,
             text="Valid evidence.",
             source_block_ids=(),
@@ -138,6 +154,8 @@ def test_retrieval_chunk_requires_content_types() -> None:
     with pytest.raises(ValueError):
         RetrievalChunk(
             chunk_id="chunk-00001",
+
+            document_id="DOC-TEST",
             order=0,
             text="Valid evidence.",
             source_block_ids=("text-00001",),
@@ -150,6 +168,8 @@ def test_retrieval_chunk_rejects_duplicate_provenance_values() -> None:
     with pytest.raises(ValueError):
         RetrievalChunk(
             chunk_id="chunk-00001",
+
+            document_id="DOC-TEST",
             order=0,
             text="Valid evidence.",
             source_block_ids=("text-00001", "text-00001"),
@@ -162,6 +182,8 @@ def test_retrieval_chunk_rejects_invalid_page_number() -> None:
     with pytest.raises(ValueError):
         RetrievalChunk(
             chunk_id="chunk-00001",
+
+            document_id="DOC-TEST",
             order=0,
             text="Valid evidence.",
             source_block_ids=("text-00001",),

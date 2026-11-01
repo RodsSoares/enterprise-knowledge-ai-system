@@ -22,7 +22,8 @@ class FakeEmbeddingProvider:
 
 def _chunk(chunk_id: str, order: int) -> RetrievalChunk:
     return RetrievalChunk(
-        chunk_id=chunk_id,
+        chunk_id=f"DOC-TEST::{chunk_id}",
+        document_id="DOC-TEST",
         order=order,
         text=f"Evidence for {chunk_id}.",
         source_block_ids=(f"block-{order}",),
@@ -41,7 +42,7 @@ def test_vector_retriever_returns_canonical_retrieval_candidates() -> None:
     )
     index = NumPyVectorIndex()
     index.add(
-        chunk_ids=("chunk-a", "chunk-b", "chunk-c"),
+        chunk_ids=("DOC-TEST::chunk-a", "DOC-TEST::chunk-b", "DOC-TEST::chunk-c"),
         embeddings=((1.0, 0.0), (0.8, 0.2), (0.0, 1.0)),
     )
     provider = FakeEmbeddingProvider()
@@ -51,8 +52,8 @@ def test_vector_retriever_returns_canonical_retrieval_candidates() -> None:
 
     assert provider.last_query == "security assessment"
     assert tuple(candidate.chunk.chunk_id for candidate in candidates) == (
-        "chunk-a",
-        "chunk-b",
+        "DOC-TEST::chunk-a",
+        "DOC-TEST::chunk-b",
     )
     assert tuple(candidate.retrieval_method for candidate in candidates) == (
         "vector",
@@ -66,7 +67,7 @@ def test_vector_retriever_returns_original_canonical_chunk_objects() -> None:
     chunks = (_chunk("chunk-a", 0),)
     index = NumPyVectorIndex()
     index.add(
-        chunk_ids=("chunk-a",),
+        chunk_ids=("DOC-TEST::chunk-a",),
         embeddings=((1.0, 0.0),),
     )
 
@@ -81,7 +82,7 @@ def test_vector_retriever_rejects_empty_query(query: str) -> None:
     chunks = (_chunk("chunk-a", 0),)
     index = NumPyVectorIndex()
     index.add(
-        chunk_ids=("chunk-a",),
+        chunk_ids=("DOC-TEST::chunk-a",),
         embeddings=((1.0, 0.0),),
     )
     retriever = VectorRetriever(FakeEmbeddingProvider(), index, chunks)

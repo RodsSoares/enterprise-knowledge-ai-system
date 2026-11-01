@@ -35,7 +35,8 @@ def _chunk(
     order: int,
 ) -> RetrievalChunk:
     return RetrievalChunk(
-        chunk_id=chunk_id,
+        chunk_id=f"DOC-TEST::{chunk_id}",
+        document_id="DOC-TEST",
         order=order,
         text=text,
         source_block_ids=(f"block-{order}",),
@@ -73,7 +74,7 @@ def test_vector_indexer_builds_search_text_and_indexes_embeddings() -> None:
     )
 
     hits = index.search((1.0, 0.0), top_k=2)
-    assert hits[0].chunk_id == "chunk-security"
+    assert hits[0].chunk_id == "DOC-TEST::chunk-security"
 
 
 def test_vector_indexer_rejects_empty_chunk_collection() -> None:

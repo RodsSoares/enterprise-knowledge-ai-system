@@ -7,6 +7,7 @@ class RetrievalChunk:
     """Retrieval unit derived from canonical source blocks."""
 
     chunk_id: str
+    document_id: str
     order: int
     text: str
     source_block_ids: tuple[str, ...]
@@ -20,6 +21,9 @@ class RetrievalChunk:
     def __post_init__(self) -> None:
         if not self.chunk_id.strip():
             raise ValueError("chunk_id must not be empty.")
+
+        if not self.document_id.strip():
+            raise ValueError("document_id must not be empty.")
 
         if self.order < 0:
             raise ValueError("order must be greater than or equal to 0.")
