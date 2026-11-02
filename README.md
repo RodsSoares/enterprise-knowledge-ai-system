@@ -1,8 +1,8 @@
 # Enterprise Knowledge AI System
 
-🚀 **Current Stage:** Enterprise Retrieval Foundation\
-🧪 **Validation:** Real semantic retrieval validated against enterprise
-documents
+🚀 **Current Stage:** Golden Set Retrieval Baseline & Hybrid Retrieval Evolution\
+🧪 **Validation:** Multi-format, multi-document vector retrieval validated against
+Golden Set A
 
 The **Enterprise Knowledge AI System** is an Enterprise
 Retrieval-Augmented Generation (RAG) system designed to transform
@@ -167,8 +167,9 @@ supports them.
 ## Current Status
 
 The project has moved beyond architecture and dataset design into a
-working **retrieval foundation** with real document processing and
-semantic retrieval validation.
+working **multi-format retrieval foundation** with real document processing,
+global chunk identity, multi-document vector indexing, and Golden Set-driven
+retrieval evaluation.
 
 | Capability | Status |
 |---|:---:|
@@ -188,8 +189,8 @@ semantic retrieval validation.
 | Real retrieval smoke validation | ✅ |
 | Ground-truth assets | ✅ |
 | Retrieval validation log | ✅ |
-| Global multi-document chunk identity | 🚧 |
-| Multi-document vector retrieval | 🚧 |
+| Global multi-document chunk identity | ✅ |
+| Multi-document vector retrieval | ✅ |
 | Lexical / BM25 retrieval | 📋 |
 | Metadata filtering | 📋 |
 | Candidate fusion | 📋 |
@@ -198,7 +199,7 @@ semantic retrieval validation.
 | Grounded answer generation | 📋 |
 | Citation validation | 📋 |
 | Explicit answer abstention | 📋 |
-| Systematic evaluation layer | 🚧 |
+| Retrieval evaluation layer | ✅ |
 
 **Legend:** ✅ implemented / validated · 🚧 current or near-term
 development · 📋 target architecture
@@ -374,62 +375,80 @@ This separates broad candidate discovery from final evidence selection.
 
 ## Real-World Retrieval Validation
 
-The project has completed its first recorded real semantic retrieval
-validation.
+Retrieval validation is recorded as a progression of increasingly demanding
+baselines rather than as isolated smoke-test success.
 
 ### RV-001 --- Real Vector Retrieval / DOC-005
 
-The experiment validated the following live path:
+The first live experiment validated the end-to-end single-document path:
 
 ``` text
 Enterprise PDF
       ↓
-Docling Parser
-      ↓
 Canonical Normalization
       ↓
-Canonical Blocks
-      ↓
-Structure-Aware Chunker
-      ↓
-Retrieval Chunks
-      ↓
-Search Text
+Structure-Aware Chunking
       ↓
 OpenAI Embeddings
       ↓
 NumPy Vector Index
-      ↓
-Query Embedding
       ↓
 Cosine Similarity
       ↓
 Top-K Retrieval Candidates
 ```
 
-The semantic query intentionally did not copy a section title directly.
-The retrieval pipeline successfully ranked substantive policy evidence
-above generic scope, purpose, and document-level context.
+**Result: PASS**
+
+RV-001 also exposed the need for globally unique chunk identifiers before
+multi-document indexing could be considered robust.
+
+### RV-002 --- Multi-document Vector Retrieval
+
+Global chunk identity was implemented and validated using identifiers such as
+`DOC-005::chunk-00001`. A shared vector index was then exercised across five
+competing enterprise documents.
+
+**Vector-only baseline:**
+
+-   Hit@1: **80.0%**
+-   Hit@3: **100.0%**
+-   Hit@5: **100.0%**
+-   MRR: **0.8667**
 
 **Result: PASS**
 
-This validates the technical integration of:
+### RV-003 --- Golden Set A / Multi-Format Vector Retrieval Baseline
 
--   real enterprise PDF parsing;
--   canonical normalization;
--   structure-aware chunk creation;
--   real embedding generation;
--   vector indexing;
--   semantic query embedding;
--   cosine-similarity search;
--   ranked retrieval candidates.
+The harder baseline expanded retrieval across the complete materialized corpus:
+**10 documents spanning PDF, DOCX, XLSX, PPTX, and Markdown**, all routed
+through format-agnostic ingestion into the canonical model.
 
-The validation also identified an important engineering requirement:
-document-local chunk identifiers must evolve into a globally unique
-identity strategy before multi-document indexing is treated as robust.
+The corpus produced **79 RetrievalChunks with 79/79 globally unique chunk
+identifiers**.
 
-That finding directly informs the next retrieval increment rather than
-being hidden by a successful smoke test.
+Golden Set A contained **36 questions**. Of these, **14 were evaluable against
+the current materialized corpus**, **13 contained positive expected evidence**
+and were retrieval-scored, and **Q29** was deferred to the answer/abstention
+layer because no positive expected evidence exists in the corpus.
+
+| Metric | Vector-only baseline |
+|---|---:|
+| Hit@1 | **76.9%** |
+| Hit@3 | **100.0%** |
+| Hit@5 | **100.0%** |
+| Recall@1 | **43.6%** |
+| Recall@3 | **87.2%** |
+| Recall@5 | **92.3%** |
+| MRR | **0.8846** |
+
+All scored questions recovered at least one expected document within Top-3.
+The three Hit@1 misses (Q05, Q21, and Q25) recovered the expected document at
+rank 2, indicating that the next retrieval opportunity is primarily **ranking
+quality rather than basic candidate discovery**.
+
+The detailed experimental record is maintained in
+`docs/validation/RETRIEVAL_VALIDATION.md`.
 
 ## Ground Truth & Evaluation
 
@@ -477,15 +496,20 @@ The system explicitly separates:
 
 A fluent answer cannot compensate for failed retrieval.
 
-### Planned retrieval metrics
+### Retrieval metrics
 
-The evaluation layer is designed to support metrics such as:
+The implemented retrieval evaluation layer supports Golden Set-driven
+measurement including:
 
--   Hit Rate;
+-   Hit@K;
 -   Recall@K;
--   Precision@K;
--   expected-evidence recovery;
+-   reciprocal rank / MRR;
+-   expected-document recovery;
 -   ranking behavior against distractor documents.
+
+Questions blocked by the current materialized corpus are classified separately
+from evaluable questions, and non-positive questions such as abstention cases
+are not forced into positive retrieval scoring.
 
 ### Planned answer evaluation
 
@@ -564,6 +588,7 @@ enterprise-knowledge-ai-system/
 ├── app/
 │   ├── ingestion/
 │   ├── chunking/
+│   ├── evaluation/
 │   ├── retrieval/
 │   └── scripts/
 │
@@ -743,18 +768,20 @@ explain enterprise evidence reliably.
 
 ### Current focus
 
-**RV-002 --- Multi-document Vector Retrieval**
+**Retrieval v0.2 --- Hybrid Retrieval & Candidate Fusion**
 
-Before broad multi-document semantic retrieval is considered validated,
-the project should:
+The vector-only Golden Set A baseline is now frozen as the comparison point for
+future retrieval changes. The next increment should introduce complementary
+lexical retrieval and candidate fusion without regressing the validated vector
+baseline.
 
-1.  define and test globally unique retrieval-chunk identity;
-2.  create retrieval chunks across multiple enterprise documents;
-3.  index the combined corpus;
-4.  execute semantic queries with relevant and distracting documents
-    competing for ranking;
-5.  evaluate whether the correct document and evidence are recovered in
-    the Top-K.
+Initial optimization targets are:
+
+1.  improve Hit@1 beyond the **76.9%** vector-only baseline;
+2.  preserve **100% Hit@3**;
+3.  improve expected-document Recall@5 beyond **92.3%**;
+4.  improve MRR beyond **0.8846**;
+5.  preserve provenance, global chunk identity, and format-agnostic behavior.
 
 ### Retrieval evolution
 
@@ -799,16 +826,16 @@ The Enterprise Knowledge AI System has moved from conceptual
 architecture into a working **enterprise retrieval engineering** stage.
 
 The current implementation demonstrates that heterogeneous enterprise
-documents can be parsed into a common structure, converted into
-structure-aware retrieval units, embedded through a real external
-embedding provider, indexed, and semantically retrieved with ranked
-evidence.
+documents can be routed through format-appropriate ingestion, normalized into
+a common structure, converted into globally identifiable structure-aware
+retrieval units, embedded through a real external embedding provider, indexed
+together, and evaluated against Golden Set questions with ranked evidence.
 
 The project is **not yet presented as a complete production RAG
-application**. Multi-document retrieval hardening, hybrid retrieval,
-reranking, context assembly, grounded generation, citation validation,
-explicit abstention, and systematic evaluation remain active evolution
-areas.
+application**. Hybrid retrieval, metadata-aware retrieval, candidate fusion,
+reranking, context assembly, grounded generation, citation validation, and
+explicit abstention remain active evolution areas. Retrieval evaluation is now
+implemented; answer-layer evaluation remains a later stage.
 
 This distinction is intentional.
 
