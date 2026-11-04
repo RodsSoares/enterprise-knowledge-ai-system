@@ -1,7 +1,7 @@
 # PROJECT AUDIT — Enterprise Knowledge AI System
 
 Version: 1.0
-Generated: 2026-10-08 03:27:30
+Generated: 2026-11-04 09:43:55
 
 > This file is generated automatically by `app/scripts/project_audit.py`.
 > Do not edit it manually.
@@ -11,16 +11,16 @@ Generated: 2026-10-08 03:27:30
 ```text
 PASS
 
-- HEAD before: e6f8769
-- HEAD after: e6f8769
-- Fingerprint before: c6d71022c8d8ca1a210bbe386ee68993ed607453ed0297cab9f9ed8d73f8c63d
-- Fingerprint after: c6d71022c8d8ca1a210bbe386ee68993ed607453ed0297cab9f9ed8d73f8c63d
+- HEAD before: 45a5a2c
+- HEAD after: 45a5a2c
+- Fingerprint before: ad4af0c2ff83ebcf92f0477c2398a85e0f1b194e55fa918ec4c05881118e30e5
+- Fingerprint after: ad4af0c2ff83ebcf92f0477c2398a85e0f1b194e55fa918ec4c05881118e30e5
 - Repository content remained stable during audit collection.
 ```
 
-- Audit started: 2026-10-08 03:26:44
-- Audit finished: 2026-10-08 03:27:30
-- Duration: 46.10 seconds
+- Audit started: 2026-11-04 09:42:23
+- Audit finished: 2026-11-04 09:43:55
+- Duration: 91.93 seconds
 
 ## 2. Environment
 
@@ -31,41 +31,30 @@ PASS
 ## 3. Git State
 
 - Branch: `main`
-- Commit: `e6f8769`
+- Commit: `45a5a2c`
 
 ### Status
 
 ```text
-A  app/retrieval/embeddings.py
-A  app/retrieval/openai_embeddings.py
-A  app/retrieval/schemas.py
-A  app/retrieval/search_text.py
-A  app/retrieval/vector_index.py
-A  app/retrieval/vector_indexer.py
-A  app/retrieval/vector_retriever.py
- M app/scripts/project_audit.py
+M app/retrieval/hybrid_retriever.py
  M docs/project_audit/PROJECT_AUDIT.md
-A  docs/validation/RETRIEVAL_VALIDATION.md
-M  requirements.txt
-A  tests/smoke/smoke_openai_embeddings.py
-A  tests/smoke/smoke_vector_retrieval.py
-A  tests/unit/test_embedding_contract.py
-A  tests/unit/test_openai_embeddings.py
-A  tests/unit/test_retrieval_schemas.py
-A  tests/unit/test_search_text.py
-A  tests/unit/test_vector_index.py
-A  tests/unit/test_vector_indexer.py
-A  tests/unit/test_vector_retriever.py
-?? docs/images/architecture-overview.png
+ M docs/validation/RETRIEVAL_VALIDATION.md
+?? app/retrieval/document_diversifier.py
+?? tests/smoke/smoke_bm25_language_experiment.py
+?? tests/smoke/smoke_document_diversity_experiment.py
+?? tests/smoke/smoke_golden_set_hybrid_retrieval.py
+?? tests/smoke/smoke_hybrid_v03_end_to_end.py
+?? tests/smoke/smoke_retrieval_diagnostics.py
+?? tests/unit/test_document_diversifier.py
 ```
 
 ## 4. Code Metrics
 
-- Python files: **41**
-- Total Python lines: **6727**
-- Effective Python lines: **5137**
-- Functions: **377**
-- Classes: **40**
+- Python files: **71**
+- Total Python lines: **9723**
+- Effective Python lines: **7552**
+- Functions: **526**
+- Classes: **57**
 - TODO/FIXME occurrences: **2**
 - Files with syntax errors: **0**
 
@@ -80,17 +69,27 @@ enterprise-knowledge-ai-system/
             [FILE] schemas.py
             [FILE] structure_aware_chunker.py
         [DIR] evaluation/
+            [FILE] __init__.py
+            [FILE] golden_set_loader.py
+            [FILE] retrieval_evaluator.py
+            [FILE] retrieval_metrics.py
+            [FILE] schemas.py
         [DIR] generation/
         [DIR] ingestion/
             [FILE] docling_parser.py
             [FILE] document_parser.py
+            [FILE] ingestion_router.py
             [FILE] pptx_native_enricher.py
             [FILE] registry.py
             [FILE] schemas.py
             [FILE] xlsx_parser.py
-        [DIR] retriev/
         [DIR] retrieval/
+            [FILE] candidate_fusion.py
+            [FILE] document_diversifier.py
             [FILE] embeddings.py
+            [FILE] hybrid_retriever.py
+            [FILE] lexical_index.py
+            [FILE] lexical_retriever.py
             [FILE] openai_embeddings.py
             [FILE] schemas.py
             [FILE] search_text.py
@@ -134,6 +133,7 @@ enterprise-knowledge-ai-system/
             [FILE] 02_enterprise_universe_and_source_strategy.md
         [DIR] images/
             [FILE] architecture-overview.png
+            [FILE] art-architecture-overview.png
             [FILE] art-featured-product.png
             [FILE] art-featured.png
             [FILE] art-system-overview.png
@@ -149,23 +149,42 @@ enterprise-knowledge-ai-system/
             [FILE] test_docling_pdf_integration.py
             [FILE] test_docling_pptx_integration.py
             [FILE] test_document_parser_pptx_integration.py
+            [FILE] test_ingestion_router_integration.py
             [FILE] test_xlsx_corpus_integration.py
         [DIR] smoke/
+            [FILE] smoke_bm25_language_experiment.py
+            [FILE] smoke_document_diversity_experiment.py
+            [FILE] smoke_golden_set_hybrid_retrieval.py
+            [FILE] smoke_golden_set_vector_retrieval.py
+            [FILE] smoke_hybrid_v03_end_to_end.py
+            [FILE] smoke_multi_document_vector_retrieval.py
             [FILE] smoke_openai_embeddings.py
+            [FILE] smoke_retrieval_diagnostics.py
             [FILE] smoke_vector_retrieval.py
         [DIR] unit/
             [FILE] test_block_serializer.py
+            [FILE] test_candidate_fusion.py
             [FILE] test_chunking_schemas.py
             [FILE] test_docling_parser.py
+            [FILE] test_document_diversifier.py
             [FILE] test_document_parser.py
             [FILE] test_embedding_contract.py
+            [FILE] test_evaluation_schemas.py
+            [FILE] test_golden_set_loader.py
+            [FILE] test_hybrid_retriever.py
             [FILE] test_ingestion_registry.py
+            [FILE] test_ingestion_router.py
             [FILE] test_ingestion_schemas.py
+            [FILE] test_lexical_index.py
+            [FILE] test_lexical_retriever.py
             [FILE] test_openai_embeddings.py
             [FILE] test_pptx_native_enricher.py
+            [FILE] test_retrieval_evaluator.py
+            [FILE] test_retrieval_metrics.py
             [FILE] test_retrieval_schemas.py
             [FILE] test_search_text.py
             [FILE] test_structure_aware_chunker.py
+            [FILE] test_structure_aware_chunker_multiblock.py
             [FILE] test_vector_index.py
             [FILE] test_vector_indexer.py
             [FILE] test_vector_retriever.py
@@ -177,15 +196,26 @@ enterprise-knowledge-ai-system/
 | File | Lines | Functions | Classes | TODOs | Syntax |
 |---|---:|---:|---:|---:|---|
 | `app/chunking/block_serializer.py` | 165 | 7 | 1 | 0 | OK |
-| `app/chunking/schemas.py` | 55 | 1 | 1 | 0 | OK |
-| `app/chunking/structure_aware_chunker.py` | 168 | 5 | 1 | 0 | OK |
+| `app/chunking/schemas.py` | 59 | 1 | 1 | 0 | OK |
+| `app/chunking/structure_aware_chunker.py` | 224 | 12 | 2 | 0 | OK |
+| `app/evaluation/__init__.py` | 1 | 0 | 0 | 0 | OK |
+| `app/evaluation/golden_set_loader.py` | 113 | 5 | 3 | 0 | OK |
+| `app/evaluation/retrieval_evaluator.py` | 120 | 3 | 3 | 0 | OK |
+| `app/evaluation/retrieval_metrics.py` | 61 | 4 | 0 | 0 | OK |
+| `app/evaluation/schemas.py` | 39 | 1 | 1 | 0 | OK |
 | `app/ingestion/docling_parser.py` | 206 | 9 | 1 | 0 | OK |
 | `app/ingestion/document_parser.py` | 80 | 4 | 1 | 0 | OK |
+| `app/ingestion/ingestion_router.py` | 63 | 4 | 1 | 0 | OK |
 | `app/ingestion/pptx_native_enricher.py` | 279 | 11 | 1 | 0 | OK |
 | `app/ingestion/registry.py` | 254 | 10 | 2 | 0 | OK |
 | `app/ingestion/schemas.py` | 441 | 14 | 11 | 0 | OK |
 | `app/ingestion/xlsx_parser.py` | 93 | 4 | 1 | 0 | OK |
+| `app/retrieval/candidate_fusion.py` | 79 | 2 | 2 | 0 | OK |
+| `app/retrieval/document_diversifier.py` | 51 | 1 | 1 | 0 | OK |
 | `app/retrieval/embeddings.py` | 17 | 2 | 1 | 0 | OK |
+| `app/retrieval/hybrid_retriever.py` | 43 | 2 | 1 | 0 | OK |
+| `app/retrieval/lexical_index.py` | 88 | 4 | 2 | 0 | OK |
+| `app/retrieval/lexical_retriever.py` | 29 | 2 | 1 | 0 | OK |
 | `app/retrieval/openai_embeddings.py` | 74 | 4 | 1 | 0 | OK |
 | `app/retrieval/schemas.py` | 26 | 1 | 1 | 0 | OK |
 | `app/retrieval/search_text.py` | 13 | 1 | 0 | 0 | OK |
@@ -198,24 +228,43 @@ enterprise-knowledge-ai-system/
 | `tests/integration/test_docling_pdf_integration.py` | 150 | 14 | 0 | 0 | OK |
 | `tests/integration/test_docling_pptx_integration.py` | 97 | 10 | 0 | 0 | OK |
 | `tests/integration/test_document_parser_pptx_integration.py` | 92 | 8 | 0 | 0 | OK |
+| `tests/integration/test_ingestion_router_integration.py` | 29 | 1 | 0 | 0 | OK |
 | `tests/integration/test_xlsx_corpus_integration.py` | 113 | 11 | 0 | 0 | OK |
+| `tests/smoke/smoke_bm25_language_experiment.py` | 141 | 2 | 0 | 0 | OK |
+| `tests/smoke/smoke_document_diversity_experiment.py` | 188 | 3 | 0 | 0 | OK |
+| `tests/smoke/smoke_golden_set_hybrid_retrieval.py` | 129 | 4 | 0 | 0 | OK |
+| `tests/smoke/smoke_golden_set_vector_retrieval.py` | 281 | 6 | 0 | 0 | OK |
+| `tests/smoke/smoke_hybrid_v03_end_to_end.py` | 156 | 3 | 0 | 0 | OK |
+| `tests/smoke/smoke_multi_document_vector_retrieval.py` | 343 | 6 | 1 | 0 | OK |
 | `tests/smoke/smoke_openai_embeddings.py` | 33 | 1 | 0 | 0 | OK |
+| `tests/smoke/smoke_retrieval_diagnostics.py` | 132 | 4 | 0 | 0 | OK |
 | `tests/smoke/smoke_vector_retrieval.py` | 106 | 1 | 0 | 0 | OK |
 | `tests/unit/test_block_serializer.py` | 182 | 6 | 0 | 0 | OK |
-| `tests/unit/test_chunking_schemas.py` | 171 | 10 | 0 | 0 | OK |
+| `tests/unit/test_candidate_fusion.py` | 101 | 14 | 0 | 0 | OK |
+| `tests/unit/test_chunking_schemas.py` | 193 | 10 | 0 | 0 | OK |
 | `tests/unit/test_docling_parser.py` | 330 | 20 | 1 | 0 | OK |
+| `tests/unit/test_document_diversifier.py` | 68 | 9 | 0 | 0 | OK |
 | `tests/unit/test_document_parser.py` | 266 | 12 | 0 | 0 | OK |
 | `tests/unit/test_embedding_contract.py` | 37 | 5 | 1 | 0 | OK |
+| `tests/unit/test_evaluation_schemas.py` | 50 | 6 | 0 | 0 | OK |
+| `tests/unit/test_golden_set_loader.py` | 59 | 6 | 0 | 0 | OK |
+| `tests/unit/test_hybrid_retriever.py` | 113 | 14 | 0 | 0 | OK |
 | `tests/unit/test_ingestion_registry.py` | 226 | 19 | 0 | 0 | OK |
+| `tests/unit/test_ingestion_router.py` | 100 | 9 | 0 | 0 | OK |
 | `tests/unit/test_ingestion_schemas.py` | 670 | 38 | 0 | 0 | OK |
+| `tests/unit/test_lexical_index.py` | 47 | 6 | 0 | 0 | OK |
+| `tests/unit/test_lexical_retriever.py` | 42 | 4 | 0 | 0 | OK |
 | `tests/unit/test_openai_embeddings.py` | 175 | 17 | 8 | 0 | OK |
 | `tests/unit/test_pptx_native_enricher.py` | 280 | 16 | 0 | 0 | OK |
-| `tests/unit/test_retrieval_schemas.py` | 85 | 6 | 0 | 0 | OK |
-| `tests/unit/test_search_text.py` | 53 | 5 | 0 | 0 | OK |
-| `tests/unit/test_structure_aware_chunker.py` | 174 | 11 | 0 | 0 | OK |
+| `tests/unit/test_retrieval_evaluator.py` | 85 | 6 | 0 | 0 | OK |
+| `tests/unit/test_retrieval_metrics.py` | 39 | 6 | 0 | 0 | OK |
+| `tests/unit/test_retrieval_schemas.py` | 86 | 6 | 0 | 0 | OK |
+| `tests/unit/test_search_text.py` | 54 | 5 | 0 | 0 | OK |
+| `tests/unit/test_structure_aware_chunker.py` | 208 | 13 | 0 | 0 | OK |
+| `tests/unit/test_structure_aware_chunker_multiblock.py` | 86 | 3 | 0 | 0 | OK |
 | `tests/unit/test_vector_index.py` | 115 | 10 | 0 | 0 | OK |
-| `tests/unit/test_vector_indexer.py` | 100 | 8 | 2 | 0 | OK |
-| `tests/unit/test_vector_retriever.py` | 123 | 10 | 1 | 0 | OK |
+| `tests/unit/test_vector_indexer.py` | 101 | 8 | 2 | 0 | OK |
+| `tests/unit/test_vector_retriever.py` | 124 | 10 | 1 | 0 | OK |
 | `tests/unit/test_xlsx_parser.py` | 132 | 10 | 0 | 0 | OK |
 
 ## 7. Enterprise Knowledge Corpus
@@ -341,6 +390,7 @@ tests/integration/test_document_parser_pptx_integration.py::test_doc_026_preserv
 tests/integration/test_document_parser_pptx_integration.py::test_doc_026_has_no_native_chart_blocks
 tests/integration/test_document_parser_pptx_integration.py::test_doc_026_preserves_docling_order_when_no_charts_exist
 tests/integration/test_document_parser_pptx_integration.py::test_doc_026_preserves_existing_pptx_semantics
+tests/integration/test_ingestion_router_integration.py::test_ingestion_router_routes_xlsx_without_exposing_parser_choice
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_is_parsed_from_physical_corpus
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_preserves_worksheet_names
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_preserves_worksheet_ranges
@@ -356,12 +406,32 @@ tests/unit/test_block_serializer.py::test_serializer_serializes_spreadsheet_stru
 tests/unit/test_block_serializer.py::test_serializer_serializes_chart_structure_deterministically
 tests/unit/test_block_serializer.py::test_serializer_uses_image_caption_when_available
 tests/unit/test_block_serializer.py::test_serializer_returns_none_for_image_without_caption
+tests/unit/test_candidate_fusion.py::test_empty_rankings
+tests/unit/test_candidate_fusion.py::test_shared_candidate_is_promoted
+tests/unit/test_candidate_fusion.py::test_scores_use_ranks_not_source_scores
+tests/unit/test_candidate_fusion.py::test_ties_follow_first_seen_order
+tests/unit/test_candidate_fusion.py::test_top_k_limits_output_and_reassigns_rank
+tests/unit/test_candidate_fusion.py::test_invalid_rrf_k[0]
+tests/unit/test_candidate_fusion.py::test_invalid_rrf_k[-1]
+tests/unit/test_candidate_fusion.py::test_invalid_rrf_k[1.2]
+tests/unit/test_candidate_fusion.py::test_invalid_rrf_k[True]
+tests/unit/test_candidate_fusion.py::test_invalid_top_k[0]
+tests/unit/test_candidate_fusion.py::test_invalid_top_k[-1]
+tests/unit/test_candidate_fusion.py::test_invalid_top_k[1.2]
+tests/unit/test_candidate_fusion.py::test_invalid_top_k[True]
+tests/unit/test_candidate_fusion.py::test_rejects_duplicate_methods
+tests/unit/test_candidate_fusion.py::test_rejects_duplicate_chunk_within_ranking
+tests/unit/test_candidate_fusion.py::test_rejects_conflicting_chunk_provenance
+tests/unit/test_candidate_fusion.py::test_rejects_duplicate_ranks
+tests/unit/test_candidate_fusion.py::test_rejects_mixed_methods_in_ranking
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_preserves_content_and_source_traceability
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_supports_multi_block_and_multi_page_provenance
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_supports_slide_provenance
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_supports_worksheet_provenance
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[chunk_id-]
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[chunk_id-   ]
+tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[document_id-]
+tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[document_id-   ]
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[text-]
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_empty_required_text_fields[text-   ]
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_negative_order
@@ -384,6 +454,18 @@ tests/unit/test_docling_parser.py::test_markdown_baseline_does_not_create_spread
 tests/unit/test_docling_parser.py::test_docling_parser_builds_section_path_by_heading_level
 tests/unit/test_docling_parser.py::test_docling_parser_preserves_picture_as_image_block
 tests/unit/test_docling_parser.py::test_docling_parser_preserves_resolved_picture_caption
+tests/unit/test_document_diversifier.py::test_diversifies_and_pins_first
+tests/unit/test_document_diversifier.py::test_backfills_in_original_order
+tests/unit/test_document_diversifier.py::test_top_k_one_keeps_original_leader
+tests/unit/test_document_diversifier.py::test_empty_pool_returns_empty_tuple
+tests/unit/test_document_diversifier.py::test_top_k_larger_than_pool
+tests/unit/test_document_diversifier.py::test_all_chunks_from_one_document_are_backfilled
+tests/unit/test_document_diversifier.py::test_rejects_duplicate_chunk_ids
+tests/unit/test_document_diversifier.py::test_rejects_invalid_top_k[0]
+tests/unit/test_document_diversifier.py::test_rejects_invalid_top_k[-1]
+tests/unit/test_document_diversifier.py::test_rejects_invalid_top_k[True]
+tests/unit/test_document_diversifier.py::test_rejects_invalid_top_k[1.5]
+tests/unit/test_document_diversifier.py::test_rejects_invalid_top_k[5]
 tests/unit/test_document_parser.py::test_document_parser_routes_docling_formats_to_docling_only[.pdf]
 tests/unit/test_document_parser.py::test_document_parser_routes_docling_formats_to_docling_only[.docx]
 tests/unit/test_document_parser.py::test_document_parser_routes_docling_formats_to_docling_only[.md]
@@ -399,6 +481,39 @@ tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without
 tests/unit/test_embedding_contract.py::test_fake_provider_satisfies_embedding_provider_protocol
 tests/unit/test_embedding_contract.py::test_embedding_provider_preserves_document_order
 tests/unit/test_embedding_contract.py::test_embedding_provider_returns_single_query_embedding
+tests/unit/test_evaluation_schemas.py::test_valid_question
+tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[question_id]
+tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[question]
+tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[question_class]
+tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[retrieval_challenge]
+tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[expected_behavior]
+tests/unit/test_evaluation_schemas.py::test_rejects_duplicate_evidence
+tests/unit/test_evaluation_schemas.py::test_rejects_evidence_distractor_overlap
+tests/unit/test_evaluation_schemas.py::test_abstention_allows_empty_expected_evidence
+tests/unit/test_golden_set_loader.py::test_loader_reads_real_golden_set
+tests/unit/test_golden_set_loader.py::test_rejects_duplicate_question_ids
+tests/unit/test_golden_set_loader.py::test_materialized_question_is_evaluable
+tests/unit/test_golden_set_loader.py::test_missing_evidence_blocks_question
+tests/unit/test_golden_set_loader.py::test_abstention_without_evidence_is_evaluable
+tests/unit/test_hybrid_retriever.py::test_combines_overlapping_candidates_and_preserves_methods
+tests/unit/test_hybrid_retriever.py::test_passes_candidate_depth_to_both_retrievers
+tests/unit/test_hybrid_retriever.py::test_top_k_larger_than_candidate_depth_expands_search
+tests/unit/test_hybrid_retriever.py::test_top_k_limits_fused_results
+tests/unit/test_hybrid_retriever.py::test_empty_retrievals_return_empty_tuple
+tests/unit/test_hybrid_retriever.py::test_single_retrieval_method_is_supported
+tests/unit/test_hybrid_retriever.py::test_rejects_blank_query[]
+tests/unit/test_hybrid_retriever.py::test_rejects_blank_query[  ]
+tests/unit/test_hybrid_retriever.py::test_rejects_blank_query[\n]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_top_k[0]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_top_k[-1]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_top_k[1.5]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_top_k[True]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_candidate_depth[0]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_candidate_depth[-1]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_candidate_depth[1.5]
+tests/unit/test_hybrid_retriever.py::test_rejects_invalid_candidate_depth[True]
+tests/unit/test_hybrid_retriever.py::test_propagates_vector_failure_without_running_lexical
+tests/unit/test_hybrid_retriever.py::test_propagates_lexical_failure
 tests/unit/test_ingestion_registry.py::test_real_registry_loads_all_27_controlled_documents
 tests/unit/test_ingestion_registry.py::test_real_registry_supports_lookup_by_id_and_key
 tests/unit/test_ingestion_registry.py::test_real_registry_preserves_lifecycle_relationship
@@ -418,6 +533,18 @@ tests/unit/test_ingestion_registry.py::test_loader_rejects_unknown_supersedes_re
 tests/unit/test_ingestion_registry.py::test_loader_rejects_inconsistent_lifecycle_relationship
 tests/unit/test_ingestion_registry.py::test_loader_requires_path_object
 tests/unit/test_ingestion_registry.py::test_loader_rejects_missing_file
+tests/unit/test_ingestion_router.py::test_router_exposes_supported_formats_without_parser_details[policy.pdf]
+tests/unit/test_ingestion_router.py::test_router_exposes_supported_formats_without_parser_details[procedure.docx]
+tests/unit/test_ingestion_router.py::test_router_exposes_supported_formats_without_parser_details[matrix.xlsx]
+tests/unit/test_ingestion_router.py::test_router_exposes_supported_formats_without_parser_details[training.pptx]
+tests/unit/test_ingestion_router.py::test_router_exposes_supported_formats_without_parser_details[guideline.md]
+tests/unit/test_ingestion_router.py::test_router_support_check_is_case_insensitive
+tests/unit/test_ingestion_router.py::test_router_rejects_unknown_extension_before_dispatch
+tests/unit/test_ingestion_router.py::test_router_rejects_non_path_input
+tests/unit/test_ingestion_router.py::test_router_rejects_missing_file
+tests/unit/test_ingestion_router.py::test_router_dispatches_and_returns_canonical_contract
+tests/unit/test_ingestion_router.py::test_router_rejects_noncanonical_parser_output
+tests/unit/test_ingestion_router.py::test_supported_suffixes_match_public_contract
 tests/unit/test_ingestion_schemas.py::test_source_location_accepts_supported_structural_locators
 tests/unit/test_ingestion_schemas.py::test_source_location_rejects_invalid_locators[page_number-0]
 tests/unit/test_ingestion_schemas.py::test_source_location_rejects_invalid_locators[slide_number-0]
@@ -469,6 +596,18 @@ tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_au
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_authority_level[5]
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_invalid_authority_level[-1]
 tests/unit/test_ingestion_schemas.py::test_canonical_document_rejects_self_supersession
+tests/unit/test_lexical_index.py::test_tokenization_preserves_identifiers
+tests/unit/test_lexical_index.py::test_ranking_and_positive_matches_only
+tests/unit/test_lexical_index.py::test_ties_are_stable
+tests/unit/test_lexical_index.py::test_invalid_corpus[ids0-texts0]
+tests/unit/test_lexical_index.py::test_invalid_corpus[ids1-texts1]
+tests/unit/test_lexical_index.py::test_invalid_corpus[ids2-texts2]
+tests/unit/test_lexical_index.py::test_invalid_corpus[ids3-texts3]
+tests/unit/test_lexical_index.py::test_invalid_search
+tests/unit/test_lexical_index.py::test_reindex_replaces_corpus
+tests/unit/test_lexical_retriever.py::test_returns_canonical_candidates_with_provenance
+tests/unit/test_lexical_retriever.py::test_duplicate_chunk_ids_rejected
+tests/unit/test_lexical_retriever.py::test_unknown_index_hit_rejected
 tests/unit/test_openai_embeddings.py::test_openai_provider_satisfies_embedding_provider_protocol
 tests/unit/test_openai_embeddings.py::test_embed_documents_calls_openai_with_expected_contract
 tests/unit/test_openai_embeddings.py::test_embed_documents_restores_response_order_using_openai_index
@@ -492,6 +631,18 @@ tests/unit/test_pptx_native_enricher.py::test_extract_charts_does_not_materializ
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_rejects_missing_file
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_rejects_non_pptx_file
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_requires_path_instance
+tests/unit/test_retrieval_evaluator.py::test_evaluator_scores_eligible_positive_evidence_questions
+tests/unit/test_retrieval_evaluator.py::test_evaluator_skips_question_blocked_by_missing_corpus_document
+tests/unit/test_retrieval_evaluator.py::test_evaluator_defers_abstention_question_to_later_layer
+tests/unit/test_retrieval_evaluator.py::test_evaluator_requires_results_for_each_scored_question
+tests/unit/test_retrieval_evaluator.py::test_evaluator_rejects_unsupported_k_configuration
+tests/unit/test_retrieval_metrics.py::test_hit_at_k_detects_expected_document
+tests/unit/test_retrieval_metrics.py::test_recall_at_k_measures_multi_document_coverage
+tests/unit/test_retrieval_metrics.py::test_reciprocal_rank_uses_first_expected_document
+tests/unit/test_retrieval_metrics.py::test_metrics_do_not_double_count_multiple_chunks_from_same_document
+tests/unit/test_retrieval_metrics.py::test_empty_expected_evidence_scores_zero
+tests/unit/test_retrieval_metrics.py::test_k_must_be_positive[hit_at_k]
+tests/unit/test_retrieval_metrics.py::test_k_must_be_positive[recall_at_k]
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_preserves_chunk_and_search_result_metadata
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_accepts_supported_methods[vector]
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_accepts_supported_methods[lexical]
@@ -517,6 +668,12 @@ tests/unit/test_structure_aware_chunker.py::test_chunker_starts_new_chunk_after_
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_zero_target_chars
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_zero_max_chars
 tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_target_chars_greater_than_max_chars
+tests/unit/test_structure_aware_chunker.py::test_chunker_generates_globally_unique_ids_across_documents
+tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_empty_document_id[]
+tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_empty_document_id[   ]
+tests/unit/test_structure_aware_chunker_multiblock.py::test_chunker_serializes_spreadsheet_blocks_into_retrieval_chunks
+tests/unit/test_structure_aware_chunker_multiblock.py::test_chunker_preserves_text_behavior_and_global_identity
+tests/unit/test_structure_aware_chunker_multiblock.py::test_oversized_spreadsheet_serialization_respects_max_chars
 tests/unit/test_vector_index.py::test_vector_index_returns_candidates_by_cosine_similarity
 tests/unit/test_vector_index.py::test_vector_index_uses_cosine_similarity_not_vector_magnitude
 tests/unit/test_vector_index.py::test_vector_index_limits_results_to_top_k
@@ -552,22 +709,22 @@ tests/unit/test_xlsx_parser.py::test_parser_rejects_missing_file
 tests/unit/test_xlsx_parser.py::test_parser_rejects_non_xlsx_source
 tests/unit/test_xlsx_parser.py::test_parser_rejects_workbook_without_content
 
-271 tests collected in 12.84s
+379 tests collected in 50.35s
 ```
 
 ## 11. Recent Commits
 
 ```text
-e6f8769 | 2026-10-06 21:19:54 -0300 | docs: add featured product artwork
-e13a446 | 2026-10-06 21:19:09 -0300 | feat: add deterministic structure-aware chunking foundation
-9bce47f | 2026-10-04 22:51:34 -0300 | feat: complete multi-source parsing and canonical normalization
-21fafa8 | 2026-10-04 01:12:51 -0300 | feat: add multi-format canonical ingestion baseline
-1b2b410 | 2026-10-03 01:40:27 -0300 | fix: correct declared project dependencies
-5596a6e | 2026-10-03 01:38:31 -0300 | feat: add controlled document registry loader
-122818d | 2026-10-03 01:31:35 -0300 | feat: define canonical document ingestion contract
-36caaa7 | 2026-10-03 01:24:50 -0300 | chore: establish project audit and development baseline
-f19fad3 | 2026-10-01 18:25:11 -0300 | docs: add conceptual system overview to README
-390b18e | 2026-10-01 18:01:13 -0300 | feat: establish enterprise knowledge universe and ground truth
+45a5a2c | 2026-11-04 00:33:15 -0300 | feat: implement hybrid retrieval with BM25 and RRF
+43920d1 | 2026-11-02 00:00:42 -0300 | feat: establish multi-format Golden Set retrieval baseline
+f5a09bb | 2026-11-01 22:25:09 -0300 | test: add multi-document vector retrieval benchmark
+51519d5 | 2026-11-01 18:01:08 -0300 | feat: add globally unique retrieval chunk identity
+0b5b6ee | 2026-10-08 04:22:46 -0300 | fix: restore README table formatting
+efef5f8 | 2026-10-08 04:17:33 -0300 | fix: clean README markdown rendering
+a036395 | 2026-10-08 04:10:51 -0300 | fix: correct README image rendering
+22eb744 | 2026-10-08 04:03:35 -0300 | docs: refine README visuals and system overview
+87b5c84 | 2026-10-08 03:55:06 -0300 | docs: update README and architecture overview
+b42ce39 | 2026-10-08 03:29:00 -0300 | feat: add vector retrieval pipeline with OpenAI embeddings
 ```
 
 ## 12. Working Tree
@@ -576,53 +733,23 @@ f19fad3 | 2026-10-01 18:25:11 -0300 | docs: add conceptual system overview to RE
 State: DIRTY
 
 Files:
-A  app/retrieval/embeddings.py
-A  app/retrieval/openai_embeddings.py
-A  app/retrieval/schemas.py
-A  app/retrieval/search_text.py
-A  app/retrieval/vector_index.py
-A  app/retrieval/vector_indexer.py
-A  app/retrieval/vector_retriever.py
- M app/scripts/project_audit.py
+M app/retrieval/hybrid_retriever.py
  M docs/project_audit/PROJECT_AUDIT.md
-A  docs/validation/RETRIEVAL_VALIDATION.md
-M  requirements.txt
-A  tests/smoke/smoke_openai_embeddings.py
-A  tests/smoke/smoke_vector_retrieval.py
-A  tests/unit/test_embedding_contract.py
-A  tests/unit/test_openai_embeddings.py
-A  tests/unit/test_retrieval_schemas.py
-A  tests/unit/test_search_text.py
-A  tests/unit/test_vector_index.py
-A  tests/unit/test_vector_indexer.py
-A  tests/unit/test_vector_retriever.py
-?? docs/images/architecture-overview.png
+ M docs/validation/RETRIEVAL_VALIDATION.md
+?? app/retrieval/document_diversifier.py
+?? tests/smoke/smoke_bm25_language_experiment.py
+?? tests/smoke/smoke_document_diversity_experiment.py
+?? tests/smoke/smoke_golden_set_hybrid_retrieval.py
+?? tests/smoke/smoke_hybrid_v03_end_to_end.py
+?? tests/smoke/smoke_retrieval_diagnostics.py
+?? tests/unit/test_document_diversifier.py
 
 Unstaged diff:
-app/scripts/project_audit.py        |  20 ++--
- docs/project_audit/PROJECT_AUDIT.md | 226 +++++++++++++++++++++++++++---------
- 2 files changed, 184 insertions(+), 62 deletions(-)
-
-Staged diff:
-app/retrieval/embeddings.py             |  17 +++
- app/retrieval/openai_embeddings.py      |  74 ++++++++++++
- app/retrieval/schemas.py                |  26 +++++
- app/retrieval/search_text.py            |  13 +++
- app/retrieval/vector_index.py           |  91 +++++++++++++++
- app/retrieval/vector_indexer.py         |  36 ++++++
- app/retrieval/vector_retriever.py       |  58 ++++++++++
- docs/validation/RETRIEVAL_VALIDATION.md | 193 ++++++++++++++++++++++++++++++++
- requirements.txt                        |   4 +-
- tests/smoke/smoke_openai_embeddings.py  |  33 ++++++
- tests/smoke/smoke_vector_retrieval.py   | 106 ++++++++++++++++++
- tests/unit/test_embedding_contract.py   |  37 ++++++
- tests/unit/test_openai_embeddings.py    | 175 +++++++++++++++++++++++++++++
- tests/unit/test_retrieval_schemas.py    |  85 ++++++++++++++
- tests/unit/test_search_text.py          |  53 +++++++++
- tests/unit/test_vector_index.py         | 115 +++++++++++++++++++
- tests/unit/test_vector_indexer.py       | 100 +++++++++++++++++
- tests/unit/test_vector_retriever.py     | 123 ++++++++++++++++++++
- 18 files changed, 1338 insertions(+), 1 deletion(-)
+app/retrieval/hybrid_retriever.py       |  13 +-
+ docs/project_audit/PROJECT_AUDIT.md     | 152 +++++---------
+ docs/validation/RETRIEVAL_VALIDATION.md | 360 +++++++++++++++++++++-----------
+ 3 files changed, 310 insertions(+), 215 deletions(-)
+warning: in the working copy of 'docs/validation/RETRIEVAL_VALIDATION.md', LF will be replaced by CRLF the next time Git touches it
 ```
 
 ## 13. Declared Dependencies
