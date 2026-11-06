@@ -1,0 +1,627 @@
+{
+  "experiment": "RV-010-REVIEW",
+  "status": "OFFLINE_REVIEW_COMPLETE",
+  "source_live_canonical_sha256": "800b8b74d4210e1ee37999055e3cf76293e471f224d9a07f49f88943590a700a",
+  "metrics_reproduced": true,
+  "a_cached_orders_reproduced": true,
+  "group_metrics": {
+    "A": {
+      "hybrid_v03": {
+        "Hit@1": 0.7692307692307693,
+        "Hit@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@1": 0.4358974358974359,
+        "Recall@3": 0.8717948717948718,
+        "Recall@5": 1.0,
+        "MRR": 0.8846153846153846
+      },
+      "unconstrained_top5": {
+        "Hit@1": 0.8461538461538461,
+        "Hit@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@1": 0.5512820512820513,
+        "Recall@3": 0.8461538461538461,
+        "Recall@5": 1.0,
+        "MRR": 0.9230769230769231
+      },
+      "prefix_preserved": {
+        "Hit@1": 0.9230769230769231,
+        "Hit@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@1": 0.5897435897435898,
+        "Recall@3": 0.8717948717948718,
+        "Recall@5": 1.0,
+        "MRR": 0.9615384615384616
+      }
+    },
+    "B": {
+      "hybrid_v03": {
+        "Hit@1": 0.5833333333333334,
+        "Hit@3": 0.8333333333333334,
+        "Hit@5": 0.8333333333333334,
+        "Recall@1": 0.5,
+        "Recall@3": 0.75,
+        "Recall@5": 0.7916666666666666,
+        "MRR": 0.6944444444444445
+      },
+      "unconstrained_top5": {
+        "Hit@1": 0.8333333333333334,
+        "Hit@3": 0.8333333333333334,
+        "Hit@5": 0.8333333333333334,
+        "Recall@1": 0.7083333333333334,
+        "Recall@3": 0.75,
+        "Recall@5": 0.7916666666666666,
+        "MRR": 0.8333333333333334
+      },
+      "prefix_preserved": {
+        "Hit@1": 0.8333333333333334,
+        "Hit@3": 0.8333333333333334,
+        "Hit@5": 0.8333333333333334,
+        "Recall@1": 0.7083333333333334,
+        "Recall@3": 0.75,
+        "Recall@5": 0.7916666666666666,
+        "MRR": 0.8333333333333334
+      }
+    }
+  },
+  "first_rank_changes": {
+    "A": {
+      "improved": [
+        "Q05",
+        "Q21",
+        "Q26"
+      ],
+      "regressed": [
+        "Q25"
+      ]
+    },
+    "B": {
+      "improved": [
+        "B04",
+        "B07",
+        "B10"
+      ],
+      "regressed": []
+    }
+  },
+  "b_reference_coverage": {
+    "macro_mean": 0.4583333333333333,
+    "groups_found": 6,
+    "groups_total": 15,
+    "fully_covered_questions": [
+      "B03",
+      "B04",
+      "B08",
+      "B10",
+      "B12"
+    ],
+    "partially_covered_questions": [
+      "B07"
+    ],
+    "zero_reference_questions": [
+      "B01",
+      "B02",
+      "B05",
+      "B06",
+      "B09",
+      "B11"
+    ]
+  },
+  "questions_b": [
+    {
+      "question_id": "B01",
+      "reference_groups_found": 0,
+      "reference_groups_total": 1,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [
+        "DOC-012"
+      ],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "A faixa de BRL 100,001–500,000 exige Procurement Director, revisão de Finance Business Partner e aprovação do Business Owner.",
+          "any_of_chunk_ids": [
+            "DOC-012::chunk-00001"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-024::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00004",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-025::chunk-00002",
+          "query_tokens_in_passage": [
+            "do"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00005",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B02",
+      "reference_groups_found": 0,
+      "reference_groups_total": 2,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [
+        "DOC-012"
+      ],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "Acima de BRL 250,000 em contratação emergencial de transportadora: Executive Director; revisão de Finance Director e Procurement Director.",
+          "any_of_chunk_ids": [
+            "DOC-012::chunk-00001"
+          ]
+        },
+        {
+          "fact_to_check": "A necessidade emergencial não remove os requisitos de aprovação; processo expedito depende de previsão na matriz.",
+          "any_of_chunk_ids": [
+            "DOC-022::chunk-00005"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-022::chunk-00004",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-025::chunk-00005",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00004",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B03",
+      "reference_groups_found": 1,
+      "reference_groups_total": 1,
+      "reference_coverage": 1.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-007::chunk-00008",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00008",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00003",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00009",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00001",
+          "query_tokens_in_passage": []
+        }
+      ]
+    },
+    {
+      "question_id": "B04",
+      "reference_groups_found": 1,
+      "reference_groups_total": 1,
+      "reference_coverage": 1.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-005::chunk-00006",
+          "query_tokens_in_passage": [
+            "as"
+          ]
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00003",
+          "query_tokens_in_passage": [
+            "as"
+          ]
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00004",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00008",
+          "query_tokens_in_passage": [
+            "as"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00004",
+          "query_tokens_in_passage": [
+            "as"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B05",
+      "reference_groups_found": 0,
+      "reference_groups_total": 2,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "E-mail corporativo por si só não transforma uma transferência não aprovada em transferência segura; é necessário canal seguro ou plataforma controlada aprovada.",
+          "any_of_chunk_ids": [
+            "DOC-005::chunk-00007"
+          ]
+        },
+        {
+          "fact_to_check": "E-mail comum não é mecanismo aprovado para dados confidenciais de clientes, salvo aprovação explícita da proteção técnica e do processo para o caso de uso.",
+          "any_of_chunk_ids": [
+            "DOC-006::chunk-00005"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-006::chunk-00004",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00003",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00005",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00007",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B06",
+      "reference_groups_found": 0,
+      "reference_groups_total": 1,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [
+        "DOC-022"
+      ],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "Desempenho e risco são relacionados, mas distintos; desempenho utiliza indicadores do domínio e classificação de risco segue a Supplier Risk Policy.",
+          "any_of_chunk_ids": [
+            "DOC-022::chunk-00006"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-025::chunk-00002",
+          "query_tokens_in_passage": [
+            "do"
+          ]
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00005",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00003",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B07",
+      "reference_groups_found": 1,
+      "reference_groups_total": 2,
+      "reference_coverage": 0.5,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+          "any_of_chunk_ids": [
+            "DOC-024::chunk-00007"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-025::chunk-00005",
+          "query_tokens_in_passage": [
+            "a",
+            "formal"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00007",
+          "query_tokens_in_passage": [
+            "formal"
+          ]
+        },
+        {
+          "chunk_id": "DOC-026::chunk-00002",
+          "query_tokens_in_passage": [
+            "formal"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-012::chunk-00001",
+          "query_tokens_in_passage": []
+        }
+      ]
+    },
+    {
+      "question_id": "B08",
+      "reference_groups_found": 1,
+      "reference_groups_total": 1,
+      "reference_coverage": 1.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-024::chunk-00005",
+          "query_tokens_in_passage": [
+            "prompts"
+          ]
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00006",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00008",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-025::chunk-00005",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-026::chunk-00001",
+          "query_tokens_in_passage": []
+        }
+      ]
+    },
+    {
+      "question_id": "B09",
+      "reference_groups_found": 0,
+      "reference_groups_total": 1,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "A due diligence comercial considera provisões de propriedade intelectual, mudanças do modelo ou serviço e requisitos de saída, além dos demais termos listados.",
+          "any_of_chunk_ids": [
+            "DOC-025::chunk-00004"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-025::chunk-00002",
+          "query_tokens_in_passage": [
+            "do"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00007",
+          "query_tokens_in_passage": [
+            "do"
+          ]
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00004",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00008",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00004",
+          "query_tokens_in_passage": [
+            "do"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B10",
+      "reference_groups_found": 1,
+      "reference_groups_total": 1,
+      "reference_coverage": 1.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-023::chunk-00006",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-026::chunk-00001",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-025::chunk-00005",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00007",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00004",
+          "query_tokens_in_passage": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B11",
+      "reference_groups_found": 0,
+      "reference_groups_total": 1,
+      "reference_coverage": 0.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [
+        {
+          "fact_to_check": "Avaliar data de vigência, escopo explícito e relações de supersessão antes de escalar ao proprietário do documento.",
+          "any_of_chunk_ids": [
+            "DOC-007::chunk-00007"
+          ]
+        }
+      ],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-007::chunk-00003",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00008",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-012::chunk-00002",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00009",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00011",
+          "query_tokens_in_passage": []
+        }
+      ]
+    },
+    {
+      "question_id": "B12",
+      "reference_groups_found": 1,
+      "reference_groups_total": 1,
+      "reference_coverage": 1.0,
+      "missing_expected_documents": [],
+      "missing_reference_groups": [],
+      "selected_literal_overlaps": [
+        {
+          "chunk_id": "DOC-005::chunk-00005",
+          "query_tokens_in_passage": [
+            "restricted"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00003",
+          "query_tokens_in_passage": [
+            "restricted"
+          ]
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00003",
+          "query_tokens_in_passage": [
+            "restricted"
+          ]
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00004",
+          "query_tokens_in_passage": []
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00005",
+          "query_tokens_in_passage": []
+        }
+      ]
+    }
+  ],
+  "automatically_promoted": false,
+  "independent_human_review": false,
+  "new_api_calls": 0,
+  "limits": [
+    "Reference passages are non-exhaustive; coverage is not answer accuracy.",
+    "RV-010 records final chunks only; losses before selection require a fresh stage trace."
+  ]
+}

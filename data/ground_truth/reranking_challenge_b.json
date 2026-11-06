@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "suite_id": "RV-010-B",
+  "language": "pt-BR",
+  "created_date": "2026-11-04",
+  "created_before_first_scoring": true,
+  "source_artifact": {
+    "name": "RV008_RESULTS.json",
+    "sha256": "ac0b132a37b98361befe3fb9f45c156e98e069d8939c840a4caa3a2d53400b70",
+    "canonical_sha256": "7adcd1dd04ab27531e6ed5e6abd494bd09217a07fa03c850f301f17665d50d78"
+  },
+  "label_status": "Assistant-authored, source-grounded prospective definitions; independent human review pending.",
+  "scope": "New questions over the same 10-document synthetic corpus. Not a blind external holdout or a new-corpus benchmark.",
+  "definition_basis": "Labels and passage references were fixed before observing scores for these queries. Source passages were already available in RV-008.",
+  "passage_metric_scope": "Reference passage-group coverage is diagnostic and non-exhaustive; a different passage can also be valid evidence.",
+  "questions": [
+    {
+      "question_id": "B01",
+      "query": "Um contrato padrão de fornecedor compromete R$ 350 mil por ano. Quem aprova, quem faz a revisão financeira e existe aprovação adicional do responsável pelo negócio?",
+      "expected_document_ids": [
+        "DOC-012"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "A faixa de BRL 100,001–500,000 exige Procurement Director, revisão de Finance Business Partner e aprovação do Business Owner.",
+          "any_of_chunk_ids": [
+            "DOC-012::chunk-00001"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-012::chunk-00001",
+          "document_id": "DOC-012",
+          "text_sha256": "418852a36d66bfc2d164268e14156080057a5a75cb1a3f59570cf1e960356f16",
+          "source_path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+          "section_path": []
+        }
+      ]
+    },
+    {
+      "question_id": "B02",
+      "query": "Para contratar uma transportadora em emergência por R$ 300 mil, quais aprovações e revisões são exigidas, e a urgência dispensa o cumprimento da matriz?",
+      "expected_document_ids": [
+        "DOC-012",
+        "DOC-022"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Acima de BRL 250,000 em contratação emergencial de transportadora: Executive Director; revisão de Finance Director e Procurement Director.",
+          "any_of_chunk_ids": [
+            "DOC-012::chunk-00001"
+          ]
+        },
+        {
+          "fact_to_check": "A necessidade emergencial não remove os requisitos de aprovação; processo expedito depende de previsão na matriz.",
+          "any_of_chunk_ids": [
+            "DOC-022::chunk-00005"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-012::chunk-00001",
+          "document_id": "DOC-012",
+          "text_sha256": "418852a36d66bfc2d164268e14156080057a5a75cb1a3f59570cf1e960356f16",
+          "source_path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+          "section_path": []
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00005",
+          "document_id": "DOC-022",
+          "text_sha256": "b98b9fbe95301120be84a9ae7c4be3c0468a91bc5a6fa008dda2af32d188ccd3",
+          "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+          "section_path": [
+            "4. Approval and contracting"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B03",
+      "query": "Uma política substituída pode ser usada para analisar uma ocorrência antiga? Isso permite tratá-la como instrução operacional vigente?",
+      "expected_document_ids": [
+        "DOC-007"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Versões substituídas podem sustentar análise histórica, mas relevância histórica não equivale a autoridade operacional atual.",
+          "any_of_chunk_ids": [
+            "DOC-007::chunk-00006",
+            "DOC-007::chunk-00008"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-007::chunk-00006",
+          "document_id": "DOC-007",
+          "text_sha256": "361836f25ed086fe3c7ef7b49212088a7db15ea83c79e39e1054717b0a96e1ee",
+          "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+          "section_path": [
+            "4. Supersession"
+          ]
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00008",
+          "document_id": "DOC-007",
+          "text_sha256": "8b93c6c486d0e2bf42f788288896783862b63077fc72cef215bfe72b9bff04d1",
+          "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+          "section_path": [
+            "6. Historical questions"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B04",
+      "query": "Após suspeitar de um vazamento, posso pedir ao destinatário externo que apague as mensagens antes de falar com Segurança da Informação? Que evidências devo preservar?",
+      "expected_document_ids": [
+        "DOC-010"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Não solicitar exclusão de evidências antes da orientação de Information Security; preservar mensagens, logs, arquivos e screenshots; registrar dados, destinatário, método, horário e escopo.",
+          "any_of_chunk_ids": [
+            "DOC-010::chunk-00004"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-010::chunk-00004",
+          "document_id": "DOC-010",
+          "text_sha256": "7dee8e5dfbb6f1defd388c200ceb5977806085cf73804b96c342f83b6569c96b",
+          "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+          "section_path": [
+            "3. Immediate actions"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B05",
+      "query": "Usar uma conta de e-mail corporativa torna automaticamente seguro o envio externo de dados confidenciais de clientes? Em que condição a transmissão por e-mail poderia ser aceita?",
+      "expected_document_ids": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "E-mail corporativo por si só não transforma uma transferência não aprovada em transferência segura; é necessário canal seguro ou plataforma controlada aprovada.",
+          "any_of_chunk_ids": [
+            "DOC-005::chunk-00007"
+          ]
+        },
+        {
+          "fact_to_check": "E-mail comum não é mecanismo aprovado para dados confidenciais de clientes, salvo aprovação explícita da proteção técnica e do processo para o caso de uso.",
+          "any_of_chunk_ids": [
+            "DOC-006::chunk-00005"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-005::chunk-00007",
+          "document_id": "DOC-005",
+          "text_sha256": "c06f24898256a63fda75093fd4c1506025528eab83af059ecff0a9ccb7d067b8",
+          "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+          "section_path": [
+            "5. Approved channels"
+          ]
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00005",
+          "document_id": "DOC-006",
+          "text_sha256": "021227130740ec3faeba25975213f8ab62af3952067ac3c82fdf97e41c943b54",
+          "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+          "section_path": [
+            "4. Email restriction"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B06",
+      "query": "Um fornecedor apresenta bons indicadores de desempenho. Posso usar esses indicadores como se fossem a classificação de risco empresarial do fornecedor?",
+      "expected_document_ids": [
+        "DOC-022"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Desempenho e risco são relacionados, mas distintos; desempenho utiliza indicadores do domínio e classificação de risco segue a Supplier Risk Policy.",
+          "any_of_chunk_ids": [
+            "DOC-022::chunk-00006"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-022::chunk-00006",
+          "document_id": "DOC-022",
+          "text_sha256": "5bbb6e15d51eb44787077f4dddd49e84aac987428b794461b7ec39f4d1c6ce55",
+          "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+          "section_path": [
+            "5. Performance and risk"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B07",
+      "query": "Se uma recomendação foi produzida por IA com controles de segurança, a revisão humana e a aprovação formal podem ser dispensadas? Quem continua responsável pela decisão?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "A responsabilidade continua com o papel humano autorizado; aprovações formais seguem a matriz e as políticas aplicáveis.",
+          "any_of_chunk_ids": [
+            "DOC-023::chunk-00007"
+          ]
+        },
+        {
+          "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+          "any_of_chunk_ids": [
+            "DOC-024::chunk-00007"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-023::chunk-00007",
+          "document_id": "DOC-023",
+          "text_sha256": "3276dd4f1fe547c6ec1570d929ec18d638255c8b1895afaa1007298f4a0c3cd5",
+          "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+          "section_path": [
+            "6. Human accountability"
+          ]
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00007",
+          "document_id": "DOC-024",
+          "text_sha256": "a9feb3de490434b4bc030342fc9e19727d642ee091071b3cb3638cac1eda99c1",
+          "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+          "section_path": [
+            "5. Output handling"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B08",
+      "query": "Quais tipos de segredos de autenticação são proibidos em prompts gerais de IA, e que princípio deve orientar os acessos à ferramenta?",
+      "expected_document_ids": [
+        "DOC-024"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Credenciais, chaves privadas, senhas e segredos equivalentes não devem entrar em prompts gerais; autenticação aprovada e menor privilégio quando suportado.",
+          "any_of_chunk_ids": [
+            "DOC-024::chunk-00005"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-024::chunk-00005",
+          "document_id": "DOC-024",
+          "text_sha256": "7e02a448191485946d5f12f9003282947c3c83b9063b3995a6e16ee430f2441f",
+          "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+          "section_path": [
+            "3. Minimum controls"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B09",
+      "query": "Na análise comercial de um fornecedor de IA, que aspectos de propriedade intelectual, mudanças do serviço e encerramento da contratação devem ser considerados?",
+      "expected_document_ids": [
+        "DOC-025"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "A due diligence comercial considera provisões de propriedade intelectual, mudanças do modelo ou serviço e requisitos de saída, além dos demais termos listados.",
+          "any_of_chunk_ids": [
+            "DOC-025::chunk-00004"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-025::chunk-00004",
+          "document_id": "DOC-025",
+          "text_sha256": "ebe9261b3811bdb75ba56c8447c4f6584d952828cdb28d695766d71c58d4f05b",
+          "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+          "section_path": [
+            "3. AI supplier due diligence"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B10",
+      "query": "Além da trilha básica de IA, qual treinamento cabe a gestores que aprovam fluxos com IA e qual atualização periódica é prevista para manter o acesso?",
+      "expected_document_ids": [
+        "DOC-026"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Gestores aprovadores precisam de treinamento de governança e accountability; atualização anual é prevista para acesso continuado quando o processo de controle de acesso suporta enforcement.",
+          "any_of_chunk_ids": [
+            "DOC-026::chunk-00001"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-026::chunk-00001",
+          "document_id": "DOC-026",
+          "text_sha256": "b2a48acfe6c3cbd248701900550f32eb68a85223646a7ace5e3e454ce786c575",
+          "source_path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+          "section_path": []
+        }
+      ]
+    },
+    {
+      "question_id": "B11",
+      "query": "Dois documentos controlados com o mesmo nível de autoridade divergem. Quais critérios devem ser avaliados antes de escalar o conflito ao responsável pelo documento?",
+      "expected_document_ids": [
+        "DOC-007"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Avaliar data de vigência, escopo explícito e relações de supersessão antes de escalar ao proprietário do documento.",
+          "any_of_chunk_ids": [
+            "DOC-007::chunk-00007"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-007::chunk-00007",
+          "document_id": "DOC-007",
+          "text_sha256": "88d0ed071b1eecd6445a93863921e2e46552ec99588b935c5a1be0acb01aee20",
+          "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+          "section_path": [
+            "5. Conflict resolution"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "B12",
+      "query": "Quais autorizações e mecanismos mínimos são exigidos para compartilhar externamente informação classificada como Restricted?",
+      "expected_document_ids": [
+        "DOC-005"
+      ],
+      "reference_passage_groups": [
+        {
+          "fact_to_check": "Informação Restricted exige autorização explícita sob controle de segurança ou legal aplicável, mecanismo aprovado para dados restritos e autorização documentada.",
+          "any_of_chunk_ids": [
+            "DOC-005::chunk-00005"
+          ]
+        }
+      ],
+      "source_evidence": [
+        {
+          "chunk_id": "DOC-005::chunk-00005",
+          "document_id": "DOC-005",
+          "text_sha256": "2ffc8ffd1f58ce5fe822c2f1677237a40b9487de7d05572b4dc6308812050ad6",
+          "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+          "section_path": [
+            "3. Information classification and minimum controls"
+          ]
+        }
+      ]
+    }
+  ]
+}

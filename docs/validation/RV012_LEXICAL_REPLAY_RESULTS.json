@@ -1,0 +1,4074 @@
+{
+  "experiment": "RV-012",
+  "status": "OFFLINE_EXPLORATORY_REPLAY_COMPLETE",
+  "paired_baseline": "RV-011 rankings; original BASELINE_DRIFT flag is preserved below",
+  "source_trace_status": "BASELINE_DRIFT",
+  "source_trace_canonical_sha256": "00179fb0e687cd79cb0e855bd2d96df2a97e0138d63401aea01b289e381c2ecd",
+  "source_live_canonical_sha256": "800b8b74d4210e1ee37999055e3cf76293e471f224d9a07f49f88943590a700a",
+  "source_rankings_and_scores_reproduced": true,
+  "drift_from_rv010": [
+    {
+      "question_id": "B11",
+      "rv010_chunk_ids": [
+        "DOC-007::chunk-00003",
+        "DOC-006::chunk-00008",
+        "DOC-012::chunk-00002",
+        "DOC-023::chunk-00009",
+        "DOC-005::chunk-00011"
+      ],
+      "rv011_chunk_ids": [
+        "DOC-007::chunk-00003",
+        "DOC-006::chunk-00008",
+        "DOC-012::chunk-00002",
+        "DOC-023::chunk-00009",
+        "DOC-022::chunk-00010"
+      ],
+      "removed_chunk_ids": [
+        "DOC-005::chunk-00011"
+      ],
+      "added_chunk_ids": [
+        "DOC-022::chunk-00010"
+      ],
+      "first_four_identical": true,
+      "document_metrics_unchanged": true,
+      "swapped_passages_have_identical_text_and_section": true,
+      "source_flag_preserved": "BASELINE_DRIFT",
+      "upstream_numeric_cause": "Not established: RV-010 did not retain raw vector scores or embeddings."
+    }
+  ],
+  "configuration": {
+    "candidate_depth": 20,
+    "selected_chunks": 5,
+    "rrf_k": 60,
+    "lexical_filter_version": "pt_en_function_words_v1",
+    "function_words": [
+      "a",
+      "an",
+      "and",
+      "ao",
+      "aos",
+      "are",
+      "as",
+      "at",
+      "be",
+      "been",
+      "being",
+      "but",
+      "by",
+      "can",
+      "com",
+      "could",
+      "da",
+      "das",
+      "de",
+      "did",
+      "do",
+      "does",
+      "dos",
+      "e",
+      "ela",
+      "elas",
+      "ele",
+      "eles",
+      "em",
+      "era",
+      "eram",
+      "essa",
+      "essas",
+      "esse",
+      "esses",
+      "esta",
+      "estas",
+      "este",
+      "estes",
+      "eu",
+      "foi",
+      "for",
+      "foram",
+      "from",
+      "had",
+      "has",
+      "have",
+      "how",
+      "i",
+      "if",
+      "in",
+      "into",
+      "is",
+      "isso",
+      "isto",
+      "it",
+      "its",
+      "já",
+      "lhe",
+      "lhes",
+      "mais",
+      "mas",
+      "may",
+      "me",
+      "meu",
+      "meus",
+      "minha",
+      "minhas",
+      "muita",
+      "muitas",
+      "muito",
+      "muitos",
+      "na",
+      "nas",
+      "nos",
+      "o",
+      "of",
+      "on",
+      "or",
+      "os",
+      "ou",
+      "our",
+      "para",
+      "pela",
+      "pelas",
+      "pelo",
+      "pelos",
+      "por",
+      "quais",
+      "qual",
+      "quando",
+      "que",
+      "quem",
+      "se",
+      "ser",
+      "seu",
+      "seus",
+      "should",
+      "sou",
+      "sua",
+      "suas",
+      "são",
+      "tem",
+      "than",
+      "that",
+      "the",
+      "their",
+      "them",
+      "there",
+      "these",
+      "they",
+      "this",
+      "those",
+      "to",
+      "têm",
+      "um",
+      "uma",
+      "umas",
+      "uns",
+      "você",
+      "vocês",
+      "was",
+      "were",
+      "what",
+      "when",
+      "where",
+      "which",
+      "who",
+      "will",
+      "with",
+      "would",
+      "you",
+      "your",
+      "à",
+      "às",
+      "é"
+    ],
+    "filter_policy_sha256": "d179093e1bfeb461b3f52c70f8d4319337cc9c027bf9e37cdd3149838f06cd48",
+    "vector_query_changed": false,
+    "document_index_changed": false
+  },
+  "new_embedding_calls": 0,
+  "cross_encoder_calls": 0,
+  "automatically_promoted": false,
+  "groups": {
+    "A": {
+      "question_count": 13,
+      "metrics": {
+        "hybrid_v03": {
+          "Hit@1": 0.7692307692307693,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.4358974358974359,
+          "Recall@3": 0.8717948717948718,
+          "Recall@5": 1.0,
+          "MRR": 0.8846153846153846
+        },
+        "vector_diverse": {
+          "Hit@1": 0.7692307692307693,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.4358974358974359,
+          "Recall@3": 0.8717948717948718,
+          "Recall@5": 1.0,
+          "MRR": 0.8846153846153846
+        },
+        "filtered_hybrid_diverse": {
+          "Hit@1": 0.8461538461538461,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.5128205128205129,
+          "Recall@3": 0.8717948717948718,
+          "Recall@5": 1.0,
+          "MRR": 0.9230769230769231
+        },
+        "filtered_hybrid_top5": {
+          "Hit@1": 0.8461538461538461,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.5128205128205129,
+          "Recall@3": 0.8717948717948718,
+          "Recall@5": 0.9230769230769231,
+          "MRR": 0.9230769230769231
+        }
+      },
+      "comparisons": {
+        "vector_diverse": {
+          "decision": "NO_FIRST_RANK_GAIN",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_diverse": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_top5": {
+          "decision": "REGRESSION",
+          "regressed_metrics": [
+            "Recall@5"
+          ],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        }
+      }
+    },
+    "B": {
+      "question_count": 12,
+      "metrics": {
+        "hybrid_v03": {
+          "Hit@1": 0.5833333333333334,
+          "Hit@3": 0.8333333333333334,
+          "Hit@5": 0.8333333333333334,
+          "Recall@1": 0.5,
+          "Recall@3": 0.75,
+          "Recall@5": 0.7916666666666666,
+          "MRR": 0.6944444444444445
+        },
+        "vector_diverse": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.875,
+          "Recall@3": 0.9583333333333334,
+          "Recall@5": 1.0,
+          "MRR": 1.0
+        },
+        "filtered_hybrid_diverse": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.875,
+          "Recall@3": 0.9583333333333334,
+          "Recall@5": 1.0,
+          "MRR": 1.0
+        },
+        "filtered_hybrid_top5": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.875,
+          "Recall@3": 0.9583333333333334,
+          "Recall@5": 0.9583333333333334,
+          "MRR": 1.0
+        }
+      },
+      "comparisons": {
+        "vector_diverse": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_diverse": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_top5": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        }
+      },
+      "reference_passages": {
+        "hybrid_v03": {
+          "macro_coverage": 0.4583333333333333,
+          "groups_found": 6,
+          "groups_total": 15,
+          "fully_covered_questions": [
+            "B03",
+            "B04",
+            "B08",
+            "B10",
+            "B12"
+          ]
+        },
+        "vector_diverse": {
+          "macro_coverage": 0.875,
+          "groups_found": 13,
+          "groups_total": 15,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B12"
+          ]
+        },
+        "filtered_hybrid_diverse": {
+          "macro_coverage": 0.875,
+          "groups_found": 13,
+          "groups_total": 15,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B12"
+          ]
+        },
+        "filtered_hybrid_top5": {
+          "macro_coverage": 0.9583333333333334,
+          "groups_found": 14,
+          "groups_total": 15,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B11",
+            "B12"
+          ]
+        }
+      }
+    },
+    "B_matching_rv010": {
+      "question_count": 11,
+      "metrics": {
+        "hybrid_v03": {
+          "Hit@1": 0.5454545454545454,
+          "Hit@3": 0.8181818181818182,
+          "Hit@5": 0.8181818181818182,
+          "Recall@1": 0.45454545454545453,
+          "Recall@3": 0.7272727272727273,
+          "Recall@5": 0.7727272727272727,
+          "MRR": 0.6666666666666666
+        },
+        "vector_diverse": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.8636363636363636,
+          "Recall@3": 0.9545454545454546,
+          "Recall@5": 1.0,
+          "MRR": 1.0
+        },
+        "filtered_hybrid_diverse": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.8636363636363636,
+          "Recall@3": 0.9545454545454546,
+          "Recall@5": 1.0,
+          "MRR": 1.0
+        },
+        "filtered_hybrid_top5": {
+          "Hit@1": 1.0,
+          "Hit@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@1": 0.8636363636363636,
+          "Recall@3": 0.9545454545454546,
+          "Recall@5": 0.9545454545454546,
+          "MRR": 1.0
+        }
+      },
+      "comparisons": {
+        "vector_diverse": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_diverse": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        },
+        "filtered_hybrid_top5": {
+          "decision": "IMPROVEMENT",
+          "regressed_metrics": [],
+          "improved_first_rank_metrics": [
+            "Hit@1",
+            "MRR"
+          ],
+          "automatically_promoted": false
+        }
+      },
+      "reference_passages": {
+        "hybrid_v03": {
+          "macro_coverage": 0.5,
+          "groups_found": 6,
+          "groups_total": 14,
+          "fully_covered_questions": [
+            "B03",
+            "B04",
+            "B08",
+            "B10",
+            "B12"
+          ]
+        },
+        "vector_diverse": {
+          "macro_coverage": 0.9545454545454546,
+          "groups_found": 13,
+          "groups_total": 14,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B12"
+          ]
+        },
+        "filtered_hybrid_diverse": {
+          "macro_coverage": 0.9545454545454546,
+          "groups_found": 13,
+          "groups_total": 14,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B12"
+          ]
+        },
+        "filtered_hybrid_top5": {
+          "macro_coverage": 0.9545454545454546,
+          "groups_found": 13,
+          "groups_total": 14,
+          "fully_covered_questions": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B08",
+            "B09",
+            "B10",
+            "B12"
+          ]
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "group": "A",
+      "question_id": "Q05",
+      "query": "Qual é o limite financeiro para contratação sem aprovação da diretoria?",
+      "expected_document_ids": [
+        "DOC-012"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "limite financeiro contratação sem aprovação diretoria",
+      "removed_query_tokens": [
+        "da",
+        "o",
+        "para",
+        "qual",
+        "é"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-025::chunk-00005",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-025::chunk-00005",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-025::chunk-00005",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-025::chunk-00005",
+            "DOC-022::chunk-00002",
+            "DOC-025::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q20",
+      "query": "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?",
+      "expected_document_ids": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "políticas internas aplicam compartilhamento dados transportadoras",
+      "removed_query_tokens": [
+        "ao",
+        "com",
+        "de",
+        "quais",
+        "se"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-022::chunk-00009",
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-022",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-022::chunk-00009",
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-022",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-022::chunk-00009",
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-022",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-005::chunk-00001",
+            "DOC-005::chunk-00005",
+            "DOC-005::chunk-00002",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 0.5,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": [
+          "Recall@5"
+        ]
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q21",
+      "query": "Quais informações são classificadas como confidenciais nos documentos logísticos?",
+      "expected_document_ids": [
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "informações classificadas como confidenciais documentos logísticos",
+      "removed_query_tokens": [
+        "nos",
+        "quais",
+        "são"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003",
+            "DOC-010::chunk-00005",
+            "DOC-005::chunk-00005",
+            "DOC-025::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q22",
+      "query": "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?",
+      "expected_document_ids": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "colaborador pode enviar dados clientes e-mail transportadora",
+      "removed_query_tokens": [
+        "de",
+        "para",
+        "por",
+        "um",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00005",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00005",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00005",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-010::chunk-00005",
+            "DOC-025::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q23",
+      "query": "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?",
+      "expected_document_ids": [
+        "DOC-010"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "procedimento correto caso dados confidenciais sejam enviados fornecedor engano",
+      "removed_query_tokens": [
+        "o",
+        "para",
+        "por",
+        "qual",
+        "um",
+        "é"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q25",
+      "query": "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?",
+      "expected_document_ids": [
+        "DOC-007"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "documento deve prevalecer sop contradiz política corporativa",
+      "removed_query_tokens": [
+        "qual",
+        "quando",
+        "um",
+        "uma"
+      ],
+      "filtered_lexical_top20": [
+        {
+          "chunk_id": "DOC-024::chunk-00008",
+          "rank": 1,
+          "score": 2.5360099431129455
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00001",
+          "rank": 2,
+          "score": 2.4401308050956474
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00010",
+          "rank": 3,
+          "score": 2.394859479718641
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00009",
+          "rank": 4,
+          "score": 2.394859479718641
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00009",
+          "rank": 5,
+          "score": 2.268593035427563
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00007",
+          "rank": 6,
+          "score": 2.227139698640042
+        },
+        {
+          "chunk_id": "DOC-022::chunk-00004",
+          "rank": 7,
+          "score": 1.929491650364914
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00009",
+          "rank": 8,
+          "score": 1.8466810165447491
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00003",
+          "rank": 9,
+          "score": 1.7467255360610834
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00008",
+          "rank": 10,
+          "score": 1.7234048116809537
+        },
+        {
+          "chunk_id": "DOC-006::chunk-00007",
+          "rank": 11,
+          "score": 1.636033367343889
+        },
+        {
+          "chunk_id": "DOC-007::chunk-00004",
+          "rank": 12,
+          "score": 1.4358516222290318
+        },
+        {
+          "chunk_id": "DOC-024::chunk-00005",
+          "rank": 13,
+          "score": 0.9861201229317448
+        }
+      ],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-007::chunk-00007",
+            "DOC-005::chunk-00010",
+            "DOC-006::chunk-00008",
+            "DOC-024::chunk-00008",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-005",
+            "DOC-006",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-006::chunk-00008",
+            "DOC-007::chunk-00007",
+            "DOC-005::chunk-00009",
+            "DOC-022::chunk-00009",
+            "DOC-024::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-007::chunk-00007",
+            "DOC-005::chunk-00010",
+            "DOC-006::chunk-00008",
+            "DOC-024::chunk-00008",
+            "DOC-022::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-005",
+            "DOC-006",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-007::chunk-00007",
+            "DOC-005::chunk-00010",
+            "DOC-006::chunk-00008",
+            "DOC-024::chunk-00008",
+            "DOC-005::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-005",
+            "DOC-006",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [
+          "Hit@1",
+          "Recall@1",
+          "MRR"
+        ],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q26",
+      "query": "Qual é atualmente a versão vigente da política de gestão de fornecedores?",
+      "expected_document_ids": [
+        "DOC-022"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "atualmente versão vigente política gestão fornecedores",
+      "removed_query_tokens": [
+        "a",
+        "da",
+        "de",
+        "qual",
+        "é"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-010::chunk-00005",
+            "DOC-022::chunk-00003",
+            "DOC-007::chunk-00007",
+            "DOC-025::chunk-00001",
+            "DOC-005::chunk-00009"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-022",
+            "DOC-007",
+            "DOC-025",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00003",
+            "DOC-025::chunk-00001",
+            "DOC-007::chunk-00001",
+            "DOC-010::chunk-00007",
+            "DOC-006::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-007",
+            "DOC-010",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00003",
+            "DOC-025::chunk-00001",
+            "DOC-007::chunk-00001",
+            "DOC-010::chunk-00007",
+            "DOC-006::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-007",
+            "DOC-010",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-022::chunk-00003",
+            "DOC-022::chunk-00001",
+            "DOC-025::chunk-00001",
+            "DOC-022::chunk-00009",
+            "DOC-025::chunk-00003"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q31",
+      "query": "Posso usar IA para analisar contratos de fornecedores?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "posso usar ia analisar contratos fornecedores",
+      "removed_query_tokens": [
+        "de",
+        "para"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-025::chunk-00004",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-025::chunk-00004",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-025::chunk-00004",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-025::chunk-00004",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q32",
+      "query": "Quais aprovações são necessárias para usar IA com dados de fornecedores?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-005",
+        "DOC-012"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "aprovações necessárias usar ia dados fornecedores",
+      "removed_query_tokens": [
+        "com",
+        "de",
+        "para",
+        "quais",
+        "são"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-023::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q33",
+      "query": "Quais requisitos de segurança se aplicam ao uso de IA?",
+      "expected_document_ids": [
+        "DOC-024",
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "requisitos segurança aplicam uso ia",
+      "removed_query_tokens": [
+        "ao",
+        "de",
+        "quais",
+        "se"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-024::chunk-00002",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q34",
+      "query": "Quem aprova uma nova ferramenta de IA?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "aprova nova ferramenta ia",
+      "removed_query_tokens": [
+        "de",
+        "quem",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-023::chunk-00006",
+            "DOC-025::chunk-00005",
+            "DOC-005::chunk-00008",
+            "DOC-006::chunk-00006",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00006",
+            "DOC-025::chunk-00005",
+            "DOC-005::chunk-00008",
+            "DOC-006::chunk-00006",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00006",
+            "DOC-025::chunk-00005",
+            "DOC-005::chunk-00008",
+            "DOC-006::chunk-00006",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-023::chunk-00006",
+            "DOC-025::chunk-00005",
+            "DOC-023::chunk-00005",
+            "DOC-005::chunk-00008",
+            "DOC-006::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 0.5,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": [
+          "Recall@5"
+        ]
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q35",
+      "query": "Posso inserir dados confidenciais em uma ferramenta de IA?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-024",
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "posso inserir dados confidenciais ferramenta ia",
+      "removed_query_tokens": [
+        "de",
+        "em",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-006::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-006::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-006::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-006::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-023::chunk-00006",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.3333333333333333,
+            "Hit@3": 1.0,
+            "Recall@3": 0.6666666666666666,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "A",
+      "question_id": "Q36",
+      "query": "Que treinamento é obrigatório para colaboradores que utilizam IA?",
+      "expected_document_ids": [
+        "DOC-026",
+        "DOC-023"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "treinamento obrigatório colaboradores utilizam ia",
+      "removed_query_tokens": [
+        "para",
+        "que",
+        "é"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          }
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B01",
+      "query": "Um contrato padrão de fornecedor compromete R$ 350 mil por ano. Quem aprova, quem faz a revisão financeira e existe aprovação adicional do responsável pelo negócio?",
+      "expected_document_ids": [
+        "DOC-012"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "contrato padrão fornecedor compromete r 350 mil ano aprova faz revisão financeira existe aprovação adicional responsável negócio",
+      "removed_query_tokens": [
+        "a",
+        "de",
+        "do",
+        "e",
+        "pelo",
+        "por",
+        "quem",
+        "um"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-024::chunk-00006",
+            "DOC-022::chunk-00004",
+            "DOC-025::chunk-00002",
+            "DOC-023::chunk-00006",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-022",
+            "DOC-025",
+            "DOC-023",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 0.0,
+            "Recall@3": 0.0,
+            "Hit@5": 0.0,
+            "Recall@5": 0.0,
+            "MRR": 0.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "A faixa de BRL 100,001–500,000 exige Procurement Director, revisão de Finance Business Partner e aprovação do Business Owner.",
+              "any_of_chunk_ids": [
+                "DOC-012::chunk-00001"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006",
+            "DOC-022::chunk-00005",
+            "DOC-025::chunk-00003",
+            "DOC-023::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-012",
+            "DOC-024",
+            "DOC-022",
+            "DOC-025",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006",
+            "DOC-022::chunk-00005",
+            "DOC-025::chunk-00003",
+            "DOC-023::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-012",
+            "DOC-024",
+            "DOC-022",
+            "DOC-025",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00006",
+            "DOC-022::chunk-00005",
+            "DOC-025::chunk-00003",
+            "DOC-023::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-012",
+            "DOC-024",
+            "DOC-022",
+            "DOC-025",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B02",
+      "query": "Para contratar uma transportadora em emergência por R$ 300 mil, quais aprovações e revisões são exigidas, e a urgência dispensa o cumprimento da matriz?",
+      "expected_document_ids": [
+        "DOC-012",
+        "DOC-022"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "contratar transportadora emergência r 300 mil aprovações revisões exigidas urgência dispensa cumprimento matriz",
+      "removed_query_tokens": [
+        "a",
+        "da",
+        "e",
+        "em",
+        "o",
+        "para",
+        "por",
+        "quais",
+        "são",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-022::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00006",
+            "DOC-025::chunk-00005",
+            "DOC-006::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-024",
+            "DOC-005",
+            "DOC-025",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 0.5,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Acima de BRL 250,000 em contratação emergencial de transportadora: Executive Director; revisão de Finance Director e Procurement Director.",
+              "any_of_chunk_ids": [
+                "DOC-012::chunk-00001"
+              ]
+            },
+            {
+              "fact_to_check": "A necessidade emergencial não remove os requisitos de aprovação; processo expedito depende de previsão na matriz.",
+              "any_of_chunk_ids": [
+                "DOC-022::chunk-00005"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005",
+            "DOC-025::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-022::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-022::chunk-00009",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B03",
+      "query": "Uma política substituída pode ser usada para analisar uma ocorrência antiga? Isso permite tratá-la como instrução operacional vigente?",
+      "expected_document_ids": [
+        "DOC-007"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "política substituída pode usada analisar ocorrência antiga permite tratá-la como instrução operacional vigente",
+      "removed_query_tokens": [
+        "isso",
+        "para",
+        "ser",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-007::chunk-00008",
+            "DOC-006::chunk-00008",
+            "DOC-022::chunk-00003",
+            "DOC-005::chunk-00009",
+            "DOC-010::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-022",
+            "DOC-005",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-007::chunk-00008",
+            "DOC-006::chunk-00008",
+            "DOC-022::chunk-00003",
+            "DOC-005::chunk-00009",
+            "DOC-010::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-022",
+            "DOC-005",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-007::chunk-00008",
+            "DOC-006::chunk-00008",
+            "DOC-022::chunk-00003",
+            "DOC-005::chunk-00009",
+            "DOC-010::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-022",
+            "DOC-005",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-007::chunk-00008",
+            "DOC-007::chunk-00006",
+            "DOC-006::chunk-00008",
+            "DOC-007::chunk-00005",
+            "DOC-007::chunk-00007"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B04",
+      "query": "Após suspeitar de um vazamento, posso pedir ao destinatário externo que apague as mensagens antes de falar com Segurança da Informação? Que evidências devo preservar?",
+      "expected_document_ids": [
+        "DOC-010"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "após suspeitar vazamento posso pedir destinatário externo apague mensagens antes falar segurança informação evidências devo preservar",
+      "removed_query_tokens": [
+        "ao",
+        "as",
+        "com",
+        "da",
+        "de",
+        "que",
+        "um"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-005::chunk-00006",
+            "DOC-006::chunk-00003",
+            "DOC-010::chunk-00004",
+            "DOC-007::chunk-00008",
+            "DOC-023::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-007",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.3333333333333333
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-010::chunk-00004",
+            "DOC-006::chunk-00004",
+            "DOC-005::chunk-00007",
+            "DOC-022::chunk-00008",
+            "DOC-024::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-010::chunk-00004",
+            "DOC-006::chunk-00004",
+            "DOC-005::chunk-00007",
+            "DOC-022::chunk-00008",
+            "DOC-024::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-010::chunk-00004",
+            "DOC-006::chunk-00004",
+            "DOC-010::chunk-00005",
+            "DOC-006::chunk-00007",
+            "DOC-006::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-010",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B05",
+      "query": "Usar uma conta de e-mail corporativa torna automaticamente seguro o envio externo de dados confidenciais de clientes? Em que condição a transmissão por e-mail poderia ser aceita?",
+      "expected_document_ids": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "usar conta e-mail corporativa torna automaticamente seguro envio externo dados confidenciais clientes condição transmissão e-mail poderia aceita",
+      "removed_query_tokens": [
+        "a",
+        "de",
+        "em",
+        "o",
+        "por",
+        "que",
+        "ser",
+        "uma"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-006::chunk-00004",
+            "DOC-005::chunk-00006",
+            "DOC-023::chunk-00003",
+            "DOC-010::chunk-00005",
+            "DOC-007::chunk-00007"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-010",
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "E-mail corporativo por si só não transforma uma transferência não aprovada em transferência segura; é necessário canal seguro ou plataforma controlada aprovada.",
+              "any_of_chunk_ids": [
+                "DOC-005::chunk-00007"
+              ]
+            },
+            {
+              "fact_to_check": "E-mail comum não é mecanismo aprovado para dados confidenciais de clientes, salvo aprovação explícita da proteção técnica e do processo para o caso de uso.",
+              "any_of_chunk_ids": [
+                "DOC-006::chunk-00005"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-006::chunk-00005",
+            "DOC-005::chunk-00007",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-005",
+            "DOC-025",
+            "DOC-024",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-006::chunk-00005",
+            "DOC-005::chunk-00007",
+            "DOC-025::chunk-00006",
+            "DOC-024::chunk-00003",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-005",
+            "DOC-025",
+            "DOC-024",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-006::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-005::chunk-00007",
+            "DOC-005::chunk-00006",
+            "DOC-005::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 2,
+          "reference_groups_total": 2,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B06",
+      "query": "Um fornecedor apresenta bons indicadores de desempenho. Posso usar esses indicadores como se fossem a classificação de risco empresarial do fornecedor?",
+      "expected_document_ids": [
+        "DOC-022"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "fornecedor apresenta bons indicadores desempenho posso usar indicadores como fossem classificação risco empresarial fornecedor",
+      "removed_query_tokens": [
+        "a",
+        "de",
+        "do",
+        "esses",
+        "se",
+        "um"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-025::chunk-00002",
+            "DOC-010::chunk-00005",
+            "DOC-024::chunk-00006",
+            "DOC-023::chunk-00003",
+            "DOC-005::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-010",
+            "DOC-024",
+            "DOC-023",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 0.0,
+            "Recall@3": 0.0,
+            "Hit@5": 0.0,
+            "Recall@5": 0.0,
+            "MRR": 0.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Desempenho e risco são relacionados, mas distintos; desempenho utiliza indicadores do domínio e classificação de risco segue a Supplier Risk Policy.",
+              "any_of_chunk_ids": [
+                "DOC-022::chunk-00006"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00006",
+            "DOC-025::chunk-00006",
+            "DOC-023::chunk-00004",
+            "DOC-012::chunk-00001",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-023",
+            "DOC-012",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-022::chunk-00006",
+            "DOC-025::chunk-00006",
+            "DOC-023::chunk-00004",
+            "DOC-012::chunk-00001",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-023",
+            "DOC-012",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-022::chunk-00006",
+            "DOC-025::chunk-00006",
+            "DOC-023::chunk-00004",
+            "DOC-012::chunk-00001",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-023",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B07",
+      "query": "Se uma recomendação foi produzida por IA com controles de segurança, a revisão humana e a aprovação formal podem ser dispensadas? Quem continua responsável pela decisão?",
+      "expected_document_ids": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "recomendação produzida ia controles segurança revisão humana aprovação formal podem dispensadas continua responsável decisão",
+      "removed_query_tokens": [
+        "a",
+        "com",
+        "de",
+        "e",
+        "foi",
+        "pela",
+        "por",
+        "quem",
+        "se",
+        "ser",
+        "uma"
+      ],
+      "filtered_lexical_top20": [
+        {
+          "chunk_id": "DOC-026::chunk-00002",
+          "rank": 1,
+          "score": 4.374066282796882
+        },
+        {
+          "chunk_id": "DOC-023::chunk-00007",
+          "rank": 2,
+          "score": 3.201892876442922
+        },
+        {
+          "chunk_id": "DOC-025::chunk-00005",
+          "rank": 3,
+          "score": 3.201892876442922
+        }
+      ],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-025::chunk-00005",
+            "DOC-023::chunk-00007",
+            "DOC-026::chunk-00002",
+            "DOC-024::chunk-00006",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-026",
+            "DOC-024",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.5,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+              "any_of_chunk_ids": [
+                "DOC-024::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00007",
+            "DOC-025::chunk-00005",
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-012",
+            "DOC-024",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.5,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+              "any_of_chunk_ids": [
+                "DOC-024::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-023::chunk-00007",
+            "DOC-025::chunk-00005",
+            "DOC-026::chunk-00002",
+            "DOC-012::chunk-00001",
+            "DOC-024::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-026",
+            "DOC-012",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.5,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+              "any_of_chunk_ids": [
+                "DOC-024::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-023::chunk-00007",
+            "DOC-025::chunk-00005",
+            "DOC-026::chunk-00002",
+            "DOC-023::chunk-00006",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-026",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 0.5,
+            "Hit@3": 1.0,
+            "Recall@3": 0.5,
+            "Hit@5": 1.0,
+            "Recall@5": 0.5,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 2,
+          "reference_coverage": 0.5,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Controles de segurança não tornam o resultado da IA autoritativo; revisão humana continua necessária conforme o caso de uso.",
+              "any_of_chunk_ids": [
+                "DOC-024::chunk-00007"
+              ]
+            }
+          ]
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": [
+          "Recall@5"
+        ]
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B08",
+      "query": "Quais tipos de segredos de autenticação são proibidos em prompts gerais de IA, e que princípio deve orientar os acessos à ferramenta?",
+      "expected_document_ids": [
+        "DOC-024"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "tipos segredos autenticação proibidos prompts gerais ia princípio deve orientar acessos ferramenta",
+      "removed_query_tokens": [
+        "de",
+        "e",
+        "em",
+        "os",
+        "quais",
+        "que",
+        "são",
+        "à"
+      ],
+      "filtered_lexical_top20": [
+        {
+          "chunk_id": "DOC-024::chunk-00005",
+          "rank": 1,
+          "score": 2.2038362903219046
+        }
+      ],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-025::chunk-00005",
+            "DOC-026::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-025",
+            "DOC-026"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-025::chunk-00005",
+            "DOC-026::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-025",
+            "DOC-026"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-025::chunk-00005",
+            "DOC-026::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-025",
+            "DOC-026"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-024::chunk-00005",
+            "DOC-006::chunk-00006",
+            "DOC-024::chunk-00002",
+            "DOC-005::chunk-00008",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B09",
+      "query": "Na análise comercial de um fornecedor de IA, que aspectos de propriedade intelectual, mudanças do serviço e encerramento da contratação devem ser considerados?",
+      "expected_document_ids": [
+        "DOC-025"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "análise comercial fornecedor ia aspectos propriedade intelectual mudanças serviço encerramento contratação devem considerados",
+      "removed_query_tokens": [
+        "da",
+        "de",
+        "do",
+        "e",
+        "na",
+        "que",
+        "ser",
+        "um"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-025::chunk-00002",
+            "DOC-024::chunk-00007",
+            "DOC-023::chunk-00004",
+            "DOC-005::chunk-00008",
+            "DOC-010::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-024",
+            "DOC-023",
+            "DOC-005",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "A due diligence comercial considera provisões de propriedade intelectual, mudanças do modelo ou serviço e requisitos de saída, além dos demais termos listados.",
+              "any_of_chunk_ids": [
+                "DOC-025::chunk-00004"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-025::chunk-00004",
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-024",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-025::chunk-00004",
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-005::chunk-00008",
+            "DOC-012::chunk-00001"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-024",
+            "DOC-005",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-025::chunk-00004",
+            "DOC-023::chunk-00004",
+            "DOC-024::chunk-00006",
+            "DOC-025::chunk-00006",
+            "DOC-005::chunk-00008"
+          ],
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B10",
+      "query": "Além da trilha básica de IA, qual treinamento cabe a gestores que aprovam fluxos com IA e qual atualização periódica é prevista para manter o acesso?",
+      "expected_document_ids": [
+        "DOC-026"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "além trilha básica ia treinamento cabe gestores aprovam fluxos ia atualização periódica prevista manter acesso",
+      "removed_query_tokens": [
+        "a",
+        "com",
+        "da",
+        "de",
+        "e",
+        "o",
+        "para",
+        "qual",
+        "que",
+        "é"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-023::chunk-00006",
+            "DOC-026::chunk-00001",
+            "DOC-025::chunk-00005",
+            "DOC-007::chunk-00007",
+            "DOC-022::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-023",
+            "DOC-026",
+            "DOC-025",
+            "DOC-007",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0.0,
+            "Recall@1": 0.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 0.5
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-006::chunk-00006",
+            "DOC-024::chunk-00005",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-006",
+            "DOC-024",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-006::chunk-00006",
+            "DOC-024::chunk-00005",
+            "DOC-025::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-006",
+            "DOC-024",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-026::chunk-00001",
+            "DOC-023::chunk-00008",
+            "DOC-023::chunk-00006",
+            "DOC-006::chunk-00006",
+            "DOC-024::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-006",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B11",
+      "query": "Dois documentos controlados com o mesmo nível de autoridade divergem. Quais critérios devem ser avaliados antes de escalar o conflito ao responsável pelo documento?",
+      "expected_document_ids": [
+        "DOC-007"
+      ],
+      "matches_rv010_selection": false,
+      "filtered_lexical_query": "dois documentos controlados mesmo nível autoridade divergem critérios devem avaliados antes escalar conflito responsável documento",
+      "removed_query_tokens": [
+        "ao",
+        "com",
+        "de",
+        "o",
+        "pelo",
+        "quais",
+        "ser"
+      ],
+      "filtered_lexical_top20": [],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-007::chunk-00003",
+            "DOC-006::chunk-00008",
+            "DOC-012::chunk-00002",
+            "DOC-023::chunk-00009",
+            "DOC-022::chunk-00010"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-012",
+            "DOC-023",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Avaliar data de vigência, escopo explícito e relações de supersessão antes de escalar ao proprietário do documento.",
+              "any_of_chunk_ids": [
+                "DOC-007::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-007::chunk-00003",
+            "DOC-006::chunk-00008",
+            "DOC-012::chunk-00002",
+            "DOC-023::chunk-00009",
+            "DOC-022::chunk-00010"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-012",
+            "DOC-023",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Avaliar data de vigência, escopo explícito e relações de supersessão antes de escalar ao proprietário do documento.",
+              "any_of_chunk_ids": [
+                "DOC-007::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-007::chunk-00003",
+            "DOC-006::chunk-00008",
+            "DOC-012::chunk-00002",
+            "DOC-023::chunk-00009",
+            "DOC-022::chunk-00010"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006",
+            "DOC-012",
+            "DOC-023",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 0,
+          "reference_groups_total": 1,
+          "reference_coverage": 0.0,
+          "missing_reference_groups": [
+            {
+              "fact_to_check": "Avaliar data de vigência, escopo explícito e relações de supersessão antes de escalar ao proprietário do documento.",
+              "any_of_chunk_ids": [
+                "DOC-007::chunk-00007"
+              ]
+            }
+          ]
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-007::chunk-00003",
+            "DOC-007::chunk-00007",
+            "DOC-007::chunk-00002",
+            "DOC-006::chunk-00008",
+            "DOC-007::chunk-00004"
+          ],
+          "document_ids": [
+            "DOC-007",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    },
+    {
+      "group": "B",
+      "question_id": "B12",
+      "query": "Quais autorizações e mecanismos mínimos são exigidos para compartilhar externamente informação classificada como Restricted?",
+      "expected_document_ids": [
+        "DOC-005"
+      ],
+      "matches_rv010_selection": true,
+      "filtered_lexical_query": "autorizações mecanismos mínimos exigidos compartilhar externamente informação classificada como restricted",
+      "removed_query_tokens": [
+        "e",
+        "para",
+        "quais",
+        "são"
+      ],
+      "filtered_lexical_top20": [
+        {
+          "chunk_id": "DOC-024::chunk-00003",
+          "rank": 1,
+          "score": 3.2476995493166405
+        },
+        {
+          "chunk_id": "DOC-010::chunk-00003",
+          "rank": 2,
+          "score": 3.0719110043485855
+        },
+        {
+          "chunk_id": "DOC-005::chunk-00005",
+          "rank": 3,
+          "score": 2.0846130586026725
+        }
+      ],
+      "arms": {
+        "hybrid_v03": {
+          "chunk_ids": [
+            "DOC-005::chunk-00005",
+            "DOC-024::chunk-00003",
+            "DOC-010::chunk-00003",
+            "DOC-006::chunk-00004",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-024",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "vector_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00005",
+            "DOC-006::chunk-00004",
+            "DOC-024::chunk-00003",
+            "DOC-023::chunk-00005",
+            "DOC-010::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-024",
+            "DOC-023",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_diverse": {
+          "chunk_ids": [
+            "DOC-005::chunk-00005",
+            "DOC-024::chunk-00003",
+            "DOC-010::chunk-00003",
+            "DOC-006::chunk-00004",
+            "DOC-023::chunk-00005"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-024",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        },
+        "filtered_hybrid_top5": {
+          "chunk_ids": [
+            "DOC-005::chunk-00005",
+            "DOC-024::chunk-00003",
+            "DOC-010::chunk-00003",
+            "DOC-005::chunk-00004",
+            "DOC-005::chunk-00007"
+          ],
+          "document_ids": [
+            "DOC-005",
+            "DOC-024",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1.0,
+            "Recall@1": 1.0,
+            "Hit@3": 1.0,
+            "Recall@3": 1.0,
+            "Hit@5": 1.0,
+            "Recall@5": 1.0,
+            "MRR": 1.0
+          },
+          "reference_groups_found": 1,
+          "reference_groups_total": 1,
+          "reference_coverage": 1.0,
+          "missing_reference_groups": []
+        }
+      },
+      "per_question_regressed_metrics": {
+        "vector_diverse": [],
+        "filtered_hybrid_diverse": [],
+        "filtered_hybrid_top5": []
+      }
+    }
+  ],
+  "limits": [
+    "Alternatives were designed after inspecting A/B; both are development sets for this change.",
+    "These are retrieval results without reranking. Scores for new passages cannot be inferred from RV-010.",
+    "Reference labels are non-exhaustive; coverage is not answer accuracy.",
+    "Query filtering removes grammatical tokens; it does not translate or calibrate lexical evidence.",
+    "The filter is opt-in and does not change the existing HybridRetriever defaults."
+  ],
+  "input_fingerprints": {
+    "/workspace/scratch/0e0705c49695/ekai_reranking/tests/smoke/smoke_lexical_filter_replay.py": "50e7df333ebe02e3382de534de84338afee508dab3ed4382dd4157d92a53aac3",
+    "../upload/RV008_RESULTS.json": "ac0b132a37b98361befe3fb9f45c156e98e069d8939c840a4caa3a2d53400b70",
+    "../upload/RV010_LIVE_RESULTS.json": "39985c8fe0ad01171d9f3b8dbeee98ceb8ab651d81a426eb3f23ae9489f6b83f",
+    "../upload/RV011_CANDIDATE_TRACE.json": "96dab3ff7fa9fe3221d221b83811acfadd8509aa88867af81a92e95af6bb70f1",
+    "app/retrieval/candidate_fusion.py": "a78209ecb5e7b88dfeadd5a2f06f17406feb5d7370b9d5d03c905117f0d0e462",
+    "app/retrieval/document_diversifier.py": "a8f7083ebb4ec2ef719e0984f85581deb4dd7b142e98ef498bdbad0c4e5804b8",
+    "app/retrieval/lexical_index.py": "01582d7794db0fa9e51ecf1d6ced57b256269f230b54dcfccfe7eb89fefd85e9",
+    "app/retrieval/lexical_query_filter.py": "04f4b331a27e6a243f8776f2f23e36525032d6615f0535f721e469e8ecec0e8b",
+    "app/retrieval/lexical_retriever.py": "c3066f17714f951088d31a78f7d664726070c277cc452bd04565ee72af00db55",
+    "data/ground_truth/reranking_challenge_b.json": "fbf623e564e3dbaf55917245274c25e96d4334bca94ee6714232b049fc3e2811"
+  }
+}
