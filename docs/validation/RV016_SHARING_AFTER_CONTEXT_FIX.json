@@ -1,0 +1,894 @@
+{
+  "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+  "answer": {
+    "request_id": "92dfec29f05d2c6b940955b8a52ca46dd3112d1859a2491d62c5c820e71cbd77",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "Antes de compartilhar dados com um fornecedor externo, a política exige que o compartilhamento seja feito apenas com um destinatário autorizado e para um propósito comercial aprovado, especialmente para informações classificadas como confidenciais ou restritas.",
+        "citation_ids": [
+          "E5",
+          "E21"
+        ]
+      },
+      {
+        "text": "Deve-se utilizar um mecanismo de transferência segura aprovado ou uma plataforma controlada adequada à classificação da informação, uma vez que o uso apenas do e-mail corporativo não é considerado um meio seguro para dados confidenciais.",
+        "citation_ids": [
+          "E5",
+          "E21",
+          "E40"
+        ]
+      },
+      {
+        "text": "Para dados confidenciais do fornecedor, é necessária aprovação da Segurança da Informação e da Governança de IA conforme definido na Matriz de Autoridade de Aprovação.",
+        "citation_ids": [
+          "E4"
+        ]
+      },
+      {
+        "text": "Se dados do fornecedor ou cliente forem processados por ferramentas de IA, a ferramenta deve estar aprovada para o uso pretendido e conforme a política de compartilhamento de dados e políticas de segurança da informação aplicáveis.",
+        "citation_ids": [
+          "E2",
+          "E4",
+          "E24"
+        ]
+      },
+      {
+        "text": "Qualquer exceção ao compartilhamento externo de dados requer justificativa de negócio documentada e aprovações definidas pelos controles de segurança e autoridade correspondentes; uma instrução operacional não pode criar exceção à política corporativa.",
+        "citation_ids": [
+          "E25"
+        ]
+      }
+    ],
+    "abstention_reason": null
+  },
+  "context": {
+    "text": "{\n  \"evidence\": [\n    {\n      \"citation_id\": \"E1\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00005\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00013\",\n        \"text-00014\"\n      ],\n      \"section_path\": [\n        \"4. Supplier disclosure\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"4. Supplier disclosure\\n\\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action.\"\n    },\n    {\n      \"citation_id\": \"E2\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00006\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00010\",\n        \"text-00011\"\n      ],\n      \"section_path\": [\n        \"5. Supplier data\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"5. Supplier data\\n\\nThe fact that an AI product is procured does not mean confidential supplier or customer data may automatically be entered into it. Data classification and approved-use requirements remain applicable.\"\n    },\n    {\n      \"citation_id\": \"E3\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00001\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00000\",\n        \"text-00001\"\n      ],\n      \"section_path\": [\n        \"DATA SHARING POLICY\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"DATA SHARING POLICY\\n\\nDocument ID: DOC-005 | Version: 2.2 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Information Security\"\n    },\n    {\n      \"citation_id\": \"E4\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00005\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00008\",\n        \"text-00009\"\n      ],\n      \"section_path\": [\n        \"4. Supplier data and approvals\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"4. Supplier data and approvals\\n\\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.\"\n    },\n    {\n      \"citation_id\": \"E5\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00004\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00006\",\n        \"text-00007\"\n      ],\n      \"section_path\": [\n        \"3. External transmission\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"3. External transmission\\n\\nConfidential customer information may be transmitted to an authorized external party only when there is a legitimate business purpose, the recipient is authorized, and an approved secure transfer mechanism or controlled platform is used.\"\n    },\n    {\n      \"citation_id\": \"E6\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00001\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00000\",\n        \"text-00001\"\n      ],\n      \"section_path\": [],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"SECURITY INCIDENT SOP\\n\\nDocument ID: DOC-010 | Version: 2.0 | Effective: 2026-01-01 | Status: ACTIVE\"\n    },\n    {\n      \"citation_id\": \"E7\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00002\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00002\",\n        \"text-00003\"\n      ],\n      \"section_path\": [\n        \"1. Purpose\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"1. Purpose\\n\\nDefine the immediate response and escalation process for suspected or confirmed information-security incidents, including accidental disclosure to suppliers.\"\n    },\n    {\n      \"citation_id\": \"E8\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00003\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00004\",\n        \"text-00005\"\n      ],\n      \"section_path\": [\n        \"2. Trigger\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"2. Trigger\\n\\nUse this SOP when confidential or restricted information may have been sent to an unauthorized recipient, transmitted through an unapproved channel, exposed through an approved system, or otherwise handled contrary to policy.\"\n    },\n    {\n      \"citation_id\": \"E9\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00004\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00006\",\n        \"text-00007\",\n        \"text-00008\",\n        \"text-00009\",\n        \"text-00010\",\n        \"text-00011\",\n        \"text-00012\"\n      ],\n      \"section_path\": [\n        \"3. Immediate actions\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"3. Immediate actions\\n\\nStop further disclosure where feasible without destroying evidence.\\n\\nNotify the Information Security incident channel immediately.\\n\\nRecord what information was involved, recipient, transmission method, time, and known scope.\\n\\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\\n\\nPreserve relevant messages, logs, files, and screenshots.\\n\\nFollow containment, notification, and remediation instructions issued by the incident owner.\"\n    },\n    {\n      \"citation_id\": \"E10\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00006\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00015\",\n        \"text-00016\"\n      ],\n      \"section_path\": [\n        \"5. Closure\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"5. Closure\\n\\nAn incident is closed only after the responsible incident owner records containment, impact assessment, required notifications, remediation, and follow-up actions.\"\n    },\n    {\n      \"citation_id\": \"E11\",\n      \"document_id\": \"DOC-010\",\n      \"chunk_id\": \"DOC-010::chunk-00007\",\n      \"source_path\": \"data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx\",\n      \"source_block_ids\": [\n        \"text-00017\",\n        \"text-00018\",\n        \"text-00019\"\n      ],\n      \"section_path\": [\n        \"6. Related documents\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"6. Related documents\\n\\nInformation Security Policy; Data Sharing Policy; applicable supplier agreement.\\n\\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.\"\n    },\n    {\n      \"citation_id\": \"E12\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00001\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00000\",\n        \"text-00001\"\n      ],\n      \"section_path\": [],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"AI Procurement Guidelines\\n\\nDocument ID: DOC-025\\nVersion: 1.0\\nEffective: 2026-01-01\\nStatus: ACTIVE\\nType: Guideline\"\n    },\n    {\n      \"citation_id\": \"E13\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00002\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00002\",\n        \"text-00003\"\n      ],\n      \"section_path\": [\n        \"1. Purpose\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"1. Purpose\\n\\nThese guidelines help Procurement teams evaluate commercial and operational considerations when acquiring AI-enabled products or services. They are guidance and do not replace corporate policy, security standards, or approval authority.\"\n    },\n    {\n      \"citation_id\": \"E14\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00003\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00004\",\n        \"text-00005\"\n      ],\n      \"section_path\": [\n        \"2. Procurement considerations\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"2. Procurement considerations\\n\\nProcurement should identify the provider, commercial model, expected users, intended business use, data categories, integration requirements, support model, portability, termination provisions, and material subcontractors.\"\n    },\n    {\n      \"citation_id\": \"E15\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00004\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00006\",\n        \"text-00007\"\n      ],\n      \"section_path\": [\n        \"3. AI supplier due diligence\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"3. AI supplier due diligence\\n\\nCommercial review should consider service commitments, data-processing terms, retention options, intellectual-property provisions, model or service changes, audit rights where applicable, and exit requirements.\"\n    },\n    {\n      \"citation_id\": \"E16\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00005\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00008\",\n        \"text-00009\"\n      ],\n      \"section_path\": [\n        \"4. Approval boundary\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"4. Approval boundary\\n\\nThese guidelines do not authorize a new AI tool. Formal approval is governed by the AI Governance Policy and Approval Authority Matrix. Information Security determines applicable security requirements.\"\n    },\n    {\n      \"citation_id\": \"E17\",\n      \"document_id\": \"DOC-025\",\n      \"chunk_id\": \"DOC-025::chunk-00007\",\n      \"source_path\": \"data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md\",\n      \"source_block_ids\": [\n        \"text-00012\",\n        \"text-00013\",\n        \"text-00014\"\n      ],\n      \"section_path\": [\n        \"6. Evaluation role\"\n      ],\n      \"page_numbers\": [],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"6. Evaluation role\\n\\nThis document intentionally contains substantial AI, supplier, data, approval, and procurement terminology. It is a useful semantic neighbor, but it is not the primary authority for security controls or AI approval decisions.\\n\\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.\"\n    },\n    {\n      \"citation_id\": \"E18\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00002\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00002\",\n        \"text-00003\"\n      ],\n      \"section_path\": [\n        \"1. Purpose\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"1. Purpose\\n\\nDefine requirements for sharing enterprise information with external parties, including suppliers, logistics providers, professional services firms, and technology providers.\"\n    },\n    {\n      \"citation_id\": \"E19\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00003\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00004\",\n        \"text-00005\"\n      ],\n      \"section_path\": [\n        \"2. Scope\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"2. Scope\\n\\nApplies to employees, contractors, systems, and business processes that disclose internal, confidential, customer, supplier, or operational information outside the enterprise.\"\n    },\n    {\n      \"citation_id\": \"E20\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00004\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00006\"\n      ],\n      \"section_path\": [\n        \"3. Information classification and minimum controls\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"3. Information classification and minimum controls\"\n    },\n    {\n      \"citation_id\": \"E21\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00005\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"table-00007\"\n      ],\n      \"section_path\": [\n        \"3. Information classification and minimum controls\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Classification | External sharing rule | Minimum channel/control\\nPublic | May be shared when approved for public use. | Approved business channel.\\nInternal | Share only for legitimate business need. | Corporate-managed channel.\\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.\"\n    },\n    {\n      \"citation_id\": \"E22\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00006\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00008\",\n        \"text-00009\"\n      ],\n      \"section_path\": [\n        \"4. Sharing with transportation carriers\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"4. Sharing with transportation carriers\\n\\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier.\"\n    },\n    {\n      \"citation_id\": \"E23\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00007\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00010\",\n        \"text-00011\"\n      ],\n      \"section_path\": [\n        \"5. Approved channels\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"5. Approved channels\\n\\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.\"\n    },\n    {\n      \"citation_id\": \"E24\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00008\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00012\",\n        \"text-00013\"\n      ],\n      \"section_path\": [\n        \"6. Supplier and AI-related use\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"6. Supplier and AI-related use\\n\\nWhere supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.\"\n    },\n    {\n      \"citation_id\": \"E25\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00009\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00014\",\n        \"text-00015\"\n      ],\n      \"section_path\": [\n        \"7. Exceptions\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"7. Exceptions\\n\\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.\"\n    },\n    {\n      \"citation_id\": \"E26\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00010\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00016\",\n        \"text-00017\"\n      ],\n      \"section_path\": [\n        \"Related documents\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Related documents\\n\\nInformation Security Policy; Document Governance Policy; AI Governance Policy; Security Incident SOP.\"\n    },\n    {\n      \"citation_id\": \"E27\",\n      \"document_id\": \"DOC-005\",\n      \"chunk_id\": \"DOC-005::chunk-00011\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00018\",\n        \"text-00019\"\n      ],\n      \"section_path\": [\n        \"Document control\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Document control\\n\\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.\"\n    },\n    {\n      \"citation_id\": \"E28\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00001\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00000\",\n        \"text-00001\"\n      ],\n      \"section_path\": [\n        \"AI GOVERNANCE POLICY\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"AI GOVERNANCE POLICY\\n\\nDocument ID: DOC-023 | Version: 1.0 | Effective: 2026-01-01 | Status: ACTIVE | Type: Corporate Policy\"\n    },\n    {\n      \"citation_id\": \"E29\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00002\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00002\",\n        \"text-00003\"\n      ],\n      \"section_path\": [\n        \"1. Purpose\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"1. Purpose\\n\\nEstablish governance requirements for selecting, approving, and using AI systems in enterprise work while preserving human accountability, information protection, and traceability.\"\n    },\n    {\n      \"citation_id\": \"E30\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00003\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00004\",\n        \"text-00005\"\n      ],\n      \"section_path\": [\n        \"2. Permitted business use\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"2. Permitted business use\\n\\nEmployees may use approved AI tools for legitimate business purposes within the approved use case and data classification. Approval of a tool does not automatically approve every data type or business decision.\"\n    },\n    {\n      \"citation_id\": \"E31\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00004\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00006\",\n        \"text-00007\"\n      ],\n      \"section_path\": [\n        \"3. AI analysis of supplier contracts\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"3. AI analysis of supplier contracts\\n\\nAI may be used to summarize or analyze supplier contracts only when the tool and use case are approved, applicable confidentiality requirements are satisfied, and the output is treated as analytical support rather than authoritative legal interpretation.\"\n    },\n    {\n      \"citation_id\": \"E32\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00006\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00010\",\n        \"text-00011\"\n      ],\n      \"section_path\": [\n        \"5. New AI tools\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"5. New AI tools\\n\\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.\"\n    },\n    {\n      \"citation_id\": \"E33\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00007\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00012\",\n        \"text-00013\"\n      ],\n      \"section_path\": [\n        \"6. Human accountability\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"6. Human accountability\\n\\nAI-generated analysis or recommendations do not transfer decision accountability from the authorized human role. Decisions requiring formal approval remain subject to the relevant authority matrix and business policy.\"\n    },\n    {\n      \"citation_id\": \"E34\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00008\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00014\",\n        \"text-00015\"\n      ],\n      \"section_path\": [\n        \"7. Training\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"7. Training\\n\\nUsers must complete the required AI workforce training before using approved AI tools for enterprise work and must complete role-specific modules when assigned.\"\n    },\n    {\n      \"citation_id\": \"E35\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00009\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00016\",\n        \"text-00017\"\n      ],\n      \"section_path\": [\n        \"Related documents\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Related documents\\n\\nAI Security Standard; AI Workforce Enablement Guide; Information Security Policy; Data Sharing Policy; Approval Authority Matrix.\"\n    },\n    {\n      \"citation_id\": \"E36\",\n      \"document_id\": \"DOC-023\",\n      \"chunk_id\": \"DOC-023::chunk-00010\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00018\",\n        \"text-00019\"\n      ],\n      \"section_path\": [\n        \"Document control\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Document control\\n\\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.\"\n    },\n    {\n      \"citation_id\": \"E37\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00001\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00000\",\n        \"text-00001\"\n      ],\n      \"section_path\": [\n        \"INFORMATION SECURITY POLICY\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"INFORMATION SECURITY POLICY\\n\\nDocument ID: DOC-006 | Version: 4.0 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Information Security\"\n    },\n    {\n      \"citation_id\": \"E38\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00002\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00002\",\n        \"text-00003\"\n      ],\n      \"section_path\": [\n        \"1. Purpose\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"1. Purpose\\n\\nEstablish enterprise-wide requirements for protecting information according to sensitivity, access need, processing environment, and external disclosure risk.\"\n    },\n    {\n      \"citation_id\": \"E39\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00003\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00004\",\n        \"text-00005\"\n      ],\n      \"section_path\": [\n        \"2. Confidential information\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"2. Confidential information\\n\\nConfidential information includes identifiable customer information, non-public supplier commercial information, credentials and authentication material, non-public contractual terms, sensitive operational data, and other information explicitly classified as confidential by the enterprise.\"\n    },\n    {\n      \"citation_id\": \"E40\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00005\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00008\",\n        \"text-00009\"\n      ],\n      \"section_path\": [\n        \"4. Email restriction\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"4. Email restriction\\n\\nOrdinary email transmission to an external recipient is not an approved mechanism for confidential customer information unless the enterprise has explicitly approved the technical protection and process for that use case. A legacy operational instruction permitting routine email transmission does not override this policy.\"\n    },\n    {\n      \"citation_id\": \"E41\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00006\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00010\",\n        \"text-00011\"\n      ],\n      \"section_path\": [\n        \"5. AI processing environments\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"5. AI processing environments\\n\\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.\"\n    },\n    {\n      \"citation_id\": \"E42\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00007\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00012\",\n        \"text-00013\"\n      ],\n      \"section_path\": [\n        \"6. Security incidents\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"6. Security incidents\\n\\nAccidental disclosure, unauthorized transmission, or suspected exposure of confidential information must be reported and handled under the active Security Incident SOP. Employees must not attempt to conceal or independently resolve a material disclosure without reporting it.\"\n    },\n    {\n      \"citation_id\": \"E43\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00008\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00014\",\n        \"text-00015\"\n      ],\n      \"section_path\": [\n        \"7. Policy precedence\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"7. Policy precedence\\n\\nWhere an SOP, work instruction, local guide, or historical document conflicts with this policy, the conflict must be resolved according to the Document Governance Policy. Lower-authority documents cannot weaken corporate security requirements.\"\n    },\n    {\n      \"citation_id\": \"E44\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00009\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00016\",\n        \"text-00017\"\n      ],\n      \"section_path\": [\n        \"Related documents\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Related documents\\n\\nData Sharing Policy; Document Governance Policy; Security Incident SOP; AI Security Standard; AI Governance Policy.\"\n    },\n    {\n      \"citation_id\": \"E45\",\n      \"document_id\": \"DOC-006\",\n      \"chunk_id\": \"DOC-006::chunk-00010\",\n      \"source_path\": \"data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf\",\n      \"source_block_ids\": [\n        \"text-00018\",\n        \"text-00019\"\n      ],\n      \"section_path\": [\n        \"Document control\"\n      ],\n      \"page_numbers\": [\n        1\n      ],\n      \"slide_numbers\": [],\n      \"sheet_names\": [],\n      \"text\": \"Document control\\n\\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.\"\n    }\n  ]\n}",
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00005",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00013",
+          "text-00014"
+        ],
+        "section_path": [
+          "4. Supplier disclosure"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E2": {
+        "citation_id": "E2",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00006",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "section_path": [
+          "5. Supplier data"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E3": {
+        "citation_id": "E3",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00001",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "section_path": [
+          "DATA SHARING POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E4": {
+        "citation_id": "E4",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00005",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "section_path": [
+          "4. Supplier data and approvals"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E5": {
+        "citation_id": "E5",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00004",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "section_path": [
+          "3. External transmission"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E6": {
+        "citation_id": "E6",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00001",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E7": {
+        "citation_id": "E7",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00002",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E8": {
+        "citation_id": "E8",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00003",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "section_path": [
+          "2. Trigger"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E9": {
+        "citation_id": "E9",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00004",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007",
+          "text-00008",
+          "text-00009",
+          "text-00010",
+          "text-00011",
+          "text-00012"
+        ],
+        "section_path": [
+          "3. Immediate actions"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E10": {
+        "citation_id": "E10",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00006",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00015",
+          "text-00016"
+        ],
+        "section_path": [
+          "5. Closure"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E11": {
+        "citation_id": "E11",
+        "document_id": "DOC-010",
+        "chunk_id": "DOC-010::chunk-00007",
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "source_block_ids": [
+          "text-00017",
+          "text-00018",
+          "text-00019"
+        ],
+        "section_path": [
+          "6. Related documents"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E12": {
+        "citation_id": "E12",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00001",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E13": {
+        "citation_id": "E13",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00002",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E14": {
+        "citation_id": "E14",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00003",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "section_path": [
+          "2. Procurement considerations"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E15": {
+        "citation_id": "E15",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00004",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "section_path": [
+          "3. AI supplier due diligence"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E16": {
+        "citation_id": "E16",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00005",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "section_path": [
+          "4. Approval boundary"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E17": {
+        "citation_id": "E17",
+        "document_id": "DOC-025",
+        "chunk_id": "DOC-025::chunk-00007",
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013",
+          "text-00014"
+        ],
+        "section_path": [
+          "6. Evaluation role"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E18": {
+        "citation_id": "E18",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00002",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E19": {
+        "citation_id": "E19",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00003",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "section_path": [
+          "2. Scope"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E20": {
+        "citation_id": "E20",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00004",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00006"
+        ],
+        "section_path": [
+          "3. Information classification and minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E21": {
+        "citation_id": "E21",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00005",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "table-00007"
+        ],
+        "section_path": [
+          "3. Information classification and minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E22": {
+        "citation_id": "E22",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00006",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "section_path": [
+          "4. Sharing with transportation carriers"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E23": {
+        "citation_id": "E23",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00007",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "section_path": [
+          "5. Approved channels"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E24": {
+        "citation_id": "E24",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00008",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "section_path": [
+          "6. Supplier and AI-related use"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E25": {
+        "citation_id": "E25",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00009",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "section_path": [
+          "7. Exceptions"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E26": {
+        "citation_id": "E26",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00010",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E27": {
+        "citation_id": "E27",
+        "document_id": "DOC-005",
+        "chunk_id": "DOC-005::chunk-00011",
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E28": {
+        "citation_id": "E28",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00001",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "section_path": [
+          "AI GOVERNANCE POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E29": {
+        "citation_id": "E29",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00002",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E30": {
+        "citation_id": "E30",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00003",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "section_path": [
+          "2. Permitted business use"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E31": {
+        "citation_id": "E31",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00004",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "section_path": [
+          "3. AI analysis of supplier contracts"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E32": {
+        "citation_id": "E32",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00006",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "section_path": [
+          "5. New AI tools"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E33": {
+        "citation_id": "E33",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00007",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "section_path": [
+          "6. Human accountability"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E34": {
+        "citation_id": "E34",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00008",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "section_path": [
+          "7. Training"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E35": {
+        "citation_id": "E35",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00009",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E36": {
+        "citation_id": "E36",
+        "document_id": "DOC-023",
+        "chunk_id": "DOC-023::chunk-00010",
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E37": {
+        "citation_id": "E37",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00001",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "section_path": [
+          "INFORMATION SECURITY POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E38": {
+        "citation_id": "E38",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00002",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E39": {
+        "citation_id": "E39",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00003",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "section_path": [
+          "2. Confidential information"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E40": {
+        "citation_id": "E40",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00005",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "section_path": [
+          "4. Email restriction"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E41": {
+        "citation_id": "E41",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00006",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "section_path": [
+          "5. AI processing environments"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E42": {
+        "citation_id": "E42",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00007",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "section_path": [
+          "6. Security incidents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E43": {
+        "citation_id": "E43",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00008",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "section_path": [
+          "7. Policy precedence"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E44": {
+        "citation_id": "E44",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00009",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      },
+      "E45": {
+        "citation_id": "E45",
+        "document_id": "DOC-006",
+        "chunk_id": "DOC-006::chunk-00010",
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": []
+      }
+    },
+    "passage_count": 45,
+    "character_count": 31545,
+    "passage_roles": {
+      "E1": "anchor",
+      "E2": "anchor",
+      "E3": "anchor",
+      "E4": "anchor",
+      "E5": "anchor",
+      "E6": "parent_document",
+      "E7": "parent_document",
+      "E8": "parent_document",
+      "E9": "parent_document",
+      "E10": "parent_document",
+      "E11": "parent_document",
+      "E12": "parent_document",
+      "E13": "parent_document",
+      "E14": "parent_document",
+      "E15": "parent_document",
+      "E16": "parent_document",
+      "E17": "parent_document",
+      "E18": "parent_document",
+      "E19": "parent_document",
+      "E20": "parent_document",
+      "E21": "parent_document",
+      "E22": "parent_document",
+      "E23": "parent_document",
+      "E24": "parent_document",
+      "E25": "parent_document",
+      "E26": "parent_document",
+      "E27": "parent_document",
+      "E28": "parent_document",
+      "E29": "parent_document",
+      "E30": "parent_document",
+      "E31": "parent_document",
+      "E32": "parent_document",
+      "E33": "parent_document",
+      "E34": "parent_document",
+      "E35": "parent_document",
+      "E36": "parent_document",
+      "E37": "parent_document",
+      "E38": "parent_document",
+      "E39": "parent_document",
+      "E40": "parent_document",
+      "E41": "parent_document",
+      "E42": "parent_document",
+      "E43": "parent_document",
+      "E44": "parent_document",
+      "E45": "parent_document"
+    },
+    "skipped": []
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "response_id": "resp_04b04f6988fe86d6016aee79d71f5087d0b50dde7dd5ea6906",
+    "usage": {
+      "input_tokens": 6975,
+      "output_tokens": 327,
+      "total_tokens": 7302
+    }
+  },
+  "elapsed_seconds": 5.138123299999279,
+  "validation": "structure_and_citation_ids_only; semantic_support_not_verified"
+}

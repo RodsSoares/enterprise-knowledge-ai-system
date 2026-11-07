@@ -1,7 +1,7 @@
 # PROJECT AUDIT — Enterprise Knowledge AI System
 
 Version: 1.0
-Generated: 2026-11-06 17:46:46
+Generated: 2026-11-06 22:48:58
 
 > This file is generated automatically by `app/scripts/project_audit.py`.
 > Do not edit it manually.
@@ -11,16 +11,16 @@ Generated: 2026-11-06 17:46:46
 ```text
 PASS
 
-- HEAD before: 17e5bc0
-- HEAD after: 17e5bc0
-- Fingerprint before: 08cf02a4ed1255328c148b99c59e8a72ad2687e5181fe3851b7f8c4eb7174ef7
-- Fingerprint after: 08cf02a4ed1255328c148b99c59e8a72ad2687e5181fe3851b7f8c4eb7174ef7
+- HEAD before: 055b0a8
+- HEAD after: 055b0a8
+- Fingerprint before: b9a6b66a10e6598fde691d02461bdf349f0090f68b3616727e0f3aa0f38edc67
+- Fingerprint after: b9a6b66a10e6598fde691d02461bdf349f0090f68b3616727e0f3aa0f38edc67
 - Repository content remained stable during audit collection.
 ```
 
-- Audit started: 2026-11-06 17:45:08
-- Audit finished: 2026-11-06 17:46:46
-- Duration: 97.98 seconds
+- Audit started: 2026-11-06 22:48:05
+- Audit finished: 2026-11-06 22:48:58
+- Duration: 53.06 seconds
 
 ## 2. Environment
 
@@ -31,55 +31,42 @@ PASS
 ## 3. Git State
 
 - Branch: `main`
-- Commit: `17e5bc0`
+- Commit: `055b0a8`
 
 ### Status
 
 ```text
-?? app/retrieval/cross_encoder_scorer.py
-?? app/retrieval/lexical_query_filter.py
-?? app/retrieval/prefix_preserving_selector.py
-?? app/retrieval/reranker.py
-?? data/ground_truth/reranking_challenge_b.json
-?? docs/validation/RV008_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV008_RESULTS.json
-?? docs/validation/RV009_ANALYSIS.md
-?? docs/validation/RV009_REPLAY_RESULTS.json
-?? docs/validation/RV009_REPLAY_RESULTS_local.json
-?? docs/validation/RV010_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV010_LIVE_RESULTS.json
-?? docs/validation/RV010_PASSAGE_REVIEW.md
-?? docs/validation/RV010_REVIEW_RESULTS.json
-?? docs/validation/RV011_CANDIDATE_TRACE.json
-?? docs/validation/RV012_ANALYSIS_AND_GUIDE.md
-?? docs/validation/RV012_LEXICAL_REPLAY_RESULTS.json
-?? docs/validation/RV012_LEXICAL_REPLAY_RESULTS_local.json
-?? docs/validation/RV013_FILTERED_RERANK_RESULTS.json
-?? docs/validation/RV013_IMPLEMENTATION_GUIDE.md
-?? tests/smoke/smoke_candidate_trace.py
-?? tests/smoke/smoke_filtered_reranking.py
-?? tests/smoke/smoke_lexical_filter_replay.py
-?? tests/smoke/smoke_prefix_reranking_live.py
-?? tests/smoke/smoke_reranking_experiment.py
-?? tests/smoke/smoke_reranking_replay.py
-?? tests/unit/test_candidate_trace.py
-?? tests/unit/test_cross_encoder_scorer.py
-?? tests/unit/test_filtered_reranking.py
-?? tests/unit/test_lexical_filter_replay.py
-?? tests/unit/test_lexical_query_filter.py
-?? tests/unit/test_prefix_preserving_selector.py
-?? tests/unit/test_prefix_reranking_live.py
-?? tests/unit/test_reranker.py
-?? tests/unit/test_reranking_replay.py
+?? app/generation/
+?? app/retrieval/evidence_context.py
+?? app/scripts/ask_knowledge.py
+?? app/scripts/compare_saved_generation.py
+?? docs/validation/RV013_ANALYSIS.md
+?? docs/validation/RV014_ANALYSIS.md
+?? docs/validation/RV014_CONTEXT_REPLAY_RESULTS_local.json
+?? docs/validation/RV014_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV014_INTEGRATION.md
+?? docs/validation/RV015_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV016_GENERATION_COMPARISON.json
+?? docs/validation/RV016_GENERATION_COMPARISON.md
+?? docs/validation/RV016_GENERATION_COMPARISON_GPT41.json
+?? docs/validation/RV016_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV016_SHARING_AFTER_CONTEXT_FIX.json
+?? docs/validation/RV016_SHARING_DIAGNOSTIC.json
+?? tests/smoke/smoke_evidence_context_replay.py
+?? tests/unit/test_answer_contract.py
+?? tests/unit/test_evidence_context.py
+?? tests/unit/test_evidence_context_replay.py
+?? tests/unit/test_rag_service.py
+?? tests/unit/test_saved_generation.py
 ```
 
 ## 4. Code Metrics
 
-- Python files: **90**
-- Total Python lines: **12801**
-- Effective Python lines: **10189**
-- Functions: **685**
-- Classes: **64**
+- Python files: **102**
+- Total Python lines: **14618**
+- Effective Python lines: **11735**
+- Functions: **790**
+- Classes: **80**
 - TODO/FIXME occurrences: **2**
 - Files with syntax errors: **0**
 
@@ -100,6 +87,9 @@ enterprise-knowledge-ai-system/
             [FILE] retrieval_metrics.py
             [FILE] schemas.py
         [DIR] generation/
+            [FILE] answer_contract.py
+            [FILE] openai_answer_provider.py
+            [FILE] rag_service.py
         [DIR] ingestion/
             [FILE] docling_parser.py
             [FILE] document_parser.py
@@ -113,6 +103,7 @@ enterprise-knowledge-ai-system/
             [FILE] cross_encoder_scorer.py
             [FILE] document_diversifier.py
             [FILE] embeddings.py
+            [FILE] evidence_context.py
             [FILE] hybrid_retriever.py
             [FILE] lexical_index.py
             [FILE] lexical_query_filter.py
@@ -126,6 +117,8 @@ enterprise-knowledge-ai-system/
             [FILE] vector_indexer.py
             [FILE] vector_retriever.py
         [DIR] scripts/
+            [FILE] ask_knowledge.py
+            [FILE] compare_saved_generation.py
             [FILE] project_audit.py
     [DIR] data/
         [DIR] ground_truth/
@@ -183,8 +176,20 @@ enterprise-knowledge-ai-system/
             [FILE] RV012_ANALYSIS_AND_GUIDE.md
             [FILE] RV012_LEXICAL_REPLAY_RESULTS.json
             [FILE] RV012_LEXICAL_REPLAY_RESULTS_local.json
+            [FILE] RV013_ANALYSIS.md
             [FILE] RV013_FILTERED_RERANK_RESULTS.json
             [FILE] RV013_IMPLEMENTATION_GUIDE.md
+            [FILE] RV014_ANALYSIS.md
+            [FILE] RV014_CONTEXT_REPLAY_RESULTS_local.json
+            [FILE] RV014_IMPLEMENTATION_GUIDE.md
+            [FILE] RV014_INTEGRATION.md
+            [FILE] RV015_IMPLEMENTATION_GUIDE.md
+            [FILE] RV016_GENERATION_COMPARISON.json
+            [FILE] RV016_GENERATION_COMPARISON.md
+            [FILE] RV016_GENERATION_COMPARISON_GPT41.json
+            [FILE] RV016_IMPLEMENTATION_GUIDE.md
+            [FILE] RV016_SHARING_AFTER_CONTEXT_FIX.json
+            [FILE] RV016_SHARING_DIAGNOSTIC.json
     [FILE] README.md
     [FILE] requirements.txt
     [DIR] tests/
@@ -200,6 +205,7 @@ enterprise-knowledge-ai-system/
             [FILE] smoke_bm25_language_experiment.py
             [FILE] smoke_candidate_trace.py
             [FILE] smoke_document_diversity_experiment.py
+            [FILE] smoke_evidence_context_replay.py
             [FILE] smoke_filtered_reranking.py
             [FILE] smoke_golden_set_hybrid_retrieval.py
             [FILE] smoke_golden_set_vector_retrieval.py
@@ -213,6 +219,7 @@ enterprise-knowledge-ai-system/
             [FILE] smoke_retrieval_diagnostics.py
             [FILE] smoke_vector_retrieval.py
         [DIR] unit/
+            [FILE] test_answer_contract.py
             [FILE] test_block_serializer.py
             [FILE] test_candidate_fusion.py
             [FILE] test_candidate_trace.py
@@ -223,6 +230,8 @@ enterprise-knowledge-ai-system/
             [FILE] test_document_parser.py
             [FILE] test_embedding_contract.py
             [FILE] test_evaluation_schemas.py
+            [FILE] test_evidence_context.py
+            [FILE] test_evidence_context_replay.py
             [FILE] test_filtered_reranking.py
             [FILE] test_golden_set_loader.py
             [FILE] test_hybrid_retriever.py
@@ -237,11 +246,13 @@ enterprise-knowledge-ai-system/
             [FILE] test_pptx_native_enricher.py
             [FILE] test_prefix_preserving_selector.py
             [FILE] test_prefix_reranking_live.py
+            [FILE] test_rag_service.py
             [FILE] test_reranker.py
             [FILE] test_reranking_replay.py
             [FILE] test_retrieval_evaluator.py
             [FILE] test_retrieval_metrics.py
             [FILE] test_retrieval_schemas.py
+            [FILE] test_saved_generation.py
             [FILE] test_search_text.py
             [FILE] test_structure_aware_chunker.py
             [FILE] test_structure_aware_chunker_multiblock.py
@@ -263,6 +274,9 @@ enterprise-knowledge-ai-system/
 | `app/evaluation/retrieval_evaluator.py` | 120 | 3 | 3 | 0 | OK |
 | `app/evaluation/retrieval_metrics.py` | 61 | 4 | 0 | 0 | OK |
 | `app/evaluation/schemas.py` | 39 | 1 | 1 | 0 | OK |
+| `app/generation/answer_contract.py` | 139 | 8 | 3 | 0 | OK |
+| `app/generation/openai_answer_provider.py` | 87 | 2 | 3 | 0 | OK |
+| `app/generation/rag_service.py` | 83 | 5 | 3 | 0 | OK |
 | `app/ingestion/docling_parser.py` | 206 | 9 | 1 | 0 | OK |
 | `app/ingestion/document_parser.py` | 80 | 4 | 1 | 0 | OK |
 | `app/ingestion/ingestion_router.py` | 63 | 4 | 1 | 0 | OK |
@@ -274,6 +288,7 @@ enterprise-knowledge-ai-system/
 | `app/retrieval/cross_encoder_scorer.py` | 109 | 3 | 1 | 0 | OK |
 | `app/retrieval/document_diversifier.py` | 51 | 1 | 1 | 0 | OK |
 | `app/retrieval/embeddings.py` | 17 | 2 | 1 | 0 | OK |
+| `app/retrieval/evidence_context.py` | 229 | 9 | 6 | 0 | OK |
 | `app/retrieval/hybrid_retriever.py` | 43 | 2 | 1 | 0 | OK |
 | `app/retrieval/lexical_index.py` | 88 | 4 | 2 | 0 | OK |
 | `app/retrieval/lexical_query_filter.py` | 56 | 4 | 2 | 0 | OK |
@@ -286,6 +301,8 @@ enterprise-knowledge-ai-system/
 | `app/retrieval/vector_index.py` | 91 | 5 | 2 | 0 | OK |
 | `app/retrieval/vector_indexer.py` | 36 | 2 | 1 | 0 | OK |
 | `app/retrieval/vector_retriever.py` | 58 | 2 | 1 | 0 | OK |
+| `app/scripts/ask_knowledge.py` | 106 | 4 | 0 | 0 | OK |
+| `app/scripts/compare_saved_generation.py` | 142 | 5 | 0 | 0 | OK |
 | `app/scripts/project_audit.py` | 712 | 27 | 0 | 2 | OK |
 | `tests/integration/test_docling_corpus_integration.py` | 111 | 9 | 0 | 0 | OK |
 | `tests/integration/test_docling_docx_integration.py` | 138 | 11 | 0 | 0 | OK |
@@ -297,6 +314,7 @@ enterprise-knowledge-ai-system/
 | `tests/smoke/smoke_bm25_language_experiment.py` | 141 | 2 | 0 | 0 | OK |
 | `tests/smoke/smoke_candidate_trace.py` | 329 | 10 | 0 | 0 | OK |
 | `tests/smoke/smoke_document_diversity_experiment.py` | 188 | 3 | 0 | 0 | OK |
+| `tests/smoke/smoke_evidence_context_replay.py` | 300 | 11 | 1 | 0 | OK |
 | `tests/smoke/smoke_filtered_reranking.py` | 246 | 6 | 0 | 0 | OK |
 | `tests/smoke/smoke_golden_set_hybrid_retrieval.py` | 129 | 4 | 0 | 0 | OK |
 | `tests/smoke/smoke_golden_set_vector_retrieval.py` | 281 | 6 | 0 | 0 | OK |
@@ -309,6 +327,7 @@ enterprise-knowledge-ai-system/
 | `tests/smoke/smoke_reranking_replay.py` | 220 | 7 | 0 | 0 | OK |
 | `tests/smoke/smoke_retrieval_diagnostics.py` | 132 | 4 | 0 | 0 | OK |
 | `tests/smoke/smoke_vector_retrieval.py` | 106 | 1 | 0 | 0 | OK |
+| `tests/unit/test_answer_contract.py` | 139 | 13 | 0 | 0 | OK |
 | `tests/unit/test_block_serializer.py` | 182 | 6 | 0 | 0 | OK |
 | `tests/unit/test_candidate_fusion.py` | 101 | 14 | 0 | 0 | OK |
 | `tests/unit/test_candidate_trace.py` | 173 | 13 | 0 | 0 | OK |
@@ -319,6 +338,8 @@ enterprise-knowledge-ai-system/
 | `tests/unit/test_document_parser.py` | 266 | 12 | 0 | 0 | OK |
 | `tests/unit/test_embedding_contract.py` | 37 | 5 | 1 | 0 | OK |
 | `tests/unit/test_evaluation_schemas.py` | 50 | 6 | 0 | 0 | OK |
+| `tests/unit/test_evidence_context.py` | 160 | 14 | 0 | 0 | OK |
+| `tests/unit/test_evidence_context_replay.py` | 151 | 7 | 0 | 0 | OK |
 | `tests/unit/test_filtered_reranking.py` | 142 | 11 | 0 | 0 | OK |
 | `tests/unit/test_golden_set_loader.py` | 59 | 6 | 0 | 0 | OK |
 | `tests/unit/test_hybrid_retriever.py` | 113 | 14 | 0 | 0 | OK |
@@ -333,11 +354,13 @@ enterprise-knowledge-ai-system/
 | `tests/unit/test_pptx_native_enricher.py` | 280 | 16 | 0 | 0 | OK |
 | `tests/unit/test_prefix_preserving_selector.py` | 101 | 10 | 0 | 0 | OK |
 | `tests/unit/test_prefix_reranking_live.py` | 108 | 9 | 0 | 0 | OK |
+| `tests/unit/test_rag_service.py` | 221 | 21 | 0 | 0 | OK |
 | `tests/unit/test_reranker.py` | 174 | 15 | 0 | 0 | OK |
 | `tests/unit/test_reranking_replay.py` | 122 | 12 | 0 | 0 | OK |
 | `tests/unit/test_retrieval_evaluator.py` | 85 | 6 | 0 | 0 | OK |
 | `tests/unit/test_retrieval_metrics.py` | 39 | 6 | 0 | 0 | OK |
 | `tests/unit/test_retrieval_schemas.py` | 86 | 6 | 0 | 0 | OK |
+| `tests/unit/test_saved_generation.py` | 60 | 6 | 0 | 0 | OK |
 | `tests/unit/test_search_text.py` | 54 | 5 | 0 | 0 | OK |
 | `tests/unit/test_structure_aware_chunker.py` | 208 | 13 | 0 | 0 | OK |
 | `tests/unit/test_structure_aware_chunker_multiblock.py` | 86 | 3 | 0 | 0 | OK |
@@ -480,6 +503,50 @@ tests/integration/test_xlsx_corpus_integration.py::test_doc_012_preserves_confid
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_document_control_preserves_identity
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_document_control_preserves_governance_metadata
 tests/integration/test_xlsx_corpus_integration.py::test_doc_012_cells_are_preserved_as_native_spreadsheet_cells
+tests/unit/test_answer_contract.py::test_roundtrip_preserves_claims_and_source_lookup
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[missing_field]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[extra_field]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[wrong_status]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[boolean_status]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[array_status]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[claims_string]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[empty_claims]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[answer_with_reason]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[missing_refs]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[unknown_ref]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[duplicate_ref]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[numeric_ref]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[refs_string]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[blank_text]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[numeric_text]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[extra_claim_field]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[missing_claim_field]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[claim_string]
+tests/unit/test_answer_contract.py::test_invalid_response_is_rejected[wrong_request]
+tests/unit/test_answer_contract.py::test_abstention_allowed_even_with_nonempty_context[False]
+tests/unit/test_answer_contract.py::test_abstention_allowed_even_with_nonempty_context[True]
+tests/unit/test_answer_contract.py::test_abstention_requires_reason[None]
+tests/unit/test_answer_contract.py::test_abstention_requires_reason[]
+tests/unit/test_answer_contract.py::test_abstention_requires_reason[  ]
+tests/unit/test_answer_contract.py::test_abstention_requires_reason[1]
+tests/unit/test_answer_contract.py::test_abstention_requires_reason[False]
+tests/unit/test_answer_contract.py::test_abstention_with_claims_rejected
+tests/unit/test_answer_contract.py::test_empty_context_cannot_answer
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[{} trailing]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[```json\n{}\n```]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[[]]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[null]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[{"status": "answered", "status": "abstained"}]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[{"value": NaN}]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[{"value": Infinity}]
+tests/unit/test_answer_contract.py::test_nonconforming_json_rejected[{"claims":[{"text":"a","text":"b"}]}]
+tests/unit/test_answer_contract.py::test_other_question_cannot_reuse_response
+tests/unit/test_answer_contract.py::test_same_citation_id_in_other_context_is_not_interchangeable
+tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[text]
+tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[duplicate_id]
+tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[invalid_id]
+tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[duplicate_chunk]
+tests/unit/test_answer_contract.py::test_structural_success_does_not_prove_claim_support
 tests/unit/test_block_serializer.py::test_serializer_preserves_text_block_content
 tests/unit/test_block_serializer.py::test_serializer_serializes_table_structure_deterministically
 tests/unit/test_block_serializer.py::test_serializer_serializes_spreadsheet_structure_deterministically
@@ -609,6 +676,56 @@ tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[expected
 tests/unit/test_evaluation_schemas.py::test_rejects_duplicate_evidence
 tests/unit/test_evaluation_schemas.py::test_rejects_evidence_distractor_overlap
 tests/unit/test_evaluation_schemas.py::test_abstention_allows_empty_expected_evidence
+tests/unit/test_evidence_context.py::test_anchors_keep_selection_order_but_retain_original_fusion_provenance
+tests/unit/test_evidence_context.py::test_rendered_json_round_trips_unicode_quoted_source_text_and_all_locations
+tests/unit/test_evidence_context.py::test_citation_map_is_a_fresh_copy_and_does_not_mutate_evidence
+tests/unit/test_evidence_context.py::test_character_budget_includes_metadata_and_accepts_an_exact_fit
+tests/unit/test_evidence_context.py::test_oversized_extra_is_skipped_and_a_later_extra_from_same_doc_can_fit
+tests/unit/test_evidence_context.py::test_chunk_budget_preserves_every_anchor_and_limits_additions
+tests/unit/test_evidence_context.py::test_repeated_document_anchors_are_preserved_and_limit_applies_only_to_additions
+tests/unit/test_evidence_context.py::test_empty_selection_produces_no_context_even_when_pool_contains_documents
+tests/unit/test_evidence_context.py::test_duplicate_chunk_identity_is_rejected[selected]
+tests/unit/test_evidence_context.py::test_duplicate_chunk_identity_is_rejected[pool]
+tests/unit/test_evidence_context.py::test_changed_anchor_or_provenance_is_rejected[missing]
+tests/unit/test_evidence_context.py::test_changed_anchor_or_provenance_is_rejected[text]
+tests/unit/test_evidence_context.py::test_changed_anchor_or_provenance_is_rejected[source_path]
+tests/unit/test_evidence_context.py::test_changed_anchor_or_provenance_is_rejected[score]
+tests/unit/test_evidence_context.py::test_changed_anchor_or_provenance_is_rejected[methods]
+tests/unit/test_evidence_context.py::test_invalid_pool_rank_order_is_rejected[ranks0]
+tests/unit/test_evidence_context.py::test_invalid_pool_rank_order_is_rejected[ranks1]
+tests/unit/test_evidence_context.py::test_invalid_pool_rank_order_is_rejected[ranks2]
+tests/unit/test_evidence_context.py::test_invalid_pool_rank_order_is_rejected[ranks3]
+tests/unit/test_evidence_context.py::test_invalid_pool_rank_order_is_rejected[ranks4]
+tests/unit/test_evidence_context.py::test_invalid_pool_scores_are_rejected[nan]
+tests/unit/test_evidence_context.py::test_invalid_pool_scores_are_rejected[inf]
+tests/unit/test_evidence_context.py::test_invalid_pool_scores_are_rejected[True]
+tests/unit/test_evidence_context.py::test_invalid_pool_scores_are_rejected[0.5]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options0]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options1]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options2]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options3]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options4]
+tests/unit/test_evidence_context.py::test_invalid_budgets_fail_at_construction[options5]
+tests/unit/test_evidence_context_replay.py::test_audit_reuses_saved_scores_and_original_latency_without_loading_a_model
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[text]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[fusion_score]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[source_block_ids]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[rerank_score]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[metric]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[query]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[selection]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[duplicate_question]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[duplicate_passage]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[trace_hash]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[filter_policy]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[group_metrics]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[decision]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[latency]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[pair_count]
+tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_inconsistent_results[unstable]
+tests/unit/test_evidence_context_replay.py::test_context_coverage_is_measured_separately_and_labels_do_not_change_selection
+tests/unit/test_evidence_context_replay.py::test_no_reference_labels_does_not_mean_perfect_passage_coverage
+tests/unit/test_evidence_context_replay.py::test_output_cannot_overwrite_a_source_file
 tests/unit/test_filtered_reranking.py::test_one_scoring_call_uses_original_query_and_preserves_both_score_provenances
 tests/unit/test_filtered_reranking.py::test_fixed_membership_does_not_claim_to_repair_missing_passages
 tests/unit/test_filtered_reranking.py::test_score_ties_keep_control_order_and_do_not_invent_a_gain
@@ -812,6 +929,25 @@ tests/unit/test_prefix_reranking_live.py::test_reference_passages_are_checked_ag
 tests/unit/test_prefix_reranking_live.py::test_frozen_data_guard_checks_exact_known_files
 tests/unit/test_prefix_reranking_live.py::test_b_regression_cannot_be_hidden_by_a_improvement
 tests/unit/test_prefix_reranking_live.py::test_comparison_preserves_the_existing_no_regression_gate
+tests/unit/test_rag_service.py::test_real_hybrid_context_generation_pipeline_and_repeated_questions
+tests/unit/test_rag_service.py::test_empty_retrieval_abstains_without_llm
+tests/unit/test_rag_service.py::test_nonempty_context_can_abstain
+tests/unit/test_rag_service.py::test_unknown_reference_blocks_displayable_result
+tests/unit/test_rag_service.py::test_provider_failure_propagates_without_retry_or_abstention
+tests/unit/test_rag_service.py::test_budget_failure_does_not_call_provider
+tests/unit/test_rag_service.py::test_invalid_question_stops_before_retrieval
+tests/unit/test_rag_service.py::test_adapter_uses_structured_output_and_separates_data_from_instructions
+tests/unit/test_rag_service.py::test_adapter_rejects_incomplete_refused_or_empty_responses[incomplete]
+tests/unit/test_rag_service.py::test_adapter_rejects_incomplete_refused_or_empty_responses[refusal]
+tests/unit/test_rag_service.py::test_adapter_rejects_incomplete_refused_or_empty_responses[empty]
+tests/unit/test_rag_service.py::test_source_discovery_excludes_generated_files_and_rejects_duplicate_ids
+tests/unit/test_rag_service.py::test_cli_rejects_existing_output_before_api_or_parsing
+tests/unit/test_rag_service.py::test_cli_interactive_session_indexes_once_and_handles_two_questions
+tests/unit/test_rag_service.py::test_short_document_expansion_recovers_table_outside_retrieval_pool
+tests/unit/test_rag_service.py::test_parent_document_budget_is_atomic_and_preserves_anchors
+tests/unit/test_rag_service.py::test_long_document_uses_ranked_supplement_instead_of_full_expansion
+tests/unit/test_rag_service.py::test_parent_expansion_rejects_stale_corpus_text
+tests/unit/test_rag_service.py::test_parent_expansion_is_independent_of_corpus_insertion_order
 tests/unit/test_reranker.py::test_scores_entire_pool_before_selecting_top_k_and_preserves_provenance
 tests/unit/test_reranker.py::test_equal_scores_keep_input_order_including_negative_scores
 tests/unit/test_reranker.py::test_empty_pool_does_not_call_scorer
@@ -881,6 +1017,13 @@ tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_base
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_based_positive_rank[-1]
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_requires_one_based_positive_rank[-10]
 tests/unit/test_retrieval_schemas.py::test_retrieval_candidate_is_immutable
+tests/unit/test_saved_generation.py::test_restore_preserves_exact_generation_context
+tests/unit/test_saved_generation.py::test_restore_rejects_mismatched_evidence[question]
+tests/unit/test_saved_generation.py::test_restore_rejects_mismatched_evidence[text]
+tests/unit/test_saved_generation.py::test_restore_rejects_mismatched_evidence[citation]
+tests/unit/test_saved_generation.py::test_comparison_changes_only_instructions_and_makes_no_embedding_calls
+tests/unit/test_saved_generation.py::test_failure_remains_error_and_second_arm_is_preserved
+tests/unit/test_saved_generation.py::test_existing_output_not_overwritten
 tests/unit/test_search_text.py::test_build_search_text_returns_original_text_without_section_context
 tests/unit/test_search_text.py::test_build_search_text_adds_single_section_context
 tests/unit/test_search_text.py::test_build_search_text_preserves_section_hierarchy
@@ -936,12 +1079,13 @@ tests/unit/test_xlsx_parser.py::test_parser_rejects_missing_file
 tests/unit/test_xlsx_parser.py::test_parser_rejects_non_xlsx_source
 tests/unit/test_xlsx_parser.py::test_parser_rejects_workbook_without_content
 
-526 tests collected in 53.76s
+646 tests collected in 15.27s
 ```
 
 ## 11. Recent Commits
 
 ```text
+055b0a8 | 2026-11-06 17:50:43 -0300 | feat: add retrieval experiments and validation through RV-013
 17e5bc0 | 2026-11-04 09:54:05 -0300 | feat: validate hybrid retrieval v0.3 with document-aware selection
 45a5a2c | 2026-11-04 00:33:15 -0300 | feat: implement hybrid retrieval with BM25 and RRF
 43920d1 | 2026-11-02 00:00:42 -0300 | feat: establish multi-format Golden Set retrieval baseline
@@ -951,7 +1095,6 @@ f5a09bb | 2026-11-01 22:25:09 -0300 | test: add multi-document vector retrieval 
 efef5f8 | 2026-10-08 04:17:33 -0300 | fix: clean README markdown rendering
 a036395 | 2026-10-08 04:10:51 -0300 | fix: correct README image rendering
 22eb744 | 2026-10-08 04:03:35 -0300 | docs: refine README visuals and system overview
-87b5c84 | 2026-10-08 03:55:06 -0300 | docs: update README and architecture overview
 ```
 
 ## 12. Working Tree
@@ -960,41 +1103,28 @@ a036395 | 2026-10-08 04:10:51 -0300 | fix: correct README image rendering
 State: DIRTY
 
 Files:
-?? app/retrieval/cross_encoder_scorer.py
-?? app/retrieval/lexical_query_filter.py
-?? app/retrieval/prefix_preserving_selector.py
-?? app/retrieval/reranker.py
-?? data/ground_truth/reranking_challenge_b.json
-?? docs/validation/RV008_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV008_RESULTS.json
-?? docs/validation/RV009_ANALYSIS.md
-?? docs/validation/RV009_REPLAY_RESULTS.json
-?? docs/validation/RV009_REPLAY_RESULTS_local.json
-?? docs/validation/RV010_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV010_LIVE_RESULTS.json
-?? docs/validation/RV010_PASSAGE_REVIEW.md
-?? docs/validation/RV010_REVIEW_RESULTS.json
-?? docs/validation/RV011_CANDIDATE_TRACE.json
-?? docs/validation/RV012_ANALYSIS_AND_GUIDE.md
-?? docs/validation/RV012_LEXICAL_REPLAY_RESULTS.json
-?? docs/validation/RV012_LEXICAL_REPLAY_RESULTS_local.json
-?? docs/validation/RV013_FILTERED_RERANK_RESULTS.json
-?? docs/validation/RV013_IMPLEMENTATION_GUIDE.md
-?? tests/smoke/smoke_candidate_trace.py
-?? tests/smoke/smoke_filtered_reranking.py
-?? tests/smoke/smoke_lexical_filter_replay.py
-?? tests/smoke/smoke_prefix_reranking_live.py
-?? tests/smoke/smoke_reranking_experiment.py
-?? tests/smoke/smoke_reranking_replay.py
-?? tests/unit/test_candidate_trace.py
-?? tests/unit/test_cross_encoder_scorer.py
-?? tests/unit/test_filtered_reranking.py
-?? tests/unit/test_lexical_filter_replay.py
-?? tests/unit/test_lexical_query_filter.py
-?? tests/unit/test_prefix_preserving_selector.py
-?? tests/unit/test_prefix_reranking_live.py
-?? tests/unit/test_reranker.py
-?? tests/unit/test_reranking_replay.py
+?? app/generation/
+?? app/retrieval/evidence_context.py
+?? app/scripts/ask_knowledge.py
+?? app/scripts/compare_saved_generation.py
+?? docs/validation/RV013_ANALYSIS.md
+?? docs/validation/RV014_ANALYSIS.md
+?? docs/validation/RV014_CONTEXT_REPLAY_RESULTS_local.json
+?? docs/validation/RV014_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV014_INTEGRATION.md
+?? docs/validation/RV015_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV016_GENERATION_COMPARISON.json
+?? docs/validation/RV016_GENERATION_COMPARISON.md
+?? docs/validation/RV016_GENERATION_COMPARISON_GPT41.json
+?? docs/validation/RV016_IMPLEMENTATION_GUIDE.md
+?? docs/validation/RV016_SHARING_AFTER_CONTEXT_FIX.json
+?? docs/validation/RV016_SHARING_DIAGNOSTIC.json
+?? tests/smoke/smoke_evidence_context_replay.py
+?? tests/unit/test_answer_contract.py
+?? tests/unit/test_evidence_context.py
+?? tests/unit/test_evidence_context_replay.py
+?? tests/unit/test_rag_service.py
+?? tests/unit/test_saved_generation.py
 ```
 
 ## 13. Declared Dependencies
