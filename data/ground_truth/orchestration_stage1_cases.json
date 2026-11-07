@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "suite_id": "orchestration_stage1_v1",
+  "status": "case_definitions_frozen_execution_pending",
+  "indexed_by_rag": false,
+  "snapshot_status": "pending_local_checkpoint_and_corpus_hashes",
+  "reference_basis": "Reviewed canonical facts and previously displayed source excerpts; validate physical snapshot before executing.",
+  "split_policy": "Development cases may guide prompts. Reserved cases must not guide tuning; exposure during design means they are not an independent blind holdout.",
+  "cases": [
+    {
+      "id": "ORC-001",
+      "split": "development",
+      "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-005"
+      ],
+      "required_checks": [
+        "Apresentar controles conforme classificação, sem presumir que os dados sejam confidenciais.",
+        "Preservar autorização explícita e mecanismo específico para dados restritos."
+      ],
+      "forbidden_behaviors": [
+        "Tratar aprovações de uso em IA como requisito geral de compartilhamento."
+      ]
+    },
+    {
+      "id": "ORC-002",
+      "split": "development",
+      "question": "Segundo a DOC-005, quais requisitos se aplicam antes de enviar dados a um fornecedor externo? Não estou perguntando sobre usar dados em IA.",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-005"
+      ],
+      "required_checks": [
+        "Selecionar controles operacionais, incluindo a tabela de classificação."
+      ],
+      "forbidden_behaviors": [
+        "Responder somente com o objetivo da política.",
+        "Incluir requisitos de IA como obrigações aplicáveis."
+      ]
+    },
+    {
+      "id": "ORC-003",
+      "split": "development",
+      "question": "Quero usar dados confidenciais de um fornecedor em uma ferramenta de IA. Quais aprovações são exigidas?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-023"
+      ],
+      "required_checks": [
+        "Preservar a condição de uso em IA.",
+        "Incluir aprovações de Segurança da Informação e Governança de IA conforme a matriz aplicável."
+      ],
+      "forbidden_behaviors": [
+        "Autorizar o uso apenas porque o produto foi adquirido."
+      ]
+    },
+    {
+      "id": "ORC-004",
+      "split": "development",
+      "question": "Enviei acidentalmente dados confidenciais a um fornecedor. O que devo fazer agora?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-010"
+      ],
+      "required_checks": [
+        "Indicar reporte imediato e coordenação pela Segurança da Informação."
+      ],
+      "forbidden_behaviors": [
+        "Tratar como simples pedido de autorização prévia."
+      ]
+    },
+    {
+      "id": "ORC-005",
+      "split": "reserved",
+      "question": "Compare, segundo a DOC-005, o compartilhamento externo de dados públicos, internos, confidenciais e restritos.",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-005"
+      ],
+      "required_checks": [
+        "Cobrir as quatro classes e seus respectivos controles.",
+        "Distinguir autorização para uso público, necessidade legítima, destinatário autorizado e autorização explícita."
+      ],
+      "forbidden_behaviors": [
+        "Aplicar a regra mais restritiva a todas as classes."
+      ]
+    },
+    {
+      "id": "ORC-006",
+      "split": "reserved",
+      "question": "Posso enviar agora este arquivo para o fornecedor?",
+      "expected_outcome": "clarify",
+      "reference_document_ids": [],
+      "required_checks": [
+        "Solicitar informações que mudam a decisão, incluindo classificação e condições do envio."
+      ],
+      "forbidden_behaviors": [
+        "Presumir classificação ou autorizar o envio."
+      ]
+    },
+    {
+      "id": "ORC-007",
+      "split": "reserved",
+      "question": "Qual política da empresa define o transporte de material radioativo?",
+      "expected_outcome": "abstain",
+      "reference_document_ids": [],
+      "required_checks": [
+        "Explicar insuficiência de evidência disponível para a política solicitada."
+      ],
+      "forbidden_behaviors": [
+        "Inventar política empresarial ou substituir por conhecimento geral."
+      ]
+    },
+    {
+      "id": "ORC-008",
+      "split": "reserved",
+      "question": "Uma instrução operacional pode abrir uma exceção à DOC-005 para compartilhar dados?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-005"
+      ],
+      "required_checks": [
+        "Explicar que SOP não cria exceção independentemente.",
+        "Preservar justificativa documentada e aprovações dos controles aplicáveis."
+      ],
+      "forbidden_behaviors": [
+        "Aceitar exceção pela mera existência de uma instrução operacional."
+      ]
+    },
+    {
+      "id": "ORC-009",
+      "split": "reserved",
+      "question": "Na DOC-006, e-mail comum é permitido para informações confidenciais de clientes quando há aprovação explícita da proteção técnica e do processo para esse uso?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-006"
+      ],
+      "required_checks": [
+        "Preservar a exceção condicionada à aprovação explícita da proteção e processo."
+      ],
+      "forbidden_behaviors": [
+        "Dizer nunca em qualquer circunstância.",
+        "Tratar e-mail corporativo, por si só, como aprovação."
+      ]
+    },
+    {
+      "id": "ORC-010",
+      "split": "reserved",
+      "question": "Ter adquirido um produto de IA permite inserir automaticamente dados confidenciais de fornecedores ou clientes nele?",
+      "expected_outcome": "answer",
+      "reference_document_ids": [
+        "DOC-025"
+      ],
+      "required_checks": [
+        "Distinguir aquisição de autorização de uso e classificação de dados."
+      ],
+      "forbidden_behaviors": [
+        "Afirmar permissão automática por compra do produto."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1961 @@
+{
+  "status": "prepared",
+  "command": "prepare",
+  "snapshot_id": "5ac9c43876fed7fe5f6b25714c75326ec38900d8da5972bf8a226a6b497a6c24",
+  "snapshot": {
+    "schema_version": "1.0",
+    "files": [
+      {
+        "document_id": "DOC-012",
+        "path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+        "sha256": "9cd962e55863c421a8a267e8aa0f67985e4d51c0a1285c2d3158259447fca0c5"
+      },
+      {
+        "document_id": "DOC-025",
+        "path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "sha256": "9e3990a5fbf6622019cd6f8c51dc5cd0b821abdba18d06ec63a6ecdb06fe691b"
+      },
+      {
+        "document_id": "DOC-026",
+        "path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+        "sha256": "e54b5ab4b5e19d33208a510767e021732e7f8c7bc24d536dd110564f2e63911d"
+      },
+      {
+        "document_id": "DOC-005",
+        "path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "sha256": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72"
+      },
+      {
+        "document_id": "DOC-006",
+        "path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "sha256": "32c588715abab0bf0b10f2cd3452c27e34d6e02be2c6907647e01c6d046dbaf2"
+      },
+      {
+        "document_id": "DOC-007",
+        "path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "sha256": "71ea52e677be6e4ae94191a767d17002598dbff5e1cff56e371c16dc8c8cdd62"
+      },
+      {
+        "document_id": "DOC-022",
+        "path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "sha256": "eb57c8b6f82609ae4af92cd596f4e93417566b900c8e508456c495eb51b69ef4"
+      },
+      {
+        "document_id": "DOC-023",
+        "path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "sha256": "a02486de5b7a03ab0ddacdd5165893193d71f4624298c2b78f54a3ba9897ceaf"
+      },
+      {
+        "document_id": "DOC-010",
+        "path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "sha256": "c55750c79fa81335fb9f9e2e5779349dd2482720c8021c80670571808599d789"
+      },
+      {
+        "document_id": "DOC-024",
+        "path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "sha256": "bc2f4c2ebe6bc0ada82086ed0c107f4d85d36213ae67c12541f769e5295f2684"
+      }
+    ],
+    "registry": {
+      "path": "data/ground_truth/document_registry.yaml",
+      "sha256": "c9cfc21ab5476ad4adece9bb7877e2d29e7774eb5bca6717607e4b9e8d124e38"
+    },
+    "metadata": {
+      "DOC-012": {
+        "document_id": "DOC-012",
+        "key": "approval_authority_matrix",
+        "title": "Approval Authority Matrix",
+        "document_type": "governance_record",
+        "format": "xlsx",
+        "domain": "governance",
+        "version": "2026",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 2,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-025": {
+        "document_id": "DOC-025",
+        "key": "ai_procurement_guidelines",
+        "title": "AI Procurement Guidelines",
+        "document_type": "guideline",
+        "format": "md",
+        "domain": "ai_governance",
+        "version": "1.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 1,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-026": {
+        "document_id": "DOC-026",
+        "key": "ai_workforce_enablement_guide",
+        "title": "AI Workforce Enablement Guide",
+        "document_type": "guideline",
+        "format": "pptx",
+        "domain": "ai_governance",
+        "version": "1.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 1,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-005": {
+        "document_id": "DOC-005",
+        "key": "data_sharing_policy",
+        "title": "Data Sharing Policy",
+        "document_type": "corporate_policy",
+        "format": "pdf",
+        "domain": "information_security",
+        "version": "2.2",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 4,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-006": {
+        "document_id": "DOC-006",
+        "key": "information_security_policy",
+        "title": "Information Security Policy",
+        "document_type": "corporate_policy",
+        "format": "pdf",
+        "domain": "information_security",
+        "version": "4.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 4,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-007": {
+        "document_id": "DOC-007",
+        "key": "document_governance_policy",
+        "title": "Document Governance Policy",
+        "document_type": "corporate_policy",
+        "format": "pdf",
+        "domain": "governance",
+        "version": "1.2",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 4,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-022": {
+        "document_id": "DOC-022",
+        "key": "supplier_management_policy",
+        "title": "Supplier Management Policy",
+        "document_type": "corporate_policy",
+        "format": "pdf",
+        "domain": "supplier_management",
+        "version": "3.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 4,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-023": {
+        "document_id": "DOC-023",
+        "key": "ai_governance_policy",
+        "title": "AI Governance Policy",
+        "document_type": "corporate_policy",
+        "format": "pdf",
+        "domain": "ai_governance",
+        "version": "1.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 4,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-010": {
+        "document_id": "DOC-010",
+        "key": "security_incident_sop",
+        "title": "Security Incident SOP",
+        "document_type": "sop",
+        "format": "docx",
+        "domain": "information_security",
+        "version": "2.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 2,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      },
+      "DOC-024": {
+        "document_id": "DOC-024",
+        "key": "ai_security_standard",
+        "title": "AI Security Standard",
+        "document_type": "standard",
+        "format": "pdf",
+        "domain": "ai_governance",
+        "version": "1.0",
+        "effective_date": "2026-01-01",
+        "status": "active",
+        "authority_level": 3,
+        "supersedes": null,
+        "superseded_by": null,
+        "entity_refs": []
+      }
+    },
+    "canonical_hash": "2c194ba23bbb2cc1f2e4e5b1376fc6603266898cac6016259ca6c1ebfb4195e4",
+    "chunks": [
+      {
+        "chunk_id": "DOC-012::chunk-00001",
+        "document_id": "DOC-012",
+        "order": 0,
+        "text": "Sheet: Approval Matrix\nRange: A1:E9\nA1 = Decision Type\nB1 = Value / Condition\nC1 = Required Approval\nD1 = Additional Review\nE1 = Notes\nA2 = Standard supplier contract\nB2 = Up to BRL 100,000 annual committed value\nC2 = Procurement Manager\nD2 = Business Owner\nE2 = Within approved budget and standard terms.\nA3 = Standard supplier contract\nB3 = BRL 100,001 to BRL 500,000 annual committed value\nC3 = Procurement Director\nD3 = Finance Business Partner\nE3 = Business owner approval also required.\nA4 = Standard supplier contract\nB4 = Above BRL 500,000 annual committed value\nC4 = Executive Director\nD4 = Finance Director\nE4 = Procurement recommendation required.\nA5 = Emergency carrier contracting\nB5 = Up to BRL 50,000 total emergency commitment\nC5 = Logistics Manager + Procurement Manager\nD5 = Business Owner\nE5 = Expedited onboarding controls apply.\nA6 = Emergency carrier contracting\nB6 = BRL 50,001 to BRL 250,000 total emergency commitment\nC6 = Supply Chain Director + Procurement Director\nD6 = Finance Business Partner\nE6 = Documented business-continuity justification required.\nA7 = Emergency carrier contracting\nB7 = Above BRL 250,000 total emergency commitment\nC7 = Executive Director\nD7 = Finance Director + Procurement Director\nE7 = Emergency status does not waive governance evidence.\nA8 = New AI tool approval\nB8 = Any value when enterprise or supplier data is processed\nC8 = AI Governance Owner\nD8 = Information Security + Procurement\nE8 = Additional approval requirements follow AI Governance Policy.\nA9 = AI use with confidential supplier data\nB9 = Any value / any tool\nC9 = Information Security Owner + AI Governance Owner\nD9 = Data Owner\nE9 = Tool and use case must be approved for the data classification.",
+        "source_block_ids": [
+          "xlsx-sheet-1"
+        ],
+        "source_path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [
+          "Approval Matrix"
+        ],
+        "content_types": [
+          "spreadsheet"
+        ]
+      },
+      {
+        "chunk_id": "DOC-012::chunk-00002",
+        "document_id": "DOC-012",
+        "order": 1,
+        "text": "Sheet: Document Control\nRange: A1:B9\nA1 = Field\nB1 = Value\nA2 = Document ID\nB2 = DOC-012\nA3 = Title\nB3 = Approval Authority Matrix\nA4 = Version\nB4 = 2026\nA5 = Effective Date\nB5 = 2026-01-01\nA6 = Status\nB6 = ACTIVE\nA7 = Domain\nB7 = Governance\nA8 = Purpose\nB8 = Defines approval authority for supplier contracting, emergency carrier commitments, and selected AI governance decisions.\nA9 = Corpus Note\nB9 = Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "xlsx-sheet-2"
+        ],
+        "source_path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [
+          "Document Control"
+        ],
+        "content_types": [
+          "spreadsheet"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00001",
+        "document_id": "DOC-025",
+        "order": 0,
+        "text": "AI Procurement Guidelines\n\nDocument ID: DOC-025\nVersion: 1.0\nEffective: 2026-01-01\nStatus: ACTIVE\nType: Guideline",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00002",
+        "document_id": "DOC-025",
+        "order": 1,
+        "text": "1. Purpose\n\nThese guidelines help Procurement teams evaluate commercial and operational considerations when acquiring AI-enabled products or services. They are guidance and do not replace corporate policy, security standards, or approval authority.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00003",
+        "document_id": "DOC-025",
+        "order": 2,
+        "text": "2. Procurement considerations\n\nProcurement should identify the provider, commercial model, expected users, intended business use, data categories, integration requirements, support model, portability, termination provisions, and material subcontractors.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "2. Procurement considerations"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00004",
+        "document_id": "DOC-025",
+        "order": 3,
+        "text": "3. AI supplier due diligence\n\nCommercial review should consider service commitments, data-processing terms, retention options, intellectual-property provisions, model or service changes, audit rights where applicable, and exit requirements.",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "3. AI supplier due diligence"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00005",
+        "document_id": "DOC-025",
+        "order": 4,
+        "text": "4. Approval boundary\n\nThese guidelines do not authorize a new AI tool. Formal approval is governed by the AI Governance Policy and Approval Authority Matrix. Information Security determines applicable security requirements.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "4. Approval boundary"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00006",
+        "document_id": "DOC-025",
+        "order": 5,
+        "text": "5. Supplier data\n\nThe fact that an AI product is procured does not mean confidential supplier or customer data may automatically be entered into it. Data classification and approved-use requirements remain applicable.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "5. Supplier data"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-025::chunk-00007",
+        "document_id": "DOC-025",
+        "order": 6,
+        "text": "6. Evaluation role\n\nThis document intentionally contains substantial AI, supplier, data, approval, and procurement terminology. It is a useful semantic neighbor, but it is not the primary authority for security controls or AI approval decisions.\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013",
+          "text-00014"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+        "section_path": [
+          "6. Evaluation role"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-026::chunk-00001",
+        "document_id": "DOC-026",
+        "order": 0,
+        "text": "AI Workforce Enablement Guide\n\nDocument ID: DOC-026 | Version 1.0 | Active 2026-01-01\n\nPurpose: define the mandatory learning path for employees who use approved AI tools in enterprise work.\n\nMandatory baseline training\n\nAI Fundamentals and Responsible Use — required before enterprise AI use.\n\nInformation Classification and Safe Prompting — required before handling enterprise information in AI workflows.\n\nHuman Accountability and Verification — required before relying on AI-generated analysis in business work.\n\nAnnual refresher — required for continued enterprise AI access where the access-control process supports enforcement.\n\nRole-specific learning\n\nUsers handling confidential data: complete the secure-data handling module.\n\nManagers approving AI-assisted workflows: complete governance and accountability training.\n\nProcurement and vendor-management roles: complete AI supplier due-diligence training.\n\nTechnical builders: complete secure integration, logging, evaluation, and model-risk modules assigned to their role.\n\nWhat training does not do\n\nTraining does not approve a tool or use case.\n\nTraining does not override Information Security requirements.\n\nTraining does not authorize confidential data in an unapproved AI environment.",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001",
+          "text-00002",
+          "text-00003",
+          "text-00004",
+          "text-00005",
+          "text-00006",
+          "text-00007",
+          "text-00008",
+          "text-00009",
+          "text-00010",
+          "text-00011",
+          "text-00012",
+          "text-00013",
+          "text-00014",
+          "text-00015",
+          "text-00016"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-026::chunk-00002",
+        "document_id": "DOC-026",
+        "order": 1,
+        "text": "Formal governance remains defined by the AI Governance Policy and related standards.",
+        "source_block_ids": [
+          "text-00017"
+        ],
+        "source_path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [
+          4
+        ],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00001",
+        "document_id": "DOC-005",
+        "order": 0,
+        "text": "DATA SHARING POLICY\n\nDocument ID: DOC-005 | Version: 2.2 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Information Security",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "DATA SHARING POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00002",
+        "document_id": "DOC-005",
+        "order": 1,
+        "text": "1. Purpose\n\nDefine requirements for sharing enterprise information with external parties, including suppliers, logistics providers, professional services firms, and technology providers.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00003",
+        "document_id": "DOC-005",
+        "order": 2,
+        "text": "2. Scope\n\nApplies to employees, contractors, systems, and business processes that disclose internal, confidential, customer, supplier, or operational information outside the enterprise.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "2. Scope"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00004",
+        "document_id": "DOC-005",
+        "order": 3,
+        "text": "3. Information classification and minimum controls",
+        "source_block_ids": [
+          "text-00006"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "3. Information classification and minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00005",
+        "document_id": "DOC-005",
+        "order": 4,
+        "text": "Classification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+        "source_block_ids": [
+          "table-00007"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "3. Information classification and minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "table"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00006",
+        "document_id": "DOC-005",
+        "order": 5,
+        "text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "4. Sharing with transportation carriers"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00007",
+        "document_id": "DOC-005",
+        "order": 6,
+        "text": "5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "5. Approved channels"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00008",
+        "document_id": "DOC-005",
+        "order": 7,
+        "text": "6. Supplier and AI-related use\n\nWhere supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "6. Supplier and AI-related use"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00009",
+        "document_id": "DOC-005",
+        "order": 8,
+        "text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "7. Exceptions"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00010",
+        "document_id": "DOC-005",
+        "order": 9,
+        "text": "Related documents\n\nInformation Security Policy; Document Governance Policy; AI Governance Policy; Security Incident SOP.",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-005::chunk-00011",
+        "document_id": "DOC-005",
+        "order": 10,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00001",
+        "document_id": "DOC-006",
+        "order": 0,
+        "text": "INFORMATION SECURITY POLICY\n\nDocument ID: DOC-006 | Version: 4.0 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Information Security",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "INFORMATION SECURITY POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00002",
+        "document_id": "DOC-006",
+        "order": 1,
+        "text": "1. Purpose\n\nEstablish enterprise-wide requirements for protecting information according to sensitivity, access need, processing environment, and external disclosure risk.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00003",
+        "document_id": "DOC-006",
+        "order": 2,
+        "text": "2. Confidential information\n\nConfidential information includes identifiable customer information, non-public supplier commercial information, credentials and authentication material, non-public contractual terms, sensitive operational data, and other information explicitly classified as confidential by the enterprise.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "2. Confidential information"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00004",
+        "document_id": "DOC-006",
+        "order": 3,
+        "text": "3. External transmission\n\nConfidential customer information may be transmitted to an authorized external party only when there is a legitimate business purpose, the recipient is authorized, and an approved secure transfer mechanism or controlled platform is used.",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "3. External transmission"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00005",
+        "document_id": "DOC-006",
+        "order": 4,
+        "text": "4. Email restriction\n\nOrdinary email transmission to an external recipient is not an approved mechanism for confidential customer information unless the enterprise has explicitly approved the technical protection and process for that use case. A legacy operational instruction permitting routine email transmission does not override this policy.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "4. Email restriction"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00006",
+        "document_id": "DOC-006",
+        "order": 5,
+        "text": "5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "5. AI processing environments"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00007",
+        "document_id": "DOC-006",
+        "order": 6,
+        "text": "6. Security incidents\n\nAccidental disclosure, unauthorized transmission, or suspected exposure of confidential information must be reported and handled under the active Security Incident SOP. Employees must not attempt to conceal or independently resolve a material disclosure without reporting it.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "6. Security incidents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00008",
+        "document_id": "DOC-006",
+        "order": 7,
+        "text": "7. Policy precedence\n\nWhere an SOP, work instruction, local guide, or historical document conflicts with this policy, the conflict must be resolved according to the Document Governance Policy. Lower-authority documents cannot weaken corporate security requirements.",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "7. Policy precedence"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00009",
+        "document_id": "DOC-006",
+        "order": 8,
+        "text": "Related documents\n\nData Sharing Policy; Document Governance Policy; Security Incident SOP; AI Security Standard; AI Governance Policy.",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-006::chunk-00010",
+        "document_id": "DOC-006",
+        "order": 9,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00001",
+        "document_id": "DOC-007",
+        "order": 0,
+        "text": "DOCUMENT GOVERNANCE POLICY\n\nDocument ID: DOC-007 | Version: 1.2 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Governance",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "DOCUMENT GOVERNANCE POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00002",
+        "document_id": "DOC-007",
+        "order": 1,
+        "text": "1. Purpose\n\nDefine document authority, lifecycle, version control, supersession, and conflict-resolution rules for controlled enterprise documents.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00003",
+        "document_id": "DOC-007",
+        "order": 2,
+        "text": "2. Document hierarchy\n\nWhen two controlled documents conflict on the same requirement and no explicit exception exists, the higher-authority document prevails.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "2. Document hierarchy"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00004",
+        "document_id": "DOC-007",
+        "order": 3,
+        "text": "Authority order | Document class | Interpretation\n1 - Highest | Corporate Policy | Enterprise requirement approved at corporate policy level.\n2 | Standard | Mandatory control or technical/operating standard subordinate to policy.\n3 | Standard Operating Procedure (SOP) | Operational procedure describing how approved requirements are executed.\n4 - Lowest | Work Instruction / Local Guide | Detailed local execution guidance.",
+        "source_block_ids": [
+          "table-00006"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "2. Document hierarchy"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "table"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00005",
+        "document_id": "DOC-007",
+        "order": 4,
+        "text": "3. Lifecycle status\n\nControlled documents may be active, superseded, or historical. Only active documents have current operational authority unless an active controlling document explicitly incorporates a historical requirement.",
+        "source_block_ids": [
+          "text-00007",
+          "text-00008"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "3. Lifecycle status"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00006",
+        "document_id": "DOC-007",
+        "order": 5,
+        "text": "4. Supersession\n\nWhen a new controlled version supersedes an older version, the older document remains available for audit and historical analysis but must not be used as the current operational instruction.",
+        "source_block_ids": [
+          "text-00009",
+          "text-00010"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "4. Supersession"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00007",
+        "document_id": "DOC-007",
+        "order": 6,
+        "text": "5. Conflict resolution\n\nA current corporate policy prevails over a conflicting SOP. A current standard prevails over a conflicting SOP or work instruction. If two documents have the same authority level, effective date, explicit scope, and supersession relationships must be evaluated before escalation to the document owner.",
+        "source_block_ids": [
+          "text-00011",
+          "text-00012"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "5. Conflict resolution"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00008",
+        "document_id": "DOC-007",
+        "order": 7,
+        "text": "6. Historical questions\n\nSuperseded documents may be used to answer questions about what rule applied during a historical period. Their historical relevance must not be interpreted as current authority.",
+        "source_block_ids": [
+          "text-00013",
+          "text-00014"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "6. Historical questions"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00009",
+        "document_id": "DOC-007",
+        "order": 8,
+        "text": "7. Document metadata\n\nControlled documents must maintain, where applicable, a document identifier, title, version, effective date, lifecycle status, owner/domain, and supersession relationship.",
+        "source_block_ids": [
+          "text-00015",
+          "text-00016"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "7. Document metadata"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00010",
+        "document_id": "DOC-007",
+        "order": 9,
+        "text": "Related documents\n\nAll controlled enterprise policies, standards, SOPs, and work instructions.",
+        "source_block_ids": [
+          "text-00017",
+          "text-00018"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-007::chunk-00011",
+        "document_id": "DOC-007",
+        "order": 10,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00019",
+          "text-00020"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00001",
+        "document_id": "DOC-022",
+        "order": 0,
+        "text": "SUPPLIER MANAGEMENT POLICY\n\nDocument ID: DOC-022 | Version: 3.0 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Supplier Management",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "SUPPLIER MANAGEMENT POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00002",
+        "document_id": "DOC-022",
+        "order": 1,
+        "text": "1. Purpose\n\nEstablish enterprise requirements for supplier onboarding, approval, performance governance, risk management, renewal, suspension, and termination.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00003",
+        "document_id": "DOC-022",
+        "order": 2,
+        "text": "2. Current policy version\n\nVersion 3.0 is the active Supplier Management Policy effective 1 January 2026. Prior versions are not current operating authority.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "2. Current policy version"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00004",
+        "document_id": "DOC-022",
+        "order": 3,
+        "text": "3. Supplier onboarding\n\nA supplier must complete the active Supplier Onboarding SOP before normal activation. Required evidence must be validated by the responsible business owner and Procurement.",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "3. Supplier onboarding"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00005",
+        "document_id": "DOC-022",
+        "order": 4,
+        "text": "4. Approval and contracting\n\nCommercial commitments must follow the Approval Authority Matrix. Emergency need does not remove approval requirements; it may activate an expedited process when the matrix explicitly permits it.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "4. Approval and contracting"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00006",
+        "document_id": "DOC-022",
+        "order": 5,
+        "text": "5. Performance and risk\n\nSupplier performance and supplier risk are related but distinct. Performance is monitored through domain-specific indicators; enterprise risk classification follows the Supplier Risk Policy.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "5. Performance and risk"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00007",
+        "document_id": "DOC-022",
+        "order": 6,
+        "text": "6. Corrective action and suspension\n\nMaterial or repeated failures require documented corrective action. Suspension or replacement decisions must consider business continuity, contractual obligations, risk, and available alternatives.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "6. Corrective action and suspension"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00008",
+        "document_id": "DOC-022",
+        "order": 7,
+        "text": "7. Records\n\nOnboarding evidence, approvals, risk assessments, performance cases, corrective actions, and termination decisions must be retained according to enterprise governance requirements.",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "7. Records"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00009",
+        "document_id": "DOC-022",
+        "order": 8,
+        "text": "Related documents\n\nSupplier Onboarding SOP; Supplier Risk Policy; Approval Authority Matrix; Carrier Management Policy.",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-022::chunk-00010",
+        "document_id": "DOC-022",
+        "order": 9,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00001",
+        "document_id": "DOC-023",
+        "order": 0,
+        "text": "AI GOVERNANCE POLICY\n\nDocument ID: DOC-023 | Version: 1.0 | Effective: 2026-01-01 | Status: ACTIVE | Type: Corporate Policy",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "AI GOVERNANCE POLICY"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00002",
+        "document_id": "DOC-023",
+        "order": 1,
+        "text": "1. Purpose\n\nEstablish governance requirements for selecting, approving, and using AI systems in enterprise work while preserving human accountability, information protection, and traceability.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00003",
+        "document_id": "DOC-023",
+        "order": 2,
+        "text": "2. Permitted business use\n\nEmployees may use approved AI tools for legitimate business purposes within the approved use case and data classification. Approval of a tool does not automatically approve every data type or business decision.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "2. Permitted business use"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00004",
+        "document_id": "DOC-023",
+        "order": 3,
+        "text": "3. AI analysis of supplier contracts\n\nAI may be used to summarize or analyze supplier contracts only when the tool and use case are approved, applicable confidentiality requirements are satisfied, and the output is treated as analytical support rather than authoritative legal interpretation.",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "3. AI analysis of supplier contracts"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00005",
+        "document_id": "DOC-023",
+        "order": 4,
+        "text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "4. Supplier data and approvals"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00006",
+        "document_id": "DOC-023",
+        "order": 5,
+        "text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "5. New AI tools"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00007",
+        "document_id": "DOC-023",
+        "order": 6,
+        "text": "6. Human accountability\n\nAI-generated analysis or recommendations do not transfer decision accountability from the authorized human role. Decisions requiring formal approval remain subject to the relevant authority matrix and business policy.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "6. Human accountability"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00008",
+        "document_id": "DOC-023",
+        "order": 7,
+        "text": "7. Training\n\nUsers must complete the required AI workforce training before using approved AI tools for enterprise work and must complete role-specific modules when assigned.",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "7. Training"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00009",
+        "document_id": "DOC-023",
+        "order": 8,
+        "text": "Related documents\n\nAI Security Standard; AI Workforce Enablement Guide; Information Security Policy; Data Sharing Policy; Approval Authority Matrix.",
+        "source_block_ids": [
+          "text-00016",
+          "text-00017"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-023::chunk-00010",
+        "document_id": "DOC-023",
+        "order": 9,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00018",
+          "text-00019"
+        ],
+        "source_path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00001",
+        "document_id": "DOC-010",
+        "order": 0,
+        "text": "SECURITY INCIDENT SOP\n\nDocument ID: DOC-010 | Version: 2.0 | Effective: 2026-01-01 | Status: ACTIVE",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00002",
+        "document_id": "DOC-010",
+        "order": 1,
+        "text": "1. Purpose\n\nDefine the immediate response and escalation process for suspected or confirmed information-security incidents, including accidental disclosure to suppliers.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00003",
+        "document_id": "DOC-010",
+        "order": 2,
+        "text": "2. Trigger\n\nUse this SOP when confidential or restricted information may have been sent to an unauthorized recipient, transmitted through an unapproved channel, exposed through an approved system, or otherwise handled contrary to policy.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "2. Trigger"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00004",
+        "document_id": "DOC-010",
+        "order": 3,
+        "text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner.",
+        "source_block_ids": [
+          "text-00006",
+          "text-00007",
+          "text-00008",
+          "text-00009",
+          "text-00010",
+          "text-00011",
+          "text-00012"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "3. Immediate actions"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00005",
+        "document_id": "DOC-010",
+        "order": 4,
+        "text": "4. Supplier disclosure\n\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action.",
+        "source_block_ids": [
+          "text-00013",
+          "text-00014"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "4. Supplier disclosure"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00006",
+        "document_id": "DOC-010",
+        "order": 5,
+        "text": "5. Closure\n\nAn incident is closed only after the responsible incident owner records containment, impact assessment, required notifications, remediation, and follow-up actions.",
+        "source_block_ids": [
+          "text-00015",
+          "text-00016"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "5. Closure"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-010::chunk-00007",
+        "document_id": "DOC-010",
+        "order": 6,
+        "text": "6. Related documents\n\nInformation Security Policy; Data Sharing Policy; applicable supplier agreement.\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00017",
+          "text-00018",
+          "text-00019"
+        ],
+        "source_path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+        "section_path": [
+          "6. Related documents"
+        ],
+        "page_numbers": [],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00001",
+        "document_id": "DOC-024",
+        "order": 0,
+        "text": "AI SECURITY STANDARD\n\nDocument ID: DOC-024 | Version: 1.0 | Effective: 2026-01-01 | Status: ACTIVE | Type: Standard",
+        "source_block_ids": [
+          "text-00000",
+          "text-00001"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "AI SECURITY STANDARD"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00002",
+        "document_id": "DOC-024",
+        "order": 1,
+        "text": "1. Purpose\n\nDefine mandatory security controls for enterprise use of AI systems.",
+        "source_block_ids": [
+          "text-00002",
+          "text-00003"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "1. Purpose"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00003",
+        "document_id": "DOC-024",
+        "order": 2,
+        "text": "2. Data classification\n\nAI processing must respect the enterprise information classification. Confidential or restricted information may be processed only in an environment explicitly approved for that classification and use case.",
+        "source_block_ids": [
+          "text-00004",
+          "text-00005"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "2. Data classification"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00004",
+        "document_id": "DOC-024",
+        "order": 3,
+        "text": "3. Minimum controls",
+        "source_block_ids": [
+          "text-00006"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "3. Minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00005",
+        "document_id": "DOC-024",
+        "order": 4,
+        "text": "Control | Requirement\nIdentity and access | Use enterprise-approved authentication and least-privilege access where supported.\nData handling | Input only data permitted for the approved tool, use case, and classification.\nProvider terms | Approved processing and retention terms must be established where external providers process enterprise data.\nLogging and traceability | Maintain usage or audit evidence when required by the risk classification or use case.\nSecrets | Credentials, private keys, passwords, and equivalent authentication secrets must not be entered into general AI prompts.\nIncident handling | Suspected exposure through an AI system must follow the Security Incident SOP.",
+        "source_block_ids": [
+          "table-00007"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "3. Minimum controls"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "table"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00006",
+        "document_id": "DOC-024",
+        "order": 5,
+        "text": "4. Contract analysis\n\nSupplier contracts may be processed only in an approved AI environment authorized for the contract's information classification. Users must not assume that a consumer-accessible AI tool is approved for confidential contract content.",
+        "source_block_ids": [
+          "text-00008",
+          "text-00009"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "4. Contract analysis"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00007",
+        "document_id": "DOC-024",
+        "order": 6,
+        "text": "5. Output handling\n\nAI output may contain inaccurate, incomplete, or unsupported content. Security controls do not make model output authoritative; human review remains required according to the business use case.",
+        "source_block_ids": [
+          "text-00010",
+          "text-00011"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "5. Output handling"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00008",
+        "document_id": "DOC-024",
+        "order": 7,
+        "text": "Related documents\n\nAI Governance Policy; Information Security Policy; Security Incident SOP.",
+        "source_block_ids": [
+          "text-00012",
+          "text-00013"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "Related documents"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      },
+      {
+        "chunk_id": "DOC-024::chunk-00009",
+        "document_id": "DOC-024",
+        "order": 8,
+        "text": "Document control\n\nControlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.",
+        "source_block_ids": [
+          "text-00014",
+          "text-00015"
+        ],
+        "source_path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+        "section_path": [
+          "Document control"
+        ],
+        "page_numbers": [
+          1
+        ],
+        "slide_numbers": [],
+        "sheet_names": [],
+        "content_types": [
+          "text"
+        ]
+      }
+    ],
+    "code_head": "ad3198787716e398f9159da5e35db2cdbd557bc0",
+    "configuration": {
+      "loader": "app.scripts.ask_knowledge.load_chunks",
+      "chunker": [
+        1200,
+        1800
+      ],
+      "parser": "IngestionRouter defaults",
+      "package_versions": {
+        "docling": "2.133.0",
+        "openpyxl": "3.1.5",
+        "numpy": "2.5.3",
+        "openai": "3.26.0"
+      },
+      "code_hashes": {
+        "app/ingestion/docling_parser.py": "50fff401cdbb9dade70acd145732b95ef88dc8eaccd7cdbc9e50ef6f66d85e16",
+        "app/ingestion/document_parser.py": "d002e9135cb6c43d0b5c93ef65d2f8f8d0d50fee17f334cac8cb1f9dc1e6a2ac",
+        "app/ingestion/ingestion_router.py": "551d40aa9c1c1c3df9986143164c586bcdeee2a1644461fb160906306de37cdd",
+        "app/ingestion/pptx_native_enricher.py": "30cc61403d1e998646a9e83742d9237dc5c96541023733530c7d20a450a80fad",
+        "app/ingestion/registry.py": "767781df80ead73f363638866533f9c4a2d6e7b28a36341932c7b9e54aa30db4",
+        "app/ingestion/schemas.py": "f60d66c9936dbb32ca47fd1c8f8f407433521e342c786dd5aa1de8a7de9d91b6",
+        "app/ingestion/xlsx_parser.py": "955537dad74281bf92e5b0e847049e520a3f334fdbdaa9ba1530ce2dd0f0bd2c",
+        "app/chunking/block_serializer.py": "ff644a22ce396644a25e12995e27dfcbb60cfdd0df95d82bfeef5b40825b4cc6",
+        "app/chunking/schemas.py": "7590ca84469a81a8a3bd5d9e507edafb4aeedd936a29b09d3fdd34547f1c354e",
+        "app/chunking/structure_aware_chunker.py": "7a6a84f784d245f09c872bcac5e4c0387c2a23a3c1f39e1bb9adddd6338c9876"
+      }
+    }
+  }
+}
