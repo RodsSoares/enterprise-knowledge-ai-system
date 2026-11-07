@@ -1,8 +1,8 @@
 # Enterprise Knowledge AI System
 
-🚀 **Current Stage:** Golden Set Retrieval Baseline & Hybrid Retrieval Evolution\
-🧪 **Validation:** Multi-format, multi-document vector retrieval validated against
-Golden Set A
+🚀 **Current Stage:** Experimental End-to-End RAG & Structured Answers\
+🧪 **Validation:** Retrieval/context through RV-014; answer contracts and live generation diagnostics RV-015/016\
+📋 **Next Stage:** Bounded semantic orchestration — proposed, not implemented
 
 The **Enterprise Knowledge AI System** is an Enterprise
 Retrieval-Augmented Generation (RAG) system designed to transform
@@ -35,11 +35,13 @@ answers.
 | Search Text | Retrieval-oriented representation derived from chunks |
 | Embeddings | OpenAI embeddings |
 | Vector Retrieval | NumPy vector index + cosine similarity |
-| Lexical Retrieval | BM25 — target architecture |
+| Lexical Retrieval | BM25 with query filtering integrated into hybrid retrieval |
 | Metadata Retrieval | Structured filters — target architecture |
-| Fusion & Reranking | Hybrid candidate fusion + reranking — target architecture |
+| Fusion & Reranking | RRF + document diversity implemented; reranker experimental |
 | Ground Truth | Canonical facts + document registry + golden questions |
-| Evaluation | Retrieval, answer quality, citations, governance |
+| Generation | Real LLM integration with structured answers and abstention |
+| Citation Validation | Structural checks implemented; semantic support under evaluation |
+| Evaluation | Retrieval/context experiments; answer quality and governance evaluation in progress |
 | Validation | Pytest + recorded real retrieval experiments |
 
 ![Enterprise Knowledge AI System — Engineering Architecture](docs/images/architecture-overview.png)
@@ -167,9 +169,13 @@ supports them.
 ## Current Status
 
 The project has moved beyond architecture and dataset design into a
-working **multi-format retrieval foundation** with real document processing,
-global chunk identity, multi-document vector indexing, and Golden Set-driven
-retrieval evaluation.
+working **experimental end-to-end RAG application** with real document processing,
+global chunk identity, hybrid retrieval, context assembly, structured LLM answers
+and cited sources in a terminal interface. Golden Set-driven retrieval evaluation
+is complemented by live generation diagnostics.
+
+The application runs end to end, but semantic answer quality is not yet approved.
+A structurally valid citation does not prove that its passage supports the claim.
 
 | Capability | Status |
 |---|:---:|
@@ -191,18 +197,22 @@ retrieval evaluation.
 | Retrieval validation log | ✅ |
 | Global multi-document chunk identity | ✅ |
 | Multi-document vector retrieval | ✅ |
-| Lexical / BM25 retrieval | 📋 |
+| Lexical / BM25 retrieval | ✅ |
 | Metadata filtering | 📋 |
-| Candidate fusion | 📋 |
-| Reranking | 📋 |
-| Context assembly | 📋 |
-| Grounded answer generation | 📋 |
-| Citation validation | 📋 |
-| Explicit answer abstention | 📋 |
+| Candidate fusion | ✅ |
+| Reranking | 🚧 experimental; RV-013 mixed results |
+| Context assembly | ✅ integrated; bounded short-document expansion |
+| Grounded answer generation | 🚧 real API integration; semantic quality under evaluation |
+| Citation validation | ✅ structural validation; semantic review proposed |
+| Explicit answer abstention | ✅ contract and empty-context handling; quality under evaluation |
+| Saved-context generation comparison | ✅ two-prompt replay without new embeddings |
+| Semantic orchestration | 📋 bounded workflow proposed |
+| API / frontend | 📋 |
 | Retrieval evaluation layer | ✅ |
 
-**Legend:** ✅ implemented / validated · 🚧 current or near-term
-development · 📋 target architecture
+**Legend:** ✅ implemented (validation scope described separately) · 🚧 experimental
+or under evaluation · 📋 target architecture. Implementation does not imply
+semantic correctness or production readiness.
 
 ## Enterprise Knowledge Sources
 
@@ -217,8 +227,10 @@ Supported and modeled source formats include:
     formula-heavy workbooks;
 -   **PPTX** --- presentations, committee reviews, structured slide
     content;
--   **Markdown / Text** --- internal guidelines, notes, historical
-    documentation.
+-   **Markdown** --- internal guidelines, notes, historical documentation.
+
+The application router currently accepts `.pdf`, `.docx`, `.xlsx`, `.pptx` and
+`.md`; plain `.txt` ingestion is not exposed through this router.
 
 The controlled enterprise corpus also includes multiple document roles
 such as policies, procedures, governance artifacts, meeting records,
@@ -340,10 +352,11 @@ percentage of relevance.
 
 ### Lexical retrieval
 
-Lexical retrieval is part of the target architecture because exact
+Lexical retrieval is implemented with BM25 and query filtering because exact
 terminology, identifiers, policy names, codes, and enterprise vocabulary
 can carry information that semantic similarity alone may not preserve
-reliably.
+reliably. The filter handles selected Portuguese/English function words; it
+does not translate Portuguese queries into the English corpus.
 
 ### Metadata retrieval
 
@@ -372,6 +385,30 @@ Potential reranking signals include:
 -   enterprise rules.
 
 This separates broad candidate discovery from final evidence selection.
+
+In the current terminal flow, hybrid retrieval returns a Top-20 candidate pool,
+then document diversity selects five anchors. RRF is active; the experimental
+reranker is not part of this default flow.
+
+### Current runtime context and generation
+
+`build_service` injects `ShortDocumentContextBuilder`, which preserves selected
+anchors and appends missing chunks from short documents within a bounded context.
+The current limits are 60 passages and 32,000 rendered characters; a short
+document has at most 6,000 characters of combined chunk text. Longer documents
+receive bounded ranked supplementation.
+
+Direct construction of `RagService` still defaults to the original
+`EvidenceContextBuilder`: ten passages and 12,000 rendered characters. These
+configurations are distinct, and character limits are not token budgets.
+
+The CLI parses and indexes the corpus at startup, reuses its in-memory indexes
+within the process, and treats each question independently. A new process rebuilds
+the indexes. Generation receives the assembled evidence and returns a structured
+answer for contract validation.
+
+See [current architecture and contracts](docs/architecture/03_current_architecture_and_contracts.md)
+for the exact runtime boundaries and configuration differences.
 
 ## Real-World Retrieval Validation
 
@@ -450,6 +487,50 @@ quality rather than basic candidate discovery**.
 The detailed experimental record is maintained in
 `docs/validation/RETRIEVAL_VALIDATION.md`.
 
+### RV-004–014 — Hybrid retrieval and context experiments
+
+Subsequent experiments examined hybrid retrieval, document diversity, lexical
+filtering and reranking. RV-013 produced mixed reranker results, including a
+regression; it did not justify automatic promotion.
+
+RV-014 replayed 25 development cases while preserving the original five anchors.
+Group B reference coverage increased from 13/15 to 15/15 groups. This measures
+context coverage, not answer correctness or independent generalization.
+
+See [RV-013 analysis](docs/validation/RV013_ANALYSIS.md) and
+[RV-014 analysis](docs/validation/RV014_ANALYSIS.md).
+
+### RV-015 — Structured answer contract
+
+The answer layer validates JSON structure, allowed fields, citation IDs and the
+binding between question and rendered context. `answered` requires cited claims;
+`abstained` requires an explanation and no claims. The targeted local execution
+reported 44 passing tests.
+
+These checks do not establish semantic support. See the
+[RV-015 guide](docs/validation/RV015_IMPLEMENTATION_GUIDE.md).
+
+### RV-016 — Live generation and saved-context comparison
+
+The terminal application connects retrieval to real LLM generation and records
+question, context, answer, source metadata, generation usage and latency.
+
+The sharing-policy diagnostic first exposed missing policy controls in the
+retrieved context. Expansion increased the context from **10 to 45 passages**
+and observed total generation tokens from **2,075 to 7,302**. The missing policy
+rules became available, but answers still drifted into unrelated AI-use rules
+or omitted conditions from cited evidence.
+
+Saved-context comparisons exercised two prompts with `gpt-4.1-mini-2025-04-14`
+and `gpt-4.1-2025-04-14`. Neither experiment established semantic approval.
+These are recorded experimental configurations, not production model
+recommendations. One generation per arm on one question does not establish
+model superiority or generalization.
+
+`CONTRACT_VALID` means structural acceptance only. See the
+[RV-016 guide](docs/validation/RV016_IMPLEMENTATION_GUIDE.md) and
+[generation comparison guide](docs/validation/RV016_GENERATION_COMPARISON.md).
+
 ## Ground Truth & Evaluation
 
 Evaluation is part of the architecture rather than a final cosmetic
@@ -511,9 +592,10 @@ Questions blocked by the current materialized corpus are classified separately
 from evaluable questions, and non-positive questions such as abstention cases
 are not forced into positive retrieval scoring.
 
-### Planned answer evaluation
+### Answer evaluation: current boundary and next step
 
-Generated answers will be evaluated for:
+Structural validation is implemented. Semantic evaluation remains in progress,
+and generated answers must still be evaluated for:
 
 -   groundedness;
 -   factual correctness;
@@ -559,6 +641,19 @@ Explicit Abstention
 The model should not compensate for missing enterprise evidence by
 silently relying on unsupported prior knowledge.
 
+The document registry models version, status, effective date and authority, but
+the terminal loading/retrieval flow does not yet consult it. Current chunk
+provenance must not be confused with runtime authority resolution or access
+control. Chunk IDs identify document/order, not a content revision.
+
+The request identifier binds the question to the rendered evidence context; it
+does not authenticate semantic truth or include a versioned corpus and user
+permissions. Provider failures and invalid outputs remain explicit errors,
+rather than being presented as lack of knowledge.
+
+Canonical facts and expected answers are evaluation assets, not application
+retrieval evidence. Future registry integration must preserve that separation.
+
 ## Technology Stack
 
   Category                 Technologies / Approach
@@ -589,6 +684,7 @@ enterprise-knowledge-ai-system/
 │   ├── ingestion/
 │   ├── chunking/
 │   ├── evaluation/
+│   ├── generation/
 │   ├── retrieval/
 │   └── scripts/
 │
@@ -625,7 +721,7 @@ application layers mature.
 ### 1. Clone the repository
 
 ``` powershell
-git clone <repository-url>
+git clone https://github.com/RodsSoares/enterprise-knowledge-ai-system.git
 cd enterprise-knowledge-ai-system
 ```
 
@@ -639,12 +735,13 @@ python -m venv .venv
 ### 3. Install dependencies
 
 ``` powershell
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### 4. Configure external services when required
 
-Real embedding calls require the appropriate environment configuration.
+Real embedding and generation calls require an API key and incur API usage.
+The scripts read environment variables; a `.env` file is not loaded automatically.
 
 ``` powershell
 $env:OPENAI_API_KEY="your-api-key"
@@ -656,7 +753,7 @@ $env:OPENAI_API_KEY="your-api-key"
 ### 5. Run the automated tests
 
 ``` powershell
-python -m pytest
+python -m pytest -q
 ```
 
 ### 6. Generate the project audit
@@ -667,6 +764,38 @@ python -m app.scripts.project_audit
 
 The audit provides a repository-derived engineering snapshot and helps
 keep documentation aligned with the actual implementation.
+
+### 7. Run the terminal application
+
+```powershell
+python -m app.scripts.ask_knowledge
+```
+
+Enter `/sair` to exit. The default generation model is `gpt-4.1-mini`, configurable
+through `OPENAI_MODEL` or `--model`. Initial parsing/OCR may download model assets.
+Startup indexing is separate from the displayed question latency; reported
+generation usage does not include embedding usage.
+
+To save one question with its evidence and result:
+
+```powershell
+python -m app.scripts.ask_knowledge --question "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?" --output docs/validation/SHARING_RUN_local.json
+```
+
+The output path must be new; the script refuses to overwrite an existing file.
+Saved results include source text, which should be reviewed before committing
+when using a different corpus.
+
+### 8. Compare generation using saved context
+
+```powershell
+python -m app.scripts.compare_saved_generation --source docs/validation/SHARING_RUN_local.json --output docs/validation/SHARING_COMPARISON_local.json
+```
+
+This performs two paid generations using the saved model by default, without
+new parsing or embeddings. `--model` selects another available model. The output
+records structural results, prompts, usage and timing; it is not an automatic
+semantic quality verdict.
 
 ## Automated Tests
 
@@ -695,6 +824,20 @@ external model or embedding calls are not required.
 
 Real-service experiments complement --- rather than replace ---
 automated regression tests.
+
+### Checkpoint validation status
+
+The last full Windows run reported before RV-015/016 was **576 passed, four
+warnings**. A later development-environment run passed **557 tests**, excluding
+eight Docling/ingestion-dependent files. Neither count is a confirmed full run
+of the current checkpoint. Execute the complete suite locally and regenerate
+the project audit before committing.
+
+Targeted answer-layer regression:
+
+```powershell
+python -m pytest tests/unit/test_answer_contract.py tests/unit/test_rag_service.py tests/unit/test_saved_generation.py -q
+```
 
 ### Retrieval validation discipline
 
@@ -768,20 +911,42 @@ explain enterprise evidence reliably.
 
 ### Current focus
 
-**Retrieval v0.2 --- Hybrid Retrieval & Candidate Fusion**
+**RV-016 checkpoint and bounded semantic orchestration design**
 
-The vector-only Golden Set A baseline is now frozen as the comparison point for
-future retrieval changes. The next increment should introduce complementary
-lexical retrieval and candidate fusion without regressing the validated vector
-baseline.
+Hybrid retrieval, context assembly and structured generation are connected.
+RV-014 remains an offline context-coverage reference; RV-015 establishes the
+answer contract; RV-016 provides live evidence of remaining semantic failures.
+The short-document expansion is an experimental response to missing evidence,
+not a demonstrated solution to answer correctness.
 
-Initial optimization targets are:
+See [RV-014 implementation](docs/validation/RV014_IMPLEMENTATION_GUIDE.md),
+[integration validation](docs/validation/RV014_INTEGRATION.md) and
+[current architecture/contracts](docs/architecture/03_current_architecture_and_contracts.md).
 
-1.  improve Hit@1 beyond the **76.9%** vector-only baseline;
-2.  preserve **100% Hit@3**;
-3.  improve expected-document Recall@5 beyond **92.3%**;
-4.  improve MRR beyond **0.8846**;
-5.  preserve provenance, global chunk identity, and format-agnostic behavior.
+### Proposed semantic orchestration — not implemented
+
+A deterministic coordinator would reuse the existing retrieval and generation
+components. The LLM would assess question scope, evidence applicability and
+claim support; code would validate contracts and enforce actions and budgets.
+
+1. Retrieve initial candidates and assess question/evidence together.
+2. Allow at most one complementary search or section expansion for a recoverable gap.
+3. Generate from selected canonical evidence and review each claim.
+4. Allow at most one answer correction, followed by a fresh review.
+5. Return an answer, abstention, clarification request or explicit operational outcome.
+
+The normal proposed path uses three LLM calls, with a structural maximum of six.
+Cumulative token and time limits must be configured before the pilot. A reviewing
+LLM can also make mistakes; independent evaluation remains necessary.
+
+Migration is organized into two functional deliveries: assessment-led evidence
+selection/recovery, followed by semantic review and controlled outcomes. Preserve
+the current baseline for comparison. No autonomous multi-agent system or new
+orchestration framework has been introduced.
+
+The [full proposal](docs/architecture/04_bounded_orchestration_proposal.md)
+defines contracts, transitions, migration and evaluation criteria. API/UI,
+persistence and multiuser authorization remain later work.
 
 ### Retrieval evolution
 
@@ -823,19 +988,22 @@ merely increasing architectural complexity.
 ## Current Development Stage
 
 The Enterprise Knowledge AI System has moved from conceptual
-architecture into a working **enterprise retrieval engineering** stage.
+architecture into a working **experimental end-to-end RAG** stage.
 
 The current implementation demonstrates that heterogeneous enterprise
 documents can be routed through format-appropriate ingestion, normalized into
 a common structure, converted into globally identifiable structure-aware
 retrieval units, embedded through a real external embedding provider, indexed
 together, and evaluated against Golden Set questions with ranked evidence.
+The terminal application additionally generates structured answers with cited
+sources and explicit abstention support.
 
 The project is **not yet presented as a complete production RAG
-application**. Hybrid retrieval, metadata-aware retrieval, candidate fusion,
-reranking, context assembly, grounded generation, citation validation, and
-explicit abstention remain active evolution areas. Retrieval evaluation is now
-implemented; answer-layer evaluation remains a later stage.
+application**. Hybrid retrieval, context assembly, LLM generation and structural
+citation validation are integrated. Semantic support, scope and conditionality
+remain unresolved evaluation concerns. Runtime document governance, multiuser
+access control, semantic orchestration, API and frontend remain to be developed.
+Reranking remains experimental and outside the default terminal flow.
 
 This distinction is intentional.
 
