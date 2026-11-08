@@ -1,0 +1,22 @@
+{
+  "max_chars": 1800,
+  "documents": {
+    "DOC-012": {
+      "source_sha256": "9cd962e55863c421a8a267e8aa0f67985e4d51c0a1285c2d3158259447fca0c5",
+      "spreadsheet_headers": [
+        {
+          "block_id": "xlsx-sheet-1",
+          "sheet_name": "Approval Matrix",
+          "cells": ["A1", "B1", "C1", "D1", "E1"],
+          "expected_labels": ["Decision Type", "Value / Condition", "Required Approval", "Additional Review", "Notes"]
+        },
+        {
+          "block_id": "xlsx-sheet-2",
+          "sheet_name": "Document Control",
+          "cells": ["A1", "B1"],
+          "expected_labels": ["Field", "Value"]
+        }
+      ]
+    }
+  }
+}

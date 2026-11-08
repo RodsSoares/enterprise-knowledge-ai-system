@@ -1,0 +1,958 @@
+{
+  "status": "planned_pending_review",
+  "experiment": "terminal_model_comparison",
+  "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+  "baseline_model": "gpt-4.1-mini-2025-04-14",
+  "candidate_model": "gpt-4.1-2025-04-14",
+  "result": {
+    "status": "planned_pending_review",
+    "contract_version": "evidence-plan/2",
+    "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+    "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+    "scope": {
+      "request_kind": "general",
+      "focus": "cuidados exigidos pela política antes de compartilhar dados com um fornecedor externo",
+      "known_conditions": [],
+      "exclusions": [],
+      "unknown_conditions": [
+        "especificidades da política de dados"
+      ],
+      "decision": "proceed",
+      "clarification": null,
+      "document_ids": []
+    },
+    "bundle": {
+      "contract_version": "evidence-plan/2",
+      "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+      "scope_hash": "3a78483a8fea7e700d80a96c05d10d21136ade2a6ecb10b269bab4372ac81f7b",
+      "plan_hash": "bb4754200de0a2e15c9e47969be4bd17e3622975aa9ecafe0edd48228572f6dd",
+      "coverage": [
+        {
+          "need": "Identificar a classificação da informação a ser compartilhada",
+          "use": "direct",
+          "condition": null,
+          "scope_link": {
+            "explanation": "A política determina requisitos diferentes para compartilhamento dependendo da classificação da informação (pública, interna, confidencial ou restrita).",
+            "question_span": {
+              "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+              "start": 0,
+              "end": 86
+            }
+          },
+          "supports": [
+            {
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_span": {
+                "text": "Classification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+                "start": 52,
+                "end": 632
+              }
+            }
+          ],
+          "coverage_id": "C1"
+        },
+        {
+          "need": "Verificar a necessidade de aprovação e autorização conforme a classificação da informação",
+          "use": "direct",
+          "condition": null,
+          "scope_link": {
+            "explanation": "O compartilhamento de dados externos só pode ocorrer após autorizações específicas variando conforme a classificação (por exemplo, autorização explícita para dados restritos).",
+            "question_span": {
+              "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+              "start": 0,
+              "end": 86
+            }
+          },
+          "supports": [
+            {
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_span": {
+                "text": "Confidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+                "start": 280,
+                "end": 632
+              }
+            }
+          ],
+          "coverage_id": "C2"
+        },
+        {
+          "need": "Utilizar apenas canais ou plataformas aprovadas apropriadas à classificação da informação",
+          "use": "direct",
+          "condition": null,
+          "scope_link": {
+            "explanation": "A política exige uso de canais ou plataformas seguras e aprovadas para envio, especialmente para informações confidenciais ou restritas.",
+            "question_span": {
+              "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+              "start": 0,
+              "end": 86
+            }
+          },
+          "supports": [
+            {
+              "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+              "source_span": {
+                "text": "Confidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+                "start": 22,
+                "end": 276
+              }
+            }
+          ],
+          "coverage_id": "C3"
+        },
+        {
+          "need": "Justificar o compartilhamento por interesse legítimo de negócio e limitar o acesso ao mínimo necessário",
+          "use": "direct",
+          "condition": null,
+          "scope_link": {
+            "explanation": "O compartilhamento de dados internos requer necessidade legítima de negócio e limitação do acesso conforme a função.",
+            "question_span": {
+              "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+              "start": 0,
+              "end": 86
+            }
+          },
+          "supports": [
+            {
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_span": {
+                "text": "Internal | Share only for legitimate business need. | Corporate-managed channel.",
+                "start": 199,
+                "end": 279
+              }
+            }
+          ],
+          "coverage_id": "C4"
+        },
+        {
+          "need": "Documentar justificativas e obter aprovações para exceções",
+          "use": "direct",
+          "condition": null,
+          "scope_link": {
+            "explanation": "Qualquer exceção requer justificativa documentada e aprovações estabelecidas pelos controles de segurança e autoridade.",
+            "question_span": {
+              "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+              "start": 0,
+              "end": 86
+            }
+          },
+          "supports": [
+            {
+              "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+              "source_span": {
+                "text": "Exceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+                "start": 15,
+                "end": 227
+              }
+            }
+          ],
+          "coverage_id": "C5"
+        }
+      ],
+      "text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.\n\n5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.\n\n7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+      "evidence": [
+        {
+          "citation_id": "E1",
+          "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+          "document_id": "DOC-005",
+          "source_revision": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72",
+          "representation_version": "evidence-units/1",
+          "structural_role": "section",
+          "section_path": [
+            "3. Information classification and minimum controls"
+          ],
+          "parent_id": null,
+          "dependency_ids": [],
+          "source_refs": [
+            {
+              "block_id": "text-00006",
+              "field": "",
+              "start": null,
+              "end": null
+            },
+            {
+              "block_id": "table-00007",
+              "field": "",
+              "start": null,
+              "end": null
+            }
+          ],
+          "reading_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+          "search_text": "Document: DOC-005\nTitle: Data Sharing Policy\nSection: 3. Information classification and minimum controls\n\n3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+          "status": "ready",
+          "searchable": true
+        },
+        {
+          "citation_id": "E2",
+          "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+          "document_id": "DOC-005",
+          "source_revision": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72",
+          "representation_version": "evidence-units/1",
+          "structural_role": "section",
+          "section_path": [
+            "5. Approved channels"
+          ],
+          "parent_id": null,
+          "dependency_ids": [],
+          "source_refs": [
+            {
+              "block_id": "text-00010",
+              "field": "",
+              "start": null,
+              "end": null
+            },
+            {
+              "block_id": "text-00011",
+              "field": "",
+              "start": null,
+              "end": null
+            }
+          ],
+          "reading_text": "5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+          "search_text": "Document: DOC-005\nTitle: Data Sharing Policy\nSection: 5. Approved channels\n\n5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+          "status": "ready",
+          "searchable": true
+        },
+        {
+          "citation_id": "E3",
+          "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+          "document_id": "DOC-005",
+          "source_revision": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72",
+          "representation_version": "evidence-units/1",
+          "structural_role": "section",
+          "section_path": [
+            "7. Exceptions"
+          ],
+          "parent_id": null,
+          "dependency_ids": [],
+          "source_refs": [
+            {
+              "block_id": "text-00014",
+              "field": "",
+              "start": null,
+              "end": null
+            },
+            {
+              "block_id": "text-00015",
+              "field": "",
+              "start": null,
+              "end": null
+            }
+          ],
+          "reading_text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+          "search_text": "Document: DOC-005\nTitle: Data Sharing Policy\nSection: 7. Exceptions\n\n7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+          "status": "ready",
+          "searchable": true
+        }
+      ],
+      "bundle_hash": "01139625bafdaa3682ce863d7aa7358169d3bb4ca27d8599cbce6f6ec890eaf6"
+    },
+    "trace": [
+      {
+        "stage": "plan_request",
+        "payload": {
+          "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+          "scope": {
+            "request_kind": "general",
+            "focus": "cuidados exigidos pela política antes de compartilhar dados com um fornecedor externo",
+            "known_conditions": [],
+            "exclusions": [],
+            "unknown_conditions": [
+              "especificidades da política de dados"
+            ],
+            "decision": "proceed",
+            "clarification": null,
+            "document_ids": []
+          },
+          "scope_hash": "3a78483a8fea7e700d80a96c05d10d21136ade2a6ecb10b269bab4372ac81f7b",
+          "complement_used": false,
+          "expansion_targets": [
+            {
+              "parent_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "document_id": "DOC-005",
+              "section_path": [
+                "3. Information classification and minimum controls"
+              ],
+              "preview": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nI"
+            }
+          ],
+          "candidates": [
+            {
+              "unit_id": "DOC-005::unit-1a3ddf104e13d8a932f28c0ef8f8fa5b161595012e738ad938fe74d396c30119",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "6. Supplier and AI-related use\n\nWhere supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.",
+              "section_path": [
+                "6. Supplier and AI-related use"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-3683ecfc1742dbb7d835ceffbb0da074d02f69b56d86ae7005c49a299aca5962",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "1. Purpose\n\nDefine requirements for sharing enterprise information with external parties, including suppliers, logistics providers, professional services firms, and technology providers.",
+              "section_path": [
+                "1. Purpose"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-eef1dcd75cf1c3cc768298d6338f55abc582eb3c2635c547fdfef78421ce5de0",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "2. Scope\n\nApplies to employees, contractors, systems, and business processes that disclose internal, confidential, customer, supplier, or operational information outside the enterprise.",
+              "section_path": [
+                "2. Scope"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+              "section_path": [
+                "3. Information classification and minimum controls"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+              "document_id": "DOC-023",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.",
+              "section_path": [
+                "4. Supplier data and approvals"
+              ],
+              "metadata": {
+                "document_id": "DOC-023",
+                "key": "ai_governance_policy",
+                "title": "AI Governance Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier.",
+              "section_path": [
+                "4. Sharing with transportation carriers"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-006::unit-de25af0c0d7fd7b60ccc159eccc16ef9278d7813cc9f1743cff262e690adeda9",
+              "document_id": "DOC-006",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "3. External transmission\n\nConfidential customer information may be transmitted to an authorized external party only when there is a legitimate business purpose, the recipient is authorized, and an approved secure transfer mechanism or controlled platform is used.",
+              "section_path": [
+                "3. External transmission"
+              ],
+              "metadata": {
+                "document_id": "DOC-006",
+                "key": "information_security_policy",
+                "title": "Information Security Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "4.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-03de624e8328095d41d61713d7275a7053da5dcec71e877d6ae9d0879c010fbd",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "DATA SHARING POLICY\n\nDocument ID: DOC-005 | Version: 2.2 | Effective: 2026-01-01 | Status: ACTIVE | Domain: Information Security",
+              "section_path": [
+                "DATA SHARING POLICY"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-025::unit-f306f71b34f133eb9fe59a87b69869457cd73879a69d61a9ca967765e66533ee",
+              "document_id": "DOC-025",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "5. Supplier data\n\nThe fact that an AI product is procured does not mean confidential supplier or customer data may automatically be entered into it. Data classification and approved-use requirements remain applicable.",
+              "section_path": [
+                "5. Supplier data"
+              ],
+              "metadata": {
+                "document_id": "DOC-025",
+                "key": "ai_procurement_guidelines",
+                "title": "AI Procurement Guidelines",
+                "document_type": "guideline",
+                "format": "md",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 1,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+              "section_path": [
+                "5. Approved channels"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-010::unit-a53055b0da14d0c1a709b3d0c6122c7b5e1f3dd9cd2db9b298381c1721583032",
+              "document_id": "DOC-010",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "4. Supplier disclosure\n\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action.",
+              "section_path": [
+                "4. Supplier disclosure"
+              ],
+              "metadata": {
+                "document_id": "DOC-010",
+                "key": "security_incident_sop",
+                "title": "Security Incident SOP",
+                "document_type": "sop",
+                "format": "docx",
+                "domain": "information_security",
+                "version": "2.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 2,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+              "section_path": [
+                "7. Exceptions"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-005::unit-aa3ca9d218571003c620eb6223d6f4496d78d124ef37a5b5a185e81931e3f7a5",
+              "document_id": "DOC-005",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "Related documents\n\nInformation Security Policy; Document Governance Policy; AI Governance Policy; Security Incident SOP.",
+              "section_path": [
+                "Related documents"
+              ],
+              "metadata": {
+                "document_id": "DOC-005",
+                "key": "data_sharing_policy",
+                "title": "Data Sharing Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "2.2",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-025::unit-d5b519ec4bfb1454410a61042bb7aa7a4dbf09b9fe6018376095542fbaf622a9",
+              "document_id": "DOC-025",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "3. AI supplier due diligence\n\nCommercial review should consider service commitments, data-processing terms, retention options, intellectual-property provisions, model or service changes, audit rights where applicable, and exit requirements.",
+              "section_path": [
+                "3. AI supplier due diligence"
+              ],
+              "metadata": {
+                "document_id": "DOC-025",
+                "key": "ai_procurement_guidelines",
+                "title": "AI Procurement Guidelines",
+                "document_type": "guideline",
+                "format": "md",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 1,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-006::unit-4240bdf710f96bf285c6cb88fedf3e0474cf8bba37b45d6fe36dc46f45da1b70",
+              "document_id": "DOC-006",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "2. Confidential information\n\nConfidential information includes identifiable customer information, non-public supplier commercial information, credentials and authentication material, non-public contractual terms, sensitive operational data, and other information explicitly classified as confidential by the enterprise.",
+              "section_path": [
+                "2. Confidential information"
+              ],
+              "metadata": {
+                "document_id": "DOC-006",
+                "key": "information_security_policy",
+                "title": "Information Security Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "4.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-023::unit-c0dfb9cf96e0468c43fa835e2d176dae41c7d90ab2478e847cee1eb793fb8852",
+              "document_id": "DOC-023",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "3. AI analysis of supplier contracts\n\nAI may be used to summarize or analyze supplier contracts only when the tool and use case are approved, applicable confidentiality requirements are satisfied, and the output is treated as analytical support rather than authoritative legal interpretation.",
+              "section_path": [
+                "3. AI analysis of supplier contracts"
+              ],
+              "metadata": {
+                "document_id": "DOC-023",
+                "key": "ai_governance_policy",
+                "title": "AI Governance Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+              "document_id": "DOC-006",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.",
+              "section_path": [
+                "5. AI processing environments"
+              ],
+              "metadata": {
+                "document_id": "DOC-006",
+                "key": "information_security_policy",
+                "title": "Information Security Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "information_security",
+                "version": "4.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-025::unit-bbb3fa91a1e4f4958de0ca3277227f615cdf34fa8ecfa7efdd21fadfc7b51057",
+              "document_id": "DOC-025",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "2. Procurement considerations\n\nProcurement should identify the provider, commercial model, expected users, intended business use, data categories, integration requirements, support model, portability, termination provisions, and material subcontractors.",
+              "section_path": [
+                "2. Procurement considerations"
+              ],
+              "metadata": {
+                "document_id": "DOC-025",
+                "key": "ai_procurement_guidelines",
+                "title": "AI Procurement Guidelines",
+                "document_type": "guideline",
+                "format": "md",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 1,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+              "document_id": "DOC-023",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.",
+              "section_path": [
+                "5. New AI tools"
+              ],
+              "metadata": {
+                "document_id": "DOC-023",
+                "key": "ai_governance_policy",
+                "title": "AI Governance Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "ai_governance",
+                "version": "1.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            },
+            {
+              "unit_id": "DOC-022::unit-6cef62ed3d2c18c3309451b8250c195fb7a1c8909934243c927714c7c50f04f0",
+              "document_id": "DOC-022",
+              "status": "ready",
+              "role": "section",
+              "reading_text": "7. Records\n\nOnboarding evidence, approvals, risk assessments, performance cases, corrective actions, and termination decisions must be retained according to enterprise governance requirements.",
+              "section_path": [
+                "7. Records"
+              ],
+              "metadata": {
+                "document_id": "DOC-022",
+                "key": "supplier_management_policy",
+                "title": "Supplier Management Policy",
+                "document_type": "corporate_policy",
+                "format": "pdf",
+                "domain": "supplier_management",
+                "version": "3.0",
+                "effective_date": "2026-01-01",
+                "status": "active",
+                "authority_level": 4,
+                "supersedes": null,
+                "superseded_by": null,
+                "entity_refs": [],
+                "as_of": "2026-11-06"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "stage": "plan",
+        "result": {
+          "items": [
+            {
+              "need": "Identificar a classificação da informação a ser compartilhada",
+              "use": "direct",
+              "condition": null,
+              "scope_link": {
+                "explanation": "A política determina requisitos diferentes para compartilhamento dependendo da classificação da informação (pública, interna, confidencial ou restrita).",
+                "question_span": {
+                  "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+                  "start": 0,
+                  "end": 86
+                }
+              },
+              "supports": [
+                {
+                  "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+                  "source_span": {
+                    "text": "Classification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+                    "start": 52,
+                    "end": 632
+                  }
+                }
+              ],
+              "coverage_id": "C1"
+            },
+            {
+              "need": "Verificar a necessidade de aprovação e autorização conforme a classificação da informação",
+              "use": "direct",
+              "condition": null,
+              "scope_link": {
+                "explanation": "O compartilhamento de dados externos só pode ocorrer após autorizações específicas variando conforme a classificação (por exemplo, autorização explícita para dados restritos).",
+                "question_span": {
+                  "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+                  "start": 0,
+                  "end": 86
+                }
+              },
+              "supports": [
+                {
+                  "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+                  "source_span": {
+                    "text": "Confidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.",
+                    "start": 280,
+                    "end": 632
+                  }
+                }
+              ],
+              "coverage_id": "C2"
+            },
+            {
+              "need": "Utilizar apenas canais ou plataformas aprovadas apropriadas à classificação da informação",
+              "use": "direct",
+              "condition": null,
+              "scope_link": {
+                "explanation": "A política exige uso de canais ou plataformas seguras e aprovadas para envio, especialmente para informações confidenciais ou restritas.",
+                "question_span": {
+                  "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+                  "start": 0,
+                  "end": 86
+                }
+              },
+              "supports": [
+                {
+                  "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+                  "source_span": {
+                    "text": "Confidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.",
+                    "start": 22,
+                    "end": 276
+                  }
+                }
+              ],
+              "coverage_id": "C3"
+            },
+            {
+              "need": "Justificar o compartilhamento por interesse legítimo de negócio e limitar o acesso ao mínimo necessário",
+              "use": "direct",
+              "condition": null,
+              "scope_link": {
+                "explanation": "O compartilhamento de dados internos requer necessidade legítima de negócio e limitação do acesso conforme a função.",
+                "question_span": {
+                  "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+                  "start": 0,
+                  "end": 86
+                }
+              },
+              "supports": [
+                {
+                  "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+                  "source_span": {
+                    "text": "Internal | Share only for legitimate business need. | Corporate-managed channel.",
+                    "start": 199,
+                    "end": 279
+                  }
+                }
+              ],
+              "coverage_id": "C4"
+            },
+            {
+              "need": "Documentar justificativas e obter aprovações para exceções",
+              "use": "direct",
+              "condition": null,
+              "scope_link": {
+                "explanation": "Qualquer exceção requer justificativa documentada e aprovações estabelecidas pelos controles de segurança e autoridade.",
+                "question_span": {
+                  "text": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+                  "start": 0,
+                  "end": 86
+                }
+              },
+              "supports": [
+                {
+                  "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+                  "source_span": {
+                    "text": "Exceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+                    "start": 15,
+                    "end": 227
+                  }
+                }
+              ],
+              "coverage_id": "C5"
+            }
+          ],
+          "action": {
+            "kind": "complete"
+          }
+        }
+      }
+    ],
+    "semantic_review": "not_performed"
+  },
+  "usage": {
+    "input_tokens": 6166,
+    "output_tokens": 1075,
+    "estimated_cost_usd": "0.020932",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-4.1-2025-04-14",
+        "request_hash": "246b141a6ebb5543f5412850a71ac2bff477de05393732e92dcfb3dbceafc7ea",
+        "reserved_input": 33590,
+        "reserved_output": 8000,
+        "status": "completed",
+        "input_tokens": 6166,
+        "output_tokens": 1075,
+        "response_id": "resp_0be55080e4b0501b016aefe323860887d099a9a6fc3eaf7cdd",
+        "returned_model": "gpt-4.1-2025-04-14",
+        "raw_output": "{\n  \"items\": [\n    {\n      \"need\": \"Identificar a classificação da informação a ser compartilhada\",\n      \"use\": \"direct\",\n      \"condition\": null,\n      \"scope_link\": {\n        \"question_quote\": \"Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?\",\n        \"explanation\": \"A política determina requisitos diferentes para compartilhamento dependendo da classificação da informação (pública, interna, confidencial ou restrita).\"\n      },\n      \"supports\": [\n        {\n          \"unit_id\": \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\",\n          \"quote\": \"Classification | External sharing rule | Minimum channel/control\\nPublic | May be shared when approved for public use. | Approved business channel.\\nInternal | Share only for legitimate business need. | Corporate-managed channel.\\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.\"\n        }\n      ]\n    },\n    {\n      \"need\": \"Verificar a necessidade de aprovação e autorização conforme a classificação da informação\",\n      \"use\": \"direct\",\n      \"condition\": null,\n      \"scope_link\": {\n        \"question_quote\": \"Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?\",\n        \"explanation\": \"O compartilhamento de dados externos só pode ocorrer após autorizações específicas variando conforme a classificação (por exemplo, autorização explícita para dados restritos).\"\n      },\n      \"supports\": [\n        {\n          \"unit_id\": \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\",\n          \"quote\": \"Confidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.\"\n        }\n      ]\n    },\n    {\n      \"need\": \"Utilizar apenas canais ou plataformas aprovadas apropriadas à classificação da informação\",\n      \"use\": \"direct\",\n      \"condition\": null,\n      \"scope_link\": {\n        \"question_quote\": \"Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?\",\n        \"explanation\": \"A política exige uso de canais ou plataformas seguras e aprovadas para envio, especialmente para informações confidenciais ou restritas.\"\n      },\n      \"supports\": [\n        {\n          \"unit_id\": \"DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88\",\n          \"quote\": \"Confidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.\"\n        }\n      ]\n    },\n    {\n      \"need\": \"Justificar o compartilhamento por interesse legítimo de negócio e limitar o acesso ao mínimo necessário\",\n      \"use\": \"direct\",\n      \"condition\": null,\n      \"scope_link\": {\n        \"question_quote\": \"Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?\",\n        \"explanation\": \"O compartilhamento de dados internos requer necessidade legítima de negócio e limitação do acesso conforme a função.\"\n      },\n      \"supports\": [\n        {\n          \"unit_id\": \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\",\n          \"quote\": \"Internal | Share only for legitimate business need. | Corporate-managed channel.\"\n        }\n      ]\n    },\n    {\n      \"need\": \"Documentar justificativas e obter aprovações para exceções\",\n      \"use\": \"direct\",\n      \"condition\": null,\n      \"scope_link\": {\n        \"question_quote\": \"Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?\",\n        \"explanation\": \"Qualquer exceção requer justificativa documentada e aprovações estabelecidas pelos controles de segurança e autoridade.\"\n      },\n      \"supports\": [\n        {\n          \"unit_id\": \"DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa\",\n          \"quote\": \"Exceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.\"\n        }\n      ]\n    }\n  ],\n  \"action\": {\n    \"kind\": \"complete\"\n  }\n}"
+      }
+    ]
+  }
+}
