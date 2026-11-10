@@ -1,0 +1,100 @@
+{
+  "experiment": "RV022_MULTICASE_GENERATION",
+  "case": "ORC-004",
+  "baseline_status": "answered_pending_review",
+  "baseline_sha256": "e8b87503206b836e420eb7b68e10f28b287ad88530f3a18f276ba2f44652df3a",
+  "intervention_sha256": "51a88844f31ce402a11bd8ef35865750653a28c3bdef213c8d1c156b75184af0",
+  "request_id": "0d04ce1f4a3fab8a261d2bed70be4fdb83231ce1c2cd696a8b4028b7c3afaf7c",
+  "model": "gpt-6.1-sol",
+  "status": "contract_pass",
+  "semantic_review": "not_performed",
+  "answer": {
+    "request_id": "0d04ce1f4a3fab8a261d2bed70be4fdb83231ce1c2cd696a8b4028b7c3afaf7c",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "Reporte imediatamente o envio acidental pelo canal de incidentes de Segurança da Informação.",
+        "coverage_id": "C1",
+        "citation_ids": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "text": "Interrompa novas divulgações sem destruir evidências.",
+        "coverage_id": "C2",
+        "citation_ids": [
+          "E2"
+        ]
+      },
+      {
+        "text": "Registre quais informações estavam envolvidas, o destinatário, o meio de transmissão, o horário e o alcance conhecido.",
+        "coverage_id": "C3",
+        "citation_ids": [
+          "E2"
+        ]
+      },
+      {
+        "text": "Não instrua o fornecedor a apagar evidências.",
+        "coverage_id": "C4",
+        "citation_ids": [
+          "E2"
+        ]
+      },
+      {
+        "text": "Preserve mensagens, logs, arquivos e capturas de tela relevantes.",
+        "coverage_id": "C5",
+        "citation_ids": [
+          "E2"
+        ]
+      },
+      {
+        "text": "Siga as instruções de contenção, notificação e remediação emitidas pelo responsável pelo incidente.",
+        "coverage_id": "C6",
+        "citation_ids": [
+          "E2"
+        ]
+      },
+      {
+        "text": "Segurança da Informação coordena a contenção e determina se Compras, Jurídico, Privacidade, o responsável pelo negócio ou o fornecedor devem tomar medidas adicionais.",
+        "coverage_id": "C7",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "Não tente ocultar nem resolver a divulgação por conta própria sem reportá-la.",
+        "coverage_id": "C8",
+        "citation_ids": [
+          "E3"
+        ]
+      }
+    ],
+    "abstention_reason": null
+  },
+  "rendered_answer": "- Reporte imediatamente o envio acidental pelo canal de incidentes de Segurança da Informação. [E1, E2]\n- Condição: Quando for viável interromper novas divulgações sem destruir evidências.\n  Interrompa novas divulgações sem destruir evidências. [E2]\n- Registre quais informações estavam envolvidas, o destinatário, o meio de transmissão, o horário e o alcance conhecido. [E2]\n- Condição: Antes de Segurança da Informação fornecer orientação.\n  Não instrua o fornecedor a apagar evidências. [E2]\n- Preserve mensagens, logs, arquivos e capturas de tela relevantes. [E2]\n- Condição: Quando o responsável pelo incidente emitir instruções.\n  Siga as instruções de contenção, notificação e remediação emitidas pelo responsável pelo incidente. [E2]\n- Segurança da Informação coordena a contenção e determina se Compras, Jurídico, Privacidade, o responsável pelo negócio ou o fornecedor devem tomar medidas adicionais. [E1]\n- Condição: Se a divulgação for material.\n  Não tente ocultar nem resolver a divulgação por conta própria sem reportá-la. [E3]\n\nFontes:\n[E1] DOC-010 | DOC-010::unit-a53055b0da14d0c1a709b3d0c6122c7b5e1f3dd9cd2db9b298381c1721583032\n4. Supplier disclosure\n\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action.\n[E2] DOC-010 | DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef\n3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner.\n[E3] DOC-006 | DOC-006::unit-b7a3f71a2bf5bb9ed8e3fb4edd6ebd68fd859b27d673150b754d9b5c72ab7b07\n6. Security incidents\n\nAccidental disclosure, unauthorized transmission, or suspected exposure of confidential information must be reported and handled under the active Security Incident SOP. Employees must not attempt to conceal or independently resolve a material disclosure without reporting it.",
+  "claims": 8,
+  "usage": {
+    "input_tokens": 4281,
+    "output_tokens": 450,
+    "estimated_cost_usd": "0.013062",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "b2ac8665eb38782ede84b7f4c465c3b103b0ff0e73455bead9ee80a9a01ee156",
+        "reserved_input": 25502,
+        "reserved_output": 8000,
+        "status": "completed",
+        "input_tokens": 4281,
+        "output_tokens": 450,
+        "response_id": "resp_094cfd883aa4ebff016af2622d333487d1bbefe53657b94e13",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"request_id\": \"0d04ce1f4a3fab8a261d2bed70be4fdb83231ce1c2cd696a8b4028b7c3afaf7c\",\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"Reporte imediatamente o envio acidental pelo canal de incidentes de Segurança da Informação.\",\n      \"coverage_id\": \"C1\",\n      \"citation_ids\": [\"E1\", \"E2\"]\n    },\n    {\n      \"text\": \"Interrompa novas divulgações sem destruir evidências.\",\n      \"coverage_id\": \"C2\",\n      \"citation_ids\": [\"E2\"]\n    },\n    {\n      \"text\": \"Registre quais informações estavam envolvidas, o destinatário, o meio de transmissão, o horário e o alcance conhecido.\",\n      \"coverage_id\": \"C3\",\n      \"citation_ids\": [\"E2\"]\n    },\n    {\n      \"text\": \"Não instrua o fornecedor a apagar evidências.\",\n      \"coverage_id\": \"C4\",\n      \"citation_ids\": [\"E2\"]\n    },\n    {\n      \"text\": \"Preserve mensagens, logs, arquivos e capturas de tela relevantes.\",\n      \"coverage_id\": \"C5\",\n      \"citation_ids\": [\"E2\"]\n    },\n    {\n      \"text\": \"Siga as instruções de contenção, notificação e remediação emitidas pelo responsável pelo incidente.\",\n      \"coverage_id\": \"C6\",\n      \"citation_ids\": [\"E2\"]\n    },\n    {\n      \"text\": \"Segurança da Informação coordena a contenção e determina se Compras, Jurídico, Privacidade, o responsável pelo negócio ou o fornecedor devem tomar medidas adicionais.\",\n      \"coverage_id\": \"C7\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"Não tente ocultar nem resolver a divulgação por conta própria sem reportá-la.\",\n      \"coverage_id\": \"C8\",\n      \"citation_ids\": [\"E3\"]\n    }\n  ],\n  \"abstention_reason\": null\n}"
+      }
+    ]
+  }
+}

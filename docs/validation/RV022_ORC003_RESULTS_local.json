@@ -1,0 +1,65 @@
+{
+  "experiment": "RV022_MULTICASE_GENERATION",
+  "case": "ORC-003",
+  "baseline_status": "answered_pending_review",
+  "baseline_sha256": "3b0b1cb19cc802659033397580c5b855f636f82ac377d7c85f8fe400e0b3f194",
+  "intervention_sha256": "51a88844f31ce402a11bd8ef35865750653a28c3bdef213c8d1c156b75184af0",
+  "request_id": "5897bd6def108fba840c9769f23e46effde50bc96deb4ae139a2beef78de3901",
+  "model": "gpt-6.1-sol",
+  "status": "contract_pass",
+  "semantic_review": "not_performed",
+  "answer": {
+    "request_id": "5897bd6def108fba840c9769f23e46effde50bc96deb4ae139a2beef78de3901",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "O uso de dados confidenciais de fornecedor em IA exige aprovação de ambos: Information Security Owner e AI Governance Owner, independentemente do valor ou da ferramenta.",
+        "coverage_id": "C1",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "É exigida revisão adicional pelo Data Owner, distinta das aprovações exigidas.",
+        "coverage_id": "C2",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "Os dados confidenciais só podem ser inseridos quando tanto a ferramenta quanto o caso de uso estiverem aprovados para a classificação da informação.",
+        "coverage_id": "C3",
+        "citation_ids": [
+          "E1",
+          "E2"
+        ]
+      }
+    ],
+    "abstention_reason": null
+  },
+  "rendered_answer": "- O uso de dados confidenciais de fornecedor em IA exige aprovação de ambos: Information Security Owner e AI Governance Owner, independentemente do valor ou da ferramenta. [E1]\n- É exigida revisão adicional pelo Data Owner, distinta das aprovações exigidas. [E1]\n- Os dados confidenciais só podem ser inseridos quando tanto a ferramenta quanto o caso de uso estiverem aprovados para a classificação da informação. [E1, E2]\n\nFontes:\n[E1] DOC-012 | DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac\nSheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification.\n[E2] DOC-006 | DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331\n5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.",
+  "claims": 3,
+  "usage": {
+    "input_tokens": 3122,
+    "output_tokens": 235,
+    "estimated_cost_usd": "0.008594",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "e822a514829227a44b7591994a4983463ca9255f7b21996942f75e6c013fd696",
+        "reserved_input": 20228,
+        "reserved_output": 8000,
+        "status": "completed",
+        "input_tokens": 3122,
+        "output_tokens": 235,
+        "response_id": "resp_00728f0fa7e56f1c016af26229b88087d1b9508ebf4a42ee49",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"request_id\": \"5897bd6def108fba840c9769f23e46effde50bc96deb4ae139a2beef78de3901\",\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"O uso de dados confidenciais de fornecedor em IA exige aprovação de ambos: Information Security Owner e AI Governance Owner, independentemente do valor ou da ferramenta.\",\n      \"coverage_id\": \"C1\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"É exigida revisão adicional pelo Data Owner, distinta das aprovações exigidas.\",\n      \"coverage_id\": \"C2\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"Os dados confidenciais só podem ser inseridos quando tanto a ferramenta quanto o caso de uso estiverem aprovados para a classificação da informação.\",\n      \"coverage_id\": \"C3\",\n      \"citation_ids\": [\"E1\", \"E2\"]\n    }\n  ],\n  \"abstention_reason\": null\n}"
+      }
+    ]
+  }
+}

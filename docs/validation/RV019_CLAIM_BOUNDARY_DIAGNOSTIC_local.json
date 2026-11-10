@@ -1,0 +1,27 @@
+{
+  "experiment": "RV019_CLAIM_BOUNDARY_DIAGNOSTIC",
+  "source_sha256": "03d6ff1ae9b6c439106c626efd0d20e1501a28e245eea9850873099d61031daf",
+  "source_status": "execution_failed",
+  "simulation_status": "contract_pass",
+  "simulation_only": true,
+  "semantic_review": "not_performed",
+  "original_c5": {
+    "text": "A aprovação da nova ferramenta exige aprovação do AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Essa aprovação da ferramenta não substitui as aprovações e a revisão exigidas para o uso de dados confidenciais de fornecedores.",
+    "coverage_id": "C5",
+    "citation_ids": [
+      "E6",
+      "E7",
+      "E3"
+    ]
+  },
+  "simulated_c5": {
+    "text": "A aprova??o de uma nova ferramenta de IA que processe dados empresariais ou de fornecedores exige aprova??o do AI Governance Owner, com revis?es de Information Security e Procurement.",
+    "coverage_id": "C5",
+    "citation_ids": [
+      "E6",
+      "E7"
+    ]
+  },
+  "claims_total": 7,
+  "error": null
+}

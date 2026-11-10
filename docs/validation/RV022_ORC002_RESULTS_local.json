@@ -1,0 +1,93 @@
+{
+  "experiment": "RV022_MULTICASE_GENERATION",
+  "case": "ORC-002",
+  "baseline_status": "answered_pending_review",
+  "baseline_sha256": "247f6474775597e627716632d6855d7131429d96b3b124e91b3404a06cf9f948",
+  "intervention_sha256": "51a88844f31ce402a11bd8ef35865750653a28c3bdef213c8d1c156b75184af0",
+  "request_id": "9550b024b50136395e6b8c7664ff0e078a63fa51b85ce8926a8745f81eb38601",
+  "model": "gpt-6.1-sol",
+  "status": "contract_pass",
+  "semantic_review": "not_performed",
+  "answer": {
+    "request_id": "9550b024b50136395e6b8c7664ff0e078a63fa51b85ce8926a8745f81eb38601",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "Compartilhar somente com aprovação para uso público e por canal de negócios aprovado.",
+        "coverage_id": "C1",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "Compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.",
+        "coverage_id": "C2",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "Exigir destinatário autorizado e finalidade de negócio aprovada. Usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. O e-mail corporativo, por si só, não torna aprovada uma transferência não aprovada.",
+        "coverage_id": "C3",
+        "citation_ids": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "text": "Obter autorização explícita conforme o controle de segurança ou jurídico aplicável e usar mecanismo aprovado para dados restritos, com autorização documentada.",
+        "coverage_id": "C4",
+        "citation_ids": [
+          "E1"
+        ]
+      },
+      {
+        "text": "Limitar os dados enviados às informações necessárias para executar o serviço logístico contratado.",
+        "coverage_id": "C5",
+        "citation_ids": [
+          "E3"
+        ]
+      },
+      {
+        "text": "Não transmitir esses dados por e-mail comum desprotegido apenas porque o destinatário é uma transportadora contratada.",
+        "coverage_id": "C6",
+        "citation_ids": [
+          "E3"
+        ]
+      },
+      {
+        "text": "Documentar a justificativa de negócio e obter as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.",
+        "coverage_id": "C7",
+        "citation_ids": [
+          "E4"
+        ]
+      }
+    ],
+    "abstention_reason": null
+  },
+  "rendered_answer": "- Condição: Quando os dados a enviar forem classificados como Public.\n  Compartilhar somente com aprovação para uso público e por canal de negócios aprovado. [E1]\n- Condição: Quando os dados a enviar forem classificados como Internal.\n  Compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa. [E1]\n- Condição: Quando os dados a enviar forem classificados como Confidential.\n  Exigir destinatário autorizado e finalidade de negócio aprovada. Usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. O e-mail corporativo, por si só, não torna aprovada uma transferência não aprovada. [E1, E2]\n- Condição: Quando os dados a enviar forem classificados como Restricted.\n  Obter autorização explícita conforme o controle de segurança ou jurídico aplicável e usar mecanismo aprovado para dados restritos, com autorização documentada. [E1]\n- Condição: Quando o fornecedor externo destinatário for uma transportadora.\n  Limitar os dados enviados às informações necessárias para executar o serviço logístico contratado. [E3]\n- Condição: Quando o destinatário for uma transportadora contratada e os dados de clientes ou remessas forem classificados como confidenciais.\n  Não transmitir esses dados por e-mail comum desprotegido apenas porque o destinatário é uma transportadora contratada. [E3]\n- Condição: Quando houver exceção aos requisitos aplicáveis ao envio de dados ao fornecedor externo.\n  Documentar a justificativa de negócio e obter as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa. [E4]\n\nFontes:\n[E1] DOC-005 | DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\n3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.\n[E2] DOC-005 | DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88\n5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer.\n[E3] DOC-005 | DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87\n4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier.\n[E4] DOC-005 | DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa\n7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+  "claims": 7,
+  "usage": {
+    "input_tokens": 4516,
+    "output_tokens": 475,
+    "estimated_cost_usd": "0.013782",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "c69c9d66b2424ea671d6c43d26419d8c844ecb92f9aa587df7afcbb303843992",
+        "reserved_input": 27470,
+        "reserved_output": 8000,
+        "status": "completed",
+        "input_tokens": 4516,
+        "output_tokens": 475,
+        "response_id": "resp_0b05edbb122efcba016af2622514ec87d1a7ac2f77b53c21e7",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"request_id\": \"9550b024b50136395e6b8c7664ff0e078a63fa51b85ce8926a8745f81eb38601\",\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"Compartilhar somente com aprovação para uso público e por canal de negócios aprovado.\",\n      \"coverage_id\": \"C1\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"Compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.\",\n      \"coverage_id\": \"C2\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"Exigir destinatário autorizado e finalidade de negócio aprovada. Usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. O e-mail corporativo, por si só, não torna aprovada uma transferência não aprovada.\",\n      \"coverage_id\": \"C3\",\n      \"citation_ids\": [\"E1\", \"E2\"]\n    },\n    {\n      \"text\": \"Obter autorização explícita conforme o controle de segurança ou jurídico aplicável e usar mecanismo aprovado para dados restritos, com autorização documentada.\",\n      \"coverage_id\": \"C4\",\n      \"citation_ids\": [\"E1\"]\n    },\n    {\n      \"text\": \"Limitar os dados enviados às informações necessárias para executar o serviço logístico contratado.\",\n      \"coverage_id\": \"C5\",\n      \"citation_ids\": [\"E3\"]\n    },\n    {\n      \"text\": \"Não transmitir esses dados por e-mail comum desprotegido apenas porque o destinatário é uma transportadora contratada.\",\n      \"coverage_id\": \"C6\",\n      \"citation_ids\": [\"E3\"]\n    },\n    {\n      \"text\": \"Documentar a justificativa de negócio e obter as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.\",\n      \"coverage_id\": \"C7\",\n      \"citation_ids\": [\"E4\"]\n    }\n  ],\n  \"abstention_reason\": null\n}"
+      }
+    ]
+  }
+}

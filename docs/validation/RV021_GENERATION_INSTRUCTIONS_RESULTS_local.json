@@ -1,0 +1,95 @@
+{
+  "experiment": "RV021_GENERATION_INSTRUCTIONS",
+  "baseline_source": "docs\\validation\\RV017_ORC003_NORMATIVE_RESULTS_local.json",
+  "baseline_sha256": "03d6ff1ae9b6c439106c626efd0d20e1501a28e245eea9850873099d61031daf",
+  "model": "gpt-6.1-sol",
+  "intervention": "\nCada claim deve conter SOMENTE regras sustentadas pelos supports do seu\ncoverage_id. N?o cite evid?ncias vinculadas exclusivamente a outro item.\nSe uma compara??o exigir evid?ncia de outro item, deixe essa compara??o\npara a claim correspondente. N?o repita a mesma compara??o em itens\ndiferentes. Preserve todas as exig?ncias materiais do plano.\n",
+  "original_request_id": "dd3b098eb1953788a63f0f0ceda4ead29fc81761ffbb419f88c0a5cdd5773ada",
+  "experimental_request_id": "240409c5291552c704c5c5713654bfec22d8b53d3fbf5021d8b57d6d19f54637",
+  "status": "contract_pass",
+  "semantic_review": "not_performed",
+  "answer": {
+    "request_id": "240409c5291552c704c5c5713654bfec22d8b53d3fbf5021d8b57d6d19f54637",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, cumprimento das políticas de Compartilhamento de Dados e Segurança da Informação e aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica ao processamento dessas informações.",
+        "coverage_id": "C1",
+        "citation_ids": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "text": "O uso de dados confidenciais de fornecedores em IA exige cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além de revisão adicional pelo Data Owner, para qualquer valor e qualquer ferramenta. A ferramenta e o caso de uso devem estar aprovados para a classificação dos dados.",
+        "coverage_id": "C2",
+        "citation_ids": [
+          "E3",
+          "E1"
+        ]
+      },
+      {
+        "text": "É proibido inserir informações confidenciais em uma ferramenta de IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. A aprovação de uma ferramenta não aprova automaticamente todos os tipos de dados nem todas as decisões de negócio.",
+        "coverage_id": "C3",
+        "citation_ids": [
+          "E4",
+          "E5"
+        ]
+      },
+      {
+        "text": "Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e cumprimento dos requisitos de governança de IA.",
+        "coverage_id": "C4",
+        "citation_ids": [
+          "E4"
+        ]
+      },
+      {
+        "text": "A aprovação da nova ferramenta exige aprovação pelo AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Requisitos adicionais de aprovação seguem a Política de Governança de IA.",
+        "coverage_id": "C5",
+        "citation_ids": [
+          "E6",
+          "E7"
+        ]
+      },
+      {
+        "text": "Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto; essa revisão não é apresentada como uma aprovação universal.",
+        "coverage_id": "C6",
+        "citation_ids": [
+          "E6"
+        ]
+      },
+      {
+        "text": "A exceção exige justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.",
+        "coverage_id": "C7",
+        "citation_ids": [
+          "E8"
+        ]
+      }
+    ],
+    "abstention_reason": null
+  },
+  "rendered_answer": "- O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, cumprimento das políticas de Compartilhamento de Dados e Segurança da Informação e aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica ao processamento dessas informações. [E1, E2]\n- O uso de dados confidenciais de fornecedores em IA exige cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além de revisão adicional pelo Data Owner, para qualquer valor e qualquer ferramenta. A ferramenta e o caso de uso devem estar aprovados para a classificação dos dados. [E3, E1]\n- É proibido inserir informações confidenciais em uma ferramenta de IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. A aprovação de uma ferramenta não aprova automaticamente todos os tipos de dados nem todas as decisões de negócio. [E4, E5]\n- Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e cumprimento dos requisitos de governança de IA. [E4]\n- Condição: Quando se tratar de uma nova ferramenta de IA que processe dados empresariais ou de fornecedores.\n  A aprovação da nova ferramenta exige aprovação pelo AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Requisitos adicionais de aprovação seguem a Política de Governança de IA. [E6, E7]\n- Condição: Na aprovação de nova ferramenta de IA, quando houver casos de uso jurídicos, de privacidade, regulados ou de alto impacto.\n  Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto; essa revisão não é apresentada como uma aprovação universal. [E6]\n- Condição: Quando houver exceção à política de compartilhamento de dados aplicável ao processamento de informações de fornecedores em IA.\n  A exceção exige justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa. [E8]\n\nFontes:\n[E1] DOC-023 | DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2\n4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.\n[E2] DOC-005 | DOC-005::unit-1a3ddf104e13d8a932f28c0ef8f8fa5b161595012e738ad938fe74d396c30119\n6. Supplier and AI-related use\n\nWhere supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.\n[E3] DOC-012 | DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac\nSheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification.\n[E4] DOC-006 | DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331\n5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.\n[E5] DOC-023 | DOC-023::unit-09c2a2ebf390cec6251519ea1e25c74963b42330f542079c3c4965f03ce90078\n2. Permitted business use\n\nEmployees may use approved AI tools for legitimate business purposes within the approved use case and data classification. Approval of a tool does not automatically approve every data type or business decision.\n[E6] DOC-023 | DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696\n5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.\n[E7] DOC-012 | DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7\nSheet: Approval Matrix; row: 8\nDecision Type [A1] | A8 = New AI tool approval\nValue / Condition [B1] | B8 = Any value when enterprise or supplier data is processed\nRequired Approval [C1] | C8 = AI Governance Owner\nAdditional Review [D1] | D8 = Information Security + Procurement\nNotes [E1] | E8 = Additional approval requirements follow AI Governance Policy.\n[E8] DOC-005 | DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa\n7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+  "usage": {
+    "input_tokens": 7939,
+    "output_tokens": 684,
+    "estimated_cost_usd": "0.022718",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "8e862b36c99d12311ccd3fafd0b967c702687a812b84c4b9cc8f76a03bc9ac50",
+        "reserved_input": 39702,
+        "reserved_output": 8000,
+        "status": "completed",
+        "input_tokens": 7939,
+        "output_tokens": 684,
+        "response_id": "resp_086ae6e8216668fc016af26003911887d19355b1b176cb1c0b",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"request_id\": \"240409c5291552c704c5c5713654bfec22d8b53d3fbf5021d8b57d6d19f54637\",\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, cumprimento das políticas de Compartilhamento de Dados e Segurança da Informação e aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica ao processamento dessas informações.\",\n      \"coverage_id\": \"C1\",\n      \"citation_ids\": [\"E1\", \"E2\"]\n    },\n    {\n      \"text\": \"O uso de dados confidenciais de fornecedores em IA exige cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além de revisão adicional pelo Data Owner, para qualquer valor e qualquer ferramenta. A ferramenta e o caso de uso devem estar aprovados para a classificação dos dados.\",\n      \"coverage_id\": \"C2\",\n      \"citation_ids\": [\"E3\", \"E1\"]\n    },\n    {\n      \"text\": \"É proibido inserir informações confidenciais em uma ferramenta de IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. A aprovação de uma ferramenta não aprova automaticamente todos os tipos de dados nem todas as decisões de negócio.\",\n      \"coverage_id\": \"C3\",\n      \"citation_ids\": [\"E4\", \"E5\"]\n    },\n    {\n      \"text\": \"Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e cumprimento dos requisitos de governança de IA.\",\n      \"coverage_id\": \"C4\",\n      \"citation_ids\": [\"E4\"]\n    },\n    {\n      \"text\": \"A aprovação da nova ferramenta exige aprovação pelo AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Requisitos adicionais de aprovação seguem a Política de Governança de IA.\",\n      \"coverage_id\": \"C5\",\n      \"citation_ids\": [\"E6\", \"E7\"]\n    },\n    {\n      \"text\": \"Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto; essa revisão não é apresentada como uma aprovação universal.\",\n      \"coverage_id\": \"C6\",\n      \"citation_ids\": [\"E6\"]\n    },\n    {\n      \"text\": \"A exceção exige justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.\",\n      \"coverage_id\": \"C7\",\n      \"citation_ids\": [\"E8\"]\n    }\n  ],\n  \"abstention_reason\": null\n}"
+      }
+    ]
+  }
+}

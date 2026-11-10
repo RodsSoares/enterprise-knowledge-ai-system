@@ -1,0 +1,93 @@
+﻿{
+    "experiment":  "RV018_CITATION_DIAGNOSTIC",
+    "source":  "docs/validation/RV017_ORC003_NORMATIVE_RESULTS_local.json",
+    "source_status":  "execution_failed",
+    "claims_total":  7,
+    "valid_claims":  6,
+    "invalid_claims":  1,
+    "checks":  [
+                   {
+                       "coverage_id":  "C1",
+                       "citation_ids":  [
+                                            "E1",
+                                            "E2"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, cumprimento das políticas de Compartilhamento de Dados e Segurança da Informação e as aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica."
+                   },
+                   {
+                       "coverage_id":  "C2",
+                       "citation_ids":  [
+                                            "E3",
+                                            "E1"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "Para dados confidenciais de fornecedores, são exigidas cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além de revisão adicional pelo Data Owner. Isso vale para qualquer valor e qualquer ferramenta; a ferramenta e o caso de uso devem estar aprovados para a classificação dos dados."
+                   },
+                   {
+                       "coverage_id":  "C3",
+                       "citation_ids":  [
+                                            "E4",
+                                            "E5"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "É proibido inserir informações confidenciais em IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. A aprovação de uma ferramenta não aprova automaticamente todos os tipos de dados ou decisões de negócio."
+                   },
+                   {
+                       "coverage_id":  "C4",
+                       "citation_ids":  [
+                                            "E4"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e cumprimento dos requisitos de governança de IA."
+                   },
+                   {
+                       "coverage_id":  "C5",
+                       "citation_ids":  [
+                                            "E6",
+                                            "E7",
+                                            "E3"
+                                        ],
+                       "invalid_citations":  [
+                                                 "E3"
+                                             ],
+                       "valid":  false,
+                       "claim_text":  "A aprovação da nova ferramenta exige aprovação do AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Essa aprovação da ferramenta não substitui as aprovações e a revisão exigidas para o uso de dados confidenciais de fornecedores."
+                   },
+                   {
+                       "coverage_id":  "C6",
+                       "citation_ids":  [
+                                            "E6"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto; não se trata de uma aprovação universalmente exigida."
+                   },
+                   {
+                       "coverage_id":  "C7",
+                       "citation_ids":  [
+                                            "E8",
+                                            "E2"
+                                        ],
+                       "invalid_citations":  [
+
+                                             ],
+                       "valid":  true,
+                       "claim_text":  "Exceções exigem justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa."
+                   }
+               ]
+}

@@ -1,0 +1,18 @@
+{
+  "experiment": "RV020_GENERATION_REPLAY",
+  "source_sha256": "03d6ff1ae9b6c439106c626efd0d20e1501a28e245eea9850873099d61031daf",
+  "request_id": "dd3b098eb1953788a63f0f0ceda4ead29fc81761ffbb419f88c0a5cdd5773ada",
+  "model": "gpt-6.1-sol",
+  "max_output_tokens": 8000,
+  "semantic_review": "not_performed",
+  "status": "contract_fail",
+  "response_status": "completed",
+  "response_id": "resp_0441228b0a315d00016af25e30cd8487d1b6f86821bae2feba",
+  "returned_model": "gpt-6.1-sol",
+  "raw_output": "{\n  \"request_id\": \"dd3b098eb1953788a63f0f0ceda4ead29fc81761ffbb419f88c0a5cdd5773ada\",\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, cumprimento das políticas de Compartilhamento de Dados e de Segurança da Informação e aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica.\",\n      \"coverage_id\": \"C1\",\n      \"citation_ids\": [\"E1\", \"E2\"]\n    },\n    {\n      \"text\": \"Para dados confidenciais de fornecedores, em qualquer valor e qualquer ferramenta, são exigidas cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além da revisão adicional do Data Owner. Essa revisão não é uma aprovação. A ferramenta e o caso de uso devem estar aprovados para a classificação dos dados.\",\n      \"coverage_id\": \"C2\",\n      \"citation_ids\": [\"E3\", \"E1\"]\n    },\n    {\n      \"text\": \"É proibido inserir informações confidenciais em IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. A aprovação de uma ferramenta não aprova automaticamente todos os tipos de dados ou decisões de negócio.\",\n      \"coverage_id\": \"C3\",\n      \"citation_ids\": [\"E4\", \"E5\"]\n    },\n    {\n      \"text\": \"Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e cumprimento dos requisitos de governança de IA.\",\n      \"coverage_id\": \"C4\",\n      \"citation_ids\": [\"E4\"]\n    },\n    {\n      \"text\": \"É exigida aprovação do AI Governance Owner, com revisões de Information Security e Procurement, independentemente do valor. A aprovação da nova ferramenta é distinta das aprovações exigidas para usar dados confidenciais de fornecedores e não as substitui.\",\n      \"coverage_id\": \"C5\",\n      \"citation_ids\": [\"E6\", \"E7\", \"E3\"]\n    },\n    {\n      \"text\": \"Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto; não se trata de uma aprovação universalmente exigida.\",\n      \"coverage_id\": \"C6\",\n      \"citation_ids\": [\"E6\"]\n    },\n    {\n      \"text\": \"São necessárias justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.\",\n      \"coverage_id\": \"C7\",\n      \"citation_ids\": [\"E8\"]\n    }\n  ],\n  \"abstention_reason\": null\n}",
+  "usage": {
+    "input_tokens": 7855,
+    "output_tokens": 616
+  },
+  "validation_error": "ValueError: Citations must support this coverage item"
+}
