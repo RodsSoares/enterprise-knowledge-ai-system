@@ -1,0 +1,288 @@
+{
+  "experiment": "RV029_EIGHT_COVERAGE_STRUCTURAL",
+  "status": "structural_contract_pass",
+  "baseline_sha256": "03d6ff1ae9b6c439106c626efd0d20e1501a28e245eea9850873099d61031daf",
+  "decision_sha256": "9c326adff04c6bcd6e83c4f981d725f56f6a1530e3a9b3a0ca0a3a1c6d6b9497",
+  "baseline_coverage_count": 7,
+  "candidate_coverage_count": 8,
+  "relationship_id": "REL-001",
+  "relation_coverage_id": "C8",
+  "validated_plan": {
+    "items": [
+      {
+        "need": "Explicar que o uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, conformidade com as políticas de compartilhamento e segurança da informação e aprovações aplicáveis à classificação dos dados.",
+        "use": "direct",
+        "condition": null,
+        "scope_link": {
+          "explanation": "A regra disciplina expressamente o uso de dados de fornecedores em IA e estabelece os requisitos gerais que também se aplicam aos dados confidenciais.",
+          "question_span": {
+            "text": "uso de dados confidenciais de fornecedores em ferramentas de IA",
+            "start": 83,
+            "end": 146
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+            "source_span": {
+              "text": "Use of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification.",
+              "start": 32,
+              "end": 227
+            }
+          },
+          {
+            "unit_id": "DOC-005::unit-1a3ddf104e13d8a932f28c0ef8f8fa5b161595012e738ad938fe74d396c30119",
+            "source_span": {
+              "text": "Where supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.",
+              "start": 32,
+              "end": 292
+            }
+          }
+        ],
+        "coverage_id": "C1"
+      },
+      {
+        "need": "Identificar as aprovações cumulativas do Information Security Owner e do AI Governance Owner e a revisão adicional do Data Owner, para qualquer valor e qualquer ferramenta, mantendo a exigência de aprovação da ferramenta e do caso de uso para a classificação dos dados.",
+        "use": "direct",
+        "condition": null,
+        "scope_link": {
+          "explanation": "A linha da matriz trata exatamente do uso de dados confidenciais de fornecedores em IA e distingue os aprovadores do responsável pela revisão adicional.",
+          "question_span": {
+            "text": "quais aprovações e revisões são exigidas para o uso de dados confidenciais de fornecedores em ferramentas de IA",
+            "start": 35,
+            "end": 146
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+            "source_span": {
+              "text": "Decision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification.",
+              "start": 31,
+              "end": 348
+            }
+          },
+          {
+            "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+            "source_span": {
+              "text": "Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.",
+              "start": 228,
+              "end": 369
+            }
+          }
+        ],
+        "coverage_id": "C2"
+      },
+      {
+        "need": "Preservar a proibição de inserir informações confidenciais sem aprovação da ferramenta e do caso de uso para a classificação relevante; esclarecer que a aprovação genérica da ferramenta não aprova automaticamente todos os tipos de dados.",
+        "use": "direct",
+        "condition": null,
+        "scope_link": {
+          "explanation": "As regras delimitam o alcance da aprovação necessária para inserir os dados confidenciais mencionados na pergunta.",
+          "question_span": {
+            "text": "uso de dados confidenciais de fornecedores em ferramentas de IA",
+            "start": 83,
+            "end": 146
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+            "source_span": {
+              "text": "Confidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification.",
+              "start": 31,
+              "end": 179
+            }
+          },
+          {
+            "unit_id": "DOC-023::unit-09c2a2ebf390cec6251519ea1e25c74963b42330f542079c3c4965f03ce90078",
+            "source_span": {
+              "text": "Employees may use approved AI tools for legitimate business purposes within the approved use case and data classification. Approval of a tool does not automatically approve every data type or business decision.",
+              "start": 27,
+              "end": 237
+            }
+          }
+        ],
+        "coverage_id": "C3"
+      },
+      {
+        "need": "Explicar os controles que acompanham o uso aprovado de informações confidenciais em IA: acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e conformidade com a governança de IA.",
+        "use": "direct",
+        "condition": null,
+        "scope_link": {
+          "explanation": "São condições expressas do processamento de informações confidenciais em IA, não aprovações substitutivas nem autorização automática de uso.",
+          "question_span": {
+            "text": "Explique as regras gerais e suas condições",
+            "start": 148,
+            "end": 190
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+            "source_span": {
+              "text": "Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements.",
+              "start": 180,
+              "end": 349
+            }
+          }
+        ],
+        "coverage_id": "C4"
+      },
+      {
+        "need": "Explicar que, quando a ferramenta de IA for nova e processar dados empresariais ou de fornecedores, é necessária aprovação do AI Governance Owner, com revisão de Information Security e Procurement, independentemente do valor; distinguir essa etapa das aprovações para usar dados confidenciais.",
+        "use": "category",
+        "condition": "Quando se tratar de uma nova ferramenta de IA que processe dados empresariais ou de fornecedores.",
+        "scope_link": {
+          "explanation": "A novidade da ferramenta é uma condição que acrescenta aprovação e revisões específicas ao uso de dados de fornecedores em IA.",
+          "question_span": {
+            "text": "quais aprovações e revisões são exigidas para o uso de dados confidenciais de fornecedores em ferramentas de IA",
+            "start": 35,
+            "end": 146
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+            "source_span": {
+              "text": "A new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review.",
+              "start": 17,
+              "end": 169
+            }
+          },
+          {
+            "unit_id": "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7",
+            "source_span": {
+              "text": "Decision Type [A1] | A8 = New AI tool approval\nValue / Condition [B1] | B8 = Any value when enterprise or supplier data is processed\nRequired Approval [C1] | C8 = AI Governance Owner\nAdditional Review [D1] | D8 = Information Security + Procurement\nNotes [E1] | E8 = Additional approval requirements follow AI Governance Policy.",
+              "start": 31,
+              "end": 358
+            }
+          }
+        ],
+        "coverage_id": "C5"
+      },
+      {
+        "need": "Preservar a possibilidade de revisão adicional para casos jurídicos, de privacidade, regulados ou de alto impacto no contexto da aprovação de novas ferramentas, sem apresentá-la como aprovação universal nem inventar responsáveis.",
+        "use": "category",
+        "condition": "Na aprovação de nova ferramenta de IA, quando houver casos de uso jurídicos, de privacidade, regulados ou de alto impacto.",
+        "scope_link": {
+          "explanation": "A política identifica essas condições como possíveis motivos de revisão adicional no processo de aprovação da ferramenta que tratará dados de fornecedores.",
+          "question_span": {
+            "text": "Explique as regras gerais e suas condições",
+            "start": 148,
+            "end": 190
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+            "source_span": {
+              "text": "A new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.",
+              "start": 17,
+              "end": 260
+            }
+          }
+        ],
+        "coverage_id": "C6"
+      },
+      {
+        "need": "Explicar que, quando houver exceção à política aplicável, são necessárias justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e autoridade pertinentes; um SOP operacional não pode criar autonomamente uma exceção à política corporativa.",
+        "use": "category",
+        "condition": "Quando houver exceção à política de compartilhamento de dados aplicável ao processamento de informações de fornecedores em IA.",
+        "scope_link": {
+          "explanation": "A política declara sua aplicação ao processamento de informações de fornecedores por IA e condiciona suas exceções a justificativa e aprovações próprias.",
+          "question_span": {
+            "text": "Explique as regras gerais e suas condições",
+            "start": 148,
+            "end": 190
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-005::unit-1a3ddf104e13d8a932f28c0ef8f8fa5b161595012e738ad938fe74d396c30119",
+            "source_span": {
+              "text": "Where supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy.",
+              "start": 32,
+              "end": 292
+            }
+          },
+          {
+            "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+            "source_span": {
+              "text": "Exceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy.",
+              "start": 15,
+              "end": 227
+            }
+          }
+        ],
+        "coverage_id": "C7"
+      },
+      {
+        "need": "Distinguir a aprovacao de uma nova ferramenta das aprovacoes para utilizar dados confidenciais de fornecedores, preservando a aplicabilidade dos dois conjuntos de requisitos.",
+        "use": "category",
+        "condition": "Quando uma nova ferramenta de IA for utilizada para processar dados confidenciais de fornecedores.",
+        "scope_link": {
+          "explanation": "Relaciona os requisitos de aprovacao do uso de dados confidenciais e os requisitos condicionais de aprovacao de nova ferramenta.",
+          "question_span": {
+            "text": "uso de dados confidenciais de fornecedores em ferramentas de IA",
+            "start": 83,
+            "end": 146
+          }
+        },
+        "supports": [
+          {
+            "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+            "source_span": {
+              "text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification.",
+              "start": 0,
+              "end": 348
+            }
+          },
+          {
+            "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+            "source_span": {
+              "text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.",
+              "start": 0,
+              "end": 369
+            }
+          },
+          {
+            "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+            "source_span": {
+              "text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.",
+              "start": 0,
+              "end": 260
+            }
+          },
+          {
+            "unit_id": "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7",
+            "source_span": {
+              "text": "Sheet: Approval Matrix; row: 8\nDecision Type [A1] | A8 = New AI tool approval\nValue / Condition [B1] | B8 = Any value when enterprise or supplier data is processed\nRequired Approval [C1] | C8 = AI Governance Owner\nAdditional Review [D1] | D8 = Information Security + Procurement\nNotes [E1] | E8 = Additional approval requirements follow AI Governance Policy.",
+              "start": 0,
+              "end": 358
+            }
+          }
+        ],
+        "coverage_id": "C8"
+      }
+    ],
+    "action": {
+      "kind": "complete"
+    }
+  },
+  "relation_support_unit_ids": [
+    "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+    "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+    "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+    "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7"
+  ],
+  "semantic_entailment": "not_independently_verified",
+  "implementation_status": "offline_candidate_only",
+  "limitations": [
+    "Validacao estrutural, nao prova semantica.",
+    "A relacao foi proposta manualmente.",
+    "O planner ainda nao gerou C8 autonomamente.",
+    "O bundle canonico nao foi reconstruido.",
+    "Nenhuma geracao LLM foi executada."
+  ]
+}

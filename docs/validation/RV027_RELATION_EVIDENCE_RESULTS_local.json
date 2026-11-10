@@ -1,0 +1,69 @@
+{
+  "experiment": "RV027_RELATION_EVIDENCE",
+  "status": "candidate_requires_review",
+  "source_package_sha256": "c1d5397354ff6a7f3768872c0b6870a381a079fbf301b1e34acc332d95353610",
+  "rv026_sha256": "25ec2c560fef3eae535c070407ab6690d123dae6fb0d077ab70968d220d707a0",
+  "rv026_status": "reviewed_with_reservation",
+  "case": "ORC-003-NORMATIVE",
+  "question": "Segundo as políticas corporativas, quais aprovações e revisões são exigidas para o uso de dados confidenciais de fornecedores em ferramentas de IA? Explique as regras gerais e suas condições, sem avaliar ou autorizar uma operação específica.",
+  "proposal": {
+    "relationship_id": "REL-001",
+    "proposed_coverage_id": "C8",
+    "relationship_type": "distinct_approval_processes",
+    "coverage_dependencies": [
+      "C2",
+      "C5"
+    ],
+    "need": "Distinguir a aprovacao de uma nova ferramenta das aprovacoes exigidas para utilizar dados confidenciais de fornecedores.",
+    "candidate_claim": "A aprovacao da nova ferramenta e as aprovacoes para o uso de dados confidenciais sao requisitos de processos distintos que devem ser considerados conforme suas condicoes de aplicabilidade.",
+    "evidence_for_data_use": [
+      {
+        "citation_id": "E3",
+        "document_id": "DOC-012",
+        "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+        "source_text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification.",
+        "source_sha256": "0cb9be76d718a3288340e3e46f7bf8dcf1742c48230b2c90c1a54b7b485d60a7"
+      },
+      {
+        "citation_id": "E1",
+        "document_id": "DOC-023",
+        "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+        "source_text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix.",
+        "source_sha256": "9dd002fea015abe269dde78ac89687eb35e2b7f07526e9d024cae0a590eaa44e"
+      }
+    ],
+    "evidence_for_new_tool": [
+      {
+        "citation_id": "E6",
+        "document_id": "DOC-023",
+        "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+        "source_text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases.",
+        "source_sha256": "97fb40e56223e6d80cb8ad41812cf4b00bdacb59466072a4fa538508b8a40e98"
+      },
+      {
+        "citation_id": "E7",
+        "document_id": "DOC-012",
+        "unit_id": "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7",
+        "source_text": "Sheet: Approval Matrix; row: 8\nDecision Type [A1] | A8 = New AI tool approval\nValue / Condition [B1] | B8 = Any value when enterprise or supplier data is processed\nRequired Approval [C1] | C8 = AI Governance Owner\nAdditional Review [D1] | D8 = Information Security + Procurement\nNotes [E1] | E8 = Additional approval requirements follow AI Governance Policy.",
+        "source_sha256": "ada4dfcc072673bc98960ae490d4a18c01560a26e42098bcee4fd774b7c762da"
+      }
+    ],
+    "evidence_checks": {
+      "use_approval_owners": true,
+      "tool_and_use_case": true,
+      "new_tool_approval": true,
+      "tool_reviewers": true
+    },
+    "source_support_status": "two_rule_sets_found",
+    "relationship_entailment": "pending_semantic_review",
+    "explicit_non_substitution_quote": false,
+    "implementation_status": "proposal_only"
+  },
+  "limitations": [
+    "A relacao foi proposta para avaliacao, nao gerada pelo planner.",
+    "As duas regras documentais foram verificadas separadamente.",
+    "A conclusao relacional ainda exige avaliacao semantica.",
+    "Nenhum novo coverage foi incorporado ao plano original.",
+    "Nenhuma chamada de API foi realizada."
+  ]
+}

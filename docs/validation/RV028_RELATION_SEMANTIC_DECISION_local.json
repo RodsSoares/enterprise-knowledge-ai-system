@@ -1,0 +1,45 @@
+{
+  "experiment": "RV028_RELATION_SEMANTIC_DECISION",
+  "status": "candidate_qualified_for_structural_test",
+  "source_sha256": "76aaa01ff175408e800fc4e45294b7bc8928cbe8b4d2c09975f96cfb4329d597",
+  "relationship_id": "REL-001",
+  "proposed_coverage_id": "C8",
+  "relationship_kind": "joint_normative_interpretation",
+  "direct_quote_of_policy": false,
+  "semantic_assessment": {
+    "two_distinct_decision_types": true,
+    "underlying_requirements_supported": true,
+    "non_substitution_explicitly_stated": false,
+    "conclusion": "supported_as_conditional_interpretation",
+    "review_method": "assistant_assisted",
+    "independently_verified": false
+  },
+  "candidate_coverage": {
+    "need": "Distinguir a aprovacao de uma nova ferramenta das aprovacoes para utilizar dados confidenciais de fornecedores, preservando a aplicabilidade dos dois conjuntos de requisitos.",
+    "use": "category",
+    "condition": "Quando uma nova ferramenta de IA for utilizada para processar dados confidenciais de fornecedores.",
+    "candidate_claim": "A aprovacao da nova ferramenta e a autorizacao para utilizar dados confidenciais sao processos distintos. Quando ambos se aplicarem, devem ser atendidos os requisitos de cada processo.",
+    "support_unit_ids": [
+      "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+      "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+      "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+      "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7"
+    ],
+    "support_document_ids": [
+      "DOC-012",
+      "DOC-023"
+    ],
+    "depends_on": [
+      "C2",
+      "C5"
+    ]
+  },
+  "implementation_status": "not_applied",
+  "limitations": [
+    "Relacao inferida da leitura conjunta de normas.",
+    "Nao e citacao literal nem autorizacao operacional.",
+    "Ainda nao foi validada pelo contrato do planejador.",
+    "Ainda nao foi submetida ao gerador LLM.",
+    "Nao modifica o plano original."
+  ]
+}
