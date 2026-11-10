@@ -1,0 +1,778 @@
+{
+  "experiment": "RV032_FULL_GOLDEN_SET_PREFLIGHT",
+  "phase": "offline_preflight",
+  "generated_at_utc": "2026-11-10T02:58:22.059322+00:00",
+  "model_calls": 0,
+  "estimated_api_cost_usd": 0,
+  "corpus_source": "tests.smoke.smoke_golden_set_vector_retrieval.SOURCE_PATHS",
+  "total_golden_questions": 36,
+  "declared_source_documents": 10,
+  "present_source_documents": 10,
+  "present_document_ids": [
+    "DOC-005",
+    "DOC-006",
+    "DOC-007",
+    "DOC-010",
+    "DOC-012",
+    "DOC-022",
+    "DOC-023",
+    "DOC-024",
+    "DOC-025",
+    "DOC-026"
+  ],
+  "missing_configured_paths": [],
+  "classification_counts": {
+    "BLOCKED_MISSING_EXPECTED_DOCUMENTS": 22,
+    "ELIGIBLE_NO_POSITIVE_EVIDENCE": 1,
+    "ELIGIBLE_POSITIVE": 13
+  },
+  "questions": [
+    {
+      "question_id": "Q01",
+      "question": "Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "procedure",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "missing_expected_documents": [
+        "DOC-003"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q02",
+      "question": "Qual é o SLA de entrega estabelecido para cada categoria de transporte?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "current_policy",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "distractors": [
+        "DOC-002",
+        "DOC-013"
+      ],
+      "missing_expected_documents": [
+        "DOC-001"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q03",
+      "question": "Quais documentos precisam ser apresentados para homologação de uma nova transportadora?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "multi_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-008",
+        "DOC-022"
+      ],
+      "distractors": [
+        "DOC-004"
+      ],
+      "missing_expected_documents": [
+        "DOC-008"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q04",
+      "question": "Quem é responsável por aprovar a contratação emergencial de uma transportadora?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "multi_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012",
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-022"
+      ],
+      "missing_expected_documents": [
+        "DOC-003"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q05",
+      "question": "Qual é o limite financeiro para contratação sem aprovação da diretoria?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "structured_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-022"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q06",
+      "question": "Em quais situações uma entrega pode ser classificada como crítica?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "definition",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "distractors": [
+        "DOC-003"
+      ],
+      "missing_expected_documents": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q07",
+      "question": "Qual é o procedimento previsto para uma entrega crítica atrasada?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "procedure",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-009"
+      ],
+      "distractors": [
+        "DOC-001"
+      ],
+      "missing_expected_documents": [
+        "DOC-009"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q08",
+      "question": "Quais KPIs são utilizados para avaliar o desempenho das transportadoras?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "multi_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003",
+        "DOC-013"
+      ],
+      "distractors": [
+        "DOC-001"
+      ],
+      "missing_expected_documents": [
+        "DOC-003",
+        "DOC-013"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q09",
+      "question": "Como é calculado o indicador OTIF segundo a documentação da empresa?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "definition",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-013"
+      ],
+      "distractors": [
+        "DOC-001",
+        "DOC-002"
+      ],
+      "missing_expected_documents": [
+        "DOC-013"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q10",
+      "question": "Qual é a meta vigente de OTIF para operações nacionais?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "versioning",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "distractors": [
+        "DOC-002"
+      ],
+      "missing_expected_documents": [
+        "DOC-001"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q11",
+      "question": "A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "historical_synthesis",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q12",
+      "question": "Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "multi_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q13",
+      "question": "Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova.",
+      "question_class": "knowledge",
+      "retrieval_challenge": "contract_comparison",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "distractors": [
+        "DOC-016"
+      ],
+      "missing_expected_documents": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q14",
+      "question": "Existe alguma exceção contratual às penalidades em caso de eventos de força maior?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "contract_comparison",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q15",
+      "question": "Quais são os critérios para classificar uma transportadora como de alto risco?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "policy_retrieval",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-004"
+      ],
+      "distractors": [
+        "DOC-003"
+      ],
+      "missing_expected_documents": [
+        "DOC-004"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q16",
+      "question": "O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "escalation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "missing_expected_documents": [
+        "DOC-003"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q17",
+      "question": "Houve algum incidente semelhante anteriormente? Como ele foi tratado?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "historical_precedent",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "distractors": [
+        "DOC-018"
+      ],
+      "missing_expected_documents": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q18",
+      "question": "Quais decisões foram tomadas após o último incidente grave de transporte?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "historical_synthesis",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "distractors": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "missing_expected_documents": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q19",
+      "question": "Alguma recomendação daquele incidente ainda está pendente?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "cross_document_follow_up",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "distractors": [
+        "DOC-017"
+      ],
+      "missing_expected_documents": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q20",
+      "question": "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "multi_document",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-011"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q21",
+      "question": "Quais informações são classificadas como confidenciais nos documentos logísticos?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "policy_retrieval",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-005"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q22",
+      "question": "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "authority_conflict",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-011"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q23",
+      "question": "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "procedure",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-010"
+      ],
+      "distractors": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q24",
+      "question": "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "conflict_detection",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-007"
+      ],
+      "distractors": [
+        "DOC-005"
+      ],
+      "missing_expected_documents": [
+        "DOC-011"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q25",
+      "question": "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "authority_resolution",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-007"
+      ],
+      "distractors": [
+        "DOC-011",
+        "DOC-006"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q26",
+      "question": "Qual é atualmente a versão vigente da política de gestão de fornecedores?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "version_lookup",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-022"
+      ],
+      "distractors": [
+        "DOC-008"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q27",
+      "question": "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "lifecycle_resolution",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-011",
+        "DOC-007",
+        "DOC-006"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-011"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q28",
+      "question": "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "version_comparison",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q29",
+      "question": "Qual é a política da empresa para transporte de material radioativo?",
+      "question_class": "abstention",
+      "retrieval_challenge": "intentional_unknown",
+      "expected_behavior": "abstain_insufficient_evidence",
+      "expected_evidence": [],
+      "distractors": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_NO_POSITIVE_EVIDENCE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q30",
+      "question": "Qual transportadora devemos contratar para a próxima operação?",
+      "question_class": "combined_boundary",
+      "retrieval_challenge": "decision_boundary",
+      "expected_behavior": "provide_evidence_without_unsupported_decision",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "distractors": [],
+      "missing_expected_documents": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "classification": "BLOCKED_MISSING_EXPECTED_DOCUMENTS",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q31",
+      "question": "Posso usar IA para analisar contratos de fornecedores?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-027"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q32",
+      "question": "Quais aprovações são necessárias para usar IA com dados de fornecedores?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-005",
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-026",
+        "DOC-027"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q33",
+      "question": "Quais requisitos de segurança se aplicam ao uso de IA?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-024",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-023",
+        "DOC-025",
+        "DOC-026",
+        "DOC-027"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q34",
+      "question": "Quem aprova uma nova ferramenta de IA?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-026"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q35",
+      "question": "Posso inserir dados confidenciais em uma ferramenta de IA?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-027"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    },
+    {
+      "question_id": "Q36",
+      "question": "Que treinamento é obrigatório para colaboradores que utilizam IA?",
+      "question_class": "knowledge",
+      "retrieval_challenge": "ai_context_disambiguation",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-026",
+        "DOC-023"
+      ],
+      "distractors": [
+        "DOC-024",
+        "DOC-027"
+      ],
+      "missing_expected_documents": [],
+      "classification": "ELIGIBLE_POSITIVE",
+      "retrieval_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "generation_execution_status": "NOT_RUN_PREFLIGHT_ONLY",
+      "semantic_verdict": "NOT_REVIEWED"
+    }
+  ],
+  "interpretation": "Eligibility is determined by expected-document presence only; it does not establish retrieval quality or answer correctness. This preflight does not run retrieval or generation."
+}

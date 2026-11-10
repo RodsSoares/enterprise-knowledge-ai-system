@@ -1,0 +1,37 @@
+﻿question_id,classification,expected_behavior,expected_evidence,missing_expected_documents,retrieval_challenge,question
+Q01,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-003,DOC-003,procedure,Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?
+Q02,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-001,DOC-001,current_policy,Qual é o SLA de entrega estabelecido para cada categoria de transporte?
+Q03,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-008,DOC-022",DOC-008,multi_document,Quais documentos precisam ser apresentados para homologação de uma nova transportadora?
+Q04,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-012,DOC-003",DOC-003,multi_document,Quem é responsável por aprovar a contratação emergencial de uma transportadora?
+Q05,ELIGIBLE_POSITIVE,answer_with_citations,DOC-012,,structured_document,Qual é o limite financeiro para contratação sem aprovação da diretoria?
+Q06,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-001,DOC-009","DOC-001,DOC-009",definition,Em quais situações uma entrega pode ser classificada como crítica?
+Q07,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-009,DOC-009,procedure,Qual é o procedimento previsto para uma entrega crítica atrasada?
+Q08,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-003,DOC-013","DOC-003,DOC-013",multi_document,Quais KPIs são utilizados para avaliar o desempenho das transportadoras?
+Q09,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-013,DOC-013,definition,Como é calculado o indicador OTIF segundo a documentação da empresa?
+Q10,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-001,DOC-001,versioning,Qual é a meta vigente de OTIF para operações nacionais?
+Q11,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-001,DOC-002,DOC-019","DOC-001,DOC-002,DOC-019",historical_synthesis,"A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?"
+Q12,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-014,DOC-015,DOC-016","DOC-014,DOC-015,DOC-016",multi_document,Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?
+Q13,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-014,DOC-015","DOC-014,DOC-015",contract_comparison,Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova.
+Q14,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-014,DOC-015,DOC-016","DOC-014,DOC-015,DOC-016",contract_comparison,Existe alguma exceção contratual às penalidades em caso de eventos de força maior?
+Q15,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-004,DOC-004,policy_retrieval,Quais são os critérios para classificar uma transportadora como de alto risco?
+Q16,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,DOC-003,DOC-003,escalation,O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?
+Q17,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-017,DOC-019","DOC-017,DOC-019",historical_precedent,Houve algum incidente semelhante anteriormente? Como ele foi tratado?
+Q18,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-018,DOC-020","DOC-018,DOC-020",historical_synthesis,Quais decisões foram tomadas após o último incidente grave de transporte?
+Q19,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-021,DOC-020","DOC-021,DOC-020",cross_document_follow_up,Alguma recomendação daquele incidente ainda está pendente?
+Q20,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-005,DOC-006",,multi_document,Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?
+Q21,ELIGIBLE_POSITIVE,answer_with_citations,DOC-006,,policy_retrieval,Quais informações são classificadas como confidenciais nos documentos logísticos?
+Q22,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-005,DOC-006",,authority_conflict,Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?
+Q23,ELIGIBLE_POSITIVE,answer_with_citations,DOC-010,,procedure,Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?
+Q24,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-006,DOC-011,DOC-007",DOC-011,conflict_detection,Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?
+Q25,ELIGIBLE_POSITIVE,answer_with_citations,DOC-007,,authority_resolution,Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?
+Q26,ELIGIBLE_POSITIVE,answer_with_citations,DOC-022,,version_lookup,Qual é atualmente a versão vigente da política de gestão de fornecedores?
+Q27,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-011,DOC-007,DOC-006",DOC-011,lifecycle_resolution,O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?
+Q28,BLOCKED_MISSING_EXPECTED_DOCUMENTS,answer_with_citations,"DOC-001,DOC-002,DOC-019","DOC-001,DOC-002,DOC-019",version_comparison,Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?
+Q29,ELIGIBLE_NO_POSITIVE_EVIDENCE,abstain_insufficient_evidence,,,intentional_unknown,Qual é a política da empresa para transporte de material radioativo?
+Q30,BLOCKED_MISSING_EXPECTED_DOCUMENTS,provide_evidence_without_unsupported_decision,"DOC-014,DOC-015,DOC-016,DOC-003","DOC-014,DOC-015,DOC-016,DOC-003",decision_boundary,Qual transportadora devemos contratar para a próxima operação?
+Q31,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-023,DOC-024",,ai_context_disambiguation,Posso usar IA para analisar contratos de fornecedores?
+Q32,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-023,DOC-005,DOC-012",,ai_context_disambiguation,Quais aprovações são necessárias para usar IA com dados de fornecedores?
+Q33,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-024,DOC-006",,ai_context_disambiguation,Quais requisitos de segurança se aplicam ao uso de IA?
+Q34,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-023,DOC-012",,ai_context_disambiguation,Quem aprova uma nova ferramenta de IA?
+Q35,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-023,DOC-024,DOC-006",,ai_context_disambiguation,Posso inserir dados confidenciais em uma ferramenta de IA?
+Q36,ELIGIBLE_POSITIVE,answer_with_citations,"DOC-026,DOC-023",,ai_context_disambiguation,Que treinamento é obrigatório para colaboradores que utilizam IA?

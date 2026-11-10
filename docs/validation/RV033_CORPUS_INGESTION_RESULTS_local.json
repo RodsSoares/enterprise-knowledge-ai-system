@@ -1,0 +1,341 @@
+{
+  "experiment": "RV-033",
+  "stage": "corpus_ingestion_and_chunking",
+  "documents_total": 27,
+  "documents_passed": 27,
+  "documents_failed": 0,
+  "chunks_total": 158,
+  "chunks_unique": 158,
+  "chunk_ids_unique": true,
+  "elapsed_seconds": 151.924,
+  "results": [
+    {
+      "document_id": "DOC-014",
+      "path": "data/source/corporate_repository/contracts/DOC-014_carrier_atlas_contract.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 13,
+      "block_types": {
+        "TextBlock": 13
+      },
+      "chunks": 6,
+      "elapsed_seconds": 20.728
+    },
+    {
+      "document_id": "DOC-015",
+      "path": "data/source/corporate_repository/contracts/DOC-015_carrier_nova_contract.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 13,
+      "block_types": {
+        "TextBlock": 13
+      },
+      "chunks": 6,
+      "elapsed_seconds": 4.502
+    },
+    {
+      "document_id": "DOC-016",
+      "path": "data/source/corporate_repository/contracts/DOC-016_carrier_orion_contract.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 13,
+      "block_types": {
+        "TextBlock": 13
+      },
+      "chunks": 6,
+      "elapsed_seconds": 4.457
+    },
+    {
+      "document_id": "DOC-012",
+      "path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+      "format": ".xlsx",
+      "status": "PASS",
+      "blocks": 2,
+      "block_types": {
+        "SpreadsheetBlock": 2
+      },
+      "chunks": 2,
+      "elapsed_seconds": 0.12
+    },
+    {
+      "document_id": "DOC-019",
+      "path": "data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx",
+      "format": ".docx",
+      "status": "PASS",
+      "blocks": 11,
+      "block_types": {
+        "TextBlock": 11
+      },
+      "chunks": 5,
+      "elapsed_seconds": 0.273
+    },
+    {
+      "document_id": "DOC-020",
+      "path": "data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx",
+      "format": ".pptx",
+      "status": "PASS",
+      "blocks": 14,
+      "block_types": {
+        "TextBlock": 14
+      },
+      "chunks": 1,
+      "elapsed_seconds": 0.251
+    },
+    {
+      "document_id": "DOC-021",
+      "path": "data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx",
+      "format": ".xlsx",
+      "status": "PASS",
+      "blocks": 2,
+      "block_types": {
+        "SpreadsheetBlock": 2
+      },
+      "chunks": 2,
+      "elapsed_seconds": 0.011
+    },
+    {
+      "document_id": "DOC-025",
+      "path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+      "format": ".md",
+      "status": "PASS",
+      "blocks": 15,
+      "block_types": {
+        "TextBlock": 15
+      },
+      "chunks": 7,
+      "elapsed_seconds": 0.071
+    },
+    {
+      "document_id": "DOC-026",
+      "path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+      "format": ".pptx",
+      "status": "PASS",
+      "blocks": 18,
+      "block_types": {
+        "TextBlock": 18
+      },
+      "chunks": 2,
+      "elapsed_seconds": 0.099
+    },
+    {
+      "document_id": "DOC-027",
+      "path": "data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt",
+      "format": ".txt",
+      "status": "PASS",
+      "blocks": 21,
+      "block_types": {
+        "TextBlock": 21
+      },
+      "chunks": 2,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "document_id": "DOC-017",
+      "path": "data/source/corporate_repository/incident_reports/DOC-017_transportation_incident_report_r001.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 10,
+      "block_types": {
+        "TextBlock": 10
+      },
+      "chunks": 5,
+      "elapsed_seconds": 4.701
+    },
+    {
+      "document_id": "DOC-018",
+      "path": "data/source/corporate_repository/incident_reports/DOC-018_transportation_incident_report_r003.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 10,
+      "block_types": {
+        "TextBlock": 10
+      },
+      "chunks": 5,
+      "elapsed_seconds": 6.06
+    },
+    {
+      "document_id": "DOC-001",
+      "path": "data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 21,
+      "block_types": {
+        "TextBlock": 21
+      },
+      "chunks": 7,
+      "elapsed_seconds": 5.923
+    },
+    {
+      "document_id": "DOC-002",
+      "path": "data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 11,
+      "block_types": {
+        "TextBlock": 11
+      },
+      "chunks": 5,
+      "elapsed_seconds": 6.408
+    },
+    {
+      "document_id": "DOC-003",
+      "path": "data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 15,
+      "block_types": {
+        "TextBlock": 15
+      },
+      "chunks": 6,
+      "elapsed_seconds": 5.673
+    },
+    {
+      "document_id": "DOC-004",
+      "path": "data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 10,
+      "block_types": {
+        "TextBlock": 10
+      },
+      "chunks": 5,
+      "elapsed_seconds": 5.517
+    },
+    {
+      "document_id": "DOC-005",
+      "path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 20,
+      "block_types": {
+        "TextBlock": 19,
+        "TableBlock": 1
+      },
+      "chunks": 11,
+      "elapsed_seconds": 31.165
+    },
+    {
+      "document_id": "DOC-006",
+      "path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 20,
+      "block_types": {
+        "TextBlock": 20
+      },
+      "chunks": 10,
+      "elapsed_seconds": 8.049
+    },
+    {
+      "document_id": "DOC-007",
+      "path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 21,
+      "block_types": {
+        "TextBlock": 20,
+        "TableBlock": 1
+      },
+      "chunks": 11,
+      "elapsed_seconds": 21.677
+    },
+    {
+      "document_id": "DOC-022",
+      "path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 20,
+      "block_types": {
+        "TextBlock": 20
+      },
+      "chunks": 10,
+      "elapsed_seconds": 4.021
+    },
+    {
+      "document_id": "DOC-023",
+      "path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 20,
+      "block_types": {
+        "TextBlock": 20
+      },
+      "chunks": 10,
+      "elapsed_seconds": 3.703
+    },
+    {
+      "document_id": "DOC-013",
+      "path": "data/source/corporate_repository/references/DOC-013_logistics_kpi_dictionary_v2.4.xlsx",
+      "format": ".xlsx",
+      "status": "PASS",
+      "blocks": 2,
+      "block_types": {
+        "SpreadsheetBlock": 2
+      },
+      "chunks": 2,
+      "elapsed_seconds": 0.06
+    },
+    {
+      "document_id": "DOC-008",
+      "path": "data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx",
+      "format": ".docx",
+      "status": "PASS",
+      "blocks": 11,
+      "block_types": {
+        "TextBlock": 11
+      },
+      "chunks": 5,
+      "elapsed_seconds": 0.174
+    },
+    {
+      "document_id": "DOC-009",
+      "path": "data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx",
+      "format": ".docx",
+      "status": "PASS",
+      "blocks": 19,
+      "block_types": {
+        "TextBlock": 19
+      },
+      "chunks": 6,
+      "elapsed_seconds": 0.265
+    },
+    {
+      "document_id": "DOC-010",
+      "path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+      "format": ".docx",
+      "status": "PASS",
+      "blocks": 20,
+      "block_types": {
+        "TextBlock": 20
+      },
+      "chunks": 7,
+      "elapsed_seconds": 0.213
+    },
+    {
+      "document_id": "DOC-011",
+      "path": "data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx",
+      "format": ".docx",
+      "status": "PASS",
+      "blocks": 11,
+      "block_types": {
+        "TextBlock": 11
+      },
+      "chunks": 5,
+      "elapsed_seconds": 0.14
+    },
+    {
+      "document_id": "DOC-024",
+      "path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+      "format": ".pdf",
+      "status": "PASS",
+      "blocks": 16,
+      "block_types": {
+        "TextBlock": 15,
+        "TableBlock": 1
+      },
+      "chunks": 9,
+      "elapsed_seconds": 17.652
+    }
+  ],
+  "api_calls": 0
+}

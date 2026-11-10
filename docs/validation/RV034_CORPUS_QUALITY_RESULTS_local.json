@@ -1,0 +1,4083 @@
+{
+  "experiment": "RV-034",
+  "stage": "deterministic_corpus_quality",
+  "status": "PASS",
+  "parameters": {
+    "target_chars": 1200,
+    "max_chars": 1800
+  },
+  "summary": {
+    "documents": 27,
+    "chunks": 158,
+    "unique_chunk_ids": 158,
+    "total_chars": 44112,
+    "average_chars": 279.2,
+    "structural_errors": 0,
+    "review_flags": 15,
+    "golden_questions": 36,
+    "questions_with_expected_documents_available": 36,
+    "semantic_coverage_verified": false,
+    "api_calls": 0
+  },
+  "issues": [
+    {
+      "severity": "review",
+      "chunk_id": "DOC-019::chunk-00005",
+      "issue": "small_chunk",
+      "chars": 98
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-020::chunk-00001",
+      "issue": "multiple_slides",
+      "slides": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-026::chunk-00001",
+      "issue": "multiple_slides",
+      "slides": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-026::chunk-00002",
+      "issue": "small_chunk",
+      "chars": 84
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-027::chunk-00002",
+      "issue": "small_chunk",
+      "chars": 97
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-005::chunk-00004",
+      "issue": "small_chunk",
+      "chars": 50
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-007::chunk-00010",
+      "issue": "small_chunk",
+      "chars": 94
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-010::chunk-00001",
+      "issue": "small_chunk",
+      "chars": 99
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-024::chunk-00002",
+      "issue": "small_chunk",
+      "chars": 80
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-024::chunk-00004",
+      "issue": "small_chunk",
+      "chars": 19
+    },
+    {
+      "severity": "review",
+      "chunk_id": "DOC-024::chunk-00008",
+      "issue": "small_chunk",
+      "chars": 92
+    },
+    {
+      "severity": "review",
+      "issue": "identical_chunk_content",
+      "chunk_ids": [
+        "DOC-014::chunk-00003",
+        "DOC-015::chunk-00003",
+        "DOC-016::chunk-00003"
+      ]
+    },
+    {
+      "severity": "review",
+      "issue": "identical_chunk_content",
+      "chunk_ids": [
+        "DOC-014::chunk-00005",
+        "DOC-015::chunk-00005",
+        "DOC-016::chunk-00005"
+      ]
+    },
+    {
+      "severity": "review",
+      "issue": "identical_chunk_content",
+      "chunk_ids": [
+        "DOC-014::chunk-00006",
+        "DOC-015::chunk-00006",
+        "DOC-016::chunk-00006"
+      ]
+    },
+    {
+      "severity": "review",
+      "issue": "identical_chunk_content",
+      "chunk_ids": [
+        "DOC-005::chunk-00011",
+        "DOC-006::chunk-00010",
+        "DOC-007::chunk-00011",
+        "DOC-022::chunk-00010",
+        "DOC-023::chunk-00010",
+        "DOC-024::chunk-00009"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "DOC-014",
+      "path": "data/source/corporate_repository/contracts/DOC-014_carrier_atlas_contract.pdf",
+      "format": ".pdf",
+      "blocks": 13,
+      "chunks": 6,
+      "min_chars": 185,
+      "max_chars": 336,
+      "avg_chars": 255.8
+    },
+    {
+      "document_id": "DOC-015",
+      "path": "data/source/corporate_repository/contracts/DOC-015_carrier_nova_contract.pdf",
+      "format": ".pdf",
+      "blocks": 13,
+      "chunks": 6,
+      "min_chars": 181,
+      "max_chars": 345,
+      "avg_chars": 258.0
+    },
+    {
+      "document_id": "DOC-016",
+      "path": "data/source/corporate_repository/contracts/DOC-016_carrier_orion_contract.pdf",
+      "format": ".pdf",
+      "blocks": 13,
+      "chunks": 6,
+      "min_chars": 185,
+      "max_chars": 336,
+      "avg_chars": 246.2
+    },
+    {
+      "document_id": "DOC-012",
+      "path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+      "format": ".xlsx",
+      "blocks": 2,
+      "chunks": 2,
+      "min_chars": 501,
+      "max_chars": 1722,
+      "avg_chars": 1111.5
+    },
+    {
+      "document_id": "DOC-019",
+      "path": "data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx",
+      "format": ".docx",
+      "blocks": 11,
+      "chunks": 5,
+      "min_chars": 98,
+      "max_chars": 206,
+      "avg_chars": 161.0
+    },
+    {
+      "document_id": "DOC-020",
+      "path": "data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx",
+      "format": ".pptx",
+      "blocks": 14,
+      "chunks": 1,
+      "min_chars": 694,
+      "max_chars": 694,
+      "avg_chars": 694.0
+    },
+    {
+      "document_id": "DOC-021",
+      "path": "data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx",
+      "format": ".xlsx",
+      "blocks": 2,
+      "chunks": 2,
+      "min_chars": 365,
+      "max_chars": 722,
+      "avg_chars": 543.5
+    },
+    {
+      "document_id": "DOC-025",
+      "path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+      "format": ".md",
+      "blocks": 15,
+      "chunks": 7,
+      "min_chars": 113,
+      "max_chars": 344,
+      "avg_chars": 234.0
+    },
+    {
+      "document_id": "DOC-026",
+      "path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+      "format": ".pptx",
+      "blocks": 18,
+      "chunks": 2,
+      "min_chars": 84,
+      "max_chars": 1249,
+      "avg_chars": 666.5
+    },
+    {
+      "document_id": "DOC-027",
+      "path": "data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt",
+      "format": ".txt",
+      "blocks": 21,
+      "chunks": 2,
+      "min_chars": 97,
+      "max_chars": 1384,
+      "avg_chars": 740.5
+    },
+    {
+      "document_id": "DOC-017",
+      "path": "data/source/corporate_repository/incident_reports/DOC-017_transportation_incident_report_r001.pdf",
+      "format": ".pdf",
+      "blocks": 10,
+      "chunks": 5,
+      "min_chars": 100,
+      "max_chars": 254,
+      "avg_chars": 195.8
+    },
+    {
+      "document_id": "DOC-018",
+      "path": "data/source/corporate_repository/incident_reports/DOC-018_transportation_incident_report_r003.pdf",
+      "format": ".pdf",
+      "blocks": 10,
+      "chunks": 5,
+      "min_chars": 143,
+      "max_chars": 255,
+      "avg_chars": 208.0
+    },
+    {
+      "document_id": "DOC-001",
+      "path": "data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf",
+      "format": ".pdf",
+      "blocks": 21,
+      "chunks": 7,
+      "min_chars": 230,
+      "max_chars": 587,
+      "avg_chars": 403.4
+    },
+    {
+      "document_id": "DOC-002",
+      "path": "data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf",
+      "format": ".pdf",
+      "blocks": 11,
+      "chunks": 5,
+      "min_chars": 113,
+      "max_chars": 226,
+      "avg_chars": 191.2
+    },
+    {
+      "document_id": "DOC-003",
+      "path": "data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf",
+      "format": ".pdf",
+      "blocks": 15,
+      "chunks": 6,
+      "min_chars": 233,
+      "max_chars": 640,
+      "avg_chars": 420.8
+    },
+    {
+      "document_id": "DOC-004",
+      "path": "data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf",
+      "format": ".pdf",
+      "blocks": 10,
+      "chunks": 5,
+      "min_chars": 187,
+      "max_chars": 360,
+      "avg_chars": 253.0
+    },
+    {
+      "document_id": "DOC-005",
+      "path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+      "format": ".pdf",
+      "blocks": 20,
+      "chunks": 11,
+      "min_chars": 50,
+      "max_chars": 580,
+      "avg_chars": 225.1
+    },
+    {
+      "document_id": "DOC-006",
+      "path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+      "format": ".pdf",
+      "blocks": 20,
+      "chunks": 10,
+      "min_chars": 115,
+      "max_chars": 349,
+      "avg_chars": 239.4
+    },
+    {
+      "document_id": "DOC-007",
+      "path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+      "format": ".pdf",
+      "blocks": 21,
+      "chunks": 11,
+      "min_chars": 94,
+      "max_chars": 424,
+      "avg_chars": 201.7
+    },
+    {
+      "document_id": "DOC-022",
+      "path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+      "format": ".pdf",
+      "blocks": 20,
+      "chunks": 10,
+      "min_chars": 115,
+      "max_chars": 234,
+      "avg_chars": 174.5
+    },
+    {
+      "document_id": "DOC-023",
+      "path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+      "format": ".pdf",
+      "blocks": 20,
+      "chunks": 10,
+      "min_chars": 115,
+      "max_chars": 369,
+      "avg_chars": 215.1
+    },
+    {
+      "document_id": "DOC-013",
+      "path": "data/source/corporate_repository/references/DOC-013_logistics_kpi_dictionary_v2.4.xlsx",
+      "format": ".xlsx",
+      "blocks": 2,
+      "chunks": 2,
+      "min_chars": 625,
+      "max_chars": 1148,
+      "avg_chars": 886.5
+    },
+    {
+      "document_id": "DOC-008",
+      "path": "data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx",
+      "format": ".docx",
+      "blocks": 11,
+      "chunks": 5,
+      "min_chars": 133,
+      "max_chars": 373,
+      "avg_chars": 235.6
+    },
+    {
+      "document_id": "DOC-009",
+      "path": "data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx",
+      "format": ".docx",
+      "blocks": 19,
+      "chunks": 6,
+      "min_chars": 178,
+      "max_chars": 595,
+      "avg_chars": 383.3
+    },
+    {
+      "document_id": "DOC-010",
+      "path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+      "format": ".docx",
+      "blocks": 20,
+      "chunks": 7,
+      "min_chars": 99,
+      "max_chars": 506,
+      "avg_chars": 241.7
+    },
+    {
+      "document_id": "DOC-011",
+      "path": "data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx",
+      "format": ".docx",
+      "blocks": 11,
+      "chunks": 5,
+      "min_chars": 167,
+      "max_chars": 233,
+      "avg_chars": 192.8
+    },
+    {
+      "document_id": "DOC-024",
+      "path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+      "format": ".pdf",
+      "blocks": 16,
+      "chunks": 9,
+      "min_chars": 19,
+      "max_chars": 692,
+      "avg_chars": 201.1
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "DOC-014::chunk-00001",
+      "document_id": "DOC-014",
+      "chars": 208,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Carrier Atlas Contract"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "39a46ac80ab1ad1df2af9b2aad36d6e51ee8b1a524444131a9df122dfb147243"
+    },
+    {
+      "chunk_id": "DOC-014::chunk-00002",
+      "document_id": "DOC-014",
+      "chars": 185,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Parties and validity"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "063ab28863cb159ae1acbea6b8cbd2c66e3e3cfae8e9d4390bde110b071c9a62"
+    },
+    {
+      "chunk_id": "DOC-014::chunk-00003",
+      "document_id": "DOC-014",
+      "chars": 226,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delivery performance and evidence"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "11872d05a2b1372c200246b2b73f595fcf0d84f7148d88625b32bf3f105e6761"
+    },
+    {
+      "chunk_id": "DOC-014::chunk-00004",
+      "document_id": "DOC-014",
+      "chars": 327,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delay penalty clause - controlled synthetic mechanics"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "b8e3e510afe373ea09231bba52b7fba722ffcc30ac7b8c67e2e89b39fbcc714b"
+    },
+    {
+      "chunk_id": "DOC-014::chunk-00005",
+      "document_id": "DOC-014",
+      "chars": 336,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Force majeure exception"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "4a7aa3e9c3c851d445dbbe6a584a4fb52c7a227783736c62f760d515412bbaec"
+    },
+    {
+      "chunk_id": "DOC-014::chunk-00006",
+      "document_id": "DOC-014",
+      "chars": 253,
+      "source_block_ids": [
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Comparison and authority"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "be24db320464e4751d1415bcd230cd3c152a8c44b19a080502bf0f00e83e9214"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00001",
+      "document_id": "DOC-015",
+      "chars": 207,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Carrier Nova Contract"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ff432b6946fb67162e5c03427110df4ec385c313a25730a59939665faecdc513"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00002",
+      "document_id": "DOC-015",
+      "chars": 181,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Parties and validity"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "a543cb65ee825cfcd35004fc725dd3e284346c44046c2468abf9801215a8dc9a"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00003",
+      "document_id": "DOC-015",
+      "chars": 226,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delivery performance and evidence"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "11872d05a2b1372c200246b2b73f595fcf0d84f7148d88625b32bf3f105e6761"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00004",
+      "document_id": "DOC-015",
+      "chars": 345,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delay penalty clause - controlled synthetic mechanics"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "34d358c593065c33fbb1f058f4bdfb116a4094e532ede7431bd7ef845e9a978a"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00005",
+      "document_id": "DOC-015",
+      "chars": 336,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Force majeure exception"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "4a7aa3e9c3c851d445dbbe6a584a4fb52c7a227783736c62f760d515412bbaec"
+    },
+    {
+      "chunk_id": "DOC-015::chunk-00006",
+      "document_id": "DOC-015",
+      "chars": 253,
+      "source_block_ids": [
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Comparison and authority"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "be24db320464e4751d1415bcd230cd3c152a8c44b19a080502bf0f00e83e9214"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00001",
+      "document_id": "DOC-016",
+      "chars": 208,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Carrier Orion Contract"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "2218720b9d1d302f57b246ced38985fa6adad2d2e6371329c639fd1b10838597"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00002",
+      "document_id": "DOC-016",
+      "chars": 185,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Parties and validity"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "a47c7ee25ca800f5ef6f6b3cdeb15c99d70a03996bf4c4c9ca42f0728d99245e"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00003",
+      "document_id": "DOC-016",
+      "chars": 226,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delivery performance and evidence"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "11872d05a2b1372c200246b2b73f595fcf0d84f7148d88625b32bf3f105e6761"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00004",
+      "document_id": "DOC-016",
+      "chars": 269,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Delay penalty clause - controlled synthetic mechanics"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ad2af3db4c62ac8fe89a8052982f62750bb3a76b05794f580ab0e27ad017436f"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00005",
+      "document_id": "DOC-016",
+      "chars": 336,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Force majeure exception"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "4a7aa3e9c3c851d445dbbe6a584a4fb52c7a227783736c62f760d515412bbaec"
+    },
+    {
+      "chunk_id": "DOC-016::chunk-00006",
+      "document_id": "DOC-016",
+      "chars": 253,
+      "source_block_ids": [
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Comparison and authority"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "be24db320464e4751d1415bcd230cd3c152a8c44b19a080502bf0f00e83e9214"
+    },
+    {
+      "chunk_id": "DOC-012::chunk-00001",
+      "document_id": "DOC-012",
+      "chars": 1722,
+      "source_block_ids": [
+        "xlsx-sheet-1"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "Approval Matrix"
+      ],
+      "sha256": "418852a36d66bfc2d164268e14156080057a5a75cb1a3f59570cf1e960356f16"
+    },
+    {
+      "chunk_id": "DOC-012::chunk-00002",
+      "document_id": "DOC-012",
+      "chars": 501,
+      "source_block_ids": [
+        "xlsx-sheet-2"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "Document Control"
+      ],
+      "sha256": "6b2ff481faeddaf67a80fd568273268a55eb2c795febb5fe72d1fffc828a8bf3"
+    },
+    {
+      "chunk_id": "DOC-019::chunk-00001",
+      "document_id": "DOC-019",
+      "chars": 204,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "dd58639d86f4b92d39397f23818684fc51dcec86318e89ef824e82ba1fa5b1e4"
+    },
+    {
+      "chunk_id": "DOC-019::chunk-00002",
+      "document_id": "DOC-019",
+      "chars": 121,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Meeting scope"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f9d219be89d276ad4d47b8a504a250d4db8d621e4e6999f209594d4a5095f8cc"
+    },
+    {
+      "chunk_id": "DOC-019::chunk-00003",
+      "document_id": "DOC-019",
+      "chars": 176,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Decision OTIF-2025-01"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "0cf3ef48849bc79bc3cf917fc42231e43479c7ebff74d8c54070ca0ea8000a94"
+    },
+    {
+      "chunk_id": "DOC-019::chunk-00004",
+      "document_id": "DOC-019",
+      "chars": 206,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "R001 precedent"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f7346925e146e9a6b88fd789e0733b08b1a30770b189208683ec8d75fd18036d"
+    },
+    {
+      "chunk_id": "DOC-019::chunk-00005",
+      "document_id": "DOC-019",
+      "chars": 98,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Governance note"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5e5421d8c79fcd7dc8809800bcf45203fb704b5ecf26e4e2225a4bad1b7675ac"
+    },
+    {
+      "chunk_id": "DOC-020::chunk-00001",
+      "document_id": "DOC-020",
+      "chars": 694,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002",
+        "text-00003",
+        "text-00004",
+        "text-00005",
+        "text-00006",
+        "text-00007",
+        "text-00008",
+        "text-00009",
+        "text-00010",
+        "text-00011",
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [
+        1,
+        2,
+        3
+      ],
+      "sheets": [],
+      "sha256": "100d377730f660f09cfd8ca02c9755b7568be496a4eb3d3da711cdc0e768d649"
+    },
+    {
+      "chunk_id": "DOC-021::chunk-00001",
+      "document_id": "DOC-021",
+      "chars": 722,
+      "source_block_ids": [
+        "xlsx-sheet-1"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "Corrective Actions"
+      ],
+      "sha256": "adcc3502d9089112c04a84497b79517bf216eefe97d36bd49fc3a380b5707f50"
+    },
+    {
+      "chunk_id": "DOC-021::chunk-00002",
+      "document_id": "DOC-021",
+      "chars": 365,
+      "source_block_ids": [
+        "xlsx-sheet-2"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "Metadata"
+      ],
+      "sha256": "27244837a05641a18382d943c8769b3b2118ee9acc41afc5d3d0e057b525e371"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00001",
+      "document_id": "DOC-025",
+      "chars": 113,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "72c5f6737a3d5dcf8559678491de1cf084d4e4438393e307dc81e78353e8bb89"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00002",
+      "document_id": "DOC-025",
+      "chars": 248,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "611c0c2442b28d5181b60b90deb370074bd710e4729b0fea552218a33126d344"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00003",
+      "document_id": "DOC-025",
+      "chars": 253,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Procurement considerations"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "eae78132995e019ad738c40fb759c0f201be2a41d6bea2450e7948ac9fe1d016"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00004",
+      "document_id": "DOC-025",
+      "chars": 240,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. AI supplier due diligence"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ebe9261b3811bdb75ba56c8447c4f6584d952828cdb28d695766d71c58d4f05b"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00005",
+      "document_id": "DOC-025",
+      "chars": 223,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Approval boundary"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ef9cc90c9cc18be78922d426580fe98fbbd53370c47bdcee3bc1c99d95ac2a5a"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00006",
+      "document_id": "DOC-025",
+      "chars": 217,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Supplier data"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "0dbd7e7500aa187df020ca1b28728f186f6477e84f79fe96183c7c55a4b42ff5"
+    },
+    {
+      "chunk_id": "DOC-025::chunk-00007",
+      "document_id": "DOC-025",
+      "chars": 344,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013",
+        "text-00014"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Evaluation role"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "b884a9a864aba249fd7b8c90498b67f0dff508012d295076e4adff2b47478a58"
+    },
+    {
+      "chunk_id": "DOC-026::chunk-00001",
+      "document_id": "DOC-026",
+      "chars": 1249,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002",
+        "text-00003",
+        "text-00004",
+        "text-00005",
+        "text-00006",
+        "text-00007",
+        "text-00008",
+        "text-00009",
+        "text-00010",
+        "text-00011",
+        "text-00012",
+        "text-00013",
+        "text-00014",
+        "text-00015",
+        "text-00016"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sheets": [],
+      "sha256": "b2a48acfe6c3cbd248701900550f32eb68a85223646a7ace5e3e454ce786c575"
+    },
+    {
+      "chunk_id": "DOC-026::chunk-00002",
+      "document_id": "DOC-026",
+      "chars": 84,
+      "source_block_ids": [
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [
+        4
+      ],
+      "sheets": [],
+      "sha256": "929fca7338f5bd0971db800b6016b5abed6609f93a0a2c502b463d746a8d7984"
+    },
+    {
+      "chunk_id": "DOC-027::chunk-00001",
+      "document_id": "DOC-027",
+      "chars": 1384,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002",
+        "text-00003",
+        "text-00004",
+        "text-00005",
+        "text-00006",
+        "text-00007",
+        "text-00008",
+        "text-00009",
+        "text-00010",
+        "text-00011",
+        "text-00012",
+        "text-00013",
+        "text-00014",
+        "text-00015",
+        "text-00016",
+        "text-00017",
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "15f949a2120cb9e063b4dc6cd1e851320713ea89a7262e080f0540bdb1472ce1"
+    },
+    {
+      "chunk_id": "DOC-027::chunk-00002",
+      "document_id": "DOC-027",
+      "chars": 97,
+      "source_block_ids": [
+        "text-00020"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "57ebb461e0d23248b10f9102593d0aaf0e7acb29befbb8f348caa64bf224fb08"
+    },
+    {
+      "chunk_id": "DOC-017::chunk-00001",
+      "document_id": "DOC-017",
+      "chars": 224,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Transportation Incident Report R001"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e0795f4ae2c064bbf752d2184e4459cbff2a3a57081513b37d429f537d8ec57a"
+    },
+    {
+      "chunk_id": "DOC-017::chunk-00002",
+      "document_id": "DOC-017",
+      "chars": 155,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Incident identification"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ffe09b1b0baf70540ea329f18487c666a7b3da5d1128a09a239fb1f7ca1210fc"
+    },
+    {
+      "chunk_id": "DOC-017::chunk-00003",
+      "document_id": "DOC-017",
+      "chars": 246,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Event timeline - proposed synthetic details"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "86a76b3760035c7bc85fe6f8a85beaff363ea24d7e1816d0f1c8e38b91839fed"
+    },
+    {
+      "chunk_id": "DOC-017::chunk-00004",
+      "document_id": "DOC-017",
+      "chars": 254,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Treatment and precedent"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7ea3a1ba6ab55dd9c9f704c6f721900765dee08a2d355a7d9d635f8f47a6465f"
+    },
+    {
+      "chunk_id": "DOC-017::chunk-00005",
+      "document_id": "DOC-017",
+      "chars": 100,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Retrieval caution"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "35462dccf11b6ec5323a44337044284a83e70ed1cf001a6ea2035747a5946e16"
+    },
+    {
+      "chunk_id": "DOC-018::chunk-00001",
+      "document_id": "DOC-018",
+      "chars": 224,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Transportation Incident Report R003"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "68ac4188d5ec644e94da48d819a2cba61d2210f83bf1ab9669570996c03fef3c"
+    },
+    {
+      "chunk_id": "DOC-018::chunk-00002",
+      "document_id": "DOC-018",
+      "chars": 143,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Incident identification"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "59816ee42dfc3fc0233d6ea7cf68b1451f7a7da0eedc6802564882728007afba"
+    },
+    {
+      "chunk_id": "DOC-018::chunk-00003",
+      "document_id": "DOC-018",
+      "chars": 255,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Event timeline - proposed synthetic details"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "3d4d4144cec8c1526cd3c6949b010222cb8532a83f127038306132889aff7a78"
+    },
+    {
+      "chunk_id": "DOC-018::chunk-00004",
+      "document_id": "DOC-018",
+      "chars": 212,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Root cause and actions"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "113213636519ace61ad26f62db228bb531c4c8ad58f8cf4e493dc5fd7317949f"
+    },
+    {
+      "chunk_id": "DOC-018::chunk-00005",
+      "document_id": "DOC-018",
+      "chars": 206,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Governance follow-up"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "065c1040f4e0c141d90b76005de66a4ed10485f08dfe32e76f3dd8ed2a3ddcf8"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00001",
+      "document_id": "DOC-001",
+      "chars": 230,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Transportation Policy"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7653e9fd93a1baaa6436c52b0460287e91c5a2a1fd086d329f87ccd71c07c9cb"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00002",
+      "document_id": "DOC-001",
+      "chars": 435,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose and authority"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "fef4ca94dbca4d81d0e2dc72b0b37c75f6e3592af1cc5639c859cbb880fbedf8"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00003",
+      "document_id": "DOC-001",
+      "chars": 428,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. National OTIF performance"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "b3017bc4947479c40f30b41c9868429bb766f15cccf43acce258d6a0d0879f07"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00004",
+      "document_id": "DOC-001",
+      "chars": 587,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Transportation service categories - controlled synthetic detail"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5f15ea54dfb3ad8c8b883d748749161e66a20fd6afce44a2486fb4d2562ea895"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00005",
+      "document_id": "DOC-001",
+      "chars": 435,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013",
+        "text-00014"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Critical deliveries"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f7ad505dd1ef6280111eba3219a5edaded5eafcd838d7da1be2df1b3ac7ca9cd"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00006",
+      "document_id": "DOC-001",
+      "chars": 409,
+      "source_block_ids": [
+        "text-00015",
+        "text-00016",
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Carrier governance and exceptions"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f39c2231af4cf4c500e0649e69084009c7d59e3d52d58fe10fcb733be3dd6777"
+    },
+    {
+      "chunk_id": "DOC-001::chunk-00007",
+      "document_id": "DOC-001",
+      "chars": 300,
+      "source_block_ids": [
+        "text-00018",
+        "text-00019",
+        "text-00020"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Traceability"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "229fce6e7fa9201a1a27c774b2ff7944641734ac4733657ec69b451364f8ad3f"
+    },
+    {
+      "chunk_id": "DOC-002::chunk-00001",
+      "document_id": "DOC-002",
+      "chars": 215,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Transportation Policy 2024"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "afbf20e9509fffb97daacd1b3142275f8340be395491bc6f4370f0d16b1affce"
+    },
+    {
+      "chunk_id": "DOC-002::chunk-00002",
+      "document_id": "DOC-002",
+      "chars": 196,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Historical applicability"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "9e0df59f599eca0fbdc602a1b8a1749d416ec48d6d359543ab54c9916ce8f21b"
+    },
+    {
+      "chunk_id": "DOC-002::chunk-00003",
+      "document_id": "DOC-002",
+      "chars": 206,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "OTIF target"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "70f39626fce96b567c7e95fdb893f974c26ed57a8870221fd6e4aae8af884778"
+    },
+    {
+      "chunk_id": "DOC-002::chunk-00004",
+      "document_id": "DOC-002",
+      "chars": 226,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Historical service management"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e16b7778810cecda2796f378b6ad3d77f77d24abdcf5b9269f2cfb05d235f1fc"
+    },
+    {
+      "chunk_id": "DOC-002::chunk-00005",
+      "document_id": "DOC-002",
+      "chars": 113,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Authority and provenance"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "3942517ab4808a81ef1c8a8af6598843f332d726d649043b1103e8cb40109019"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00001",
+      "document_id": "DOC-003",
+      "chars": 233,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Carrier Management Policy"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5166c1287df0d638f01c51bfc581c1e8b2ce1dd2dc06949b494cadc62c7d1cba"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00002",
+      "document_id": "DOC-003",
+      "chars": 243,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose and scope"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "0a0030e6fd9050d5609e016921f684e1bd20acc5ae351a90488f4cdff7a97531"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00003",
+      "document_id": "DOC-003",
+      "chars": 403,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Performance monitoring"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "011f97923c5c44fabcb0663dbf5b078f806677ee4ac0ffacab832da0dda13628"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00004",
+      "document_id": "DOC-003",
+      "chars": 640,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Repeated SLA breach"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "65bc7ea1cfb73125b695ecfdbd87a9e9ef494ac36ac25ebd58d255f908203333"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00005",
+      "document_id": "DOC-003",
+      "chars": 596,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Carrier replacement procedure"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "8f69e76a3dcf86e60e94c8103a38d3e4cb6ba6f7b662af550f210145040b9cec"
+    },
+    {
+      "chunk_id": "DOC-003::chunk-00006",
+      "document_id": "DOC-003",
+      "chars": 410,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013",
+        "text-00014"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Escalation evidence and authority"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "515ad17ebe506e06e15da1c7dd26c2cde70b2cd026772f01e7520ed808c09254"
+    },
+    {
+      "chunk_id": "DOC-004::chunk-00001",
+      "document_id": "DOC-004",
+      "chars": 204,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Supplier Risk Policy"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f5d4aa7e1377a91d8bb78cfd841f175f0d36840ef4b3199f9db12c0f34a1aeb4"
+    },
+    {
+      "chunk_id": "DOC-004::chunk-00002",
+      "document_id": "DOC-004",
+      "chars": 187,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Scope"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "86d3928d132b45d3cadd8e9d3a1959aac893563b4898e63792bbabe8bca4691b"
+    },
+    {
+      "chunk_id": "DOC-004::chunk-00003",
+      "document_id": "DOC-004",
+      "chars": 360,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "High-risk carrier criteria - proposed synthetic definitions"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "a71f96434b1f7afe5bc1246b203496310aa388202953e08dd077275aecca3323"
+    },
+    {
+      "chunk_id": "DOC-004::chunk-00004",
+      "document_id": "DOC-004",
+      "chars": 263,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Risk review"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "cab9691f853782a0ef1469866dd43d139da10540cfd458c67182da19ca00bc8f"
+    },
+    {
+      "chunk_id": "DOC-004::chunk-00005",
+      "document_id": "DOC-004",
+      "chars": 251,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Outcome"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "08b7de4e6dcc6bada3d28f71387479872d9b9863bc7503e0a28269abbad6d60e"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00001",
+      "document_id": "DOC-005",
+      "chars": 128,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "DATA SHARING POLICY"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "27857cfdaa3bd9ea28f5c46fde4a4c2d5fae33a5e690f3ec59e6c915a429014e"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00002",
+      "document_id": "DOC-005",
+      "chars": 186,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "c2f463796340bb5d6ddfff53f6ef04fa1e10c9cacb6cd506b49a719d3b1288ea"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00003",
+      "document_id": "DOC-005",
+      "chars": 185,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Scope"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "92269fa07914c91c16a78f10091f0e564089e9cd8ba172dff4214154e6e49fff"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00004",
+      "document_id": "DOC-005",
+      "chars": 50,
+      "source_block_ids": [
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Information classification and minimum controls"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "484029153692a37f09ab7f1f7ad43a5574693c681a6af7760e237b6342f6fe69"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00005",
+      "document_id": "DOC-005",
+      "chars": 580,
+      "source_block_ids": [
+        "table-00007"
+      ],
+      "content_types": [
+        "table"
+      ],
+      "sections": [
+        "3. Information classification and minimum controls"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "2ffc8ffd1f58ce5fe822c2f1677237a40b9487de7d05572b4dc6308812050ad6"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00006",
+      "document_id": "DOC-005",
+      "chars": 317,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Sharing with transportation carriers"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "8b746143496277599f06bdf455101b8912f7f29c53fd5b95848050ae98423faf"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00007",
+      "document_id": "DOC-005",
+      "chars": 276,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Approved channels"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "c06f24898256a63fda75093fd4c1506025528eab83af059ecff0a9ccb7d067b8"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00008",
+      "document_id": "DOC-005",
+      "chars": 292,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Supplier and AI-related use"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "baf4a33cd0190358ff271067ca1aa700995ed17bdf518c6175de689cec30205b"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00009",
+      "document_id": "DOC-005",
+      "chars": 227,
+      "source_block_ids": [
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "7. Exceptions"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "83c79ddc71939c304a28119748ba432def52338c60021a31cce871a6c4535db4"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00010",
+      "document_id": "DOC-005",
+      "chars": 120,
+      "source_block_ids": [
+        "text-00016",
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "57454b0d363b8ea2c3bb9370b86b9a56fe62521affdcc68ec0444fce989251ce"
+    },
+    {
+      "chunk_id": "DOC-005::chunk-00011",
+      "document_id": "DOC-005",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00001",
+      "document_id": "DOC-006",
+      "chars": 136,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "INFORMATION SECURITY POLICY"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e64fa360aa1851f972a47692ab16fb0e17004c7f6c1f843a967e34971209ead4"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00002",
+      "document_id": "DOC-006",
+      "chars": 170,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "60d7c66f67679e6edf99fcdcb1f14a7979e0c980abec352ccee24cc527b5efa8"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00003",
+      "document_id": "DOC-006",
+      "chars": 319,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Confidential information"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7e14fabc00ed7422dddbffe8b8f595b8a6be6f55f686f436b9a3b66d9536ebae"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00004",
+      "document_id": "DOC-006",
+      "chars": 263,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. External transmission"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "23e33844c162bbbd2d3204b097bfd796f3c379f42733b58fce621ce67ad3ec71"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00005",
+      "document_id": "DOC-006",
+      "chars": 345,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Email restriction"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "021227130740ec3faeba25975213f8ab62af3952067ac3c82fdf97e41c943b54"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00006",
+      "document_id": "DOC-006",
+      "chars": 349,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. AI processing environments"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f570a29ad710107e6816e360a264f108b25a1d3dbba905047cd95ec62f4ddcf5"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00007",
+      "document_id": "DOC-006",
+      "chars": 298,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Security incidents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "77d743e14eed450e4e5ddb5afa939eceffc4e450399f0bce4633e76565b004b8"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00008",
+      "document_id": "DOC-006",
+      "chars": 265,
+      "source_block_ids": [
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "7. Policy precedence"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "cb146a97b8276ac244026847d2abfd97bc2ad7423056fdb8047e5bf58ae971b0"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00009",
+      "document_id": "DOC-006",
+      "chars": 134,
+      "source_block_ids": [
+        "text-00016",
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "188176c8f7139ee04dc51b14fff1328d4ce354f257ee1bdb9713025771ab711c"
+    },
+    {
+      "chunk_id": "DOC-006::chunk-00010",
+      "document_id": "DOC-006",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00001",
+      "document_id": "DOC-007",
+      "chars": 125,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "DOCUMENT GOVERNANCE POLICY"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e9d60017b96dfdddbb2952504a59c0b4920fa453e31a6b6d59848ad4421a01e3"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00002",
+      "document_id": "DOC-007",
+      "chars": 147,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7ffada8813f6203e890bc3d29bc4aae256ecc0c5c56c16173ee282536ba6c6d0"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00003",
+      "document_id": "DOC-007",
+      "chars": 159,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Document hierarchy"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "dadababc3bced6c53a254e9fe09013e73c8b5bf5fa2693d4a05c01e61ea51874"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00004",
+      "document_id": "DOC-007",
+      "chars": 424,
+      "source_block_ids": [
+        "table-00006"
+      ],
+      "content_types": [
+        "table"
+      ],
+      "sections": [
+        "2. Document hierarchy"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f8c63041a537b55fba953397c95a767555ac970bf3f8e2a259f15c740374c41c"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00005",
+      "document_id": "DOC-007",
+      "chars": 228,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Lifecycle status"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7c4d99a47dc2e71914bad550db0fa2c91d77ba105e1e61ec797a51b90cec120b"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00006",
+      "document_id": "DOC-007",
+      "chars": 207,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Supersession"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "361836f25ed086fe3c7ef7b49212088a7db15ea83c79e39e1054717b0a96e1ee"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00007",
+      "document_id": "DOC-007",
+      "chars": 325,
+      "source_block_ids": [
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Conflict resolution"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "88d0ed071b1eecd6445a93863921e2e46552ec99588b935c5a1be0acb01aee20"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00008",
+      "document_id": "DOC-007",
+      "chars": 202,
+      "source_block_ids": [
+        "text-00013",
+        "text-00014"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Historical questions"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "8b93c6c486d0e2bf42f788288896783862b63077fc72cef215bfe72b9bff04d1"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00009",
+      "document_id": "DOC-007",
+      "chars": 193,
+      "source_block_ids": [
+        "text-00015",
+        "text-00016"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "7. Document metadata"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f8860111c803035f729f943a08eb9d57da1268975c4685f41369e24fe5fa55bd"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00010",
+      "document_id": "DOC-007",
+      "chars": 94,
+      "source_block_ids": [
+        "text-00017",
+        "text-00018"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "2af3086c61907017af6bdbc7a078ce0b5c2a3b8aec5b8d9a159ac653179e1365"
+    },
+    {
+      "chunk_id": "DOC-007::chunk-00011",
+      "document_id": "DOC-007",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00019",
+        "text-00020"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00001",
+      "document_id": "DOC-022",
+      "chars": 134,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "SUPPLIER MANAGEMENT POLICY"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "502922298c9737832c698ac910e317b3b4c1eba80a868ffb56fac72c993f7676"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00002",
+      "document_id": "DOC-022",
+      "chars": 159,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5f26f462419a19e4b040705c1c4e03ec07998c5d1e524051ce77d94695c41f5c"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00003",
+      "document_id": "DOC-022",
+      "chars": 157,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Current policy version"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ac195b56839962e7f0369588aacbb3273b2d182fe1937fb7cdfbdbdad98d4427"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00004",
+      "document_id": "DOC-022",
+      "chars": 196,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Supplier onboarding"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "95f09489dea09570736dd1f99daaa255a9af0babf027c3e901a507baad6650ca"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00005",
+      "document_id": "DOC-022",
+      "chars": 224,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Approval and contracting"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "b98b9fbe95301120be84a9ae7c4be3c0468a91bc5a6fa008dda2af32d188ccd3"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00006",
+      "document_id": "DOC-022",
+      "chars": 215,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Performance and risk"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5bbb6e15d51eb44787077f4dddd49e84aac987428b794461b7ec39f4d1c6ce55"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00007",
+      "document_id": "DOC-022",
+      "chars": 234,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Corrective action and suspension"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "dd974bf189b59615f5944e641197b30c6bee507d3e6df2047547989642855c5f"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00008",
+      "document_id": "DOC-022",
+      "chars": 192,
+      "source_block_ids": [
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "7. Records"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7ac52995969ece20d064ad342fe4bc7f74d14b7fb45a2f919e33121b318e75af"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00009",
+      "document_id": "DOC-022",
+      "chars": 119,
+      "source_block_ids": [
+        "text-00016",
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "aeaeb918050e015a5a2c6f66916ecea6a66e32995db79aba2616e111b6b0fcc6"
+    },
+    {
+      "chunk_id": "DOC-022::chunk-00010",
+      "document_id": "DOC-022",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00001",
+      "document_id": "DOC-023",
+      "chars": 123,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "AI GOVERNANCE POLICY"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7e038250771b386f69ae0b388f5061817bc591eddac28d7c0fa85477f624cd1d"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00002",
+      "document_id": "DOC-023",
+      "chars": 192,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e2e9df0162e8ec957758c542c65697c1efde9092ebb56a8afacf0799587104b0"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00003",
+      "document_id": "DOC-023",
+      "chars": 237,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Permitted business use"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "6244bda3b0c7672a083aa12fa95d0e9b4bbb9d1fc6943e821d632f4e39941b1c"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00004",
+      "document_id": "DOC-023",
+      "chars": 292,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. AI analysis of supplier contracts"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7e83ebcfadd1df27287232d1fedf960480ed658f7be5b40bd4df14900ab9fb32"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00005",
+      "document_id": "DOC-023",
+      "chars": 369,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Supplier data and approvals"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "9dd002fea015abe269dde78ac89687eb35e2b7f07526e9d024cae0a590eaa44e"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00006",
+      "document_id": "DOC-023",
+      "chars": 260,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. New AI tools"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "97fb40e56223e6d80cb8ad41812cf4b00bdacb59466072a4fa538508b8a40e98"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00007",
+      "document_id": "DOC-023",
+      "chars": 242,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Human accountability"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "3276dd4f1fe547c6ec1570d929ec18d638255c8b1895afaa1007298f4a0c3cd5"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00008",
+      "document_id": "DOC-023",
+      "chars": 173,
+      "source_block_ids": [
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "7. Training"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "334c097648154ea6aaf915c18d14ba87f36cc7a8772c1ef5c72edbfd54fc4f74"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00009",
+      "document_id": "DOC-023",
+      "chars": 148,
+      "source_block_ids": [
+        "text-00016",
+        "text-00017"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "ba931d27a26dc396123e92b72966b1de451ee67115c5256a5ebb0e197aa291a9"
+    },
+    {
+      "chunk_id": "DOC-023::chunk-00010",
+      "document_id": "DOC-023",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    },
+    {
+      "chunk_id": "DOC-013::chunk-00001",
+      "document_id": "DOC-013",
+      "chars": 1148,
+      "source_block_ids": [
+        "xlsx-sheet-1"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "KPI Dictionary"
+      ],
+      "sha256": "06d616b303c70f4758f3ea875e814d97c5bf73112f2e9381c808ff5fa89e9b74"
+    },
+    {
+      "chunk_id": "DOC-013::chunk-00002",
+      "document_id": "DOC-013",
+      "chars": 625,
+      "source_block_ids": [
+        "xlsx-sheet-2"
+      ],
+      "content_types": [
+        "spreadsheet"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [
+        "Metadata"
+      ],
+      "sha256": "86da8eeb01cb1eac70fd2e51aec0fae5fdb7328404ff68bdfd834e52cd909d1d"
+    },
+    {
+      "chunk_id": "DOC-008::chunk-00001",
+      "document_id": "DOC-008",
+      "chars": 189,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "926306973f23a4da86bd72c20844e7252ca8b38390fc70e9ed7d6c2e83d03c7e"
+    },
+    {
+      "chunk_id": "DOC-008::chunk-00002",
+      "document_id": "DOC-008",
+      "chars": 133,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Purpose"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "6e66022b5a31e09cea38f1b36a0a503253ff04e17a242d7cf65251852e97c26a"
+    },
+    {
+      "chunk_id": "DOC-008::chunk-00003",
+      "document_id": "DOC-008",
+      "chars": 373,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Required documentation — proposed synthetic list"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "097c174c51c4c61959184938328d1299c61360769f8418c929ba15451286d3d4"
+    },
+    {
+      "chunk_id": "DOC-008::chunk-00004",
+      "document_id": "DOC-008",
+      "chars": 290,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Validation workflow"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "c44b0f99ec43ae9665b6a2e9a19d5448370c77d856b989e9da6cdd284d22c5ec"
+    },
+    {
+      "chunk_id": "DOC-008::chunk-00005",
+      "document_id": "DOC-008",
+      "chars": 193,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Evidence and exceptions"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "841d74a6a7292fd8007441d4234855e4a382bbfcc0b8149d9f1c5d3eccfbb7fc"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00001",
+      "document_id": "DOC-009",
+      "chars": 223,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "9ea7c833117f6d92763ef2aaad6c5c1f115f2567efb58429d67a8419e2bde229"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00002",
+      "document_id": "DOC-009",
+      "chars": 178,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Objective"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "16a79701a3e514f8c2e2d2f0e733af5a1530dc20b0c4d8bdeb2bb6301aaf09d1"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00003",
+      "document_id": "DOC-009",
+      "chars": 595,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006",
+        "text-00007"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Critical-delivery classification"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "86a692cdd6a3fcf00b18a25704d615c6fc537d9be4a29e3d8ce1ace3be881dd3"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00004",
+      "document_id": "DOC-009",
+      "chars": 366,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009",
+        "text-00010",
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Operating workflow"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "29c0dd9aff4f6386987d98b162019810cfb32b2454f71921678746d2610a5343"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00005",
+      "document_id": "DOC-009",
+      "chars": 590,
+      "source_block_ids": [
+        "text-00013",
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Delayed critical delivery escalation"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "da44cce69b29ff72615c661c4a1d36a0a40b654e1e916010c00880d77fff5f01"
+    },
+    {
+      "chunk_id": "DOC-009::chunk-00006",
+      "document_id": "DOC-009",
+      "chars": 348,
+      "source_block_ids": [
+        "text-00016",
+        "text-00017",
+        "text-00018"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Closure and evidence"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "c42858d34d0dd0ea858605d864bee9a6b8c82b804bd1845ddaa1fe3a686f2869"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00001",
+      "document_id": "DOC-010",
+      "chars": 99,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "fdb17aed6360cb7d7f6d99e0dc744b48e14c247c147635303043902f20a954c3"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00002",
+      "document_id": "DOC-010",
+      "chars": 169,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "39f17b7d5d80ceb8b1e6eb5435eca6b4d92af88b9fe54cf57e49ea8b497186e7"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00003",
+      "document_id": "DOC-010",
+      "chars": 237,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Trigger"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "fe668b008ad564802f39a1b31e0c76585e93b5c559f56d0e9dc20ce85f1ee2c9"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00004",
+      "document_id": "DOC-010",
+      "chars": 506,
+      "source_block_ids": [
+        "text-00006",
+        "text-00007",
+        "text-00008",
+        "text-00009",
+        "text-00010",
+        "text-00011",
+        "text-00012"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Immediate actions"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7dee8e5dfbb6f1defd388c200ceb5977806085cf73804b96c342f83b6569c96b"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00005",
+      "document_id": "DOC-010",
+      "chars": 305,
+      "source_block_ids": [
+        "text-00013",
+        "text-00014"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Supplier disclosure"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "cf6a1f00c7c777361b4d8c29fe3a49c6d93b34fd950af4c8d61ae0b51761a75f"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00006",
+      "document_id": "DOC-010",
+      "chars": 175,
+      "source_block_ids": [
+        "text-00015",
+        "text-00016"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Closure"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "09f017249abb4aceb984c8b098bb73815c07e4da56b0d056d6951e6dc0c851ef"
+    },
+    {
+      "chunk_id": "DOC-010::chunk-00007",
+      "document_id": "DOC-010",
+      "chars": 201,
+      "source_block_ids": [
+        "text-00017",
+        "text-00018",
+        "text-00019"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "6. Related documents"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e4002e9ea7b9d130cfaaffa76e5b2571d33b4e051dd61b54cc9746b85f7c7fd0"
+    },
+    {
+      "chunk_id": "DOC-011::chunk-00001",
+      "document_id": "DOC-011",
+      "chars": 193,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001",
+        "text-00002"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "a244c4d5dd728f0d24bf165445a122705fbd4d5ac5b80a3d64191fe50cbbdcb4"
+    },
+    {
+      "chunk_id": "DOC-011::chunk-00002",
+      "document_id": "DOC-011",
+      "chars": 168,
+      "source_block_ids": [
+        "text-00003",
+        "text-00004"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Historical scope"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "4bdcb257b972828de578917350bb613d09d98ce511bd2375859b327ebcf88870"
+    },
+    {
+      "chunk_id": "DOC-011::chunk-00003",
+      "document_id": "DOC-011",
+      "chars": 233,
+      "source_block_ids": [
+        "text-00005",
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Historical instruction"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "458f8d73359cad80a1ae453272528fa54806757916919306be45f09b9a19d113"
+    },
+    {
+      "chunk_id": "DOC-011::chunk-00004",
+      "document_id": "DOC-011",
+      "chars": 203,
+      "source_block_ids": [
+        "text-00007",
+        "text-00008"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Current authority notice"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "5f3a942fc643784a24569344d304f1ad41c1d819c649627f22cb4987d967e2dd"
+    },
+    {
+      "chunk_id": "DOC-011::chunk-00005",
+      "document_id": "DOC-011",
+      "chars": 167,
+      "source_block_ids": [
+        "text-00009",
+        "text-00010"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Historical interpretation"
+      ],
+      "pages": [],
+      "slides": [],
+      "sheets": [],
+      "sha256": "d9fa118fecdd93422881e24860c48e44d739e2b9bf25824f31c7803a7deffe34"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00001",
+      "document_id": "DOC-024",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00000",
+        "text-00001"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "AI SECURITY STANDARD"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "577432cb3ecae5d5f1a50733ce8c9ca4f079b187c18e6d5eea75196b9f76a02b"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00002",
+      "document_id": "DOC-024",
+      "chars": 80,
+      "source_block_ids": [
+        "text-00002",
+        "text-00003"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "1. Purpose"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "4033ab40b59a355bc66f9285f6b232d6dde7d6cc0a0a22e3ce06ad7cea076690"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00003",
+      "document_id": "DOC-024",
+      "chars": 230,
+      "source_block_ids": [
+        "text-00004",
+        "text-00005"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "2. Data classification"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "e269492d65a70e5803509bf68e73bab1bbab1e622f51be83ee239d3a83b6c747"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00004",
+      "document_id": "DOC-024",
+      "chars": 19,
+      "source_block_ids": [
+        "text-00006"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "3. Minimum controls"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "20438e6a612daaae77692d9066618348411880db7f548553f8d8cdb27e58bde2"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00005",
+      "document_id": "DOC-024",
+      "chars": 692,
+      "source_block_ids": [
+        "table-00007"
+      ],
+      "content_types": [
+        "table"
+      ],
+      "sections": [
+        "3. Minimum controls"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7e02a448191485946d5f12f9003282947c3c83b9063b3995a6e16ee430f2441f"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00006",
+      "document_id": "DOC-024",
+      "chars": 254,
+      "source_block_ids": [
+        "text-00008",
+        "text-00009"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "4. Contract analysis"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "3a4520f902393292d7306063bea55b2abc8672353d965ce91fda7e9b78b74107"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00007",
+      "document_id": "DOC-024",
+      "chars": 213,
+      "source_block_ids": [
+        "text-00010",
+        "text-00011"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "5. Output handling"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "a9feb3de490434b4bc030342fc9e19727d642ee091071b3cb3638cac1eda99c1"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00008",
+      "document_id": "DOC-024",
+      "chars": 92,
+      "source_block_ids": [
+        "text-00012",
+        "text-00013"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Related documents"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "f0308c7bc93dde96dc2a702c0a7b4f2ebb6211f3ad95ccdc86442fa0a87e1b5a"
+    },
+    {
+      "chunk_id": "DOC-024::chunk-00009",
+      "document_id": "DOC-024",
+      "chars": 115,
+      "source_block_ids": [
+        "text-00014",
+        "text-00015"
+      ],
+      "content_types": [
+        "text"
+      ],
+      "sections": [
+        "Document control"
+      ],
+      "pages": [
+        1
+      ],
+      "slides": [],
+      "sheets": [],
+      "sha256": "7336d8c5bbeaa3114ffbd4135e566864be5f0c626a0e601a3f027b62e7ffbd0c"
+    }
+  ],
+  "golden_document_coverage": [
+    {
+      "question_id": "Q01",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q02",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q03",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-008",
+        "DOC-022"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q04",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012",
+        "DOC-003"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q05",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q06",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q07",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-009"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q08",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003",
+        "DOC-013"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q09",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-013"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q10",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q11",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q12",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q13",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q14",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q15",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-004"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q16",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q17",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q18",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q19",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q20",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q21",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q22",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q23",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-010"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q24",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-007"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q25",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-007"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q26",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-022"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q27",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-011",
+        "DOC-007",
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q28",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q29",
+      "expected_behavior": "abstain_insufficient_evidence",
+      "expected_evidence": [],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q30",
+      "expected_behavior": "provide_evidence_without_unsupported_decision",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q31",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q32",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-005",
+        "DOC-012"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q33",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-024",
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q34",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q35",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024",
+        "DOC-006"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    },
+    {
+      "question_id": "Q36",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-026",
+        "DOC-023"
+      ],
+      "missing_document_ids": [],
+      "documents_available": true,
+      "semantic_coverage_verified": false
+    }
+  ]
+}

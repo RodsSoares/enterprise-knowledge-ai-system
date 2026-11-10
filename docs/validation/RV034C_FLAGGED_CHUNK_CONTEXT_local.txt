@@ -1,0 +1,806 @@
+RV-034C FLAGGED CHUNK CONTEXT
+===========================================================================
+Flagged chunk IDs: 26
+Documents requiring inspection: 14
+
+
+===========================================================================
+DOCUMENT: DOC-014
+FILE: DOC-014_carrier_atlas_contract.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-014::chunk-00002
+Characters: 185
+Content types: ('text',)
+Source blocks: ('text-00003', 'text-00004')
+Sections: ('Parties and validity',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Parties and validity
+
+Carrier: Atlas Transportes (CAR-ATLAS). Contract year 2026; active according to the document registry. This is a synthetic contract, not a real executed agreement.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-014::chunk-00003
+Characters: 226
+Content types: ('text',)
+Source blocks: ('text-00005', 'text-00006')
+Sections: ('Delivery performance and evidence',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delivery performance and evidence
+
+Applicable shipment commitments are recorded in the order or service schedule. On-time status is evidenced by approved tracking and proof of delivery. Corporate performance policy is DOC-001.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-014::chunk-00004
+Characters: 327
+Content types: ('text',)
+Source blocks: ('text-00007', 'text-00008')
+Sections: ('Delay penalty clause - controlled synthetic mechanics',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delay penalty clause - controlled synthetic mechanics
+
+Delay penalty present: YES. 3% of the monthly invoiced amount for each documented material delay event, capped at 12% per month. These monetary mechanics are proposed synthetic details and require benchmark review; the canonical fact fixes only clause presence or absence.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-014::chunk-00005
+Characters: 336
+Content types: ('text',)
+Source blocks: ('text-00009', 'text-00010')
+Sections: ('Force majeure exception',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Force majeure exception
+
+Force majeure exception: YES. Extraordinary external events beyond reasonable control may excuse a qualifying delay only when supported by timely notice, evidence and documented mitigation. Proposed notification window: within 24 hours of awareness. Routine capacity shortage is not automatically force majeure.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-014::chunk-00006
+Characters: 253
+Content types: ('text',)
+Source blocks: ('text-00011', 'text-00012')
+Sections: ('Comparison and authority',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Comparison and authority
+
+Atlas and Nova both have delay penalties but use different bases and caps; Orion has no delay penalty clause. Contract terms must be assessed individually, and none of these contracts alone authorizes a final carrier selection.
+
+
+===========================================================================
+DOCUMENT: DOC-015
+FILE: DOC-015_carrier_nova_contract.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-015::chunk-00002
+Characters: 181
+Content types: ('text',)
+Source blocks: ('text-00003', 'text-00004')
+Sections: ('Parties and validity',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Parties and validity
+
+Carrier: Nova Logística (CAR-NOVA). Contract year 2026; active according to the document registry. This is a synthetic contract, not a real executed agreement.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-015::chunk-00003
+Characters: 226
+Content types: ('text',)
+Source blocks: ('text-00005', 'text-00006')
+Sections: ('Delivery performance and evidence',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delivery performance and evidence
+
+Applicable shipment commitments are recorded in the order or service schedule. On-time status is evidenced by approved tracking and proof of delivery. Corporate performance policy is DOC-001.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-015::chunk-00004
+Characters: 345
+Content types: ('text',)
+Source blocks: ('text-00007', 'text-00008')
+Sections: ('Delay penalty clause - controlled synthetic mechanics',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delay penalty clause - controlled synthetic mechanics
+
+Delay penalty present: YES. 2% of the affected shipment freight charge per documented late delivery, capped at 10% of the monthly freight invoice. These monetary mechanics are proposed synthetic details and require benchmark review; the canonical fact fixes only clause presence or absence.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-015::chunk-00005
+Characters: 336
+Content types: ('text',)
+Source blocks: ('text-00009', 'text-00010')
+Sections: ('Force majeure exception',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Force majeure exception
+
+Force majeure exception: YES. Extraordinary external events beyond reasonable control may excuse a qualifying delay only when supported by timely notice, evidence and documented mitigation. Proposed notification window: within 24 hours of awareness. Routine capacity shortage is not automatically force majeure.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-015::chunk-00006
+Characters: 253
+Content types: ('text',)
+Source blocks: ('text-00011', 'text-00012')
+Sections: ('Comparison and authority',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Comparison and authority
+
+Atlas and Nova both have delay penalties but use different bases and caps; Orion has no delay penalty clause. Contract terms must be assessed individually, and none of these contracts alone authorizes a final carrier selection.
+
+
+===========================================================================
+DOCUMENT: DOC-016
+FILE: DOC-016_carrier_orion_contract.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-016::chunk-00002
+Characters: 185
+Content types: ('text',)
+Source blocks: ('text-00003', 'text-00004')
+Sections: ('Parties and validity',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Parties and validity
+
+Carrier: Orion Transportes (CAR-ORION). Contract year 2025; active according to the document registry. This is a synthetic contract, not a real executed agreement.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-016::chunk-00003
+Characters: 226
+Content types: ('text',)
+Source blocks: ('text-00005', 'text-00006')
+Sections: ('Delivery performance and evidence',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delivery performance and evidence
+
+Applicable shipment commitments are recorded in the order or service schedule. On-time status is evidenced by approved tracking and proof of delivery. Corporate performance policy is DOC-001.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-016::chunk-00004
+Characters: 269
+Content types: ('text',)
+Source blocks: ('text-00007', 'text-00008')
+Sections: ('Delay penalty clause - controlled synthetic mechanics',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Delay penalty clause - controlled synthetic mechanics
+
+Delay penalty present: NO. No contractual delay penalty clause exists. These monetary mechanics are proposed synthetic details and require benchmark review; the canonical fact fixes only clause presence or absence.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-016::chunk-00005
+Characters: 336
+Content types: ('text',)
+Source blocks: ('text-00009', 'text-00010')
+Sections: ('Force majeure exception',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Force majeure exception
+
+Force majeure exception: YES. Extraordinary external events beyond reasonable control may excuse a qualifying delay only when supported by timely notice, evidence and documented mitigation. Proposed notification window: within 24 hours of awareness. Routine capacity shortage is not automatically force majeure.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-016::chunk-00006
+Characters: 253
+Content types: ('text',)
+Source blocks: ('text-00011', 'text-00012')
+Sections: ('Comparison and authority',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Comparison and authority
+
+Atlas and Nova both have delay penalties but use different bases and caps; Orion has no delay penalty clause. Contract terms must be assessed individually, and none of these contracts alone authorizes a final carrier selection.
+
+
+===========================================================================
+DOCUMENT: DOC-019
+FILE: DOC-019_operations_committee_minutes_2025.docx
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-019::chunk-00004
+Characters: 206
+Content types: ('text',)
+Source blocks: ('text-00007', 'text-00008')
+Sections: ('R001 precedent',)
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+R001 precedent
+
+Committee reviewed the 2025 route R001 incident and accepted the recovery report; proposed synthetic follow-up required documented vehicle maintenance checks and carrier escalation evidence.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-019::chunk-00005
+Characters: 98
+Content types: ('text',)
+Source blocks: ('text-00009', 'text-00010')
+Sections: ('Governance note',)
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+Governance note
+
+These minutes evidence a decision but do not replace the active corporate policy.
+
+
+===========================================================================
+DOCUMENT: DOC-020
+FILE: DOC-020_operations_committee_minutes_2026.pptx
+===========================================================================
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-020::chunk-00001
+Characters: 694
+Content types: ('text',)
+Source blocks: ('text-00000', 'text-00001', 'text-00002', 'text-00003', 'text-00004', 'text-00005', 'text-00006', 'text-00007', 'text-00008', 'text-00009', 'text-00010', 'text-00011', 'text-00012', 'text-00013')
+Sections: ()
+Pages: ()
+Slides: (1, 2, 3)
+---------------------------------------------------------------------------
+Operations Committee Minutes 2026
+
+DOC-020 | 2026 | Historical governance record
+
+Controlled synthetic corpus — RV032 draft
+
+Incident review: EVT-INC-R003-2026, route R003
+
+R003 incident — decisions
+
+Approve immediate dispatch verification checklist
+
+Require dual-channel critical escalation coverage
+
+Assign Control Tower owner to monitor mitigation
+
+Record progress and unresolved actions in DOC-021
+
+Action governance
+
+Action CA-2026-R003-01: dispatch checklist — closed after review
+
+Action CA-2026-R003-02: escalation coverage audit — open
+
+Owners and status are proposed synthetic facts, not fixed in canonical_facts.yaml
+
+Committee minutes are historical evidence, not a corporate policy
+
+
+===========================================================================
+DOCUMENT: DOC-026
+FILE: DOC-026_AI_Workforce_Enablement_Guide.pptx
+===========================================================================
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-026::chunk-00001
+Characters: 1249
+Content types: ('text',)
+Source blocks: ('text-00000', 'text-00001', 'text-00002', 'text-00003', 'text-00004', 'text-00005', 'text-00006', 'text-00007', 'text-00008', 'text-00009', 'text-00010', 'text-00011', 'text-00012', 'text-00013', 'text-00014', 'text-00015', 'text-00016')
+Sections: ()
+Pages: ()
+Slides: (1, 2, 3, 4)
+---------------------------------------------------------------------------
+AI Workforce Enablement Guide
+
+Document ID: DOC-026 | Version 1.0 | Active 2026-01-01
+
+Purpose: define the mandatory learning path for employees who use approved AI tools in enterprise work.
+
+Mandatory baseline training
+
+AI Fundamentals and Responsible Use — required before enterprise AI use.
+
+Information Classification and Safe Prompting — required before handling enterprise information in AI workflows.
+
+Human Accountability and Verification — required before relying on AI-generated analysis in business work.
+
+Annual refresher — required for continued enterprise AI access where the access-control process supports enforcement.
+
+Role-specific learning
+
+Users handling confidential data: complete the secure-data handling module.
+
+Managers approving AI-assisted workflows: complete governance and accountability training.
+
+Procurement and vendor-management roles: complete AI supplier due-diligence training.
+
+Technical builders: complete secure integration, logging, evaluation, and model-risk modules assigned to their role.
+
+What training does not do
+
+Training does not approve a tool or use case.
+
+Training does not override Information Security requirements.
+
+Training does not authorize confidential data in an unapproved AI environment.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-026::chunk-00002
+Characters: 84
+Content types: ('text',)
+Source blocks: ('text-00017',)
+Sections: ()
+Pages: ()
+Slides: (4,)
+---------------------------------------------------------------------------
+Formal governance remains defined by the AI Governance Policy and related standards.
+
+
+===========================================================================
+DOCUMENT: DOC-027
+FILE: DOC-027_AI_Supply_Chain_Usage_Guidelines.txt
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-027::chunk-00001
+Characters: 1384
+Content types: ('text',)
+Source blocks: ('text-00000', 'text-00001', 'text-00002', 'text-00003', 'text-00004', 'text-00005', 'text-00006', 'text-00007', 'text-00008', 'text-00009', 'text-00010', 'text-00011', 'text-00012', 'text-00013', 'text-00014', 'text-00015', 'text-00016', 'text-00017', 'text-00018', 'text-00019')
+Sections: ()
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+AI SUPPLY CHAIN USAGE GUIDELINES
+
+Document ID: DOC-027
+
+Version: 1.0
+
+Effective: 2026-01-01
+
+Status: ACTIVE
+
+Type: Guideline
+
+PURPOSE
+
+Provide practical examples for approved AI use in Supply Chain. This guideline is not a corporate policy and does not authorize tools, data classifications, or formal decisions.
+
+EXAMPLE USES
+
+- Summarize non-sensitive operational notes.
+
+- Draft a first version of a carrier-performance narrative from approved inputs.
+
+- Compare non-confidential process descriptions.
+
+- Generate questions for investigation of an operational exception.
+
+- Assist with documentation when the user verifies the result.
+
+SUPPLIER AND CARRIER CONTEXT
+
+AI can support analysis of supplier and carrier information only within an approved environment and approved use case. Users must follow the AI Governance Policy, Information Security Policy, Data Sharing Policy, and applicable contractual obligations.
+
+DECISION BOUNDARY
+
+AI may organize evidence and suggest considerations, but formal supplier selection, contracting approval, security approval, and exception approval remain with the authorized human roles.
+
+IMPORTANT
+
+This document contains terms such as AI, supplier, carrier, approval, security, data, and contract. It is operational guidance, not the authoritative source for approval authority, confidential-data controls, or mandatory enterprise training.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-027::chunk-00002
+Characters: 97
+Content types: ('text',)
+Source blocks: ('text-00020',)
+Sections: ()
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-005
+FILE: DOC-005_Data_Sharing_Policy.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-005::chunk-00003
+Characters: 185
+Content types: ('text',)
+Source blocks: ('text-00004', 'text-00005')
+Sections: ('2. Scope',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+2. Scope
+
+Applies to employees, contractors, systems, and business processes that disclose internal, confidential, customer, supplier, or operational information outside the enterprise.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-005::chunk-00004
+Characters: 50
+Content types: ('text',)
+Source blocks: ('text-00006',)
+Sections: ('3. Information classification and minimum controls',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+3. Information classification and minimum controls
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-005::chunk-00005
+Characters: 580
+Content types: ('table',)
+Source blocks: ('table-00007',)
+Sections: ('3. Information classification and minimum controls',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Classification | External sharing rule | Minimum channel/control
+Public | May be shared when approved for public use. | Approved business channel.
+Internal | Share only for legitimate business need. | Corporate-managed channel.
+Confidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.
+Restricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-005::chunk-00010
+Characters: 120
+Content types: ('text',)
+Source blocks: ('text-00016', 'text-00017')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+Information Security Policy; Document Governance Policy; AI Governance Policy; Security Incident SOP.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-005::chunk-00011
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00018', 'text-00019')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-006
+FILE: DOC-006_Information_Security_Policy.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-006::chunk-00009
+Characters: 134
+Content types: ('text',)
+Source blocks: ('text-00016', 'text-00017')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+Data Sharing Policy; Document Governance Policy; Security Incident SOP; AI Security Standard; AI Governance Policy.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-006::chunk-00010
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00018', 'text-00019')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-007
+FILE: DOC-007_Document_Governance_Policy.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-007::chunk-00009
+Characters: 193
+Content types: ('text',)
+Source blocks: ('text-00015', 'text-00016')
+Sections: ('7. Document metadata',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+7. Document metadata
+
+Controlled documents must maintain, where applicable, a document identifier, title, version, effective date, lifecycle status, owner/domain, and supersession relationship.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-007::chunk-00010
+Characters: 94
+Content types: ('text',)
+Source blocks: ('text-00017', 'text-00018')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+All controlled enterprise policies, standards, SOPs, and work instructions.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-007::chunk-00011
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00019', 'text-00020')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-022
+FILE: DOC-022_Supplier_Management_Policy.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-022::chunk-00009
+Characters: 119
+Content types: ('text',)
+Source blocks: ('text-00016', 'text-00017')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+Supplier Onboarding SOP; Supplier Risk Policy; Approval Authority Matrix; Carrier Management Policy.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-022::chunk-00010
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00018', 'text-00019')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-023
+FILE: DOC-023_AI_Governance_Policy.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-023::chunk-00009
+Characters: 148
+Content types: ('text',)
+Source blocks: ('text-00016', 'text-00017')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+AI Security Standard; AI Workforce Enablement Guide; Information Security Policy; Data Sharing Policy; Approval Authority Matrix.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-023::chunk-00010
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00018', 'text-00019')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.
+
+
+===========================================================================
+DOCUMENT: DOC-010
+FILE: DOC-010_Security_Incident_SOP.docx
+===========================================================================
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-010::chunk-00001
+Characters: 99
+Content types: ('text',)
+Source blocks: ('text-00000', 'text-00001')
+Sections: ()
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+SECURITY INCIDENT SOP
+
+Document ID: DOC-010 | Version: 2.0 | Effective: 2026-01-01 | Status: ACTIVE
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-010::chunk-00002
+Characters: 169
+Content types: ('text',)
+Source blocks: ('text-00002', 'text-00003')
+Sections: ('1. Purpose',)
+Pages: ()
+Slides: ()
+---------------------------------------------------------------------------
+1. Purpose
+
+Define the immediate response and escalation process for suspected or confirmed information-security incidents, including accidental disclosure to suppliers.
+
+
+===========================================================================
+DOCUMENT: DOC-024
+FILE: DOC-024_AI_Security_Standard.pdf
+===========================================================================
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-024::chunk-00001
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00000', 'text-00001')
+Sections: ('AI SECURITY STANDARD',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+AI SECURITY STANDARD
+
+Document ID: DOC-024 | Version: 1.0 | Effective: 2026-01-01 | Status: ACTIVE | Type: Standard
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-024::chunk-00002
+Characters: 80
+Content types: ('text',)
+Source blocks: ('text-00002', 'text-00003')
+Sections: ('1. Purpose',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+1. Purpose
+
+Define mandatory security controls for enterprise use of AI systems.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-024::chunk-00003
+Characters: 230
+Content types: ('text',)
+Source blocks: ('text-00004', 'text-00005')
+Sections: ('2. Data classification',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+2. Data classification
+
+AI processing must respect the enterprise information classification. Confidential or restricted information may be processed only in an environment explicitly approved for that classification and use case.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-024::chunk-00004
+Characters: 19
+Content types: ('text',)
+Source blocks: ('text-00006',)
+Sections: ('3. Minimum controls',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+3. Minimum controls
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-024::chunk-00005
+Characters: 692
+Content types: ('table',)
+Source blocks: ('table-00007',)
+Sections: ('3. Minimum controls',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Control | Requirement
+Identity and access | Use enterprise-approved authentication and least-privilege access where supported.
+Data handling | Input only data permitted for the approved tool, use case, and classification.
+Provider terms | Approved processing and retention terms must be established where external providers process enterprise data.
+Logging and traceability | Maintain usage or audit evidence when required by the risk classification or use case.
+Secrets | Credentials, private keys, passwords, and equivalent authentication secrets must not be entered into general AI prompts.
+Incident handling | Suspected exposure through an AI system must follow the Security Incident SOP.
+
+
+---------------------------------------------------------------------------
+NEIGHBOR: DOC-024::chunk-00007
+Characters: 213
+Content types: ('text',)
+Source blocks: ('text-00010', 'text-00011')
+Sections: ('5. Output handling',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+5. Output handling
+
+AI output may contain inaccurate, incomplete, or unsupported content. Security controls do not make model output authoritative; human review remains required according to the business use case.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-024::chunk-00008
+Characters: 92
+Content types: ('text',)
+Source blocks: ('text-00012', 'text-00013')
+Sections: ('Related documents',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Related documents
+
+AI Governance Policy; Information Security Policy; Security Incident SOP.
+
+
+---------------------------------------------------------------------------
+FLAGGED: DOC-024::chunk-00009
+Characters: 115
+Content types: ('text',)
+Source blocks: ('text-00014', 'text-00015')
+Sections: ('Document control',)
+Pages: (1,)
+Slides: ()
+---------------------------------------------------------------------------
+Document control
+
+Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.

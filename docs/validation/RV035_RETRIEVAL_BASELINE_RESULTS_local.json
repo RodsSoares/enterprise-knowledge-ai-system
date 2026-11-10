@@ -1,0 +1,2588 @@
+{
+  "experiment": "RV-035",
+  "status": "REAL_EMBEDDING_RETRIEVAL_BASELINE_COMPLETE",
+  "configuration": {
+    "embedding_model": "text-embedding-3-small",
+    "candidate_depth": 20,
+    "selected_documents": 5,
+    "rrf_k": 60,
+    "hybrid": "vector + filtered BM25 + RRF + document diversity",
+    "metrics_level": "document",
+    "metric_scope": "35 positive-evidence questions; Q29 excluded",
+    "comparison_note": "Standalone vector and BM25 are evaluated after document deduplication. Hybrid uses the project's DocumentDiversifier."
+  },
+  "summary": {
+    "documents": 27,
+    "chunks": 158,
+    "questions_total": 36,
+    "positive_evidence_questions": 35,
+    "abstention_questions": 1,
+    "embedding_model": "text-embedding-3-small",
+    "generation_calls": 0,
+    "abstention_behavior_verified": false,
+    "semantic_answer_quality_verified": false
+  },
+  "metrics": {
+    "vector": {
+      "Hit@1": 0.7143,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.931,
+      "MRR@5": 0.84,
+      "FullEvidence@5": 0.8286
+    },
+    "bm25_filtered": {
+      "Hit@1": 0.0571,
+      "Hit@3": 0.2,
+      "Hit@5": 0.2286,
+      "Recall@5": 0.219,
+      "MRR@5": 0.1295,
+      "FullEvidence@5": 0.2
+    },
+    "hybrid_diverse": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.9071,
+      "MRR@5": 0.821,
+      "FullEvidence@5": 0.7714
+    }
+  },
+  "questions": [
+    {
+      "question_id": "Q01",
+      "question": "Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-002",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-003",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-009",
+            "DOC-002"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q02",
+      "question": "Qual é o SLA de entrega estabelecido para cada categoria de transporte?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "distractors": [
+        "DOC-002",
+        "DOC-013"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-009",
+            "DOC-003",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-003",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.3333333333333333,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-002",
+            "DOC-009"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q03",
+      "question": "Quais documentos precisam ser apresentados para homologação de uma nova transportadora?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-008",
+        "DOC-022"
+      ],
+      "distractors": [
+        "DOC-004"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-014",
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-003",
+            "DOC-008",
+            "DOC-014",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.3333333333333333,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q04",
+      "question": "Quem é responsável por aprovar a contratação emergencial de uma transportadora?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012",
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-022"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-022"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-022"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q05",
+      "question": "Qual é o limite financeiro para contratação sem aprovação da diretoria?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-022"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-022"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-022"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q06",
+      "question": "Em quais situações uma entrega pode ser classificada como crítica?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "distractors": [
+        "DOC-003"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q07",
+      "question": "Qual é o procedimento previsto para uma entrega crítica atrasada?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-009"
+      ],
+      "distractors": [
+        "DOC-001"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-001"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-001"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q08",
+      "question": "Quais KPIs são utilizados para avaliar o desempenho das transportadoras?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003",
+        "DOC-013"
+      ],
+      "distractors": [
+        "DOC-001"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q09",
+      "question": "Como é calculado o indicador OTIF segundo a documentação da empresa?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-013"
+      ],
+      "distractors": [
+        "DOC-001",
+        "DOC-002"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-001",
+            "DOC-002"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002",
+            "DOC-001"
+          ]
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-001",
+            "DOC-002"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q10",
+      "question": "Qual é a meta vigente de OTIF para operações nacionais?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "distractors": [
+        "DOC-002"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002"
+          ]
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-002"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q11",
+      "question": "A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q12",
+      "question": "Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-014",
+            "DOC-016",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-014",
+            "DOC-016",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q13",
+      "question": "Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova.",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "distractors": [
+        "DOC-016"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-001",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-016"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-027"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-016"
+          ]
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-027",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-016"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q14",
+      "question": "Existe alguma exceção contratual às penalidades em caso de eventos de força maior?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q15",
+      "question": "Quais são os critérios para classificar uma transportadora como de alto risco?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-004"
+      ],
+      "distractors": [
+        "DOC-003"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-003"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-003"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q16",
+      "question": "O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "distractors": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-003",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-009",
+            "DOC-018"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q17",
+      "question": "Houve algum incidente semelhante anteriormente? Como ele foi tratado?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "distractors": [
+        "DOC-018"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-009"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-018"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-009"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-018"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q18",
+      "question": "Quais decisões foram tomadas após o último incidente grave de transporte?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "distractors": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-019",
+            "DOC-017"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-001"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-019",
+            "DOC-017"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q19",
+      "question": "Alguma recomendação daquele incidente ainda está pendente?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "distractors": [
+        "DOC-017"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-017"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-017"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q20",
+      "question": "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-011"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q21",
+      "question": "Quais informações são classificadas como confidenciais nos documentos logísticos?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-005"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-005"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-005"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q22",
+      "question": "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-011"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-010"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q23",
+      "question": "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-010"
+      ],
+      "distractors": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-006",
+            "DOC-005"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-006",
+            "DOC-005"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q24",
+      "question": "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-007"
+      ],
+      "distractors": [
+        "DOC-005"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-005"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-005"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q25",
+      "question": "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-007"
+      ],
+      "distractors": [
+        "DOC-011",
+        "DOC-006"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-006"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-010",
+            "DOC-005",
+            "DOC-022",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-006"
+          ]
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022",
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-006"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q26",
+      "question": "Qual é atualmente a versão vigente da política de gestão de fornecedores?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-022"
+      ],
+      "distractors": [
+        "DOC-008"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-008"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-008"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q27",
+      "question": "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-011",
+        "DOC-007",
+        "DOC-006"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-018"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-014"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-016",
+            "DOC-007",
+            "DOC-017"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q28",
+      "question": "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-001",
+            "DOC-014",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q29",
+      "question": "Qual é a política da empresa para transporte de material radioativo?",
+      "class": "abstention",
+      "expected_behavior": "abstain_insufficient_evidence",
+      "expected_evidence": [],
+      "distractors": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-005",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "metrics": null,
+          "distractors_at_5": [
+            "DOC-001"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-025",
+            "DOC-022",
+            "DOC-006",
+            "DOC-014"
+          ],
+          "metrics": null,
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-004",
+            "DOC-003",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "metrics": null,
+          "distractors_at_5": [
+            "DOC-001"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q30",
+      "question": "Qual transportadora devemos contratar para a próxima operação?",
+      "class": "combined_boundary",
+      "expected_behavior": "provide_evidence_without_unsupported_decision",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "distractors": [],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        }
+      }
+    },
+    {
+      "question_id": "Q31",
+      "question": "Posso usar IA para analisar contratos de fornecedores?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-027"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025",
+            "DOC-027"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025",
+            "DOC-027"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q32",
+      "question": "Quais aprovações são necessárias para usar IA com dados de fornecedores?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-005",
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-026",
+        "DOC-027"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025",
+            "DOC-027"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025",
+            "DOC-027"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q33",
+      "question": "Quais requisitos de segurança se aplicam ao uso de IA?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-024",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-023",
+        "DOC-025",
+        "DOC-026",
+        "DOC-027"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-023",
+            "DOC-025"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-023",
+            "DOC-025"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q34",
+      "question": "Quem aprova uma nova ferramenta de IA?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-026"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-014",
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-015",
+            "DOC-025",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": [
+            "DOC-025"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q35",
+      "question": "Posso inserir dados confidenciais em uma ferramenta de IA?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024",
+        "DOC-006"
+      ],
+      "distractors": [
+        "DOC-025",
+        "DOC-027"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-025"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "Q36",
+      "question": "Que treinamento é obrigatório para colaboradores que utilizam IA?",
+      "class": "knowledge",
+      "expected_behavior": "answer_with_citations",
+      "expected_evidence": [
+        "DOC-026",
+        "DOC-023"
+      ],
+      "distractors": [
+        "DOC-024",
+        "DOC-027"
+      ],
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-024"
+          ]
+        },
+        "bm25_filtered": {
+          "document_ids": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 0,
+            "Recall@5": 0.0,
+            "MRR@5": 0.0,
+            "FullEvidence@5": 0
+          },
+          "distractors_at_5": []
+        },
+        "hybrid_diverse": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          },
+          "distractors_at_5": [
+            "DOC-024"
+          ]
+        }
+      }
+    }
+  ],
+  "source_hashes": {
+    "DOC-014": {
+      "path": "data/source/corporate_repository/contracts/DOC-014_carrier_atlas_contract.pdf",
+      "sha256": "c117495b7d40bdcc28cc67b4caa290ca20f9d809267b9a9789d647cbc7179578"
+    },
+    "DOC-015": {
+      "path": "data/source/corporate_repository/contracts/DOC-015_carrier_nova_contract.pdf",
+      "sha256": "9bf6d07c7c943deac66cc5dcc6a3d1a52140ecdaa9e1f7e8cf0b84e0129b8506"
+    },
+    "DOC-016": {
+      "path": "data/source/corporate_repository/contracts/DOC-016_carrier_orion_contract.pdf",
+      "sha256": "a40267217872216ac69c3b6a6cf615b01b91334b541ee069e22bad04ab98e13c"
+    },
+    "DOC-012": {
+      "path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+      "sha256": "9cd962e55863c421a8a267e8aa0f67985e4d51c0a1285c2d3158259447fca0c5"
+    },
+    "DOC-019": {
+      "path": "data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx",
+      "sha256": "469acd241cf9dd480cc203af1eb18151b8d31f59f2e6107d81f1a7957fe33f39"
+    },
+    "DOC-020": {
+      "path": "data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx",
+      "sha256": "defd7dc8ba45ba6467d6b8147545222dec65454c43a6c1554fae2920d7400aa2"
+    },
+    "DOC-021": {
+      "path": "data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx",
+      "sha256": "e9144d50128f47f8b2368cc651802c9a7285bdf45276dc1dbd51ae7d51d7a799"
+    },
+    "DOC-025": {
+      "path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+      "sha256": "9e3990a5fbf6622019cd6f8c51dc5cd0b821abdba18d06ec63a6ecdb06fe691b"
+    },
+    "DOC-026": {
+      "path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+      "sha256": "e54b5ab4b5e19d33208a510767e021732e7f8c7bc24d536dd110564f2e63911d"
+    },
+    "DOC-027": {
+      "path": "data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt",
+      "sha256": "f707aef129c5eb4adf9419a1ad7da5a3b9ee0bb6b85a716cc493e30cd7ab5599"
+    },
+    "DOC-017": {
+      "path": "data/source/corporate_repository/incident_reports/DOC-017_transportation_incident_report_r001.pdf",
+      "sha256": "7ece1deb1e24b5dfdac3eee28d939d1d09805178ab6fc2132cecef416e7cd220"
+    },
+    "DOC-018": {
+      "path": "data/source/corporate_repository/incident_reports/DOC-018_transportation_incident_report_r003.pdf",
+      "sha256": "5ca1d7805c083f55cb3ead3da8fdbd9768cebf1c8cf4e8ea7e0e198e08406d17"
+    },
+    "DOC-001": {
+      "path": "data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf",
+      "sha256": "8af60b524a4d219abd6b09cf6ed2caa85caf8a9fcedf75d48069e6784a8ac818"
+    },
+    "DOC-002": {
+      "path": "data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf",
+      "sha256": "bace6a5021fec84850b7b220e7cef505699279bbcb59ac5f9e75e73cc740b0cf"
+    },
+    "DOC-003": {
+      "path": "data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf",
+      "sha256": "cff963bc737f890bfe35be1b033c988a28374eb072acc8c9808c9d5318ba26ab"
+    },
+    "DOC-004": {
+      "path": "data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf",
+      "sha256": "4b2d7ce4e8f67455997453893539c8e6c7753605c4672da90bdbd08c3577fd77"
+    },
+    "DOC-005": {
+      "path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+      "sha256": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72"
+    },
+    "DOC-006": {
+      "path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+      "sha256": "32c588715abab0bf0b10f2cd3452c27e34d6e02be2c6907647e01c6d046dbaf2"
+    },
+    "DOC-007": {
+      "path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+      "sha256": "71ea52e677be6e4ae94191a767d17002598dbff5e1cff56e371c16dc8c8cdd62"
+    },
+    "DOC-022": {
+      "path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+      "sha256": "eb57c8b6f82609ae4af92cd596f4e93417566b900c8e508456c495eb51b69ef4"
+    },
+    "DOC-023": {
+      "path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+      "sha256": "a02486de5b7a03ab0ddacdd5165893193d71f4624298c2b78f54a3ba9897ceaf"
+    },
+    "DOC-013": {
+      "path": "data/source/corporate_repository/references/DOC-013_logistics_kpi_dictionary_v2.4.xlsx",
+      "sha256": "cfe6ec7e395d160f55f703a7502c942ec6e76a67df5ee378d1f42650f3853ac6"
+    },
+    "DOC-008": {
+      "path": "data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx",
+      "sha256": "b2ebbf79ef33a17d1fa6b554d54ac03e554abd1c3348131130a488b07714b611"
+    },
+    "DOC-009": {
+      "path": "data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx",
+      "sha256": "dbfc9224189f5406b30c52c104bf31db5032a48ed115cb083cb93569f6b5a5d0"
+    },
+    "DOC-010": {
+      "path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+      "sha256": "c55750c79fa81335fb9f9e2e5779349dd2482720c8021c80670571808599d789"
+    },
+    "DOC-011": {
+      "path": "data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx",
+      "sha256": "559b3ff9162843575ab8b392707ff8b09aaa9caa740bdfb27fabe026b393f6be"
+    },
+    "DOC-024": {
+      "path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+      "sha256": "bc2f4c2ebe6bc0ada82086ed0c107f4d85d36213ae67c12541f769e5295f2684"
+    }
+  }
+}

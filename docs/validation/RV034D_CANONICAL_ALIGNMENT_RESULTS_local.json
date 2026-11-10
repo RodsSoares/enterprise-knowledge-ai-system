@@ -1,0 +1,583 @@
+{
+  "experiment": "RV-034D",
+  "status": "TARGETED_CHECKS_PASS_REVIEW_REQUIRED",
+  "scope": "Selected deterministic checks, not full semantic approval",
+  "summary": {
+    "documents": 27,
+    "chunks": 158,
+    "checks": 81,
+    "passed": 81,
+    "failed": 0,
+    "review_flags": 5,
+    "semantic_alignment_fully_verified": false
+  },
+  "checks": [
+    {
+      "check": "registry_document_ids",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "registry_document_count",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "chunk_id_uniqueness",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-001",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-002",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-003",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-004",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-005",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-006",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-007",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-008",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-009",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-010",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-011",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-012",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-013",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-014",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-015",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-016",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-017",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-018",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-019",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-020",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-021",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-022",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-023",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-024",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-025",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-026",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "format_DOC-027",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "golden_question_count",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "evidence_documents_Q01",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q02",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q03",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q04",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q05",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q06",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q07",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q08",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q09",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q10",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q11",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q12",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q13",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q14",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q15",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q16",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q17",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q18",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q19",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q20",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q21",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q22",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q23",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q24",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q25",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q26",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q27",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q28",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q29",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q30",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q31",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q32",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q33",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q34",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q35",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "evidence_documents_Q36",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "check": "active_OTIF_DOC001",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "historical_OTIF_DOC002",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "supplier_policy_version_DOC022",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "carrier_identity_DOC-014",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "penalty_clause_DOC-014",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "force_majeure_DOC-014",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "carrier_identity_DOC-015",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "penalty_clause_DOC-015",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "force_majeure_DOC-015",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "carrier_identity_DOC-016",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "penalty_clause_DOC-016",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "force_majeure_DOC-016",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "canonical_not_indexed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "golden_not_indexed",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "failures": [],
+  "review_flags": [
+    {
+      "category": "contract_proposed_mechanics",
+      "document_id": "DOC-014",
+      "matches": [
+        "proposed synthetic",
+        "benchmark review",
+        "Proposed notification"
+      ],
+      "requires_human_review": true
+    },
+    {
+      "category": "contract_proposed_mechanics",
+      "document_id": "DOC-015",
+      "matches": [
+        "proposed synthetic",
+        "benchmark review",
+        "Proposed notification"
+      ],
+      "requires_human_review": true
+    },
+    {
+      "category": "contract_proposed_mechanics",
+      "document_id": "DOC-016",
+      "matches": [
+        "proposed synthetic",
+        "benchmark review",
+        "Proposed notification"
+      ],
+      "requires_human_review": true
+    },
+    {
+      "category": "historical_proposed_actions",
+      "document_id": "DOC-019",
+      "matches": [
+        "not fixed in canonical",
+        "proposed synthetic"
+      ],
+      "requires_human_review": true
+    },
+    {
+      "category": "historical_proposed_actions",
+      "document_id": "DOC-020",
+      "matches": [
+        "proposed synthetic",
+        "not fixed in canonical"
+      ],
+      "requires_human_review": true
+    }
+  ],
+  "source_hashes": {
+    "DOC-014": {
+      "path": "data/source/corporate_repository/contracts/DOC-014_carrier_atlas_contract.pdf",
+      "sha256": "c117495b7d40bdcc28cc67b4caa290ca20f9d809267b9a9789d647cbc7179578"
+    },
+    "DOC-015": {
+      "path": "data/source/corporate_repository/contracts/DOC-015_carrier_nova_contract.pdf",
+      "sha256": "9bf6d07c7c943deac66cc5dcc6a3d1a52140ecdaa9e1f7e8cf0b84e0129b8506"
+    },
+    "DOC-016": {
+      "path": "data/source/corporate_repository/contracts/DOC-016_carrier_orion_contract.pdf",
+      "sha256": "a40267217872216ac69c3b6a6cf615b01b91334b541ee069e22bad04ab98e13c"
+    },
+    "DOC-012": {
+      "path": "data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx",
+      "sha256": "9cd962e55863c421a8a267e8aa0f67985e4d51c0a1285c2d3158259447fca0c5"
+    },
+    "DOC-019": {
+      "path": "data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx",
+      "sha256": "469acd241cf9dd480cc203af1eb18151b8d31f59f2e6107d81f1a7957fe33f39"
+    },
+    "DOC-020": {
+      "path": "data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx",
+      "sha256": "defd7dc8ba45ba6467d6b8147545222dec65454c43a6c1554fae2920d7400aa2"
+    },
+    "DOC-021": {
+      "path": "data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx",
+      "sha256": "e9144d50128f47f8b2368cc651802c9a7285bdf45276dc1dbd51ae7d51d7a799"
+    },
+    "DOC-025": {
+      "path": "data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md",
+      "sha256": "9e3990a5fbf6622019cd6f8c51dc5cd0b821abdba18d06ec63a6ecdb06fe691b"
+    },
+    "DOC-026": {
+      "path": "data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx",
+      "sha256": "e54b5ab4b5e19d33208a510767e021732e7f8c7bc24d536dd110564f2e63911d"
+    },
+    "DOC-027": {
+      "path": "data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt",
+      "sha256": "f707aef129c5eb4adf9419a1ad7da5a3b9ee0bb6b85a716cc493e30cd7ab5599"
+    },
+    "DOC-017": {
+      "path": "data/source/corporate_repository/incident_reports/DOC-017_transportation_incident_report_r001.pdf",
+      "sha256": "7ece1deb1e24b5dfdac3eee28d939d1d09805178ab6fc2132cecef416e7cd220"
+    },
+    "DOC-018": {
+      "path": "data/source/corporate_repository/incident_reports/DOC-018_transportation_incident_report_r003.pdf",
+      "sha256": "5ca1d7805c083f55cb3ead3da8fdbd9768cebf1c8cf4e8ea7e0e198e08406d17"
+    },
+    "DOC-001": {
+      "path": "data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf",
+      "sha256": "8af60b524a4d219abd6b09cf6ed2caa85caf8a9fcedf75d48069e6784a8ac818"
+    },
+    "DOC-002": {
+      "path": "data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf",
+      "sha256": "bace6a5021fec84850b7b220e7cef505699279bbcb59ac5f9e75e73cc740b0cf"
+    },
+    "DOC-003": {
+      "path": "data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf",
+      "sha256": "cff963bc737f890bfe35be1b033c988a28374eb072acc8c9808c9d5318ba26ab"
+    },
+    "DOC-004": {
+      "path": "data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf",
+      "sha256": "4b2d7ce4e8f67455997453893539c8e6c7753605c4672da90bdbd08c3577fd77"
+    },
+    "DOC-005": {
+      "path": "data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf",
+      "sha256": "2101871e17a5a8d08d19d6cc5b8247414b94ff0eaebc5c3a1ac8fbd63756da72"
+    },
+    "DOC-006": {
+      "path": "data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf",
+      "sha256": "32c588715abab0bf0b10f2cd3452c27e34d6e02be2c6907647e01c6d046dbaf2"
+    },
+    "DOC-007": {
+      "path": "data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf",
+      "sha256": "71ea52e677be6e4ae94191a767d17002598dbff5e1cff56e371c16dc8c8cdd62"
+    },
+    "DOC-022": {
+      "path": "data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf",
+      "sha256": "eb57c8b6f82609ae4af92cd596f4e93417566b900c8e508456c495eb51b69ef4"
+    },
+    "DOC-023": {
+      "path": "data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf",
+      "sha256": "a02486de5b7a03ab0ddacdd5165893193d71f4624298c2b78f54a3ba9897ceaf"
+    },
+    "DOC-013": {
+      "path": "data/source/corporate_repository/references/DOC-013_logistics_kpi_dictionary_v2.4.xlsx",
+      "sha256": "cfe6ec7e395d160f55f703a7502c942ec6e76a67df5ee378d1f42650f3853ac6"
+    },
+    "DOC-008": {
+      "path": "data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx",
+      "sha256": "b2ebbf79ef33a17d1fa6b554d54ac03e554abd1c3348131130a488b07714b611"
+    },
+    "DOC-009": {
+      "path": "data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx",
+      "sha256": "dbfc9224189f5406b30c52c104bf31db5032a48ed115cb083cb93569f6b5a5d0"
+    },
+    "DOC-010": {
+      "path": "data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx",
+      "sha256": "c55750c79fa81335fb9f9e2e5779349dd2482720c8021c80670571808599d789"
+    },
+    "DOC-011": {
+      "path": "data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx",
+      "sha256": "559b3ff9162843575ab8b392707ff8b09aaa9caa740bdfb27fabe026b393f6be"
+    },
+    "DOC-024": {
+      "path": "data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf",
+      "sha256": "bc2f4c2ebe6bc0ada82086ed0c107f4d85d36213ae67c12541f769e5295f2684"
+    }
+  },
+  "api_calls": 0
+}
