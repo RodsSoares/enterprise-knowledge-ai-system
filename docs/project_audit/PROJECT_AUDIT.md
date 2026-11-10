@@ -1,7 +1,7 @@
 # PROJECT AUDIT — Enterprise Knowledge AI System
 
 Version: 1.0
-Generated: 2026-11-06 22:48:58
+Generated: 2026-11-10 12:55:45
 
 > This file is generated automatically by `app/scripts/project_audit.py`.
 > Do not edit it manually.
@@ -11,16 +11,16 @@ Generated: 2026-11-06 22:48:58
 ```text
 PASS
 
-- HEAD before: 055b0a8
-- HEAD after: 055b0a8
-- Fingerprint before: b9a6b66a10e6598fde691d02461bdf349f0090f68b3616727e0f3aa0f38edc67
-- Fingerprint after: b9a6b66a10e6598fde691d02461bdf349f0090f68b3616727e0f3aa0f38edc67
+- HEAD before: 1d6f592
+- HEAD after: 1d6f592
+- Fingerprint before: 1c9321b3d87e3ac6c37146cb55299f8753c76644234e646f9e57bca8805e49a2
+- Fingerprint after: 1c9321b3d87e3ac6c37146cb55299f8753c76644234e646f9e57bca8805e49a2
 - Repository content remained stable during audit collection.
 ```
 
-- Audit started: 2026-11-06 22:48:05
-- Audit finished: 2026-11-06 22:48:58
-- Duration: 53.06 seconds
+- Audit started: 2026-11-10 12:54:49
+- Audit finished: 2026-11-10 12:55:45
+- Duration: 56.45 seconds
 
 ## 2. Environment
 
@@ -31,42 +31,46 @@ PASS
 ## 3. Git State
 
 - Branch: `main`
-- Commit: `055b0a8`
+- Commit: `1d6f592`
 
 ### Status
 
 ```text
-?? app/generation/
-?? app/retrieval/evidence_context.py
-?? app/scripts/ask_knowledge.py
-?? app/scripts/compare_saved_generation.py
-?? docs/validation/RV013_ANALYSIS.md
-?? docs/validation/RV014_ANALYSIS.md
-?? docs/validation/RV014_CONTEXT_REPLAY_RESULTS_local.json
-?? docs/validation/RV014_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV014_INTEGRATION.md
-?? docs/validation/RV015_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV016_GENERATION_COMPARISON.json
-?? docs/validation/RV016_GENERATION_COMPARISON.md
-?? docs/validation/RV016_GENERATION_COMPARISON_GPT41.json
-?? docs/validation/RV016_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV016_SHARING_AFTER_CONTEXT_FIX.json
-?? docs/validation/RV016_SHARING_DIAGNOSTIC.json
-?? tests/smoke/smoke_evidence_context_replay.py
-?? tests/unit/test_answer_contract.py
-?? tests/unit/test_evidence_context.py
-?? tests/unit/test_evidence_context_replay.py
-?? tests/unit/test_rag_service.py
-?? tests/unit/test_saved_generation.py
+M app/ingestion/document_parser.py
+ M app/ingestion/ingestion_router.py
+ M app/scripts/ask_knowledge.py
+ M docs/project_audit/PROJECT_AUDIT.md
+ M tests/unit/test_document_parser.py
+ M tests/unit/test_ingestion_router.py
+?? data/corpus_quarantine/
+?? data/source/corporate_repository/contracts/
+?? data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx
+?? data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx
+?? data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx
+?? data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt
+?? data/source/corporate_repository/incident_reports/
+?? data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf
+?? data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf
+?? data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf
+?? data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf
+?? data/source/corporate_repository/references/
+?? data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx
+?? data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx
+?? data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx
+?? docs/validation/RV032_GOLDEN_SET_PREFLIGHT_local.csv
+?? docs/validation/RV032_GOLDEN_SET_PREFLIGHT_local.json
+?? docs/validation/RV033_CORPUS_INGESTION_RESULTS_local.json
+?? rv032_golden_set_preflight.py
+?? tests/unit/test_txt_ingestion.py
 ```
 
 ## 4. Code Metrics
 
-- Python files: **102**
-- Total Python lines: **14618**
-- Effective Python lines: **11735**
-- Functions: **790**
-- Classes: **80**
+- Python files: **133**
+- Total Python lines: **19265**
+- Effective Python lines: **15708**
+- Functions: **1110**
+- Classes: **116**
 - TODO/FIXME occurrences: **2**
 - Files with syntax errors: **0**
 
@@ -78,6 +82,8 @@ enterprise-knowledge-ai-system/
     [DIR] app/
         [DIR] chunking/
             [FILE] block_serializer.py
+            [FILE] evidence_snapshot.py
+            [FILE] evidence_units.py
             [FILE] schemas.py
             [FILE] structure_aware_chunker.py
         [DIR] evaluation/
@@ -88,6 +94,7 @@ enterprise-knowledge-ai-system/
             [FILE] schemas.py
         [DIR] generation/
             [FILE] answer_contract.py
+            [FILE] evidence_answer.py
             [FILE] openai_answer_provider.py
             [FILE] rag_service.py
         [DIR] ingestion/
@@ -98,12 +105,21 @@ enterprise-knowledge-ai-system/
             [FILE] registry.py
             [FILE] schemas.py
             [FILE] xlsx_parser.py
+        [DIR] orchestration/
+            [FILE] contracts.py
+            [FILE] coordinator.py
+            [FILE] evidence_pipeline.py
+            [FILE] evidence_planner.py
+            [FILE] init.py
+            [FILE] live_provider.py
+            [FILE] snapshot.py
         [DIR] retrieval/
             [FILE] candidate_fusion.py
             [FILE] cross_encoder_scorer.py
             [FILE] document_diversifier.py
             [FILE] embeddings.py
             [FILE] evidence_context.py
+            [FILE] evidence_unit_retriever.py
             [FILE] hybrid_retriever.py
             [FILE] lexical_index.py
             [FILE] lexical_query_filter.py
@@ -117,31 +133,60 @@ enterprise-knowledge-ai-system/
             [FILE] vector_indexer.py
             [FILE] vector_retriever.py
         [DIR] scripts/
+            [FILE] ask_evidence.py
             [FILE] ask_knowledge.py
+            [FILE] compare_evidence_contexts.py
             [FILE] compare_saved_generation.py
+            [FILE] compare_stage1_orchestration.py
+            [FILE] generate_evidence_answer.py
+            [FILE] plan_evidence_units.py
+            [FILE] prepare_evidence_units.py
             [FILE] project_audit.py
     [DIR] data/
+        [DIR] corpus_quarantine/
+            [FILE] DOC-022_supplier_management_policy_v3.0.pdf
         [DIR] ground_truth/
             [FILE] canonical_facts.yaml
             [FILE] document_registry.yaml
             [FILE] golden_questions.yaml
+            [FILE] orchestration_stage1_cases.json
             [FILE] reranking_challenge_b.json
         [DIR] source/
             [DIR] contracts/
             [DIR] corporate_repository/
+                [DIR] contracts/
+                    [FILE] DOC-014_carrier_atlas_contract.pdf
+                    [FILE] DOC-015_carrier_nova_contract.pdf
+                    [FILE] DOC-016_carrier_orion_contract.pdf
                 [DIR] governance/
                     [FILE] DOC-012_Approval_Authority_Matrix.xlsx
+                    [FILE] DOC-019_operations_committee_minutes_2025.docx
+                    [FILE] DOC-020_operations_committee_minutes_2026.pptx
+                    [FILE] DOC-021_corrective_action_tracker.xlsx
                 [DIR] guidelines/
                     [FILE] DOC-025_AI_Procurement_Guidelines.md
                     [FILE] DOC-026_AI_Workforce_Enablement_Guide.pptx
+                    [FILE] DOC-027_AI_Supply_Chain_Usage_Guidelines.txt
+                [DIR] incident_reports/
+                    [FILE] DOC-017_transportation_incident_report_r001.pdf
+                    [FILE] DOC-018_transportation_incident_report_r003.pdf
                 [DIR] policies/
+                    [FILE] DOC-001_transportation_policy_2026_v3.0.pdf
+                    [FILE] DOC-002_transportation_policy_2024.pdf
+                    [FILE] DOC-003_carrier_management_policy_v2.1.pdf
+                    [FILE] DOC-004_supplier_risk_policy.pdf
                     [FILE] DOC-005_Data_Sharing_Policy.pdf
                     [FILE] DOC-006_Information_Security_Policy.pdf
                     [FILE] DOC-007_Document_Governance_Policy.pdf
                     [FILE] DOC-022_Supplier_Management_Policy.pdf
                     [FILE] DOC-023_AI_Governance_Policy.pdf
+                [DIR] references/
+                    [FILE] DOC-013_logistics_kpi_dictionary_v2.4.xlsx
                 [DIR] sops/
+                    [FILE] DOC-008_supplier_onboarding_sop.docx
+                    [FILE] DOC-009_critical_delivery_sop_v2.3.docx
                     [FILE] DOC-010_Security_Incident_SOP.docx
+                    [FILE] DOC-011_legacy_data_sharing_sop.docx
                 [DIR] standards/
                     [FILE] DOC-024_AI_Security_Standard.pdf
             [DIR] incidents/
@@ -154,6 +199,13 @@ enterprise-knowledge-ai-system/
         [DIR] architecture/
             [FILE] 01_system_overview.md
             [FILE] 02_enterprise_universe_and_source_strategy.md
+            [FILE] 03_current_architecture_and_contracts.md
+            [FILE] 04_bounded_orchestration_proposal.md
+            [FILE] 05_stage1_contracts_and_evaluation.md
+            [FILE] 06_root_cause_investigation_and_plan.md
+            [FILE] 07_corpus_evidence_diagnosis.md
+            [FILE] 08_chunking_engineering_diagnosis.md
+            [FILE] 09_evidence_oriented_revision_design.md
         [DIR] images/
             [FILE] architecture-overview.png
             [FILE] art-architecture-overview.png
@@ -162,6 +214,39 @@ enterprise-knowledge-ai-system/
             [FILE] art-system-overview.png
         [DIR] project_audit/
         [DIR] validation/
+            [FILE] CONTEXT_DIAGNOSTIC_ANALYSIS.md
+            [FILE] CONTEXT_DIAGNOSTIC_CONFIG_local.json
+            [FILE] CONTEXT_DIAGNOSTIC_GUIDE.md
+            [FILE] CONTEXT_DIAGNOSTIC_PLAN_local.json
+            [FILE] CONTEXT_DIAGNOSTIC_RESULTS_local.json
+            [FILE] EVIDENCE_ANSWER_IMPLEMENTATION_GUIDE.md
+            [FILE] EVIDENCE_ANSWER_ORC001_GPT61SOL_PLAN_local.json
+            [FILE] EVIDENCE_ANSWER_ORC001_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_ANSWER_ORC002_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_ANSWER_ORC003_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_ANSWER_ORC004_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_ANSWER_RESULTS_REVIEW.md
+            [FILE] EVIDENCE_DECISION_ORC003_TERMINAL_RESULTS_local.json
+            [FILE] EVIDENCE_PIPELINE_IMPLEMENTATION_GUIDE.md
+            [FILE] EVIDENCE_PIPELINE_ORC001_GPT61SOL_PLAN_local.json
+            [FILE] EVIDENCE_PIPELINE_ORC001_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PIPELINE_ORC002_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PIPELINE_ORC003_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PIPELINE_ORC004_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_IMPLEMENTATION_GUIDE.md
+            [FILE] EVIDENCE_PLANNER_ORC001_GPT41_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC001_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC001_PLAN_local.json
+            [FILE] EVIDENCE_PLANNER_ORC001_REPLAY_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC001_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC002_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC003_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_ORC004_GPT61SOL_RESULTS_local.json
+            [FILE] EVIDENCE_PLANNER_PROGRESS_REVIEW.md
+            [FILE] EVIDENCE_UNIT_EMBEDDINGS_local.json
+            [FILE] EVIDENCE_UNITS_CONFIG.json
+            [FILE] EVIDENCE_UNITS_IMPLEMENTATION_GUIDE.md
+            [FILE] EVIDENCE_UNITS_SNAPSHOT_local.json
             [FILE] RETRIEVAL_VALIDATION.md
             [FILE] RV008_IMPLEMENTATION_GUIDE.md
             [FILE] RV008_RESULTS.json
@@ -190,8 +275,40 @@ enterprise-knowledge-ai-system/
             [FILE] RV016_IMPLEMENTATION_GUIDE.md
             [FILE] RV016_SHARING_AFTER_CONTEXT_FIX.json
             [FILE] RV016_SHARING_DIAGNOSTIC.json
+            [FILE] RV017_ORC003_NORMATIVE_PLAN_local.json
+            [FILE] RV017_ORC003_NORMATIVE_RESULTS_local.json
+            [FILE] RV018_CITATION_DIAGNOSTIC_local.json
+            [FILE] RV019_CLAIM_BOUNDARY_DIAGNOSTIC_local.json
+            [FILE] RV020_GENERATION_REPLAY_local.json
+            [FILE] RV021_GENERATION_INSTRUCTIONS_RESULTS_local.json
+            [FILE] RV022_MULTICASE_SUMMARY_local.json
+            [FILE] RV022_ORC001_RESULTS_local.json
+            [FILE] RV022_ORC002_RESULTS_local.json
+            [FILE] RV022_ORC003_RESULTS_local.json
+            [FILE] RV022_ORC004_RESULTS_local.json
+            [FILE] RV023_CLEAN_INSTRUCTIONS_RESULTS_local.json
+            [FILE] RV025_SEMANTIC_REVIEW_PACKAGE_local.json
+            [FILE] RV025_SEMANTIC_REVIEW_RESULTS_local.json
+            [FILE] RV026_RELATIONAL_COMPLETENESS_RESULTS_local.json
+            [FILE] RV027_RELATION_EVIDENCE_RESULTS_local.json
+            [FILE] RV028_RELATION_SEMANTIC_DECISION_local.json
+            [FILE] RV029_EIGHT_COVERAGE_STRUCTURAL_RESULTS_local.json
+            [FILE] RV030_EIGHT_COVERAGE_BUNDLE_RESULTS_local.json
+            [FILE] RV031_EIGHT_COVERAGE_GENERATION_RESULTS_local.json
+            [FILE] RV032_GOLDEN_SET_PREFLIGHT_local.csv
+            [FILE] RV032_GOLDEN_SET_PREFLIGHT_local.json
+            [FILE] RV033_CORPUS_INGESTION_RESULTS_local.json
+            [FILE] STAGE1_CORPUS_SNAPSHOT_local.json
+            [FILE] STAGE1_ORC001_ANALYSIS.md
+            [FILE] STAGE1_ORC001_COMPARISON_local.json
+            [FILE] STAGE1_ORC001_COMPARISON_v2_local.json
+            [FILE] STAGE1_ORC001_PLAN_local.json
+            [FILE] STAGE1_ORC001_PLAN_retry_local.json
+            [FILE] STAGE1_RUN_CONFIG.example.json
+            [FILE] STAGE1_RUN_CONFIG_local.json
     [FILE] README.md
     [FILE] requirements.txt
+    [FILE] rv032_golden_set_preflight.py
     [DIR] tests/
         [DIR] integration/
             [FILE] test_docling_corpus_integration.py
@@ -220,19 +337,28 @@ enterprise-knowledge-ai-system/
             [FILE] smoke_vector_retrieval.py
         [DIR] unit/
             [FILE] test_answer_contract.py
+            [FILE] test_ask_evidence.py
             [FILE] test_block_serializer.py
             [FILE] test_candidate_fusion.py
             [FILE] test_candidate_trace.py
             [FILE] test_chunking_schemas.py
+            [FILE] test_context_diagnostic.py
             [FILE] test_cross_encoder_scorer.py
             [FILE] test_docling_parser.py
             [FILE] test_document_diversifier.py
             [FILE] test_document_parser.py
             [FILE] test_embedding_contract.py
             [FILE] test_evaluation_schemas.py
+            [FILE] test_evidence_answer.py
             [FILE] test_evidence_context.py
             [FILE] test_evidence_context_replay.py
+            [FILE] test_evidence_pipeline.py
+            [FILE] test_evidence_planner.py
+            [FILE] test_evidence_snapshot.py
+            [FILE] test_evidence_unit_retriever.py
+            [FILE] test_evidence_units.py
             [FILE] test_filtered_reranking.py
+            [FILE] test_generate_evidence_answer.py
             [FILE] test_golden_set_loader.py
             [FILE] test_hybrid_retriever.py
             [FILE] test_ingestion_registry.py
@@ -243,6 +369,7 @@ enterprise-knowledge-ai-system/
             [FILE] test_lexical_query_filter.py
             [FILE] test_lexical_retriever.py
             [FILE] test_openai_embeddings.py
+            [FILE] test_plan_evidence_units.py
             [FILE] test_pptx_native_enricher.py
             [FILE] test_prefix_preserving_selector.py
             [FILE] test_prefix_reranking_live.py
@@ -254,8 +381,11 @@ enterprise-knowledge-ai-system/
             [FILE] test_retrieval_schemas.py
             [FILE] test_saved_generation.py
             [FILE] test_search_text.py
+            [FILE] test_stage1_live.py
+            [FILE] test_stage1_orchestration.py
             [FILE] test_structure_aware_chunker.py
             [FILE] test_structure_aware_chunker_multiblock.py
+            [FILE] test_txt_ingestion.py
             [FILE] test_vector_index.py
             [FILE] test_vector_indexer.py
             [FILE] test_vector_retriever.py
@@ -267,6 +397,8 @@ enterprise-knowledge-ai-system/
 | File | Lines | Functions | Classes | TODOs | Syntax |
 |---|---:|---:|---:|---:|---|
 | `app/chunking/block_serializer.py` | 165 | 7 | 1 | 0 | OK |
+| `app/chunking/evidence_snapshot.py` | 127 | 8 | 0 | 0 | OK |
+| `app/chunking/evidence_units.py` | 325 | 14 | 5 | 0 | OK |
 | `app/chunking/schemas.py` | 59 | 1 | 1 | 0 | OK |
 | `app/chunking/structure_aware_chunker.py` | 224 | 12 | 2 | 0 | OK |
 | `app/evaluation/__init__.py` | 1 | 0 | 0 | 0 | OK |
@@ -275,20 +407,29 @@ enterprise-knowledge-ai-system/
 | `app/evaluation/retrieval_metrics.py` | 61 | 4 | 0 | 0 | OK |
 | `app/evaluation/schemas.py` | 39 | 1 | 1 | 0 | OK |
 | `app/generation/answer_contract.py` | 139 | 8 | 3 | 0 | OK |
+| `app/generation/evidence_answer.py` | 208 | 6 | 0 | 0 | OK |
 | `app/generation/openai_answer_provider.py` | 87 | 2 | 3 | 0 | OK |
 | `app/generation/rag_service.py` | 83 | 5 | 3 | 0 | OK |
 | `app/ingestion/docling_parser.py` | 206 | 9 | 1 | 0 | OK |
-| `app/ingestion/document_parser.py` | 80 | 4 | 1 | 0 | OK |
+| `app/ingestion/document_parser.py` | 105 | 5 | 1 | 0 | OK |
 | `app/ingestion/ingestion_router.py` | 63 | 4 | 1 | 0 | OK |
 | `app/ingestion/pptx_native_enricher.py` | 279 | 11 | 1 | 0 | OK |
 | `app/ingestion/registry.py` | 254 | 10 | 2 | 0 | OK |
 | `app/ingestion/schemas.py` | 441 | 14 | 11 | 0 | OK |
 | `app/ingestion/xlsx_parser.py` | 93 | 4 | 1 | 0 | OK |
+| `app/orchestration/contracts.py` | 207 | 11 | 3 | 0 | OK |
+| `app/orchestration/coordinator.py` | 203 | 9 | 4 | 0 | OK |
+| `app/orchestration/evidence_pipeline.py` | 99 | 5 | 0 | 0 | OK |
+| `app/orchestration/evidence_planner.py` | 350 | 23 | 4 | 0 | OK |
+| `app/orchestration/init.py` | 1 | 0 | 0 | 0 | OK |
+| `app/orchestration/live_provider.py` | 217 | 13 | 5 | 0 | OK |
+| `app/orchestration/snapshot.py` | 111 | 10 | 1 | 0 | OK |
 | `app/retrieval/candidate_fusion.py` | 79 | 2 | 2 | 0 | OK |
 | `app/retrieval/cross_encoder_scorer.py` | 109 | 3 | 1 | 0 | OK |
 | `app/retrieval/document_diversifier.py` | 51 | 1 | 1 | 0 | OK |
 | `app/retrieval/embeddings.py` | 17 | 2 | 1 | 0 | OK |
 | `app/retrieval/evidence_context.py` | 229 | 9 | 6 | 0 | OK |
+| `app/retrieval/evidence_unit_retriever.py` | 87 | 6 | 1 | 0 | OK |
 | `app/retrieval/hybrid_retriever.py` | 43 | 2 | 1 | 0 | OK |
 | `app/retrieval/lexical_index.py` | 88 | 4 | 2 | 0 | OK |
 | `app/retrieval/lexical_query_filter.py` | 56 | 4 | 2 | 0 | OK |
@@ -301,9 +442,16 @@ enterprise-knowledge-ai-system/
 | `app/retrieval/vector_index.py` | 91 | 5 | 2 | 0 | OK |
 | `app/retrieval/vector_indexer.py` | 36 | 2 | 1 | 0 | OK |
 | `app/retrieval/vector_retriever.py` | 58 | 2 | 1 | 0 | OK |
+| `app/scripts/ask_evidence.py` | 118 | 3 | 0 | 0 | OK |
 | `app/scripts/ask_knowledge.py` | 106 | 4 | 0 | 0 | OK |
+| `app/scripts/compare_evidence_contexts.py` | 157 | 8 | 0 | 0 | OK |
 | `app/scripts/compare_saved_generation.py` | 142 | 5 | 0 | 0 | OK |
+| `app/scripts/compare_stage1_orchestration.py` | 145 | 5 | 0 | 0 | OK |
+| `app/scripts/generate_evidence_answer.py` | 108 | 3 | 0 | 0 | OK |
+| `app/scripts/plan_evidence_units.py` | 213 | 6 | 0 | 0 | OK |
+| `app/scripts/prepare_evidence_units.py` | 124 | 2 | 0 | 0 | OK |
 | `app/scripts/project_audit.py` | 712 | 27 | 0 | 2 | OK |
+| `rv032_golden_set_preflight.py` | 105 | 1 | 0 | 0 | OK |
 | `tests/integration/test_docling_corpus_integration.py` | 111 | 9 | 0 | 0 | OK |
 | `tests/integration/test_docling_docx_integration.py` | 138 | 11 | 0 | 0 | OK |
 | `tests/integration/test_docling_pdf_integration.py` | 150 | 14 | 0 | 0 | OK |
@@ -328,19 +476,28 @@ enterprise-knowledge-ai-system/
 | `tests/smoke/smoke_retrieval_diagnostics.py` | 132 | 4 | 0 | 0 | OK |
 | `tests/smoke/smoke_vector_retrieval.py` | 106 | 1 | 0 | 0 | OK |
 | `tests/unit/test_answer_contract.py` | 139 | 13 | 0 | 0 | OK |
+| `tests/unit/test_ask_evidence.py` | 57 | 7 | 0 | 0 | OK |
 | `tests/unit/test_block_serializer.py` | 182 | 6 | 0 | 0 | OK |
 | `tests/unit/test_candidate_fusion.py` | 101 | 14 | 0 | 0 | OK |
 | `tests/unit/test_candidate_trace.py` | 173 | 13 | 0 | 0 | OK |
 | `tests/unit/test_chunking_schemas.py` | 193 | 10 | 0 | 0 | OK |
+| `tests/unit/test_context_diagnostic.py` | 71 | 7 | 2 | 0 | OK |
 | `tests/unit/test_cross_encoder_scorer.py` | 132 | 10 | 0 | 0 | OK |
 | `tests/unit/test_docling_parser.py` | 330 | 20 | 1 | 0 | OK |
 | `tests/unit/test_document_diversifier.py` | 68 | 9 | 0 | 0 | OK |
 | `tests/unit/test_document_parser.py` | 266 | 12 | 0 | 0 | OK |
 | `tests/unit/test_embedding_contract.py` | 37 | 5 | 1 | 0 | OK |
 | `tests/unit/test_evaluation_schemas.py` | 50 | 6 | 0 | 0 | OK |
+| `tests/unit/test_evidence_answer.py` | 169 | 13 | 0 | 0 | OK |
 | `tests/unit/test_evidence_context.py` | 160 | 14 | 0 | 0 | OK |
 | `tests/unit/test_evidence_context_replay.py` | 151 | 7 | 0 | 0 | OK |
+| `tests/unit/test_evidence_pipeline.py` | 141 | 15 | 1 | 0 | OK |
+| `tests/unit/test_evidence_planner.py` | 176 | 20 | 2 | 0 | OK |
+| `tests/unit/test_evidence_snapshot.py` | 71 | 6 | 0 | 0 | OK |
+| `tests/unit/test_evidence_unit_retriever.py` | 58 | 7 | 1 | 0 | OK |
+| `tests/unit/test_evidence_units.py` | 167 | 16 | 0 | 0 | OK |
 | `tests/unit/test_filtered_reranking.py` | 142 | 11 | 0 | 0 | OK |
+| `tests/unit/test_generate_evidence_answer.py` | 77 | 12 | 1 | 0 | OK |
 | `tests/unit/test_golden_set_loader.py` | 59 | 6 | 0 | 0 | OK |
 | `tests/unit/test_hybrid_retriever.py` | 113 | 14 | 0 | 0 | OK |
 | `tests/unit/test_ingestion_registry.py` | 226 | 19 | 0 | 0 | OK |
@@ -351,6 +508,7 @@ enterprise-knowledge-ai-system/
 | `tests/unit/test_lexical_query_filter.py` | 76 | 8 | 0 | 0 | OK |
 | `tests/unit/test_lexical_retriever.py` | 42 | 4 | 0 | 0 | OK |
 | `tests/unit/test_openai_embeddings.py` | 175 | 17 | 8 | 0 | OK |
+| `tests/unit/test_plan_evidence_units.py` | 145 | 16 | 2 | 0 | OK |
 | `tests/unit/test_pptx_native_enricher.py` | 280 | 16 | 0 | 0 | OK |
 | `tests/unit/test_prefix_preserving_selector.py` | 101 | 10 | 0 | 0 | OK |
 | `tests/unit/test_prefix_reranking_live.py` | 108 | 9 | 0 | 0 | OK |
@@ -362,8 +520,11 @@ enterprise-knowledge-ai-system/
 | `tests/unit/test_retrieval_schemas.py` | 86 | 6 | 0 | 0 | OK |
 | `tests/unit/test_saved_generation.py` | 60 | 6 | 0 | 0 | OK |
 | `tests/unit/test_search_text.py` | 54 | 5 | 0 | 0 | OK |
+| `tests/unit/test_stage1_live.py` | 255 | 27 | 1 | 0 | OK |
+| `tests/unit/test_stage1_orchestration.py` | 260 | 34 | 3 | 0 | OK |
 | `tests/unit/test_structure_aware_chunker.py` | 208 | 13 | 0 | 0 | OK |
 | `tests/unit/test_structure_aware_chunker_multiblock.py` | 86 | 3 | 0 | 0 | OK |
+| `tests/unit/test_txt_ingestion.py` | 70 | 6 | 0 | 0 | OK |
 | `tests/unit/test_vector_index.py` | 115 | 10 | 0 | 0 | OK |
 | `tests/unit/test_vector_indexer.py` | 101 | 8 | 2 | 0 | OK |
 | `tests/unit/test_vector_retriever.py` | 124 | 10 | 1 | 0 | OK |
@@ -371,31 +532,49 @@ enterprise-knowledge-ai-system/
 
 ## 7. Enterprise Knowledge Corpus
 
-- Total source documents: **10**
+- Total source documents: **27**
 
 ### Documents by extension
 
-- `.docx`: 1
+- `.docx`: 5
 - `.md`: 1
-- `.pdf`: 6
-- `.pptx`: 1
-- `.xlsx`: 1
+- `.pdf`: 15
+- `.pptx`: 2
+- `.txt`: 1
+- `.xlsx`: 3
 
 ### Documents by source area
 
-- `corporate_repository`: 10
+- `corporate_repository`: 27
 
 ### Source documents
 
+- `data/source/corporate_repository/contracts/DOC-014_carrier_atlas_contract.pdf`
+- `data/source/corporate_repository/contracts/DOC-015_carrier_nova_contract.pdf`
+- `data/source/corporate_repository/contracts/DOC-016_carrier_orion_contract.pdf`
 - `data/source/corporate_repository/governance/DOC-012_Approval_Authority_Matrix.xlsx`
+- `data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx`
+- `data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx`
+- `data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx`
 - `data/source/corporate_repository/guidelines/DOC-025_AI_Procurement_Guidelines.md`
 - `data/source/corporate_repository/guidelines/DOC-026_AI_Workforce_Enablement_Guide.pptx`
+- `data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt`
+- `data/source/corporate_repository/incident_reports/DOC-017_transportation_incident_report_r001.pdf`
+- `data/source/corporate_repository/incident_reports/DOC-018_transportation_incident_report_r003.pdf`
+- `data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf`
+- `data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf`
+- `data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf`
+- `data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf`
 - `data/source/corporate_repository/policies/DOC-005_Data_Sharing_Policy.pdf`
 - `data/source/corporate_repository/policies/DOC-006_Information_Security_Policy.pdf`
 - `data/source/corporate_repository/policies/DOC-007_Document_Governance_Policy.pdf`
 - `data/source/corporate_repository/policies/DOC-022_Supplier_Management_Policy.pdf`
 - `data/source/corporate_repository/policies/DOC-023_AI_Governance_Policy.pdf`
+- `data/source/corporate_repository/references/DOC-013_logistics_kpi_dictionary_v2.4.xlsx`
+- `data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx`
+- `data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx`
 - `data/source/corporate_repository/sops/DOC-010_Security_Incident_SOP.docx`
+- `data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx`
 - `data/source/corporate_repository/standards/DOC-024_AI_Security_Standard.pdf`
 
 ## 8. Ground Truth
@@ -411,6 +590,7 @@ enterprise-knowledge-ai-system/
 - `data/ground_truth/canonical_facts.yaml`
 - `data/ground_truth/document_registry.yaml`
 - `data/ground_truth/golden_questions.yaml`
+- `data/ground_truth/orchestration_stage1_cases.json`
 - `data/ground_truth/reranking_challenge_b.json`
 
 ## 9. Test Suite
@@ -547,6 +727,11 @@ tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[duplicate
 tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[invalid_id]
 tests/unit/test_answer_contract.py::test_inconsistent_context_rejected[duplicate_chunk]
 tests/unit/test_answer_contract.py::test_structural_success_does_not_prove_claim_support
+tests/unit/test_ask_evidence.py::test_dry_run_does_not_create_sdk_or_change_inputs
+tests/unit/test_ask_evidence.py::test_execute_saves_all_stages_and_usage
+tests/unit/test_ask_evidence.py::test_missing_cache_fails_before_sdk_or_output
+tests/unit/test_ask_evidence.py::test_existing_output_is_preserved
+tests/unit/test_ask_evidence.py::test_budget_failure_persists_plan_and_usage
 tests/unit/test_block_serializer.py::test_serializer_preserves_text_block_content
 tests/unit/test_block_serializer.py::test_serializer_serializes_table_structure_deterministically
 tests/unit/test_block_serializer.py::test_serializer_serializes_spreadsheet_structure_deterministically
@@ -604,6 +789,12 @@ tests/unit/test_chunking_schemas.py::test_retrieval_chunk_requires_source_blocks
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_requires_content_types
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_duplicate_provenance_values
 tests/unit/test_chunking_schemas.py::test_retrieval_chunk_rejects_invalid_page_number
+tests/unit/test_context_diagnostic.py::test_all_pairs_have_minimal_subset_and_identical_shared_text
+tests/unit/test_context_diagnostic.py::test_invalid_evidence_or_reserved_case_rejected[snapshot]
+tests/unit/test_context_diagnostic.py::test_invalid_evidence_or_reserved_case_rejected[text]
+tests/unit/test_context_diagnostic.py::test_invalid_evidence_or_reserved_case_rejected[reserved]
+tests/unit/test_context_diagnostic.py::test_eight_calls_share_provider_and_never_receive_reference_answers
+tests/unit/test_context_diagnostic.py::test_failure_stops_and_preserves_partial_results
 tests/unit/test_cross_encoder_scorer.py::test_lazy_loading_pinned_revision_batch_order_and_local_inference
 tests/unit/test_cross_encoder_scorer.py::test_invalid_configuration_rejected_without_loading[options0]
 tests/unit/test_cross_encoder_scorer.py::test_invalid_configuration_rejected_without_loading[options1]
@@ -661,7 +852,6 @@ tests/unit/test_document_parser.py::test_pptx_composition_orders_blocks_by_slide
 tests/unit/test_document_parser.py::test_pptx_composition_preserves_text_projection_without_flattening_charts
 tests/unit/test_document_parser.py::test_pptx_without_native_charts_returns_docling_content_unchanged
 tests/unit/test_document_parser.py::test_document_parser_rejects_non_path_input
-tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document.txt]
 tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document.csv]
 tests/unit/test_document_parser.py::test_document_parser_rejects_formats_without_an_ingestion_strategy[document]
 tests/unit/test_embedding_contract.py::test_fake_provider_satisfies_embedding_provider_protocol
@@ -676,6 +866,31 @@ tests/unit/test_evaluation_schemas.py::test_rejects_empty_required_text[expected
 tests/unit/test_evaluation_schemas.py::test_rejects_duplicate_evidence
 tests/unit/test_evaluation_schemas.py::test_rejects_evidence_distractor_overlap
 tests/unit/test_evaluation_schemas.py::test_abstention_allows_empty_expected_evidence
+tests/unit/test_evidence_answer.py::test_valid_source_binds_and_renders_conditions_and_sources
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[question]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[scope]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[candidate]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[plan]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[bundle]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[status]
+tests/unit/test_evidence_answer.py::test_tampered_sources_fail_before_generation[snapshot]
+tests/unit/test_evidence_answer.py::test_last_completed_plan_after_complement_is_used
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[wrong_request]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[wrong_coverage]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[wrong_source]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[missing_item]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[duplicate_ref]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[empty]
+tests/unit/test_evidence_answer.py::test_invalid_claim_bindings_rejected[extra_field]
+tests/unit/test_evidence_answer.py::test_abstention_does_not_require_forced_coverage
+tests/unit/test_evidence_answer.py::test_contract_does_not_claim_semantic_entailment
+tests/unit/test_evidence_answer.py::test_modified_prepared_request_is_rejected
+tests/unit/test_evidence_answer.py::test_provider_failure_is_not_abstention[incomplete]
+tests/unit/test_evidence_answer.py::test_provider_failure_is_not_abstention[refusal]
+tests/unit/test_evidence_answer.py::test_provider_failure_is_not_abstention[empty]
+tests/unit/test_evidence_answer.py::test_duplicate_json_keys_rejected
+tests/unit/test_evidence_answer.py::test_compact_terminal_comparison_uses_saved_request_metadata
+tests/unit/test_evidence_answer.py::test_generation_instructions_preserve_coverage_boundaries
 tests/unit/test_evidence_context.py::test_anchors_keep_selection_order_but_retain_original_fusion_provenance
 tests/unit/test_evidence_context.py::test_rendered_json_round_trips_unicode_quoted_source_text_and_all_locations
 tests/unit/test_evidence_context.py::test_citation_map_is_a_fresh_copy_and_does_not_mutate_evidence
@@ -726,6 +941,63 @@ tests/unit/test_evidence_context_replay.py::test_audit_rejects_changed_or_incons
 tests/unit/test_evidence_context_replay.py::test_context_coverage_is_measured_separately_and_labels_do_not_change_selection
 tests/unit/test_evidence_context_replay.py::test_no_reference_labels_does_not_mean_perfect_passage_coverage
 tests/unit/test_evidence_context_replay.py::test_output_cannot_overwrite_a_source_file
+tests/unit/test_evidence_pipeline.py::test_end_to_end_shares_four_call_ledger_and_preserves_binding
+tests/unit/test_evidence_pipeline.py::test_exit_paths_do_not_retry_or_force_answers[clarify-clarification_required-1]
+tests/unit/test_evidence_pipeline.py::test_exit_paths_do_not_retry_or_force_answers[plan_abstain-abstained-3]
+tests/unit/test_evidence_pipeline.py::test_exit_paths_do_not_retry_or_force_answers[generation_abstain-abstained-4]
+tests/unit/test_evidence_pipeline.py::test_exit_paths_do_not_retry_or_force_answers[generation_error-execution_failed-4]
+tests/unit/test_evidence_pipeline.py::test_exit_paths_do_not_retry_or_force_answers[bad_citation-execution_failed-4]
+tests/unit/test_evidence_pipeline.py::test_unknown_document_ends_after_scope
+tests/unit/test_evidence_pipeline.py::test_cumulative_budget_blocks_generation_without_reset[max_calls-3]
+tests/unit/test_evidence_pipeline.py::test_cumulative_budget_blocks_generation_without_reset[max_output_tokens-250]
+tests/unit/test_evidence_pipeline.py::test_cumulative_budget_blocks_generation_without_reset[max_cost_usd-0.032]
+tests/unit/test_evidence_pipeline.py::test_single_complement_includes_generation_in_same_budget
+tests/unit/test_evidence_pipeline.py::test_second_lookup_is_not_executed
+tests/unit/test_evidence_pipeline.py::test_invalid_cache_never_calls_sdk
+tests/unit/test_evidence_planner.py::test_scope_sees_only_question_and_bundle_is_bound_to_plan_and_sources
+tests/unit/test_evidence_planner.py::test_document_reference_is_application_owned_and_filters_search
+tests/unit/test_evidence_planner.py::test_unknown_explicit_document_never_falls_back_to_generic_search
+tests/unit/test_evidence_planner.py::test_exact_question_quotes_are_required_for_known_conditions
+tests/unit/test_evidence_planner.py::test_category_schema_and_validator_both_reject_null_condition
+tests/unit/test_evidence_planner.py::test_scope_link_requires_an_exact_question_anchor
+tests/unit/test_evidence_planner.py::test_scope_link_is_traceability_not_a_semantic_guarantee
+tests/unit/test_evidence_planner.py::test_plan_rejects_invalid_supports_and_action_protocol[foreign]
+tests/unit/test_evidence_planner.py::test_plan_rejects_invalid_supports_and_action_protocol[quote]
+tests/unit/test_evidence_planner.py::test_plan_rejects_invalid_supports_and_action_protocol[condition]
+tests/unit/test_evidence_planner.py::test_plan_rejects_invalid_supports_and_action_protocol[action_fields]
+tests/unit/test_evidence_planner.py::test_plan_rejects_invalid_supports_and_action_protocol[empty]
+tests/unit/test_evidence_planner.py::test_only_one_complement_and_scope_remains_identical
+tests/unit/test_evidence_planner.py::test_clarification_stops_before_retrieval
+tests/unit/test_evidence_planner.py::test_bundle_over_limit_is_not_silently_truncated_or_approved
+tests/unit/test_evidence_planner.py::test_foreign_retriever_evidence_is_rejected
+tests/unit/test_evidence_planner.py::test_structural_expansion_adds_content_without_another_search
+tests/unit/test_evidence_snapshot.py::test_roundtrip_reconstructs_sources_and_lexical_index
+tests/unit/test_evidence_snapshot.py::test_changed_physical_source_invalidates_catalog
+tests/unit/test_evidence_snapshot.py::test_tampered_projection_rejected_even_with_recomputed_outer_hash
+tests/unit/test_evidence_snapshot.py::test_v1_snapshot_not_silently_upgraded
+tests/unit/test_evidence_snapshot.py::test_real_workbook_projects_all_eight_decisions_with_original_roles
+tests/unit/test_evidence_unit_retriever.py::test_hybrid_trace_and_filter_apply_before_ranking
+tests/unit/test_evidence_unit_retriever.py::test_cache_roundtrip_and_changed_search_text_invalidates
+tests/unit/test_evidence_unit_retriever.py::test_empty_filtered_lexical_query_has_no_vote
+tests/unit/test_evidence_unit_retriever.py::test_invalid_embeddings_are_not_cached[vectors0]
+tests/unit/test_evidence_unit_retriever.py::test_invalid_embeddings_are_not_cached[vectors1]
+tests/unit/test_evidence_unit_retriever.py::test_invalid_embeddings_are_not_cached[vectors2]
+tests/unit/test_evidence_units.py::test_section_keeps_heading_table_and_notes_despite_different_types
+tests/unit/test_evidence_units.py::test_sections_do_not_merge_and_no_section_is_not_a_shared_section
+tests/unit/test_evidence_units.py::test_headings_alone_are_navigation_not_searchable_rule_units
+tests/unit/test_evidence_units.py::test_matrix_records_preserve_approval_review_conjunction_and_coordinates
+tests/unit/test_evidence_units.py::test_unreviewed_matrix_does_not_guess_headers
+tests/unit/test_evidence_units.py::test_ambiguous_or_stale_matrix_configuration_fails[wrong_label]
+tests/unit/test_evidence_units.py::test_ambiguous_or_stale_matrix_configuration_fails[missing_cell]
+tests/unit/test_evidence_units.py::test_ambiguous_or_stale_matrix_configuration_fails[wrong_sheet]
+tests/unit/test_evidence_units.py::test_ambiguous_or_stale_matrix_configuration_fails[extra_row]
+tests/unit/test_evidence_units.py::test_formula_is_not_executed_or_presented_as_value
+tests/unit/test_evidence_units.py::test_long_table_records_keep_headings_and_following_notes
+tests/unit/test_evidence_units.py::test_large_text_uses_exact_paragraph_offsets_but_requires_review
+tests/unit/test_evidence_units.py::test_indivisible_rule_is_retained_and_flagged_not_cut
+tests/unit/test_evidence_units.py::test_ids_are_deterministic_and_change_with_source_revision
+tests/unit/test_evidence_units.py::test_materialization_budget_fails_atomically_and_deduplicates
+tests/unit/test_evidence_units.py::test_graph_rejects_cycle_and_invalid_offsets
 tests/unit/test_filtered_reranking.py::test_one_scoring_call_uses_original_query_and_preserves_both_score_provenances
 tests/unit/test_filtered_reranking.py::test_fixed_membership_does_not_claim_to_repair_missing_passages
 tests/unit/test_filtered_reranking.py::test_score_ties_keep_control_order_and_do_not_invent_a_gain
@@ -744,6 +1016,12 @@ tests/unit/test_filtered_reranking.py::test_changed_replay_is_rejected_before_mo
 tests/unit/test_filtered_reranking.py::test_changed_replay_is_rejected_before_model_loading[group_metrics-Metric mismatch]
 tests/unit/test_filtered_reranking.py::test_changed_replay_is_rejected_before_model_loading[duplicates-missing or duplicated]
 tests/unit/test_filtered_reranking.py::test_changed_replay_is_rejected_before_model_loading[coverage-coverage changed]
+tests/unit/test_generate_evidence_answer.py::test_dry_run_never_creates_sdk
+tests/unit/test_generate_evidence_answer.py::test_execute_one_generation_and_preserve_inputs
+tests/unit/test_generate_evidence_answer.py::test_failure_preserves_ledger_without_retry[fail]
+tests/unit/test_generate_evidence_answer.py::test_failure_preserves_ledger_without_retry[malformed]
+tests/unit/test_generate_evidence_answer.py::test_budget_rejected_in_dry_run_before_call
+tests/unit/test_generate_evidence_answer.py::test_existing_output_not_overwritten
 tests/unit/test_golden_set_loader.py::test_loader_reads_real_golden_set
 tests/unit/test_golden_set_loader.py::test_rejects_duplicate_question_ids
 tests/unit/test_golden_set_loader.py::test_materialized_question_is_evaluable
@@ -896,6 +1174,15 @@ tests/unit/test_openai_embeddings.py::test_embed_query_rejects_empty_text[\n\t]
 tests/unit/test_openai_embeddings.py::test_embed_documents_rejects_empty_document_text
 tests/unit/test_openai_embeddings.py::test_provider_rejects_empty_model_name
 tests/unit/test_openai_embeddings.py::test_embed_documents_rejects_incomplete_openai_response
+tests/unit/test_plan_evidence_units.py::test_dry_run_never_calls_sdk_or_creates_cache
+tests/unit/test_plan_evidence_units.py::test_live_runner_saves_bundle_ledger_and_reuses_document_embeddings
+tests/unit/test_plan_evidence_units.py::test_existing_output_is_not_overwritten
+tests/unit/test_plan_evidence_units.py::test_replay_calls_only_planner_and_preserves_request
+tests/unit/test_plan_evidence_units.py::test_replay_dry_run_has_no_sdk_calls
+tests/unit/test_plan_evidence_units.py::test_replay_rejects_modified_inputs_before_any_payment[text]
+tests/unit/test_plan_evidence_units.py::test_replay_rejects_modified_inputs_before_any_payment[scope]
+tests/unit/test_plan_evidence_units.py::test_replay_rejects_modified_inputs_before_any_payment[model]
+tests/unit/test_plan_evidence_units.py::test_replay_records_lookup_without_executing_it
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_preserves_native_chart_structure
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_preserves_slide_provenance
 tests/unit/test_pptx_native_enricher.py::test_extract_charts_assigns_deterministic_ids_and_global_order
@@ -1028,6 +1315,58 @@ tests/unit/test_search_text.py::test_build_search_text_returns_original_text_wit
 tests/unit/test_search_text.py::test_build_search_text_adds_single_section_context
 tests/unit/test_search_text.py::test_build_search_text_preserves_section_hierarchy
 tests/unit/test_search_text.py::test_build_search_text_does_not_mutate_canonical_chunk_text
+tests/unit/test_stage1_live.py::test_manifest_roundtrip_and_registry_metadata
+tests/unit/test_stage1_live.py::test_manifest_rejects_physical_change
+tests/unit/test_stage1_live.py::test_manifest_rejects_changed_catalog
+tests/unit/test_stage1_live.py::test_manifest_detects_change_during_parsing
+tests/unit/test_stage1_live.py::test_shared_budget_reservation_and_actual_usage
+tests/unit/test_stage1_live.py::test_budget_blocks_before_sdk[change0]
+tests/unit/test_stage1_live.py::test_budget_blocks_before_sdk[change1]
+tests/unit/test_stage1_live.py::test_budget_blocks_before_sdk[change2]
+tests/unit/test_stage1_live.py::test_call_limit_counts_embeddings_and_generation
+tests/unit/test_stage1_live.py::test_missing_usage_retains_reservation_and_stops
+tests/unit/test_stage1_live.py::test_deadline_blocks_before_sdk
+tests/unit/test_stage1_live.py::test_usage_above_reservation_stops_next_call
+tests/unit/test_stage1_live.py::test_compare_pair_reuses_initial_pool_and_records_metadata
+tests/unit/test_stage1_live.py::test_compare_failure_still_records_cost
+tests/unit/test_stage1_live.py::test_runner_dry_run_and_output_not_overwritten
+tests/unit/test_stage1_live.py::test_missing_config_rejected
+tests/unit/test_stage1_live.py::test_reserved_case_fields_not_in_assessment_request
+tests/unit/test_stage1_live.py::test_constructor_failure_preserves_original_exception
+tests/unit/test_stage1_live.py::test_quote_offsets_are_computed_without_changing_decisions
+tests/unit/test_stage1_live.py::test_quotes_must_be_exact_nonempty_and_unique[abc-fabricated]
+tests/unit/test_stage1_live.py::test_quotes_must_be_exact_nonempty_and_unique[abc abc-abc]
+tests/unit/test_stage1_live.py::test_quotes_must_be_exact_nonempty_and_unique[abc-]
+tests/unit/test_stage1_live.py::test_quote_resolution_does_not_repair_requirement_mismatch_or_false_sufficiency
+tests/unit/test_stage1_orchestration.py::test_selects_canonical_evidence_and_excludes_ai_distractor
+tests/unit/test_stage1_orchestration.py::test_expands_section_including_table_then_reassesses
+tests/unit/test_stage1_orchestration.py::test_search_once_and_reassess
+tests/unit/test_stage1_orchestration.py::test_second_lookup_is_blocked_with_abstention
+tests/unit/test_stage1_orchestration.py::test_terminal_decisions_skip_generation[clarify-clarification_required]
+tests/unit/test_stage1_orchestration.py::test_terminal_decisions_skip_generation[abstain-abstained]
+tests/unit/test_stage1_orchestration.py::test_conditional_evidence_is_not_rewritten
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>0]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>1]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>2]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>3]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>4]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>5]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>6]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>7]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>8]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>9]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>10]
+tests/unit/test_stage1_orchestration.py::test_contract_rejects_bad_assessment_without_generation[<lambda>11]
+tests/unit/test_stage1_orchestration.py::test_invalid_section_blocks_tool_execution
+tests/unit/test_stage1_orchestration.py::test_duplicate_json_keys_rejected
+tests/unit/test_stage1_orchestration.py::test_provider_failure_is_error_not_abstention
+tests/unit/test_stage1_orchestration.py::test_noncanonical_retrieval_blocked_before_assessment
+tests/unit/test_stage1_orchestration.py::test_atomic_expansion_over_budget_does_not_generate_partial_context
+tests/unit/test_stage1_orchestration.py::test_request_budget_checked_before_call
+tests/unit/test_stage1_orchestration.py::test_deadline_checked_after_assessment_before_generation
+tests/unit/test_stage1_orchestration.py::test_paid_components_not_accepted
+tests/unit/test_stage1_orchestration.py::test_document_instruction_cannot_add_tools_or_raise_limits
+tests/unit/test_stage1_orchestration.py::test_invalid_generator_citations_block_answer
 tests/unit/test_structure_aware_chunker.py::test_chunker_groups_text_blocks_from_same_section
 tests/unit/test_structure_aware_chunker.py::test_chunker_starts_new_chunk_when_section_changes
 tests/unit/test_structure_aware_chunker.py::test_chunker_splits_same_section_before_exceeding_max_size
@@ -1044,6 +1383,11 @@ tests/unit/test_structure_aware_chunker.py::test_chunker_rejects_empty_document_
 tests/unit/test_structure_aware_chunker_multiblock.py::test_chunker_serializes_spreadsheet_blocks_into_retrieval_chunks
 tests/unit/test_structure_aware_chunker_multiblock.py::test_chunker_preserves_text_behavior_and_global_identity
 tests/unit/test_structure_aware_chunker_multiblock.py::test_oversized_spreadsheet_serialization_respects_max_chars
+tests/unit/test_txt_ingestion.py::test_txt_produces_canonical_content
+tests/unit/test_txt_ingestion.py::test_txt_preserves_source_order
+tests/unit/test_txt_ingestion.py::test_txt_supports_utf8_bom
+tests/unit/test_txt_ingestion.py::test_txt_rejects_empty_content
+tests/unit/test_txt_ingestion.py::test_discovery_finds_nested_txt
 tests/unit/test_vector_index.py::test_vector_index_returns_candidates_by_cosine_similarity
 tests/unit/test_vector_index.py::test_vector_index_uses_cosine_similarity_not_vector_magnitude
 tests/unit/test_vector_index.py::test_vector_index_limits_results_to_top_k
@@ -1079,22 +1423,22 @@ tests/unit/test_xlsx_parser.py::test_parser_rejects_missing_file
 tests/unit/test_xlsx_parser.py::test_parser_rejects_non_xlsx_source
 tests/unit/test_xlsx_parser.py::test_parser_rejects_workbook_without_content
 
-646 tests collected in 15.27s
+810 tests collected in 15.28s
 ```
 
 ## 11. Recent Commits
 
 ```text
-055b0a8 | 2026-11-06 17:50:43 -0300 | feat: add retrieval experiments and validation through RV-013
-17e5bc0 | 2026-11-04 09:54:05 -0300 | feat: validate hybrid retrieval v0.3 with document-aware selection
-45a5a2c | 2026-11-04 00:33:15 -0300 | feat: implement hybrid retrieval with BM25 and RRF
-43920d1 | 2026-11-02 00:00:42 -0300 | feat: establish multi-format Golden Set retrieval baseline
-f5a09bb | 2026-11-01 22:25:09 -0300 | test: add multi-document vector retrieval benchmark
-51519d5 | 2026-11-01 18:01:08 -0300 | feat: add globally unique retrieval chunk identity
-0b5b6ee | 2026-10-08 04:22:46 -0300 | fix: restore README table formatting
-efef5f8 | 2026-10-08 04:17:33 -0300 | fix: clean README markdown rendering
-a036395 | 2026-10-08 04:10:51 -0300 | fix: correct README image rendering
-22eb744 | 2026-10-08 04:03:35 -0300 | docs: refine README visuals and system overview
+1d6f592 | 2026-11-09 22:22:14 -0300 | docs(validation): record RV027-RV031 relational evidence experiments
+bbe73dc | 2026-11-09 21:54:16 -0300 | docs(validation): record RV026 relational completeness assessment
+318a6fc | 2026-11-09 21:49:50 -0300 | docs(validation): record RV025 semantic review verdicts
+5218698 | 2026-11-09 21:47:51 -0300 | docs(validation): add RV025 semantic review package
+45e7f1e | 2026-11-09 21:36:42 -0300 | fix(generation): enforce coverage-scoped evidence instructions
+25bc2c1 | 2026-11-09 21:21:14 -0300 | docs(validation): record RV017-RV023 evidence generation experiments
+3916324 | 2026-11-08 01:46:18 -0300 | feat: implement evidence answer generation and orchestration pipeline
+f9cb115 | 2026-11-08 00:11:56 -0300 | docs: preserve diagnostic and evidence planner dry-run plans
+2908c00 | 2026-11-08 00:09:00 -0300 | docs: preserve context diagnostic experiment results
+cf0abec | 2026-11-08 00:08:14 -0300 | feat: add evidence units and bounded planning with reviewed experiments
 ```
 
 ## 12. Working Tree
@@ -1103,28 +1447,41 @@ a036395 | 2026-10-08 04:10:51 -0300 | fix: correct README image rendering
 State: DIRTY
 
 Files:
-?? app/generation/
-?? app/retrieval/evidence_context.py
-?? app/scripts/ask_knowledge.py
-?? app/scripts/compare_saved_generation.py
-?? docs/validation/RV013_ANALYSIS.md
-?? docs/validation/RV014_ANALYSIS.md
-?? docs/validation/RV014_CONTEXT_REPLAY_RESULTS_local.json
-?? docs/validation/RV014_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV014_INTEGRATION.md
-?? docs/validation/RV015_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV016_GENERATION_COMPARISON.json
-?? docs/validation/RV016_GENERATION_COMPARISON.md
-?? docs/validation/RV016_GENERATION_COMPARISON_GPT41.json
-?? docs/validation/RV016_IMPLEMENTATION_GUIDE.md
-?? docs/validation/RV016_SHARING_AFTER_CONTEXT_FIX.json
-?? docs/validation/RV016_SHARING_DIAGNOSTIC.json
-?? tests/smoke/smoke_evidence_context_replay.py
-?? tests/unit/test_answer_contract.py
-?? tests/unit/test_evidence_context.py
-?? tests/unit/test_evidence_context_replay.py
-?? tests/unit/test_rag_service.py
-?? tests/unit/test_saved_generation.py
+M app/ingestion/document_parser.py
+ M app/ingestion/ingestion_router.py
+ M app/scripts/ask_knowledge.py
+ M docs/project_audit/PROJECT_AUDIT.md
+ M tests/unit/test_document_parser.py
+ M tests/unit/test_ingestion_router.py
+?? data/corpus_quarantine/
+?? data/source/corporate_repository/contracts/
+?? data/source/corporate_repository/governance/DOC-019_operations_committee_minutes_2025.docx
+?? data/source/corporate_repository/governance/DOC-020_operations_committee_minutes_2026.pptx
+?? data/source/corporate_repository/governance/DOC-021_corrective_action_tracker.xlsx
+?? data/source/corporate_repository/guidelines/DOC-027_AI_Supply_Chain_Usage_Guidelines.txt
+?? data/source/corporate_repository/incident_reports/
+?? data/source/corporate_repository/policies/DOC-001_transportation_policy_2026_v3.0.pdf
+?? data/source/corporate_repository/policies/DOC-002_transportation_policy_2024.pdf
+?? data/source/corporate_repository/policies/DOC-003_carrier_management_policy_v2.1.pdf
+?? data/source/corporate_repository/policies/DOC-004_supplier_risk_policy.pdf
+?? data/source/corporate_repository/references/
+?? data/source/corporate_repository/sops/DOC-008_supplier_onboarding_sop.docx
+?? data/source/corporate_repository/sops/DOC-009_critical_delivery_sop_v2.3.docx
+?? data/source/corporate_repository/sops/DOC-011_legacy_data_sharing_sop.docx
+?? docs/validation/RV032_GOLDEN_SET_PREFLIGHT_local.csv
+?? docs/validation/RV032_GOLDEN_SET_PREFLIGHT_local.json
+?? docs/validation/RV033_CORPUS_INGESTION_RESULTS_local.json
+?? rv032_golden_set_preflight.py
+?? tests/unit/test_txt_ingestion.py
+
+Unstaged diff:
+app/ingestion/document_parser.py    |  27 +-
+ app/ingestion/ingestion_router.py   |   2 +-
+ app/scripts/ask_knowledge.py        |   2 +-
+ docs/project_audit/PROJECT_AUDIT.md | 475 ++++++++++++++++++++++++++++++------
+ tests/unit/test_document_parser.py  |   2 +-
+ tests/unit/test_ingestion_router.py |   2 +-
+ 6 files changed, 430 insertions(+), 80 deletions(-)
 ```
 
 ## 13. Declared Dependencies
