@@ -1,0 +1,776 @@
+{
+  "experiment": "RV025_SEMANTIC_REVIEW",
+  "evaluation_type": "claim_level_groundedness",
+  "status": "reviewed_with_reservation",
+  "source_model": "gpt-6.1-sol",
+  "cases_total": 5,
+  "claims_total": 32,
+  "criteria": [
+    "faithfulness",
+    "coverage_completeness",
+    "condition_preservation",
+    "scope_compliance",
+    "citation_relevance"
+  ],
+  "reviews": [
+    {
+      "case": "ORC-001",
+      "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+      "scope": {
+        "request_kind": "general",
+        "focus": "cuidados exigidos pela política antes de compartilhar dados com um fornecedor externo",
+        "known_conditions": [],
+        "exclusions": [],
+        "unknown_conditions": [
+          "especificidades da política de dados"
+        ],
+        "decision": "proceed",
+        "clarification": null,
+        "document_ids": []
+      },
+      "claims": [
+        {
+          "coverage_id": "C1",
+          "coverage_need": "Para dados públicos, verificar aprovação para uso público e utilizar canal de negócios aprovado.",
+          "condition": "Quando os dados a compartilhar forem classificados como públicos.",
+          "claim_text": "Compartilhar somente com aprovação para uso público e por canal de negócios aprovado.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "coverage_need": "Para dados internos, compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.",
+          "condition": "Quando os dados a compartilhar forem classificados como internos.",
+          "claim_text": "Compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "coverage_need": "Para dados confidenciais, verificar destinatário autorizado e finalidade de negócio aprovada; usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. E-mail corporativo, por si só, não torna uma transferência não aprovada em transferência segura aprovada.",
+          "condition": "Quando os dados a compartilhar forem classificados como confidenciais.",
+          "claim_text": "Compartilhar somente com destinatário autorizado e finalidade de negócio aprovada. Usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. O e-mail corporativo, por si só, não torna uma transferência não aprovada em transferência segura aprovada.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            },
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+              "source_text": "5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "coverage_need": "Para dados restritos, obter autorização explícita conforme o controle de segurança ou jurídico aplicável, com autorização documentada e mecanismo aprovado para dados restritos.",
+          "condition": "Quando os dados a compartilhar forem classificados como restritos.",
+          "claim_text": "Obter autorização explícita conforme o controle de segurança ou jurídico aplicável, documentar a autorização e usar mecanismo aprovado para dados restritos.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "coverage_need": "Limitar os dados enviados à transportadora às informações necessárias para executar o serviço logístico contratado.",
+          "condition": "Quando o fornecedor destinatário for uma transportadora.",
+          "claim_text": "Limitar os dados enviados à transportadora às informações necessárias para executar o serviço logístico contratado.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+              "source_text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "coverage_need": "Não transmitir dados confidenciais de clientes ou remessas por e-mail comum desprotegido apenas porque a transportadora é contratada.",
+          "condition": "Quando o destinatário for uma transportadora e os dados de clientes ou remessas forem classificados como confidenciais.",
+          "claim_text": "Não transmitir dados confidenciais de clientes ou remessas por e-mail comum desprotegido apenas porque a transportadora é contratada.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+              "source_text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "coverage_need": "Quando houver exceção, exigir justificativa de negócio documentada e as aprovações previstas nos controles de segurança e de autoridade aplicáveis; um procedimento operacional não pode criar, de forma independente, uma exceção à política corporativa.",
+          "condition": "Quando houver exceção às regras de compartilhamento externo.",
+          "claim_text": "Exigir justificativa de negócio documentada e as aprovações previstas nos controles de segurança e de autoridade aplicáveis. Um procedimento operacional não pode criar, de forma independente, uma exceção à política corporativa.",
+          "citations": [
+            {
+              "citation_id": "E4",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+              "source_text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "source_result": "RV022_ORC001_RESULTS_local.json",
+      "source_sha256": "a0e5be06c38d268faf40b0eca1a351e792c1916f516e08d3054d36fb3c5294fb"
+    },
+    {
+      "case": "ORC-002",
+      "question": "Segundo a DOC-005, quais requisitos se aplicam antes de enviar dados a um fornecedor externo? Não estou perguntando sobre usar dados em IA.",
+      "scope": {
+        "request_kind": "general",
+        "focus": "Identificar, segundo a DOC-005, os requisitos aplicáveis antes de enviar dados a um fornecedor externo.",
+        "known_conditions": [
+          {
+            "text": "A referência solicitada é a DOC-005.",
+            "source_span": {
+              "text": "Segundo a DOC-005",
+              "start": 0,
+              "end": 17
+            }
+          },
+          {
+            "text": "A consulta trata de requisitos anteriores ao envio de dados a um fornecedor externo.",
+            "source_span": {
+              "text": "antes de enviar dados a um fornecedor externo",
+              "start": 47,
+              "end": 92
+            }
+          }
+        ],
+        "exclusions": [
+          {
+            "text": "O uso de dados em IA está fora do escopo.",
+            "source_span": {
+              "text": "Não estou perguntando sobre usar dados em IA.",
+              "start": 94,
+              "end": 139
+            }
+          }
+        ],
+        "unknown_conditions": [
+          "O conteúdo da DOC-005 e os requisitos que ela estabelece."
+        ],
+        "decision": "proceed",
+        "clarification": null,
+        "document_ids": [
+          "DOC-005"
+        ]
+      },
+      "claims": [
+        {
+          "coverage_id": "C1",
+          "coverage_need": "Para dados públicos, verificar a aprovação para uso público e utilizar um canal de negócios aprovado.",
+          "condition": "Quando os dados a enviar forem classificados como Public.",
+          "claim_text": "Compartilhar somente com aprovação para uso público e por canal de negócios aprovado.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "coverage_need": "Para dados internos, compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.",
+          "condition": "Quando os dados a enviar forem classificados como Internal.",
+          "claim_text": "Compartilhar somente por necessidade legítima de negócio e por canal gerenciado pela empresa.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "coverage_need": "Para dados confidenciais, exigir destinatário autorizado e finalidade de negócio aprovada, usar transferência segura aprovada ou plataforma controlada adequada à classificação e limitar o acesso aos destinatários pretendidos. O uso de email corporativo, por si só, não torna aprovada uma transferência não aprovada.",
+          "condition": "Quando os dados a enviar forem classificados como Confidential.",
+          "claim_text": "Exigir destinatário autorizado e finalidade de negócio aprovada. Usar transferência segura aprovada ou plataforma controlada adequada à classificação, limitando o acesso aos destinatários pretendidos. O e-mail corporativo, por si só, não torna aprovada uma transferência não aprovada.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            },
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+              "source_text": "5. Approved channels\n\nConfidential information shared externally must use an approved secure channel or controlled platform appropriate to the information classification. Corporate email alone does not convert an otherwise unapproved transfer into an approved secure transfer."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "coverage_need": "Para dados restritos, obter autorização explícita conforme o controle de segurança ou jurídico aplicável e usar mecanismo aprovado para dados restritos, com autorização documentada.",
+          "condition": "Quando os dados a enviar forem classificados como Restricted.",
+          "claim_text": "Obter autorização explícita conforme o controle de segurança ou jurídico aplicável e usar mecanismo aprovado para dados restritos, com autorização documentada.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+              "source_text": "3. Information classification and minimum controls\n\nClassification | External sharing rule | Minimum channel/control\nPublic | May be shared when approved for public use. | Approved business channel.\nInternal | Share only for legitimate business need. | Corporate-managed channel.\nConfidential | Share only with an authorized recipient and approved business purpose. | Approved secure transfer or controlled platform; access limited to intended recipients.\nRestricted | External sharing requires explicit authorization under the applicable security or legal control. | Approved restricted-data mechanism and documented authorization."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "coverage_need": "Se o fornecedor for uma transportadora, limitar os dados enviados às informações necessárias para executar o serviço logístico contratado.",
+          "condition": "Quando o fornecedor externo destinatário for uma transportadora.",
+          "claim_text": "Limitar os dados enviados às informações necessárias para executar o serviço logístico contratado.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+              "source_text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "coverage_need": "Não transmitir dados confidenciais de clientes ou remessas por email comum desprotegido apenas porque o destinatário é uma transportadora contratada.",
+          "condition": "Quando o destinatário for uma transportadora contratada e os dados de clientes ou remessas forem classificados como confidenciais.",
+          "claim_text": "Não transmitir esses dados por e-mail comum desprotegido apenas porque o destinatário é uma transportadora contratada.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+              "source_text": "4. Sharing with transportation carriers\n\nTransportation carriers may receive only the information required to execute the contracted logistics service. Customer or shipment data classified as confidential must not be transmitted through ordinary unprotected email merely because the recipient is a contracted carrier."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "coverage_need": "Quando houver exceção aos requisitos de compartilhamento, documentar a justificativa de negócio e obter as aprovações definidas pelos controles de segurança e autoridade aplicáveis; um SOP operacional não pode criar, por si só, uma exceção à política corporativa.",
+          "condition": "Quando houver exceção aos requisitos aplicáveis ao envio de dados ao fornecedor externo.",
+          "claim_text": "Documentar a justificativa de negócio e obter as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.",
+          "citations": [
+            {
+              "citation_id": "E4",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+              "source_text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "source_result": "RV022_ORC002_RESULTS_local.json",
+      "source_sha256": "d39fa53e49af2460e60de4d3dea5cbec712006dcf0af5bacbf2376c2aaa049db"
+    },
+    {
+      "case": "ORC-003",
+      "question": "Quero usar dados confidenciais de um fornecedor em uma ferramenta de IA. Quais aprovações são exigidas?",
+      "scope": {
+        "request_kind": "specific",
+        "focus": "Identificar quais aprovações são exigidas para usar dados confidenciais de um fornecedor em uma ferramenta de IA.",
+        "known_conditions": [
+          {
+            "text": "O uso pretendido envolve dados confidenciais de um fornecedor em uma ferramenta de IA.",
+            "source_span": {
+              "text": "Quero usar dados confidenciais de um fornecedor em uma ferramenta de IA.",
+              "start": 0,
+              "end": 72
+            }
+          }
+        ],
+        "exclusions": [],
+        "unknown_conditions": [
+          "Qual ferramenta de IA será utilizada.",
+          "Quais requisitos de aprovação se aplicam ao uso pretendido."
+        ],
+        "decision": "proceed",
+        "clarification": null,
+        "document_ids": []
+      },
+      "claims": [
+        {
+          "coverage_id": "C1",
+          "coverage_need": "Exigir aprovação conjunta do Information Security Owner e do AI Governance Owner para o uso de dados confidenciais de fornecedor em IA, independentemente do valor ou da ferramenta.",
+          "condition": null,
+          "claim_text": "O uso de dados confidenciais de fornecedor em IA exige aprovação de ambos: Information Security Owner e AI Governance Owner, independentemente do valor ou da ferramenta.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-012",
+              "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+              "source_text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "coverage_need": "Identificar a revisão adicional pelo Data Owner, distinguindo-a das aprovações exigidas.",
+          "condition": null,
+          "claim_text": "É exigida revisão adicional pelo Data Owner, distinta das aprovações exigidas.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-012",
+              "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+              "source_text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "coverage_need": "Exigir que tanto a ferramenta quanto o caso de uso estejam aprovados para a classificação confidencial antes da inserção dos dados.",
+          "condition": null,
+          "claim_text": "Os dados confidenciais só podem ser inseridos quando tanto a ferramenta quanto o caso de uso estiverem aprovados para a classificação da informação.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-012",
+              "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+              "source_text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification."
+            },
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-006",
+              "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+              "source_text": "5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "source_result": "RV022_ORC003_RESULTS_local.json",
+      "source_sha256": "043ccba78bd4ae4fef10b91dfd5d2a2edcfc21423d47c3a261e6808066a09e8d"
+    },
+    {
+      "case": "ORC-004",
+      "question": "Enviei acidentalmente dados confidenciais a um fornecedor. O que devo fazer agora?",
+      "scope": {
+        "request_kind": "specific",
+        "focus": "Identificar quais medidas tomar agora em relação ao envio acidental de dados confidenciais a um fornecedor.",
+        "known_conditions": [
+          {
+            "text": "O usuário enviou acidentalmente dados confidenciais a um fornecedor.",
+            "source_span": {
+              "text": "Enviei acidentalmente dados confidenciais a um fornecedor.",
+              "start": 0,
+              "end": 58
+            }
+          }
+        ],
+        "exclusions": [],
+        "unknown_conditions": [
+          "Quais dados foram enviados e em que quantidade.",
+          "Quando e por qual meio ocorreu o envio.",
+          "Se o fornecedor acessou ou compartilhou os dados.",
+          "Quais procedimentos internos ou obrigações se aplicam à situação."
+        ],
+        "decision": "proceed",
+        "clarification": null,
+        "document_ids": []
+      },
+      "claims": [
+        {
+          "coverage_id": "C1",
+          "coverage_need": "Reportar imediatamente o envio acidental pelo canal de incidentes de Segurança da Informação.",
+          "condition": null,
+          "claim_text": "Reporte imediatamente o envio acidental pelo canal de incidentes de Segurança da Informação.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a53055b0da14d0c1a709b3d0c6122c7b5e1f3dd9cd2db9b298381c1721583032",
+              "source_text": "4. Supplier disclosure\n\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action."
+            },
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "coverage_need": "Interromper novas divulgações quando viável, sem destruir evidências.",
+          "condition": "Quando for viável interromper novas divulgações sem destruir evidências.",
+          "claim_text": "Interrompa novas divulgações sem destruir evidências.",
+          "citations": [
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "coverage_need": "Registrar quais informações estavam envolvidas, o destinatário, o meio de transmissão, o horário e o alcance conhecido.",
+          "condition": null,
+          "claim_text": "Registre quais informações estavam envolvidas, o destinatário, o meio de transmissão, o horário e o alcance conhecido.",
+          "citations": [
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "coverage_need": "Não instruir o fornecedor a apagar evidências antes de receber orientação de Segurança da Informação.",
+          "condition": "Antes de Segurança da Informação fornecer orientação.",
+          "claim_text": "Não instrua o fornecedor a apagar evidências.",
+          "citations": [
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "coverage_need": "Preservar mensagens, logs, arquivos e capturas de tela relevantes.",
+          "condition": null,
+          "claim_text": "Preserve mensagens, logs, arquivos e capturas de tela relevantes.",
+          "citations": [
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "coverage_need": "Seguir as instruções de contenção, notificação e remediação emitidas pelo responsável pelo incidente.",
+          "condition": "Quando o responsável pelo incidente emitir instruções.",
+          "claim_text": "Siga as instruções de contenção, notificação e remediação emitidas pelo responsável pelo incidente.",
+          "citations": [
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a9c7e517c3f31638ca41139f6bb556a08ab55643595b47fedf8eebd5a0869fef",
+              "source_text": "3. Immediate actions\n\nStop further disclosure where feasible without destroying evidence.\n\nNotify the Information Security incident channel immediately.\n\nRecord what information was involved, recipient, transmission method, time, and known scope.\n\nDo not instruct the external recipient to delete evidence before Information Security provides direction.\n\nPreserve relevant messages, logs, files, and screenshots.\n\nFollow containment, notification, and remediation instructions issued by the incident owner."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "coverage_need": "Preservar o papel de Segurança da Informação na coordenação da contenção e na determinação de ações adicionais de Compras, Jurídico, Privacidade, responsável pelo negócio ou fornecedor.",
+          "condition": null,
+          "claim_text": "Segurança da Informação coordena a contenção e determina se Compras, Jurídico, Privacidade, o responsável pelo negócio ou o fornecedor devem tomar medidas adicionais.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-010",
+              "unit_id": "DOC-010::unit-a53055b0da14d0c1a709b3d0c6122c7b5e1f3dd9cd2db9b298381c1721583032",
+              "source_text": "4. Supplier disclosure\n\nIf confidential data was accidentally sent to a supplier or carrier, the employee must report the incident immediately. Information Security coordinates containment and determines whether Procurement, Legal, Privacy, the business owner, or the supplier must take additional action."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C8",
+          "coverage_need": "Não tentar ocultar nem resolver independentemente uma divulgação material sem reportá-la.",
+          "condition": "Se a divulgação for material.",
+          "claim_text": "Não tente ocultar nem resolver a divulgação por conta própria sem reportá-la.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-006",
+              "unit_id": "DOC-006::unit-b7a3f71a2bf5bb9ed8e3fb4edd6ebd68fd859b27d673150b754d9b5c72ab7b07",
+              "source_text": "6. Security incidents\n\nAccidental disclosure, unauthorized transmission, or suspected exposure of confidential information must be reported and handled under the active Security Incident SOP. Employees must not attempt to conceal or independently resolve a material disclosure without reporting it."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "source_result": "RV022_ORC004_RESULTS_local.json",
+      "source_sha256": "acbd791c34c52b49c96c4e7797616e990a0143fb7a320e879b6e6706fe504753"
+    },
+    {
+      "case": "ORC-003-NORMATIVE",
+      "question": "Segundo as políticas corporativas, quais aprovações e revisões são exigidas para o uso de dados confidenciais de fornecedores em ferramentas de IA? Explique as regras gerais e suas condições, sem avaliar ou autorizar uma operação específica.",
+      "scope": {
+        "request_kind": "general",
+        "focus": "Explicar, segundo as políticas corporativas, quais aprovações e revisões são exigidas para o uso de dados confidenciais de fornecedores em ferramentas de IA, incluindo as regras gerais e suas condições.",
+        "known_conditions": [
+          {
+            "text": "O objeto da consulta é o uso de dados confidenciais de fornecedores em ferramentas de IA.",
+            "source_span": {
+              "text": "uso de dados confidenciais de fornecedores em ferramentas de IA",
+              "start": 83,
+              "end": 146
+            }
+          },
+          {
+            "text": "A explicação deve se basear nas políticas corporativas.",
+            "source_span": {
+              "text": "Segundo as políticas corporativas",
+              "start": 0,
+              "end": 33
+            }
+          },
+          {
+            "text": "O pedido abrange regras gerais e suas condições.",
+            "source_span": {
+              "text": "Explique as regras gerais e suas condições",
+              "start": 148,
+              "end": 190
+            }
+          }
+        ],
+        "exclusions": [
+          {
+            "text": "Não avaliar nem autorizar uma operação específica.",
+            "source_span": {
+              "text": "sem avaliar ou autorizar uma operação específica",
+              "start": 192,
+              "end": 240
+            }
+          }
+        ],
+        "unknown_conditions": [
+          "O conteúdo das políticas corporativas aplicáveis não foi fornecido."
+        ],
+        "decision": "proceed",
+        "clarification": null,
+        "document_ids": []
+      },
+      "claims": [
+        {
+          "coverage_id": "C1",
+          "coverage_need": "Explicar que o uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, conformidade com as políticas de compartilhamento e segurança da informação e aprovações aplicáveis à classificação dos dados.",
+          "condition": null,
+          "claim_text": "O uso de dados de fornecedores em IA exige ferramenta e caso de uso aprovados, conformidade com as políticas de Compartilhamento de Dados e Segurança da Informação e as aprovações aplicáveis à classificação dos dados. A Política de Governança de IA também se aplica; a ferramenta é tratada como ambiente de processamento externo ou gerenciado conforme seu status de aprovação.",
+          "citations": [
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-023",
+              "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+              "source_text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix."
+            },
+            {
+              "citation_id": "E2",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-1a3ddf104e13d8a932f28c0ef8f8fa5b161595012e738ad938fe74d396c30119",
+              "source_text": "6. Supplier and AI-related use\n\nWhere supplier or customer information is processed by an AI tool, the tool is treated as an external or managed processing environment according to its approval status. The AI Governance Policy and Information Security Policy apply in addition to this policy."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "coverage_need": "Identificar as aprovações cumulativas do Information Security Owner e do AI Governance Owner e a revisão adicional do Data Owner, para qualquer valor e qualquer ferramenta, mantendo a exigência de aprovação da ferramenta e do caso de uso para a classificação dos dados.",
+          "condition": null,
+          "claim_text": "Para dados confidenciais de fornecedores, independentemente do valor e da ferramenta, são exigidas cumulativamente as aprovações do Information Security Owner e do AI Governance Owner, além da revisão adicional pelo Data Owner. A ferramenta e o caso de uso devem estar aprovados para a classificação dos dados.",
+          "citations": [
+            {
+              "citation_id": "E3",
+              "document_id": "DOC-012",
+              "unit_id": "DOC-012::unit-1edf84000d73bf46709588663ab0ac32be8988c30553f82add6da3f391cbb3ac",
+              "source_text": "Sheet: Approval Matrix; row: 9\nDecision Type [A1] | A9 = AI use with confidential supplier data\nValue / Condition [B1] | B9 = Any value / any tool\nRequired Approval [C1] | C9 = Information Security Owner + AI Governance Owner\nAdditional Review [D1] | D9 = Data Owner\nNotes [E1] | E9 = Tool and use case must be approved for the data classification."
+            },
+            {
+              "citation_id": "E1",
+              "document_id": "DOC-023",
+              "unit_id": "DOC-023::unit-2620910ebb5529c7e03ac98e06808d659f6fec62fcd119eac5c7d2a8e84ff5b2",
+              "source_text": "4. Supplier data and approvals\n\nUse of supplier data in AI requires an approved AI tool/use case, compliance with the Data Sharing Policy and Information Security Policy, and the approvals applicable to the data classification. Confidential supplier data additionally requires Information Security and AI Governance approval as defined by the Approval Authority Matrix."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "coverage_need": "Preservar a proibição de inserir informações confidenciais sem aprovação da ferramenta e do caso de uso para a classificação relevante; esclarecer que a aprovação genérica da ferramenta não aprova automaticamente todos os tipos de dados.",
+          "condition": null,
+          "claim_text": "É proibido inserir informações confidenciais em IA sem que a ferramenta e o caso de uso estejam aprovados para a classificação relevante. O uso deve ter finalidade empresarial legítima e permanecer no caso de uso e na classificação aprovados; aprovar uma ferramenta não aprova automaticamente todos os tipos de dados ou decisões de negócio.",
+          "citations": [
+            {
+              "citation_id": "E4",
+              "document_id": "DOC-006",
+              "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+              "source_text": "5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements."
+            },
+            {
+              "citation_id": "E5",
+              "document_id": "DOC-023",
+              "unit_id": "DOC-023::unit-09c2a2ebf390cec6251519ea1e25c74963b42330f542079c3c4965f03ce90078",
+              "source_text": "2. Permitted business use\n\nEmployees may use approved AI tools for legitimate business purposes within the approved use case and data classification. Approval of a tool does not automatically approve every data type or business decision."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "coverage_need": "Explicar os controles que acompanham o uso aprovado de informações confidenciais em IA: acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e conformidade com a governança de IA.",
+          "condition": null,
+          "claim_text": "Os controles exigidos incluem acesso aprovado, termos de tratamento de dados, gestão de identidade e acesso, registros quando aplicáveis e conformidade com os requisitos de governança de IA.",
+          "citations": [
+            {
+              "citation_id": "E4",
+              "document_id": "DOC-006",
+              "unit_id": "DOC-006::unit-d706b9b510953eebe8dda536cfd3e270268c2b3515793401748f6b5b34606331",
+              "source_text": "5. AI processing environments\n\nConfidential information must not be entered into an AI tool unless that tool and use case are approved for the relevant information classification. Required controls include approved access, data handling terms, identity and access management, logging where applicable, and compliance with AI governance requirements."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "coverage_need": "Explicar que, quando a ferramenta de IA for nova e processar dados empresariais ou de fornecedores, é necessária aprovação do AI Governance Owner, com revisão de Information Security e Procurement, independentemente do valor; distinguir essa etapa das aprovações para usar dados confidenciais.",
+          "condition": "Quando se tratar de uma nova ferramenta de IA que processe dados empresariais ou de fornecedores.",
+          "claim_text": "A aprovação da nova ferramenta exige aprovação do AI Governance Owner e revisões de Information Security e Procurement, independentemente do valor. Requisitos adicionais de aprovação seguem a Política de Governança de IA.",
+          "citations": [
+            {
+              "citation_id": "E6",
+              "document_id": "DOC-023",
+              "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+              "source_text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases."
+            },
+            {
+              "citation_id": "E7",
+              "document_id": "DOC-012",
+              "unit_id": "DOC-012::unit-f7b6194bc6457d2ffe087cfc4facd94e8ce201149b6b5020a8cd03e85e829af7",
+              "source_text": "Sheet: Approval Matrix; row: 8\nDecision Type [A1] | A8 = New AI tool approval\nValue / Condition [B1] | B8 = Any value when enterprise or supplier data is processed\nRequired Approval [C1] | C8 = AI Governance Owner\nAdditional Review [D1] | D8 = Information Security + Procurement\nNotes [E1] | E8 = Additional approval requirements follow AI Governance Policy."
+            }
+          ],
+          "semantic_verdict": "partial",
+          "review_notes": "As evidencias sustentam as aprovacoes da nova ferramenta, mas a afirmacao nao explicita a distincao entre aprovar a ferramenta e aprovar o uso de dados confidenciais. A informacao complementar aparece em C2."
+        },
+        {
+          "coverage_id": "C6",
+          "coverage_need": "Preservar a possibilidade de revisão adicional para casos jurídicos, de privacidade, regulados ou de alto impacto no contexto da aprovação de novas ferramentas, sem apresentá-la como aprovação universal nem inventar responsáveis.",
+          "condition": "Na aprovação de nova ferramenta de IA, quando houver casos de uso jurídicos, de privacidade, regulados ou de alto impacto.",
+          "claim_text": "Pode ser exigida revisão adicional para casos de uso jurídicos, de privacidade, regulados ou de alto impacto.",
+          "citations": [
+            {
+              "citation_id": "E6",
+              "document_id": "DOC-023",
+              "unit_id": "DOC-023::unit-fcca844ee2aa8518e21a50beeb151da9b9a4228d26c4ae86c947598538ef8696",
+              "source_text": "5. New AI tools\n\nA new AI tool that processes enterprise or supplier data requires approval by the AI Governance Owner, with Information Security and Procurement review. Additional review may be required for legal, privacy, regulated, or high-impact use cases."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "coverage_need": "Explicar que, quando houver exceção à política aplicável, são necessárias justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e autoridade pertinentes; um SOP operacional não pode criar autonomamente uma exceção à política corporativa.",
+          "condition": "Quando houver exceção à política de compartilhamento de dados aplicável ao processamento de informações de fornecedores em IA.",
+          "claim_text": "A exceção exige justificativa de negócio documentada e as aprovações definidas pelos controles de segurança e de autoridade aplicáveis. Um procedimento operacional padrão (SOP) não pode, por si só, criar uma exceção à política corporativa.",
+          "citations": [
+            {
+              "citation_id": "E8",
+              "document_id": "DOC-005",
+              "unit_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+              "source_text": "7. Exceptions\n\nExceptions require documented business justification and the approvals defined by the applicable security and authority controls. An operational SOP cannot independently create an exception to a corporate policy."
+            }
+          ],
+          "semantic_verdict": "pass",
+          "review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "source_result": "RV023_CLEAN_INSTRUCTIONS_RESULTS_local.json",
+      "source_sha256": "d0be3f023baf5059982fe16e1b9873e971998bb2d29e38b88df6bb87b49dbc50"
+    }
+  ],
+  "review_method": "assistant_source_based_manual_review",
+  "source_package_sha256": "4577b8461b287a91b8fe61cc8e7b130606a31351caf390a8838aab76e5165b38",
+  "summary": {
+    "claims_total": 32,
+    "passed": 31,
+    "partial": 1,
+    "failed": 0,
+    "pass_rate": 0.9688,
+    "limitations": [
+      "Revisao assistida, nao independente.",
+      "Conjunto pequeno e parcialmente redundante.",
+      "Resultados nao estimam confiabilidade em producao.",
+      "Avaliacao baseada nas fontes do pacote."
+    ]
+  }
+}
