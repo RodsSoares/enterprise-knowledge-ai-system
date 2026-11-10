@@ -14,7 +14,7 @@ from app.ingestion.schemas import NormalizedContent
 from app.ingestion.xlsx_parser import XlsxParser
 
 
-SUPPORTED_SUFFIXES = frozenset({".pdf", ".docx", ".xlsx", ".pptx", ".md"})
+SUPPORTED_SUFFIXES = frozenset({".pdf", ".docx", ".xlsx", ".pptx", ".md", ".txt"})
 
 
 class IngestionRouter:

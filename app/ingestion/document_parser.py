@@ -11,7 +11,7 @@ from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
-from app.ingestion.schemas import ContentBlock, NormalizedContent
+from app.ingestion.schemas import ContentBlock, NormalizedContent, TextBlock, SourceLocation
 
 
 class DocumentParser:
@@ -40,6 +40,9 @@ class DocumentParser:
         if suffix in self._DOCLING_SUFFIXES:
             return self._docling_parser.parse(path)
 
+        if suffix == ".txt":
+            return self._parse_txt(path)
+
         if suffix == ".xlsx":
             return self._xlsx_parser.parse(path)
 
@@ -47,6 +50,28 @@ class DocumentParser:
             return self._parse_pptx(path)
 
         raise ValueError(f"Unsupported document format: {suffix or '<none>'}")
+
+    @staticmethod
+    def _parse_txt(path: Path) -> NormalizedContent:
+        """Preserve non-empty source lines as ordered text blocks."""
+        source = path.read_text(encoding="utf-8-sig")
+        lines = [line.strip() for line in source.splitlines()
+                 if line.strip()]
+
+        if not lines:
+            raise ValueError(f"No canonical content extracted from {path}")
+
+        blocks = tuple(
+            TextBlock(
+                block_id=f"text-{i:05d}",
+                order=i,
+                kind="paragraph",
+                text=line,
+                location=SourceLocation(),
+            )
+            for i, line in enumerate(lines)
+        )
+        return NormalizedContent(blocks=blocks)
 
     def _parse_pptx(self, path: Path) -> NormalizedContent:
         base_content = self._docling_parser.parse(path)

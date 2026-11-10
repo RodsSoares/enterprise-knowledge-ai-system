@@ -13,7 +13,7 @@ from app.retrieval.openai_embeddings import OpenAIEmbeddingProvider
 def discover_sources(root):
     if not root.is_dir():
         raise ValueError(f"Corpus directory not found: {root}")
-    suffixes = {".pdf", ".docx", ".xlsx", ".pptx", ".md"}
+    suffixes = {".pdf", ".docx", ".xlsx", ".pptx", ".md", ".txt"}
     paths = sorted(p for p in root.rglob("DOC-*")
                    if p.is_file() and p.suffix.lower() in suffixes
                    and re.match(r"^DOC-\d+_", p.name))

@@ -252,7 +252,7 @@ def test_document_parser_rejects_non_path_input() -> None:
         parser.parse("document.pdf")  # type: ignore[arg-type]
 
 
-@pytest.mark.parametrize("filename", ["document.txt", "document.csv", "document"])
+@pytest.mark.parametrize("filename", ["document.csv", "document"])
 def test_document_parser_rejects_formats_without_an_ingestion_strategy(
     filename: str,
 ) -> None:

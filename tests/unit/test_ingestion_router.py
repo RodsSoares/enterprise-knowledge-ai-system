@@ -96,5 +96,5 @@ def test_router_rejects_noncanonical_parser_output(tmp_path):
 
 def test_supported_suffixes_match_public_contract():
     assert SUPPORTED_SUFFIXES == frozenset(
-        {".pdf", ".docx", ".xlsx", ".pptx", ".md"}
+        {".pdf", ".docx", ".xlsx", ".pptx", ".md", ".txt"}
     )
