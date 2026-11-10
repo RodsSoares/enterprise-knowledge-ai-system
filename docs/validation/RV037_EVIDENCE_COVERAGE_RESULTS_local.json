@@ -1,0 +1,8424 @@
+{
+  "experiment": "RV-037",
+  "status": "OFFLINE_REPLAY_COMPLETE",
+  "source_file": "RV036_BILINGUAL_RETRIEVAL_RESULTS_local.json",
+  "source_sha256": "e26019fa4a4be3cafab8bed5ea31eec6c54071b909352c769d020e0cd0569d64",
+  "validation": {
+    "questions_total": 36,
+    "positive_questions": 35,
+    "abstention_questions": 1,
+    "metric_level": "document",
+    "generation_calls": 0,
+    "embedding_calls": 0,
+    "source_traces_replayed": true,
+    "automatic_promotion": false
+  },
+  "aggregate_metrics": {
+    "vector": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.931,
+      "MRR@5": 0.8257,
+      "FullEvidence@5": 0.8286
+    },
+    "hybrid_control": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.9071,
+      "MRR@5": 0.821,
+      "FullEvidence@5": 0.7714
+    },
+    "hybrid_bilingual": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9143,
+      "Hit@5": 1,
+      "Recall@5": 0.919,
+      "MRR@5": 0.8186,
+      "FullEvidence@5": 0.8
+    },
+    "protected_1": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.919,
+      "MRR@5": 0.8271,
+      "FullEvidence@5": 0.8
+    },
+    "protected_2": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.9476,
+      "MRR@5": 0.8257,
+      "FullEvidence@5": 0.8571
+    },
+    "protected_3": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.95,
+      "MRR@5": 0.8257,
+      "FullEvidence@5": 0.8571
+    },
+    "protected_4": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.95,
+      "MRR@5": 0.8257,
+      "FullEvidence@5": 0.8571
+    },
+    "protected_5": {
+      "Hit@1": 0.6857,
+      "Hit@3": 0.9429,
+      "Hit@5": 1,
+      "Recall@5": 0.931,
+      "MRR@5": 0.8257,
+      "FullEvidence@5": 0.8286
+    }
+  },
+  "comparisons_vs_vector": {
+    "hybrid_control": {
+      "gains": [],
+      "regressions": [
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        },
+        {
+          "question_id": "Q34",
+          "recall_delta": -0.5,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-012"
+          ]
+        }
+      ],
+      "unchanged": 33
+    },
+    "hybrid_bilingual": {
+      "gains": [
+        {
+          "question_id": "Q18",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-020"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q20",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-006"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q30",
+          "recall_delta": 0.25,
+          "baseline_missing": [
+            "DOC-016"
+          ],
+          "candidate_missing": []
+        }
+      ],
+      "regressions": [
+        {
+          "question_id": "Q08",
+          "recall_delta": -0.5,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-013"
+          ]
+        },
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        },
+        {
+          "question_id": "Q32",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-005"
+          ]
+        },
+        {
+          "question_id": "Q33",
+          "recall_delta": -0.5,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-006"
+          ]
+        }
+      ],
+      "unchanged": 28
+    },
+    "protected_1": {
+      "gains": [
+        {
+          "question_id": "Q18",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-020"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q20",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-006"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q30",
+          "recall_delta": 0.25,
+          "baseline_missing": [
+            "DOC-016"
+          ],
+          "candidate_missing": []
+        }
+      ],
+      "regressions": [
+        {
+          "question_id": "Q08",
+          "recall_delta": -0.5,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-013"
+          ]
+        },
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        },
+        {
+          "question_id": "Q32",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-005"
+          ]
+        },
+        {
+          "question_id": "Q33",
+          "recall_delta": -0.5,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-006"
+          ]
+        }
+      ],
+      "unchanged": 28
+    },
+    "protected_2": {
+      "gains": [
+        {
+          "question_id": "Q18",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-020"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q20",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-006"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q30",
+          "recall_delta": 0.25,
+          "baseline_missing": [
+            "DOC-016"
+          ],
+          "candidate_missing": []
+        }
+      ],
+      "regressions": [
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        },
+        {
+          "question_id": "Q32",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-005"
+          ]
+        }
+      ],
+      "unchanged": 30
+    },
+    "protected_3": {
+      "gains": [
+        {
+          "question_id": "Q18",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-020"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q20",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-006"
+          ],
+          "candidate_missing": []
+        }
+      ],
+      "regressions": [
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        }
+      ],
+      "unchanged": 32
+    },
+    "protected_4": {
+      "gains": [
+        {
+          "question_id": "Q18",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-020"
+          ],
+          "candidate_missing": []
+        },
+        {
+          "question_id": "Q20",
+          "recall_delta": 0.5,
+          "baseline_missing": [
+            "DOC-006"
+          ],
+          "candidate_missing": []
+        }
+      ],
+      "regressions": [
+        {
+          "question_id": "Q28",
+          "recall_delta": -0.33333,
+          "baseline_missing": [],
+          "candidate_missing": [
+            "DOC-019"
+          ]
+        }
+      ],
+      "unchanged": 32
+    },
+    "protected_5": {
+      "gains": [],
+      "regressions": [],
+      "unchanged": 35
+    }
+  },
+  "critical_cases": [
+    {
+      "question_id": "Q18",
+      "question": "Quais decisões foram tomadas após o último incidente grave de transporte?",
+      "expected_evidence": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-018": 2,
+          "DOC-020": 14
+        },
+        "lexical_control": {
+          "DOC-018": null,
+          "DOC-020": null
+        },
+        "lexical_bilingual": {
+          "DOC-018": 5,
+          "DOC-020": 8
+        },
+        "hybrid_control_pool": {
+          "DOC-018": 2,
+          "DOC-020": 14
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-018": 2,
+          "DOC-020": 6
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-020"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q19",
+      "question": "Alguma recomendação daquele incidente ainda está pendente?",
+      "expected_evidence": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-021": 10,
+          "DOC-020": 9
+        },
+        "lexical_control": {
+          "DOC-021": null,
+          "DOC-020": null
+        },
+        "lexical_bilingual": {
+          "DOC-021": null,
+          "DOC-020": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-021": 10,
+          "DOC-020": 9
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-021": 17,
+          "DOC-020": 4
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-018",
+            "DOC-010",
+            "DOC-017",
+            "DOC-020",
+            "DOC-019"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.25,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-018",
+            "DOC-010",
+            "DOC-020",
+            "DOC-019"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.25,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-010",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q20",
+      "question": "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-005": 1,
+          "DOC-006": 12
+        },
+        "lexical_control": {
+          "DOC-005": null,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-005": 1,
+          "DOC-006": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-005": 1,
+          "DOC-006": 12
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-005": 1,
+          "DOC-006": 3
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-006",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-006",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q24",
+      "question": "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?",
+      "expected_evidence": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-007"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-006": 2,
+          "DOC-011": 3,
+          "DOC-007": 20
+        },
+        "lexical_control": {
+          "DOC-006": null,
+          "DOC-011": null,
+          "DOC-007": null
+        },
+        "lexical_bilingual": {
+          "DOC-006": 3,
+          "DOC-011": 2,
+          "DOC-007": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-006": 2,
+          "DOC-011": 3,
+          "DOC-007": 20
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-006": 2,
+          "DOC-011": 1,
+          "DOC-007": 11
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-006",
+            "DOC-005",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-011",
+            "DOC-006",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q27",
+      "question": "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?",
+      "expected_evidence": [
+        "DOC-011",
+        "DOC-007",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 10,
+      "lexical_hits_after": 17,
+      "candidate_presence": {
+        "vector": {
+          "DOC-011": 1,
+          "DOC-007": 3,
+          "DOC-006": null
+        },
+        "lexical_control": {
+          "DOC-011": 2,
+          "DOC-007": 4,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-011": 1,
+          "DOC-007": 3,
+          "DOC-006": null
+        },
+        "hybrid_control_pool": {
+          "DOC-011": 1,
+          "DOC-007": 5,
+          "DOC-006": null
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-011": 1,
+          "DOC-007": 4,
+          "DOC-006": null
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-018"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-016",
+            "DOC-007",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-018"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q28",
+      "question": "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "lexical_hits_before": 2,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 1,
+          "DOC-002": 2,
+          "DOC-019": 6
+        },
+        "lexical_control": {
+          "DOC-001": null,
+          "DOC-002": null,
+          "DOC-019": null
+        },
+        "lexical_bilingual": {
+          "DOC-001": 2,
+          "DOC-002": 4,
+          "DOC-019": null
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 2,
+          "DOC-002": 4,
+          "DOC-019": 8
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 1,
+          "DOC-002": 4,
+          "DOC-019": 12
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-019"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-001",
+            "DOC-014",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-022",
+            "DOC-002",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-022",
+            "DOC-002",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-019"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q30",
+      "question": "Qual transportadora devemos contratar para a próxima operação?",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-014": 6,
+          "DOC-015": 7,
+          "DOC-016": 9,
+          "DOC-003": 1
+        },
+        "lexical_control": {
+          "DOC-014": null,
+          "DOC-015": null,
+          "DOC-016": null,
+          "DOC-003": null
+        },
+        "lexical_bilingual": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3,
+          "DOC-003": 7
+        },
+        "hybrid_control_pool": {
+          "DOC-014": 6,
+          "DOC-015": 7,
+          "DOC-016": 9,
+          "DOC-003": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3,
+          "DOC-003": 4
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-003",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q34",
+      "question": "Quem aprova uma nova ferramenta de IA?",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-023": 1,
+          "DOC-012": 9
+        },
+        "lexical_control": {
+          "DOC-023": null,
+          "DOC-012": null
+        },
+        "lexical_bilingual": {
+          "DOC-023": 3,
+          "DOC-012": 8
+        },
+        "hybrid_control_pool": {
+          "DOC-023": 1,
+          "DOC-012": 14
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-023": 2,
+          "DOC-012": 7
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-015",
+            "DOC-025",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    }
+  ],
+  "rv035_rv036_ranking_drift": [
+    {
+      "question_id": "Q12",
+      "arm": "vector",
+      "old": [
+        "DOC-015",
+        "DOC-001",
+        "DOC-014",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "new": [
+        "DOC-015",
+        "DOC-001",
+        "DOC-016",
+        "DOC-014",
+        "DOC-003"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "arm": "hybrid_control",
+      "old": [
+        "DOC-015",
+        "DOC-001",
+        "DOC-014",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "new": [
+        "DOC-015",
+        "DOC-001",
+        "DOC-016",
+        "DOC-014",
+        "DOC-003"
+      ]
+    },
+    {
+      "question_id": "Q13",
+      "arm": "vector",
+      "old": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-001",
+        "DOC-003"
+      ],
+      "new": [
+        "DOC-016",
+        "DOC-014",
+        "DOC-015",
+        "DOC-001",
+        "DOC-003"
+      ]
+    },
+    {
+      "question_id": "Q13",
+      "arm": "hybrid_control",
+      "old": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-027",
+        "DOC-001"
+      ],
+      "new": [
+        "DOC-014",
+        "DOC-016",
+        "DOC-015",
+        "DOC-027",
+        "DOC-001"
+      ]
+    },
+    {
+      "question_id": "Q18",
+      "arm": "vector",
+      "old": [
+        "DOC-019",
+        "DOC-018",
+        "DOC-017",
+        "DOC-009",
+        "DOC-001"
+      ],
+      "new": [
+        "DOC-019",
+        "DOC-018",
+        "DOC-017",
+        "DOC-009",
+        "DOC-003"
+      ]
+    },
+    {
+      "question_id": "Q18",
+      "arm": "hybrid_control",
+      "old": [
+        "DOC-019",
+        "DOC-018",
+        "DOC-017",
+        "DOC-009",
+        "DOC-001"
+      ],
+      "new": [
+        "DOC-019",
+        "DOC-018",
+        "DOC-017",
+        "DOC-009",
+        "DOC-003"
+      ]
+    }
+  ],
+  "per_question": [
+    {
+      "question_id": "Q01",
+      "question": "Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-003": 1
+        },
+        "lexical_control": {
+          "DOC-003": 2
+        },
+        "lexical_bilingual": {
+          "DOC-003": 6
+        },
+        "hybrid_control_pool": {
+          "DOC-003": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-003": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-002",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-009",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-002",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-002",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q02",
+      "question": "Qual é o SLA de entrega estabelecido para cada categoria de transporte?",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 1
+        },
+        "lexical_control": {
+          "DOC-001": 5
+        },
+        "lexical_bilingual": {
+          "DOC-001": 12
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 5
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-009",
+            "DOC-003",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-002",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-003",
+            "DOC-014",
+            "DOC-009",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-003",
+            "DOC-014",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-003",
+            "DOC-014",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-009",
+            "DOC-003",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-009",
+            "DOC-003",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-009",
+            "DOC-003",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q03",
+      "question": "Quais documentos precisam ser apresentados para homologação de uma nova transportadora?",
+      "expected_evidence": [
+        "DOC-008",
+        "DOC-022"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-008": 2,
+          "DOC-022": 4
+        },
+        "lexical_control": {
+          "DOC-008": null,
+          "DOC-022": null
+        },
+        "lexical_bilingual": {
+          "DOC-008": 9,
+          "DOC-022": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-008": 4,
+          "DOC-022": 7
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-008": 3,
+          "DOC-022": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-003",
+            "DOC-008",
+            "DOC-014",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.3333333333333333,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-015",
+            "DOC-008",
+            "DOC-003",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-022",
+            "DOC-015",
+            "DOC-008",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-015",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-015",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-008",
+            "DOC-022",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q04",
+      "question": "Quem é responsável por aprovar a contratação emergencial de uma transportadora?",
+      "expected_evidence": [
+        "DOC-012",
+        "DOC-003"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-012": 7,
+          "DOC-003": 2
+        },
+        "lexical_control": {
+          "DOC-012": null,
+          "DOC-003": null
+        },
+        "lexical_bilingual": {
+          "DOC-012": 2,
+          "DOC-003": 9
+        },
+        "hybrid_control_pool": {
+          "DOC-012": 7,
+          "DOC-003": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-012": 2,
+          "DOC-003": 3
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-003",
+            "DOC-009",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-003",
+            "DOC-009",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-012",
+            "DOC-009",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-012",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q05",
+      "question": "Qual é o limite financeiro para contratação sem aprovação da diretoria?",
+      "expected_evidence": [
+        "DOC-012"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-012": 2
+        },
+        "lexical_control": {
+          "DOC-012": null
+        },
+        "lexical_bilingual": {
+          "DOC-012": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-012": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-012": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-023",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-023",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-023",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-023",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-023"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-012",
+            "DOC-025",
+            "DOC-003",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q06",
+      "question": "Em quais situações uma entrega pode ser classificada como crítica?",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-009"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 2,
+          "DOC-009": 1
+        },
+        "lexical_control": {
+          "DOC-001": null,
+          "DOC-009": null
+        },
+        "lexical_bilingual": {
+          "DOC-001": 1,
+          "DOC-009": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 2,
+          "DOC-009": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 1,
+          "DOC-009": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-009",
+            "DOC-001",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q07",
+      "question": "Qual é o procedimento previsto para uma entrega crítica atrasada?",
+      "expected_evidence": [
+        "DOC-009"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-009": 2
+        },
+        "lexical_control": {
+          "DOC-009": null
+        },
+        "lexical_bilingual": {
+          "DOC-009": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-009": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-009": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-003",
+            "DOC-018",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-003",
+            "DOC-018",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-003",
+            "DOC-018",
+            "DOC-014"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-009",
+            "DOC-017",
+            "DOC-003",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q08",
+      "question": "Quais KPIs são utilizados para avaliar o desempenho das transportadoras?",
+      "expected_evidence": [
+        "DOC-003",
+        "DOC-013"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-003": 1,
+          "DOC-013": 2
+        },
+        "lexical_control": {
+          "DOC-003": null,
+          "DOC-013": null
+        },
+        "lexical_bilingual": {
+          "DOC-003": 1,
+          "DOC-013": 14
+        },
+        "hybrid_control_pool": {
+          "DOC-003": 1,
+          "DOC-013": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-003": 1,
+          "DOC-013": 8
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-014",
+            "DOC-005",
+            "DOC-001"
+          ],
+          "missing": [
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-014",
+            "DOC-005",
+            "DOC-001"
+          ],
+          "missing": [
+            "DOC-013"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-013",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q09",
+      "question": "Como é calculado o indicador OTIF segundo a documentação da empresa?",
+      "expected_evidence": [
+        "DOC-013"
+      ],
+      "lexical_hits_before": 6,
+      "lexical_hits_after": 6,
+      "candidate_presence": {
+        "vector": {
+          "DOC-013": 5
+        },
+        "lexical_control": {
+          "DOC-013": 5
+        },
+        "lexical_bilingual": {
+          "DOC-013": 5
+        },
+        "hybrid_control_pool": {
+          "DOC-013": 5
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-013": 5
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-003",
+            "DOC-019",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-003",
+            "DOC-019",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-003",
+            "DOC-019",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q10",
+      "question": "Qual é a meta vigente de OTIF para operações nacionais?",
+      "expected_evidence": [
+        "DOC-001"
+      ],
+      "lexical_hits_before": 6,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 1
+        },
+        "lexical_control": {
+          "DOC-001": 2
+        },
+        "lexical_bilingual": {
+          "DOC-001": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-019",
+            "DOC-002",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-019",
+            "DOC-002",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-019",
+            "DOC-003",
+            "DOC-013"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q11",
+      "question": "A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "lexical_hits_before": 6,
+      "lexical_hits_after": 7,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 2,
+          "DOC-002": 1,
+          "DOC-019": 3
+        },
+        "lexical_control": {
+          "DOC-001": 2,
+          "DOC-002": 1,
+          "DOC-019": 3
+        },
+        "lexical_bilingual": {
+          "DOC-001": 1,
+          "DOC-002": 2,
+          "DOC-019": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 2,
+          "DOC-002": 1,
+          "DOC-019": 3
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 2,
+          "DOC-002": 1,
+          "DOC-019": 3
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-002",
+            "DOC-001",
+            "DOC-019",
+            "DOC-013",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q12",
+      "question": "Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-014": 4,
+          "DOC-015": 1,
+          "DOC-016": 3
+        },
+        "lexical_control": {
+          "DOC-014": null,
+          "DOC-015": null,
+          "DOC-016": null
+        },
+        "lexical_bilingual": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-014": 4,
+          "DOC-015": 1,
+          "DOC-016": 3
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-014": 1,
+          "DOC-015": 3,
+          "DOC-016": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-016",
+            "DOC-014",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-016",
+            "DOC-014",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-016",
+            "DOC-015",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-014",
+            "DOC-016",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-014",
+            "DOC-016",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-016",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-016",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-015",
+            "DOC-001",
+            "DOC-016",
+            "DOC-014",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q13",
+      "question": "Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova.",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015"
+      ],
+      "lexical_hits_before": 8,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-014": 2,
+          "DOC-015": 3
+        },
+        "lexical_control": {
+          "DOC-014": 1,
+          "DOC-015": 2
+        },
+        "lexical_bilingual": {
+          "DOC-014": 1,
+          "DOC-015": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-014": 1,
+          "DOC-015": 3
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-014": 1,
+          "DOC-015": 3
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-016",
+            "DOC-015",
+            "DOC-027",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-016",
+            "DOC-015",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q14",
+      "question": "Existe alguma exceção contratual às penalidades em caso de eventos de força maior?",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 17,
+      "candidate_presence": {
+        "vector": {
+          "DOC-014": 2,
+          "DOC-015": 3,
+          "DOC-016": 1
+        },
+        "lexical_control": {
+          "DOC-014": null,
+          "DOC-015": null,
+          "DOC-016": null
+        },
+        "lexical_bilingual": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-014": 2,
+          "DOC-015": 3,
+          "DOC-016": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-014": 1,
+          "DOC-015": 3,
+          "DOC-016": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-016",
+            "DOC-015",
+            "DOC-005",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-005",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-005",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-005",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-014",
+            "DOC-015",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q15",
+      "question": "Quais são os critérios para classificar uma transportadora como de alto risco?",
+      "expected_evidence": [
+        "DOC-004"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-004": 1
+        },
+        "lexical_control": {
+          "DOC-004": null
+        },
+        "lexical_bilingual": {
+          "DOC-004": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-004": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-004": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-003",
+            "DOC-009",
+            "DOC-022",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-003",
+            "DOC-009",
+            "DOC-022",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-022",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-022",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-004",
+            "DOC-009",
+            "DOC-003",
+            "DOC-001",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q16",
+      "question": "O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?",
+      "expected_evidence": [
+        "DOC-003"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-003": 1
+        },
+        "lexical_control": {
+          "DOC-003": 2
+        },
+        "lexical_bilingual": {
+          "DOC-003": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-003": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-003": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-009",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-004",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-004",
+            "DOC-018"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-018",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-001",
+            "DOC-009",
+            "DOC-018",
+            "DOC-002"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q17",
+      "question": "Houve algum incidente semelhante anteriormente? Como ele foi tratado?",
+      "expected_evidence": [
+        "DOC-017",
+        "DOC-019"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 19,
+      "candidate_presence": {
+        "vector": {
+          "DOC-017": 1,
+          "DOC-019": 2
+        },
+        "lexical_control": {
+          "DOC-017": null,
+          "DOC-019": null
+        },
+        "lexical_bilingual": {
+          "DOC-017": 1,
+          "DOC-019": 5
+        },
+        "hybrid_control_pool": {
+          "DOC-017": 1,
+          "DOC-019": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-017": 1,
+          "DOC-019": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-010",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-010"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-011",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q18",
+      "question": "Quais decisões foram tomadas após o último incidente grave de transporte?",
+      "expected_evidence": [
+        "DOC-018",
+        "DOC-020"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-018": 2,
+          "DOC-020": 14
+        },
+        "lexical_control": {
+          "DOC-018": null,
+          "DOC-020": null
+        },
+        "lexical_bilingual": {
+          "DOC-018": 5,
+          "DOC-020": 8
+        },
+        "hybrid_control_pool": {
+          "DOC-018": 2,
+          "DOC-020": 14
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-018": 2,
+          "DOC-020": 6
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-020",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-020"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-019",
+            "DOC-018",
+            "DOC-017",
+            "DOC-009",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-020"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q19",
+      "question": "Alguma recomendação daquele incidente ainda está pendente?",
+      "expected_evidence": [
+        "DOC-021",
+        "DOC-020"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-021": 10,
+          "DOC-020": 9
+        },
+        "lexical_control": {
+          "DOC-021": null,
+          "DOC-020": null
+        },
+        "lexical_bilingual": {
+          "DOC-021": null,
+          "DOC-020": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-021": 10,
+          "DOC-020": 9
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-021": 17,
+          "DOC-020": 4
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-018",
+            "DOC-010",
+            "DOC-017",
+            "DOC-020",
+            "DOC-019"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.25,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-018",
+            "DOC-010",
+            "DOC-020",
+            "DOC-019"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.25,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-018",
+            "DOC-010",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-017",
+            "DOC-019",
+            "DOC-010",
+            "DOC-018",
+            "DOC-020"
+          ],
+          "missing": [
+            "DOC-021"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 0,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 0.2,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q20",
+      "question": "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-005": 1,
+          "DOC-006": 12
+        },
+        "lexical_control": {
+          "DOC-005": null,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-005": 1,
+          "DOC-006": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-005": 1,
+          "DOC-006": 12
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-005": 1,
+          "DOC-006": 3
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-006",
+            "DOC-009",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-006",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-001",
+            "DOC-009",
+            "DOC-022",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q21",
+      "question": "Quais informações são classificadas como confidenciais nos documentos logísticos?",
+      "expected_evidence": [
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-006": 2
+        },
+        "lexical_control": {
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-006": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-006": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-006": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-005",
+            "DOC-010",
+            "DOC-011",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-011",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-011",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-011",
+            "DOC-008"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-011"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-010",
+            "DOC-001",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q22",
+      "question": "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?",
+      "expected_evidence": [
+        "DOC-005",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-005": 1,
+          "DOC-006": 2
+        },
+        "lexical_control": {
+          "DOC-005": null,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-005": 2,
+          "DOC-006": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-005": 1,
+          "DOC-006": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-005": 1,
+          "DOC-006": 5
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-010"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-010"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-025",
+            "DOC-010",
+            "DOC-003",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-025",
+            "DOC-010",
+            "DOC-003",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-025",
+            "DOC-010",
+            "DOC-003"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-025",
+            "DOC-010"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-009",
+            "DOC-003",
+            "DOC-010"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q23",
+      "question": "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?",
+      "expected_evidence": [
+        "DOC-010"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-010": 1
+        },
+        "lexical_control": {
+          "DOC-010": null
+        },
+        "lexical_bilingual": {
+          "DOC-010": 4
+        },
+        "hybrid_control_pool": {
+          "DOC-010": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-010": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-025",
+            "DOC-010",
+            "DOC-006",
+            "DOC-023",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-025",
+            "DOC-006",
+            "DOC-023",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-023",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-023",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-010",
+            "DOC-006",
+            "DOC-025",
+            "DOC-005",
+            "DOC-023"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q24",
+      "question": "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?",
+      "expected_evidence": [
+        "DOC-006",
+        "DOC-011",
+        "DOC-007"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-006": 2,
+          "DOC-011": 3,
+          "DOC-007": 20
+        },
+        "lexical_control": {
+          "DOC-006": null,
+          "DOC-011": null,
+          "DOC-007": null
+        },
+        "lexical_bilingual": {
+          "DOC-006": 3,
+          "DOC-011": 2,
+          "DOC-007": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-006": 2,
+          "DOC-011": 3,
+          "DOC-007": 20
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-006": 2,
+          "DOC-011": 1,
+          "DOC-007": 11
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-006",
+            "DOC-005",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-011",
+            "DOC-006",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-005",
+            "DOC-006",
+            "DOC-011",
+            "DOC-010",
+            "DOC-023"
+          ],
+          "missing": [
+            "DOC-007"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q25",
+      "question": "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?",
+      "expected_evidence": [
+        "DOC-007"
+      ],
+      "lexical_hits_before": 20,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-007": 2
+        },
+        "lexical_control": {
+          "DOC-007": 6
+        },
+        "lexical_bilingual": {
+          "DOC-007": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-007": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-007": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-024",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-007",
+            "DOC-005",
+            "DOC-022",
+            "DOC-024"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q26",
+      "question": "Qual é atualmente a versão vigente da política de gestão de fornecedores?",
+      "expected_evidence": [
+        "DOC-022"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-022": 1
+        },
+        "lexical_control": {
+          "DOC-022": null
+        },
+        "lexical_bilingual": {
+          "DOC-022": 1
+        },
+        "hybrid_control_pool": {
+          "DOC-022": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-022": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-004",
+            "DOC-007",
+            "DOC-001",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-004",
+            "DOC-007",
+            "DOC-001",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-007",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-007",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-022",
+            "DOC-025",
+            "DOC-004",
+            "DOC-008",
+            "DOC-007"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q27",
+      "question": "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?",
+      "expected_evidence": [
+        "DOC-011",
+        "DOC-007",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 10,
+      "lexical_hits_after": 17,
+      "candidate_presence": {
+        "vector": {
+          "DOC-011": 1,
+          "DOC-007": 3,
+          "DOC-006": null
+        },
+        "lexical_control": {
+          "DOC-011": 2,
+          "DOC-007": 4,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-011": 1,
+          "DOC-007": 3,
+          "DOC-006": null
+        },
+        "hybrid_control_pool": {
+          "DOC-011": 1,
+          "DOC-007": 5,
+          "DOC-006": null
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-011": 1,
+          "DOC-007": 4,
+          "DOC-006": null
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-018"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-016",
+            "DOC-007",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-003"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-011",
+            "DOC-002",
+            "DOC-007",
+            "DOC-017",
+            "DOC-018"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q28",
+      "question": "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?",
+      "expected_evidence": [
+        "DOC-001",
+        "DOC-002",
+        "DOC-019"
+      ],
+      "lexical_hits_before": 2,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-001": 1,
+          "DOC-002": 2,
+          "DOC-019": 6
+        },
+        "lexical_control": {
+          "DOC-001": null,
+          "DOC-002": null,
+          "DOC-019": null
+        },
+        "lexical_bilingual": {
+          "DOC-001": 2,
+          "DOC-002": 4,
+          "DOC-019": null
+        },
+        "hybrid_control_pool": {
+          "DOC-001": 2,
+          "DOC-002": 4,
+          "DOC-019": 8
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-001": 1,
+          "DOC-002": 4,
+          "DOC-019": 12
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-019"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-016",
+            "DOC-001",
+            "DOC-014",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-022",
+            "DOC-002",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-022",
+            "DOC-002",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-016",
+            "DOC-017"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-016"
+          ],
+          "missing": [
+            "DOC-019"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-022",
+            "DOC-003",
+            "DOC-019"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q29",
+      "question": "Qual é a política da empresa para transporte de material radioativo?",
+      "expected_evidence": [],
+      "lexical_hits_before": 8,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {},
+        "lexical_control": {},
+        "lexical_bilingual": {},
+        "hybrid_control_pool": {},
+        "hybrid_bilingual_pool": {}
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-005",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-004",
+            "DOC-003",
+            "DOC-025",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-005",
+            "DOC-009",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-002",
+            "DOC-005",
+            "DOC-009",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-002",
+            "DOC-005",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-005",
+            "DOC-002",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-005",
+            "DOC-002",
+            "DOC-009"
+          ],
+          "missing": [],
+          "metrics": null
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-001",
+            "DOC-003",
+            "DOC-005",
+            "DOC-002",
+            "DOC-022"
+          ],
+          "missing": [],
+          "metrics": null
+        }
+      }
+    },
+    {
+      "question_id": "Q30",
+      "question": "Qual transportadora devemos contratar para a próxima operação?",
+      "expected_evidence": [
+        "DOC-014",
+        "DOC-015",
+        "DOC-016",
+        "DOC-003"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-014": 6,
+          "DOC-015": 7,
+          "DOC-016": 9,
+          "DOC-003": 1
+        },
+        "lexical_control": {
+          "DOC-014": null,
+          "DOC-015": null,
+          "DOC-016": null,
+          "DOC-003": null
+        },
+        "lexical_bilingual": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3,
+          "DOC-003": 7
+        },
+        "hybrid_control_pool": {
+          "DOC-014": 6,
+          "DOC-015": 7,
+          "DOC-016": 9,
+          "DOC-003": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-014": 1,
+          "DOC-015": 2,
+          "DOC-016": 3,
+          "DOC-003": 4
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-003",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016",
+            "DOC-001"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-014",
+            "DOC-015",
+            "DOC-016"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-003",
+            "DOC-009",
+            "DOC-005",
+            "DOC-014",
+            "DOC-015"
+          ],
+          "missing": [
+            "DOC-016"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.75,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q31",
+      "question": "Posso usar IA para analisar contratos de fornecedores?",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-023": 1,
+          "DOC-024": 2
+        },
+        "lexical_control": {
+          "DOC-023": null,
+          "DOC-024": null
+        },
+        "lexical_bilingual": {
+          "DOC-023": 1,
+          "DOC-024": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-023": 1,
+          "DOC-024": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-023": 1,
+          "DOC-024": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-004",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-004",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-004",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-027",
+            "DOC-004"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-024",
+            "DOC-025",
+            "DOC-005",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q32",
+      "question": "Quais aprovações são necessárias para usar IA com dados de fornecedores?",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-005",
+        "DOC-012"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-023": 1,
+          "DOC-005": 4,
+          "DOC-012": 5
+        },
+        "lexical_control": {
+          "DOC-023": null,
+          "DOC-005": null,
+          "DOC-012": null
+        },
+        "lexical_bilingual": {
+          "DOC-023": 1,
+          "DOC-005": 8,
+          "DOC-012": 14
+        },
+        "hybrid_control_pool": {
+          "DOC-023": 1,
+          "DOC-005": 4,
+          "DOC-012": 5
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-023": 1,
+          "DOC-005": 9,
+          "DOC-012": 4
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-012",
+            "DOC-027",
+            "DOC-010"
+          ],
+          "missing": [
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-012",
+            "DOC-027",
+            "DOC-010"
+          ],
+          "missing": [
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-012",
+            "DOC-027",
+            "DOC-010"
+          ],
+          "missing": [
+            "DOC-005"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.6666666666666666,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-012",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q33",
+      "question": "Quais requisitos de segurança se aplicam ao uso de IA?",
+      "expected_evidence": [
+        "DOC-024",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-024": 1,
+          "DOC-006": 2
+        },
+        "lexical_control": {
+          "DOC-024": null,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-024": 1,
+          "DOC-006": 10
+        },
+        "hybrid_control_pool": {
+          "DOC-024": 1,
+          "DOC-006": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-024": 1,
+          "DOC-006": 10
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-023",
+            "DOC-005",
+            "DOC-025",
+            "DOC-026"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-023",
+            "DOC-005",
+            "DOC-025",
+            "DOC-026"
+          ],
+          "missing": [
+            "DOC-006"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-023",
+            "DOC-005",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-024",
+            "DOC-006",
+            "DOC-005",
+            "DOC-023",
+            "DOC-025"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q34",
+      "question": "Quem aprova uma nova ferramenta de IA?",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-012"
+      ],
+      "lexical_hits_before": 5,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-023": 1,
+          "DOC-012": 9
+        },
+        "lexical_control": {
+          "DOC-023": null,
+          "DOC-012": null
+        },
+        "lexical_bilingual": {
+          "DOC-023": 3,
+          "DOC-012": 8
+        },
+        "hybrid_control_pool": {
+          "DOC-023": 1,
+          "DOC-012": 14
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-023": 2,
+          "DOC-012": 7
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-015",
+            "DOC-025",
+            "DOC-014",
+            "DOC-005"
+          ],
+          "missing": [
+            "DOC-012"
+          ],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 0.5,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 0
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-025",
+            "DOC-023",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 0,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 0.5,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-023",
+            "DOC-025",
+            "DOC-005",
+            "DOC-006",
+            "DOC-012"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q35",
+      "question": "Posso inserir dados confidenciais em uma ferramenta de IA?",
+      "expected_evidence": [
+        "DOC-023",
+        "DOC-024",
+        "DOC-006"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-023": 2,
+          "DOC-024": 5,
+          "DOC-006": 1
+        },
+        "lexical_control": {
+          "DOC-023": null,
+          "DOC-024": null,
+          "DOC-006": null
+        },
+        "lexical_bilingual": {
+          "DOC-023": 1,
+          "DOC-024": 3,
+          "DOC-006": 2
+        },
+        "hybrid_control_pool": {
+          "DOC-023": 2,
+          "DOC-024": 5,
+          "DOC-006": 1
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-023": 2,
+          "DOC-024": 4,
+          "DOC-006": 1
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-006",
+            "DOC-023",
+            "DOC-025",
+            "DOC-024",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    },
+    {
+      "question_id": "Q36",
+      "question": "Que treinamento é obrigatório para colaboradores que utilizam IA?",
+      "expected_evidence": [
+        "DOC-026",
+        "DOC-023"
+      ],
+      "lexical_hits_before": 0,
+      "lexical_hits_after": 20,
+      "candidate_presence": {
+        "vector": {
+          "DOC-026": 1,
+          "DOC-023": 2
+        },
+        "lexical_control": {
+          "DOC-026": null,
+          "DOC-023": null
+        },
+        "lexical_bilingual": {
+          "DOC-026": 1,
+          "DOC-023": 3
+        },
+        "hybrid_control_pool": {
+          "DOC-026": 1,
+          "DOC-023": 2
+        },
+        "hybrid_bilingual_pool": {
+          "DOC-026": 1,
+          "DOC-023": 2
+        }
+      },
+      "arms": {
+        "vector": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_control": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "hybrid_bilingual": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_1": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_2": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_3": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-027",
+            "DOC-006"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_4": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-027"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        },
+        "protected_5": {
+          "document_ids": [
+            "DOC-026",
+            "DOC-023",
+            "DOC-024",
+            "DOC-006",
+            "DOC-005"
+          ],
+          "missing": [],
+          "metrics": {
+            "Hit@1": 1,
+            "Hit@3": 1,
+            "Hit@5": 1,
+            "Recall@5": 1.0,
+            "MRR@5": 1.0,
+            "FullEvidence@5": 1
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Document-level coverage does not establish passage relevance or claim entailment.",
+    "Offline replay assesses fixed candidate pools; it does not evaluate new retrieval or generation.",
+    "Prefix-protection variants are in-sample experiments on the same 35 scored questions; independent holdout is required.",
+    "Q29 abstention behavior and governance authority resolution are not validated."
+  ]
+}
