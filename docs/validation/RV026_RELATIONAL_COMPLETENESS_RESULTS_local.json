@@ -1,0 +1,267 @@
+{
+  "experiment": "RV026_RELATIONAL_COMPLETENESS",
+  "status": "reviewed_with_reservation",
+  "method": "source_based_assistant_assisted_reclassification",
+  "source_sha256": "c1d5397354ff6a7f3768872c0b6870a381a079fbf301b1e34acc332d95353610",
+  "claims_total": 32,
+  "local_pass": 31,
+  "local_partial": 1,
+  "global_cases_pass": 4,
+  "global_cases_partial": 1,
+  "semantic_review_independent": false,
+  "reviews": [
+    {
+      "case": "ORC-001",
+      "claim_count": 7,
+      "local_assessments": [
+        {
+          "coverage_id": "C1",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "global_completeness": "pass",
+      "relationships": []
+    },
+    {
+      "case": "ORC-002",
+      "claim_count": 7,
+      "local_assessments": [
+        {
+          "coverage_id": "C1",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "global_completeness": "pass",
+      "relationships": []
+    },
+    {
+      "case": "ORC-003",
+      "claim_count": 3,
+      "local_assessments": [
+        {
+          "coverage_id": "C1",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "global_completeness": "pass",
+      "relationships": []
+    },
+    {
+      "case": "ORC-004",
+      "claim_count": 8,
+      "local_assessments": [
+        {
+          "coverage_id": "C1",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C6",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C8",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "global_completeness": "pass",
+      "relationships": []
+    },
+    {
+      "case": "ORC-003-NORMATIVE",
+      "claim_count": 7,
+      "local_assessments": [
+        {
+          "coverage_id": "C1",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C2",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C3",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C4",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C5",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "partial",
+          "original_review_notes": "As evidencias sustentam as aprovacoes da nova ferramenta, mas a afirmacao nao explicita a distincao entre aprovar a ferramenta e aprovar o uso de dados confidenciais. A informacao complementar aparece em C2."
+        },
+        {
+          "coverage_id": "C6",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        },
+        {
+          "coverage_id": "C7",
+          "faithfulness_review": "supported_preliminary",
+          "local_completeness": "pass",
+          "original_review_notes": "Afirmacao alinhada ao requisito, as condicoes e as evidencias citadas na revisao assistida."
+        }
+      ],
+      "global_completeness": "partial_relational_clarity",
+      "relationships": [
+        {
+          "relationship_id": "REL-001",
+          "coverage_ids": [
+            "C2",
+            "C5"
+          ],
+          "type": "distinct_approval_processes",
+          "expected_relationship": "A aprovacao de nova ferramenta de IA nao substitui as aprovacoes necessarias para utilizar dados confidenciais de fornecedores.",
+          "substantive_requirements_present": true,
+          "relationship_explicit": false,
+          "verdict": "partial",
+          "explanation": "As aprovacoes dos dois processos estao presentes em C2 e C5, mas a relacao entre eles nao foi expressamente comunicada na resposta.",
+          "review_basis": "RV025 assistant-assisted review"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Classificacoes derivadas do RV025, nao nova avaliacao independente.",
+    "A presenca substantiva nao equivale a relacao explicita.",
+    "Casos pequenos e parcialmente redundantes.",
+    "Nao representa confiabilidade em producao."
+  ]
+}
