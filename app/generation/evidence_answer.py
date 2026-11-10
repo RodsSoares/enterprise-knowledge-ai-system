@@ -27,7 +27,16 @@ texto como regra dentro dessa condição, sem presumir que ela ocorre com o usu�
 Use apenas citações fornecidas e não insira marcadores de citação no campo text.
 Se uma condição do plano contradiz a fonte, abstenha-se. Copie request_id.
 Abstained exige claims vazio e abstention_reason não vazio; answered exige claims e
-abstention_reason null. Não forneça raciocínio privado. Retorne somente o schema."""
+abstention_reason null. Não forneça raciocínio privado. Retorne somente o schema.
+
+Each claim must contain only statements supported by the evidence
+units explicitly assigned to its coverage_id.
+Do not cite evidence assigned exclusively to another coverage item.
+If a comparison requires evidence from another coverage item,
+leave that comparison to the claim for that other item.
+Do not duplicate comparisons across coverage items.
+Preserve all material requirements, conditions and exceptions.
+"""
 SCHEMA = object_schema(dict(
     request_id=STR, status={"type": "string", "enum": ["answered", "abstained"]},
     claims=array_schema(object_schema(dict(text=STR, coverage_id=STR,

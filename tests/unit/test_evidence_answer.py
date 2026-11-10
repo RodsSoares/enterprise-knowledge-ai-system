@@ -144,3 +144,26 @@ def test_compact_terminal_comparison_uses_saved_request_metadata(inputs):
     assert prepare_generation(compact, snapshot) == prepare_generation(saved, snapshot)
     compact['result']['trace'][0]['payload']['candidates'][0]['metadata']['as_of']='invalid'
     with pytest.raises(ValueError): prepare_generation(compact, snapshot)
+
+
+def test_generation_instructions_preserve_coverage_boundaries(inputs):
+    from app.generation.evidence_answer import INSTRUCTIONS
+
+    request = prepare_generation(*inputs)
+    kwargs = generation_kwargs(request, "fake", 100)
+
+    assert kwargs["instructions"] == INSTRUCTIONS
+    assert "Each claim must contain only statements" in INSTRUCTIONS
+    assert "Do not cite evidence assigned exclusively" in INSTRUCTIONS
+    assert "Preserve all material requirements" in INSTRUCTIONS
+
+    answer = answer_for(request)
+    assert validate_answer(json.dumps(answer), request) == answer
+
+    answer["claims"][0]["citation_ids"] = (
+        answer["claims"][1]["citation_ids"]
+    )
+    with pytest.raises(
+        ValueError, match="Citations must support"
+    ):
+        validate_answer(json.dumps(answer), request)
