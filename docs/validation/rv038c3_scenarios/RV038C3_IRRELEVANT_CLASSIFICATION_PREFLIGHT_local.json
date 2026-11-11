@@ -1,0 +1,36 @@
+{
+  "experiment": "RV-038C2B",
+  "status": "dry_run",
+  "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+  "snapshot_id": "synthetic-rv038c3-irrelevant_classification",
+  "input_sha256": "e00ca2a44693b7311262e3c6deb8aa31dd36323cd83fa69d1adba3af63b5229f",
+  "bundle_hash": "f1c5ec77a80495b0b808cdd697c2ca278736cb303300d684a917f1af73c1e5a1",
+  "assurance_request": {
+    "candidate_chunk_ids": [
+      "SYNTH-RV038C3::irrelevant_classification::unit-db44738a2b396949f7ac70094db4a104ea444f6858f8f2a00c95d50d19ad9090",
+      "SYNTH-RV038C3::irrelevant_classification::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e",
+      "SYNTH-RV038C3::irrelevant_classification::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f",
+      "SYNTH-RV038C3::irrelevant_classification::unit-1f868e8837ad0071d014e37d783a81cc0d45aca5243c9eee0a3f9c4950caaa09"
+    ],
+    "evidence_set_hash": "35b6676e2aae9e5b2920044c4e846721c9ab22b694ba8a7352d0c4cc0aa00763",
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "recovery_used": false,
+    "requirement_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "synthetic-rv038c3-irrelevant_classification"
+  },
+  "context_hash": "03dfcbe84e2a3a682d9d86ad362b8a69dfc8aef6f3e2ba081f92609536a04863",
+  "schema_hash": "c6e65f80d8227e20dc5572314e5b7d6e873228796ce91c145a1398017dc0d997",
+  "instructions_hash": "d5b00aa2aed1f83def6a19f3f9e095c1710f63bb551ce6823efe7cac3053ee0e",
+  "decision": null,
+  "usage": null,
+  "semantic_review": "unverified"
+}
