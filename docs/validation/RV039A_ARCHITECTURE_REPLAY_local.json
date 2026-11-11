@@ -1,0 +1,3484 @@
+{
+  "experiment": "RV-039A",
+  "mode": "offline_no_api",
+  "candidate_replay": {
+    "status": "offline_ablation_complete",
+    "sample_size": 35,
+    "excluded_abstention_cases": [
+      {
+        "question_id": "Q29",
+        "expected_behavior": "abstain_insufficient_evidence"
+      }
+    ],
+    "metric_level": "unique_document_ids_from_saved_chunk_ranks",
+    "comparability_warning": "New policy uses unit-prefix; RV036 protected3 uses document-prefix and historical selection. Do not equate them.",
+    "summary": {
+      "protected_units_0": {
+        "questions": 35,
+        "mean_document_recall_5": 0.919,
+        "full_document_evidence_5": 0.8
+      },
+      "protected_units_2": {
+        "questions": 35,
+        "mean_document_recall_5": 0.9476,
+        "full_document_evidence_5": 0.8571
+      },
+      "protected_units_3": {
+        "questions": 35,
+        "mean_document_recall_5": 0.9476,
+        "full_document_evidence_5": 0.8571
+      },
+      "protected_units_5": {
+        "questions": 35,
+        "mean_document_recall_5": 0.95,
+        "full_document_evidence_5": 0.8571
+      },
+      "historical_vector": {
+        "questions": 35,
+        "mean_document_recall_5": 0.931,
+        "full_document_evidence_5": 0.8286
+      },
+      "historical_hybrid_control": {
+        "questions": 35,
+        "mean_document_recall_5": 0.9071,
+        "full_document_evidence_5": 0.7714
+      },
+      "historical_hybrid_bilingual": {
+        "questions": 35,
+        "mean_document_recall_5": 0.919,
+        "full_document_evidence_5": 0.8
+      },
+      "historical_hybrid_protected3": {
+        "questions": 35,
+        "mean_document_recall_5": 0.95,
+        "full_document_evidence_5": 0.8571
+      }
+    },
+    "questions": [
+      {
+        "question_id": "Q01",
+        "expected_document_ids": [
+          "DOC-003"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-003",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-002",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-009",
+              "DOC-002"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-003",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q02",
+        "expected_document_ids": [
+          "DOC-001"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-002",
+              "DOC-003",
+              "DOC-014",
+              "DOC-009",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-003",
+              "DOC-014",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-009",
+              "DOC-003",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-009",
+              "DOC-003",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-009",
+              "DOC-003",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-002",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-002",
+              "DOC-003",
+              "DOC-014",
+              "DOC-009",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-009",
+              "DOC-003",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q03",
+        "expected_document_ids": [
+          "DOC-008",
+          "DOC-022"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-022",
+              "DOC-015",
+              "DOC-008",
+              "DOC-003",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-003",
+              "DOC-008",
+              "DOC-022",
+              "DOC-015",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-003",
+              "DOC-008",
+              "DOC-022",
+              "DOC-015",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-003",
+              "DOC-008",
+              "DOC-022",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-003",
+              "DOC-008",
+              "DOC-022",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-015",
+              "DOC-003",
+              "DOC-008",
+              "DOC-014",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-022",
+              "DOC-015",
+              "DOC-008",
+              "DOC-003",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-003",
+              "DOC-008",
+              "DOC-022",
+              "DOC-015",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q04",
+        "expected_document_ids": [
+          "DOC-012",
+          "DOC-003"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-003",
+              "DOC-009",
+              "DOC-004"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-012",
+              "DOC-009",
+              "DOC-004"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-001",
+              "DOC-012",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-003",
+              "DOC-009",
+              "DOC-004"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-022",
+              "DOC-003",
+              "DOC-001",
+              "DOC-012",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q05",
+        "expected_document_ids": [
+          "DOC-012"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-003",
+              "DOC-024"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-003",
+              "DOC-024"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-022",
+              "DOC-012",
+              "DOC-025",
+              "DOC-023",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q06",
+        "expected_document_ids": [
+          "DOC-001",
+          "DOC-009"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-009",
+              "DOC-001",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q07",
+        "expected_document_ids": [
+          "DOC-009"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-003",
+              "DOC-018",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-003",
+              "DOC-018",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-003",
+              "DOC-018",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-017",
+              "DOC-003",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-017",
+              "DOC-003",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-017",
+              "DOC-003",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-003",
+              "DOC-018",
+              "DOC-014"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-001",
+              "DOC-009",
+              "DOC-017",
+              "DOC-003",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q08",
+        "expected_document_ids": [
+          "DOC-003",
+          "DOC-013"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-014",
+              "DOC-005",
+              "DOC-001"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-014",
+              "DOC-005",
+              "DOC-001"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-003",
+              "DOC-013",
+              "DOC-009",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q09",
+        "expected_document_ids": [
+          "DOC-013"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-003",
+              "DOC-019",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-003",
+              "DOC-019",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-003",
+              "DOC-019",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q10",
+        "expected_document_ids": [
+          "DOC-001"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-019",
+              "DOC-002",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-003",
+              "DOC-013"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-019",
+              "DOC-002",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q11",
+        "expected_document_ids": [
+          "DOC-001",
+          "DOC-002",
+          "DOC-019"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-002",
+              "DOC-001",
+              "DOC-019",
+              "DOC-013",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q12",
+        "expected_document_ids": [
+          "DOC-014",
+          "DOC-015",
+          "DOC-016"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-001",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-014",
+              "DOC-016",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-016",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-016",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-016",
+              "DOC-014",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-016",
+              "DOC-014",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-001",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-015",
+              "DOC-001",
+              "DOC-016",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q13",
+        "expected_document_ids": [
+          "DOC-014",
+          "DOC-015"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-027",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q14",
+        "expected_document_ids": [
+          "DOC-014",
+          "DOC-015",
+          "DOC-016"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-005",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-005",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-005",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-001",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-014",
+              "DOC-016",
+              "DOC-015",
+              "DOC-005",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-016",
+              "DOC-014",
+              "DOC-015",
+              "DOC-005",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q15",
+        "expected_document_ids": [
+          "DOC-004"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-004",
+              "DOC-003",
+              "DOC-009",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-004",
+              "DOC-003",
+              "DOC-009",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-004",
+              "DOC-009",
+              "DOC-003",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-004",
+              "DOC-009",
+              "DOC-003",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-004",
+              "DOC-009",
+              "DOC-003",
+              "DOC-001",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-004",
+              "DOC-009",
+              "DOC-003",
+              "DOC-001",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-004",
+              "DOC-003",
+              "DOC-009",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-004",
+              "DOC-009",
+              "DOC-003",
+              "DOC-022",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q16",
+        "expected_document_ids": [
+          "DOC-003"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-018",
+              "DOC-002"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-018",
+              "DOC-002"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-004",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-004",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-018",
+              "DOC-002"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-009",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-004",
+              "DOC-018",
+              "DOC-002"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-003",
+              "DOC-001",
+              "DOC-009",
+              "DOC-004",
+              "DOC-018"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q17",
+        "expected_document_ids": [
+          "DOC-017",
+          "DOC-019"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-010",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-010",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-011",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-011",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-010",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q18",
+        "expected_document_ids": [
+          "DOC-018",
+          "DOC-020"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-009",
+              "DOC-003"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-009",
+              "DOC-003"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-019",
+              "DOC-018",
+              "DOC-017",
+              "DOC-020",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q19",
+        "expected_document_ids": [
+          "DOC-021",
+          "DOC-020"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-018",
+              "DOC-010",
+              "DOC-017",
+              "DOC-020",
+              "DOC-019"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-018",
+              "DOC-010",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-018",
+              "DOC-010",
+              "DOC-017",
+              "DOC-020",
+              "DOC-019"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-017",
+              "DOC-019",
+              "DOC-010",
+              "DOC-018",
+              "DOC-020"
+            ],
+            "recall": 0.5,
+            "full": false
+          }
+        }
+      },
+      {
+        "question_id": "Q20",
+        "expected_document_ids": [
+          "DOC-005",
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-001",
+              "DOC-009",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-001",
+              "DOC-009",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-005",
+              "DOC-001",
+              "DOC-006",
+              "DOC-009",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-005",
+              "DOC-001",
+              "DOC-006",
+              "DOC-009",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-005",
+              "DOC-001",
+              "DOC-009",
+              "DOC-022",
+              "DOC-003"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-005",
+              "DOC-001",
+              "DOC-009",
+              "DOC-022",
+              "DOC-003"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-001",
+              "DOC-009",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-005",
+              "DOC-001",
+              "DOC-009",
+              "DOC-006",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q21",
+        "expected_document_ids": [
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-006",
+              "DOC-005",
+              "DOC-010",
+              "DOC-011",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-011",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-011",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-001",
+              "DOC-009"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-006",
+              "DOC-005",
+              "DOC-010",
+              "DOC-011",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-010",
+              "DOC-011",
+              "DOC-008"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q22",
+        "expected_document_ids": [
+          "DOC-005",
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-005",
+              "DOC-025",
+              "DOC-010",
+              "DOC-003",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-025",
+              "DOC-010",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-025",
+              "DOC-010",
+              "DOC-003"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-009",
+              "DOC-003",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-009",
+              "DOC-003",
+              "DOC-010"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-009",
+              "DOC-003",
+              "DOC-010"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-005",
+              "DOC-025",
+              "DOC-010",
+              "DOC-003",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-009",
+              "DOC-025",
+              "DOC-010"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q23",
+        "expected_document_ids": [
+          "DOC-010"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-025",
+              "DOC-010",
+              "DOC-006",
+              "DOC-023",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-023",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-023",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-005",
+              "DOC-023"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-005",
+              "DOC-023"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-005",
+              "DOC-023"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-025",
+              "DOC-010",
+              "DOC-006",
+              "DOC-023",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-010",
+              "DOC-006",
+              "DOC-025",
+              "DOC-023",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q24",
+        "expected_document_ids": [
+          "DOC-006",
+          "DOC-011",
+          "DOC-007"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-011",
+              "DOC-006",
+              "DOC-005",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-011",
+              "DOC-006",
+              "DOC-005",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-005",
+              "DOC-006",
+              "DOC-011",
+              "DOC-010",
+              "DOC-023"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          }
+        }
+      },
+      {
+        "question_id": "Q25",
+        "expected_document_ids": [
+          "DOC-007"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-022",
+              "DOC-024"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-006",
+              "DOC-007",
+              "DOC-005",
+              "DOC-024",
+              "DOC-022"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q26",
+        "expected_document_ids": [
+          "DOC-022"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-022",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-022",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-022",
+              "DOC-025",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-022",
+              "DOC-025",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-022",
+              "DOC-025",
+              "DOC-004",
+              "DOC-008",
+              "DOC-007"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-022",
+              "DOC-025",
+              "DOC-004",
+              "DOC-008",
+              "DOC-007"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-022",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-022",
+              "DOC-025",
+              "DOC-004",
+              "DOC-007",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q27",
+        "expected_document_ids": [
+          "DOC-011",
+          "DOC-007",
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-017",
+              "DOC-003"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-017",
+              "DOC-018"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-016",
+              "DOC-007",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-011",
+              "DOC-002",
+              "DOC-007",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          }
+        }
+      },
+      {
+        "question_id": "Q28",
+        "expected_document_ids": [
+          "DOC-001",
+          "DOC-002",
+          "DOC-019"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-001",
+              "DOC-022",
+              "DOC-002",
+              "DOC-016",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-022",
+              "DOC-016",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-022",
+              "DOC-016",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-022",
+              "DOC-003",
+              "DOC-016"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-022",
+              "DOC-003",
+              "DOC-019"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-016",
+              "DOC-001",
+              "DOC-014",
+              "DOC-002",
+              "DOC-022"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-001",
+              "DOC-022",
+              "DOC-002",
+              "DOC-016",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-001",
+              "DOC-002",
+              "DOC-022",
+              "DOC-016",
+              "DOC-017"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          }
+        }
+      },
+      {
+        "question_id": "Q30",
+        "expected_document_ids": [
+          "DOC-014",
+          "DOC-015",
+          "DOC-016",
+          "DOC-003"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-014",
+              "DOC-015",
+              "DOC-016",
+              "DOC-003",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-014",
+              "DOC-015",
+              "DOC-016"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-005",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 0.75,
+            "full": false
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-005",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 0.75,
+            "full": false
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-005",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 0.75,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-014",
+              "DOC-015",
+              "DOC-016",
+              "DOC-003",
+              "DOC-001"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-003",
+              "DOC-009",
+              "DOC-005",
+              "DOC-014",
+              "DOC-015"
+            ],
+            "recall": 0.75,
+            "full": false
+          }
+        }
+      },
+      {
+        "question_id": "Q31",
+        "expected_document_ids": [
+          "DOC-023",
+          "DOC-024"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-004",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-004",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-025",
+              "DOC-027",
+              "DOC-004"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-025",
+              "DOC-005",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-025",
+              "DOC-005",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-025",
+              "DOC-005",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-004",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-023",
+              "DOC-024",
+              "DOC-025",
+              "DOC-027",
+              "DOC-004"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q32",
+        "expected_document_ids": [
+          "DOC-023",
+          "DOC-005",
+          "DOC-012"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-012",
+              "DOC-027",
+              "DOC-010"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-012",
+              "DOC-027",
+              "DOC-010"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-012",
+              "DOC-027",
+              "DOC-010"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-012",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-012",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-012",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-012",
+              "DOC-027",
+              "DOC-010"
+            ],
+            "recall": 0.6666666666666666,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-012",
+              "DOC-027"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q33",
+        "expected_document_ids": [
+          "DOC-024",
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-024",
+              "DOC-023",
+              "DOC-005",
+              "DOC-025",
+              "DOC-026"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-023",
+              "DOC-005",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-005",
+              "DOC-023",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-005",
+              "DOC-023",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-005",
+              "DOC-023",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-005",
+              "DOC-023",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-024",
+              "DOC-023",
+              "DOC-005",
+              "DOC-025",
+              "DOC-026"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-024",
+              "DOC-006",
+              "DOC-005",
+              "DOC-023",
+              "DOC-025"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q34",
+        "expected_document_ids": [
+          "DOC-023",
+          "DOC-012"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-025",
+              "DOC-023",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-023",
+              "DOC-015",
+              "DOC-025",
+              "DOC-014",
+              "DOC-005"
+            ],
+            "recall": 0.5,
+            "full": false
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-025",
+              "DOC-023",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-023",
+              "DOC-025",
+              "DOC-005",
+              "DOC-006",
+              "DOC-012"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q35",
+        "expected_document_ids": [
+          "DOC-023",
+          "DOC-024",
+          "DOC-006"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-006",
+              "DOC-023",
+              "DOC-025",
+              "DOC-024",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      },
+      {
+        "question_id": "Q36",
+        "expected_document_ids": [
+          "DOC-026",
+          "DOC-023"
+        ],
+        "arms": {
+          "protected_units_0": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_2": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_3": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "protected_units_5": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-006",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_vector": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-006",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_control": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-006",
+              "DOC-005"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_bilingual": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          },
+          "historical_hybrid_protected3": {
+            "documents": [
+              "DOC-026",
+              "DOC-023",
+              "DOC-024",
+              "DOC-027",
+              "DOC-006"
+            ],
+            "recall": 1.0,
+            "full": true
+          }
+        }
+      }
+    ]
+  },
+  "lexical_probe": {
+    "status": "offline_lexical_probe_complete",
+    "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+    "target_document": "DOC-005",
+    "target_id_for_diagnostic_only": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+    "variants": {
+      "original_pt": {
+        "lexical_query": "política corporativa compartilhamento externo exceções justificativa negócio documentada aprovações controles segurança autoridade procedimento operacional não pode criar exceção",
+        "retrieved": 0,
+        "canonical_target_rank": null,
+        "top_5_document_ids": []
+      },
+      "controlled_pt_en": {
+        "lexical_query": "política corporativa compartilhamento externo exceções justificativa negócio documentada aprovações controles segurança autoridade procedimento operacional não pode criar exceção policy corporate sharing external exceptions justification business documented approvals controls security authority procedure operational exception",
+        "retrieved": 20,
+        "canonical_target_rank": 1,
+        "top_5_document_ids": [
+          "DOC-005",
+          "DOC-007",
+          "DOC-005",
+          "DOC-023",
+          "DOC-012"
+        ]
+      }
+    },
+    "api_calls": 0
+  },
+  "notes": [
+    "Question IDs and expected documents are evaluation-only, not used by runtime retrieval.",
+    "Metrics are for documents on saved RV036 chunk traces, not RV039 live unit retrieval."
+  ]
+}
