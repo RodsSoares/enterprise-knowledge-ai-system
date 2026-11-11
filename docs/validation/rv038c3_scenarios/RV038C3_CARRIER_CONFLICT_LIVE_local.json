@@ -1,0 +1,131 @@
+{
+  "experiment": "RV-038C2B",
+  "status": "assessment_recorded",
+  "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+  "snapshot_id": "synthetic-rv038c3-carrier_conflict",
+  "input_sha256": "66b765ad17b8dd63cd9c1257b287c570a8939c32596b2bf18c113f071d500410",
+  "bundle_hash": "69aa198b01a541be8c732baf3f2bc467df0ed0620c2986db48beee703e6e5a9b",
+  "assurance_request": {
+    "candidate_chunk_ids": [
+      "SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1",
+      "SYNTH-RV038C3::carrier_conflict::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e",
+      "SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013",
+      "SYNTH-RV038C3::carrier_conflict::unit-1f868e8837ad0071d014e37d783a81cc0d45aca5243c9eee0a3f9c4950caaa09"
+    ],
+    "evidence_set_hash": "411b1ea1b5b2b53f4a23cfae2f10b6c5817ec79a286fe720407d9976d1f1786f",
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "recovery_used": false,
+    "requirement_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "synthetic-rv038c3-carrier_conflict"
+  },
+  "context_hash": "82d3c477e1543a1f40151e0dd38d913481d3791c6a530eaf542d2b823f4082b2",
+  "schema_hash": "c6e65f80d8227e20dc5572314e5b7d6e873228796ce91c145a1398017dc0d997",
+  "instructions_hash": "d5b00aa2aed1f83def6a19f3f9e095c1710f63bb551ce6823efe7cac3053ee0e",
+  "decision": {
+    "decision": "RETRIEVE_MORE",
+    "evidence_set_hash": "411b1ea1b5b2b53f4a23cfae2f10b6c5817ec79a286fe720407d9976d1f1786f",
+    "lookup": {
+      "kind": "search",
+      "query": "Política vigente e precedência das disposições sobre compartilhamento de dados confidenciais com transportadoras contratadas: canais seguros obrigatórios, e-mail comum desprotegido e eventual exceção autorizada.",
+      "target_requirement_ids": [
+        "C3",
+        "C6"
+      ]
+    },
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "reason_codes": [
+      "CONTRADICTORY_CHANNEL_RULES",
+      "CARRIER_EMAIL_CONFLICT",
+      "POLICY_PRECEDENCE_UNRESOLVED"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "C1",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C2",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C3",
+        "status": "conflicted",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1",
+          "SYNTH-RV038C3::carrier_conflict::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e",
+          "SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013"
+        ]
+      },
+      {
+        "requirement_id": "C4",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C5",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013"
+        ]
+      },
+      {
+        "requirement_id": "C6",
+        "status": "conflicted",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013",
+          "SYNTH-RV038C3::carrier_conflict::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e"
+        ]
+      },
+      {
+        "requirement_id": "C7",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::carrier_conflict::unit-1f868e8837ad0071d014e37d783a81cc0d45aca5243c9eee0a3f9c4950caaa09"
+        ]
+      }
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "synthetic-rv038c3-carrier_conflict"
+  },
+  "usage": {
+    "input_tokens": 2378,
+    "output_tokens": 1117,
+    "estimated_cost_usd": "0.015926",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "73f6da080c8489e26bda04005c71d5c71493bfc9cb9c500e91870ac18d6ad8c3",
+        "reserved_input": 18034,
+        "reserved_output": 2500,
+        "status": "completed",
+        "input_tokens": 2378,
+        "output_tokens": 1117,
+        "response_id": "resp_0eb9b4b5f4ab4481016af3cde9d80887d19a55acc2e35ca46f",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"schema_version\": \"0.1\",\n  \"question_hash\": \"d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac\",\n  \"snapshot_id\": \"synthetic-rv038c3-carrier_conflict\",\n  \"evidence_set_hash\": \"411b1ea1b5b2b53f4a23cfae2f10b6c5817ec79a286fe720407d9976d1f1786f\",\n  \"requirements\": [\n    {\n      \"requirement_id\": \"C1\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C2\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C3\",\n      \"status\": \"conflicted\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\",\n        \"SYNTH-RV038C3::carrier_conflict::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e\",\n        \"SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C4\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C5\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C6\",\n      \"status\": \"conflicted\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-24cab2dc227dd4f69366de615eb937b7096ba924bec7ce31da7e9e8cce29b013\",\n        \"SYNTH-RV038C3::carrier_conflict::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C7\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::carrier_conflict::unit-1f868e8837ad0071d014e37d783a81cc0d45aca5243c9eee0a3f9c4950caaa09\"\n      ]\n    }\n  ],\n  \"decision\": \"RETRIEVE_MORE\",\n  \"lookup\": {\n    \"kind\": \"search\",\n    \"query\": \"Política vigente e precedência das disposições sobre compartilhamento de dados confidenciais com transportadoras contratadas: canais seguros obrigatórios, e-mail comum desprotegido e eventual exceção autorizada.\",\n    \"target_requirement_ids\": [\n      \"C3\",\n      \"C6\"\n    ]\n  },\n  \"reason_codes\": [\n    \"CONTRADICTORY_CHANNEL_RULES\",\n    \"CARRIER_EMAIL_CONFLICT\",\n    \"POLICY_PRECEDENCE_UNRESOLVED\"\n  ]\n}"
+      }
+    ]
+  },
+  "semantic_review": "unverified"
+}

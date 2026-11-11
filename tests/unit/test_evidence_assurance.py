@@ -118,3 +118,19 @@ def test_extra_field_rejected():
 def test_bad_request_rejected():
     with pytest.raises(AssuranceContractError):
         AssuranceRequest.create(question="q", snapshot_id="s", requirement_ids=["x", "x"], candidate_chunk_ids=[])
+
+
+def test_long_bounded_lookup_query_allowed():
+    r = req()
+    p = proposal(r)
+    p["lookup"]["query"] = "policy exception evidence " * 20
+    assert len(p["lookup"]["query"]) > 256
+    assert valid(p, r)["decision"] == "RETRIEVE_MORE"
+
+
+def test_lookup_query_over_1024_rejected():
+    r = req()
+    p = proposal(r)
+    p["lookup"]["query"] = "x" * 1025
+    with pytest.raises(AssuranceContractError):
+        valid(p, r)

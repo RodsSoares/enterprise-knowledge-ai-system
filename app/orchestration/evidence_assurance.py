@@ -167,7 +167,13 @@ def validate_assurance(raw: str, request: AssuranceRequest) -> AssuranceResult:
         lookup = _object(p["lookup"], {"kind", "query", "target_requirement_ids"}, "lookup")
         if lookup["kind"] != "search":
             raise AssuranceContractError("RV-038 pilot supports search requests only")
-        _id(lookup["query"], "lookup query")
+        query = lookup["query"]
+        if (
+            not isinstance(query, str)
+            or not query.strip()
+            or len(query) > 1024
+        ):
+            raise AssuranceContractError("Invalid lookup query")
         targets = _unique_ids(lookup["target_requirement_ids"], "target_requirement_id")
         if not targets or any(statuses.get(t) not in {"partial", "missing", "conflicted"} for t in targets):
             raise AssuranceContractError("Lookup must target declared gaps")

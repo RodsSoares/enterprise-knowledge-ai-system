@@ -1,0 +1,20 @@
+{
+  "experiment": "RV-038D2A",
+  "status": "offline_recovery_probe_complete",
+  "source_snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+  "synthetic_snapshot_id": "synthetic-rv038c3-missing_exception",
+  "provenance_mode": "separate_snapshots_no_merge",
+  "query": "política corporativa compartilhamento externo exceções justificativa de negócio documentada aprovações controles de segurança autoridade procedimento operacional não pode criar exceção",
+  "lexical_query": "política corporativa compartilhamento externo exceções justificativa negócio documentada aprovações controles segurança autoridade procedimento operacional não pode criar exceção",
+  "top_k": 20,
+  "target_requirement": "C7",
+  "canonical_target_id": "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa",
+  "canonical_document_id": "DOC-005",
+  "canonical_target_verified": true,
+  "searchable_units": 107,
+  "retrieved_ids": [],
+  "target_rank": null,
+  "target_hit": false,
+  "api_calls": 0,
+  "limitation": "Lexical-only diagnostic; not a full hybrid retrieval or successful replan/reassessment demonstration."
+}

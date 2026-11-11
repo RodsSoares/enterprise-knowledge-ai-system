@@ -1,0 +1,120 @@
+{
+  "experiment": "RV-038C2B",
+  "status": "assessment_recorded",
+  "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+  "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+  "input_sha256": "6008a744069941b393a2297b4ad1d16fcb00379b6e4df31e27ee7000bd728f9f",
+  "bundle_hash": "473aefeaecab70ec70e6cdd36d14818d87acbcd880d6f7becfe43fab83dbe1a8",
+  "assurance_request": {
+    "candidate_chunk_ids": [
+      "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+      "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88",
+      "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87",
+      "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa"
+    ],
+    "evidence_set_hash": "b74e36413887cb8b23535ec1a45202652bded00e115eda3c77c3778fdef12490",
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "recovery_used": false,
+    "requirement_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70"
+  },
+  "context_hash": "a0097dc462231b8b15a16279146692fe17f4cc33bb966ce03f2120b8b3ae3a44",
+  "schema_hash": "c6e65f80d8227e20dc5572314e5b7d6e873228796ce91c145a1398017dc0d997",
+  "instructions_hash": "d5b00aa2aed1f83def6a19f3f9e095c1710f63bb551ce6823efe7cac3053ee0e",
+  "decision": {
+    "decision": "APPROVE",
+    "evidence_set_hash": "b74e36413887cb8b23535ec1a45202652bded00e115eda3c77c3778fdef12490",
+    "lookup": null,
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "reason_codes": [
+      "ALL_REQUIREMENTS_SUPPORTED"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "C1",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35"
+        ]
+      },
+      {
+        "requirement_id": "C2",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35"
+        ]
+      },
+      {
+        "requirement_id": "C3",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35",
+          "DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88"
+        ]
+      },
+      {
+        "requirement_id": "C4",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35"
+        ]
+      },
+      {
+        "requirement_id": "C5",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87"
+        ]
+      },
+      {
+        "requirement_id": "C6",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87"
+        ]
+      },
+      {
+        "requirement_id": "C7",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa"
+        ]
+      }
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70"
+  },
+  "usage": {
+    "input_tokens": 2230,
+    "output_tokens": 775,
+    "estimated_cost_usd": "0.01221",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "90395be019e46f69230ba029f82b4992133954e48f6c292d311be34571d3f45f",
+        "reserved_input": 17450,
+        "reserved_output": 2500,
+        "status": "completed",
+        "input_tokens": 2230,
+        "output_tokens": 775,
+        "response_id": "resp_0d5ea35b6f58e129016af3ca6b4dc087d1a172c95b6eafcaf2",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"schema_version\": \"0.1\",\n  \"question_hash\": \"d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac\",\n  \"snapshot_id\": \"8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70\",\n  \"evidence_set_hash\": \"b74e36413887cb8b23535ec1a45202652bded00e115eda3c77c3778fdef12490\",\n  \"requirements\": [\n    {\n      \"requirement_id\": \"C1\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C2\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C3\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\",\n        \"DOC-005::unit-2fee2bb245a7ce31586728f0d21e26342a23219879b805fcea42718d7b2c8a88\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C4\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-9b0d28fc0e3086af15def6c5a4d43fa93965cbbaa1b1a4ddf2803d4fb420ec35\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C5\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C6\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-7c8625b003fc6835188e4cc28881508738aba9b952c95c306256f96faadc7b87\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C7\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"DOC-005::unit-3e2cd1d6aa0b17f415f5cfb78e0895519691a34eabb2fd7e1907e495aef661fa\"\n      ]\n    }\n  ],\n  \"decision\": \"APPROVE\",\n  \"lookup\": null,\n  \"reason_codes\": [\n    \"ALL_REQUIREMENTS_SUPPORTED\"\n  ]\n}"
+      }
+    ]
+  },
+  "semantic_review": "unverified"
+}

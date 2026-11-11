@@ -1,0 +1,124 @@
+{
+  "experiment": "RV-038C2B",
+  "status": "assessment_recorded",
+  "question": "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?",
+  "snapshot_id": "synthetic-rv038c3-missing_exception",
+  "input_sha256": "8ebf4c3bae47551434478ba7a0ae28965e81045e22de43d0750ce983a113a605",
+  "bundle_hash": "f1c4b666b8ca8e4626c4e14f59ceacc505c301eebf99546e76f56ea6c99d122e",
+  "assurance_request": {
+    "candidate_chunk_ids": [
+      "SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1",
+      "SYNTH-RV038C3::missing_exception::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e",
+      "SYNTH-RV038C3::missing_exception::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f",
+      "SYNTH-RV038C3::missing_exception::unit-288791e175d9c2bbb16a7f57a966e4292c5a3f4be95dcbb63a6326544b9a57d2"
+    ],
+    "evidence_set_hash": "261ed001bbe023f587103439df17ee8fb2d826ec814e4e6ccfe9d0892952db13",
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "recovery_used": false,
+    "requirement_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "synthetic-rv038c3-missing_exception"
+  },
+  "context_hash": "6f40d76e6af466d52cbe75e313b20888956dbd409906f7b41a476dc22f243a41",
+  "schema_hash": "c6e65f80d8227e20dc5572314e5b7d6e873228796ce91c145a1398017dc0d997",
+  "instructions_hash": "d5b00aa2aed1f83def6a19f3f9e095c1710f63bb551ce6823efe7cac3053ee0e",
+  "decision": {
+    "decision": "RETRIEVE_MORE",
+    "evidence_set_hash": "261ed001bbe023f587103439df17ee8fb2d826ec814e4e6ccfe9d0892952db13",
+    "lookup": {
+      "kind": "search",
+      "query": "política corporativa compartilhamento externo exceções justificativa de negócio documentada aprovações controles de segurança autoridade procedimento operacional não pode criar exceção",
+      "target_requirement_ids": [
+        "C7"
+      ]
+    },
+    "question_hash": "d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac",
+    "reason_codes": [
+      "EXCEPTION_REQUIREMENTS_MISSING"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "C1",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C2",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C3",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1",
+          "SYNTH-RV038C3::missing_exception::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e"
+        ]
+      },
+      {
+        "requirement_id": "C4",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1"
+        ]
+      },
+      {
+        "requirement_id": "C5",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f"
+        ]
+      },
+      {
+        "requirement_id": "C6",
+        "status": "supported",
+        "supporting_chunk_ids": [
+          "SYNTH-RV038C3::missing_exception::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f"
+        ]
+      },
+      {
+        "requirement_id": "C7",
+        "status": "missing",
+        "supporting_chunk_ids": []
+      }
+    ],
+    "schema_version": "0.1",
+    "snapshot_id": "synthetic-rv038c3-missing_exception"
+  },
+  "usage": {
+    "input_tokens": 2320,
+    "output_tokens": 804,
+    "estimated_cost_usd": "0.012680",
+    "calls": 1,
+    "failed": false,
+    "accounting": "Actual usage when available; full reservation retained for unreported calls",
+    "events": [
+      {
+        "kind": "responses",
+        "model": "gpt-6.1-sol",
+        "request_hash": "581fd70ea040ba7a2b83db4173ffa1d3ab852d75e874a3f00e2c3d4111a893d3",
+        "reserved_input": 17768,
+        "reserved_output": 2500,
+        "status": "completed",
+        "input_tokens": 2320,
+        "output_tokens": 804,
+        "response_id": "resp_0f1ba27bd618d60a016af3cdaba5c487d1b1cf1fd47f6c692c",
+        "returned_model": "gpt-6.1-sol",
+        "raw_output": "{\n  \"schema_version\": \"0.1\",\n  \"question_hash\": \"d8f618a8ea3259d50d3e0f201d58a1a543233c858b7833049c93747ac5205bac\",\n  \"snapshot_id\": \"synthetic-rv038c3-missing_exception\",\n  \"evidence_set_hash\": \"261ed001bbe023f587103439df17ee8fb2d826ec814e4e6ccfe9d0892952db13\",\n  \"requirements\": [\n    {\n      \"requirement_id\": \"C1\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C2\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C3\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\",\n        \"SYNTH-RV038C3::missing_exception::unit-08fe9c0d703e8ae49843b617dc48dedd67c74b433188e8c7d5ab4888ded9087e\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C4\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-6328dbcbca2d67165af2897af6f220dabce34532beb68171d0f8fe3093acf7a1\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C5\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C6\",\n      \"status\": \"supported\",\n      \"supporting_chunk_ids\": [\n        \"SYNTH-RV038C3::missing_exception::unit-eafcf82de61189749410ca1b1864f1e77408c3880a8bda5b5942c1073e93f62f\"\n      ]\n    },\n    {\n      \"requirement_id\": \"C7\",\n      \"status\": \"missing\",\n      \"supporting_chunk_ids\": []\n    }\n  ],\n  \"decision\": \"RETRIEVE_MORE\",\n  \"lookup\": {\n    \"kind\": \"search\",\n    \"query\": \"política corporativa compartilhamento externo exceções justificativa de negócio documentada aprovações controles de segurança autoridade procedimento operacional não pode criar exceção\",\n    \"target_requirement_ids\": [\n      \"C7\"\n    ]\n  },\n  \"reason_codes\": [\n    \"EXCEPTION_REQUIREMENTS_MISSING\"\n  ]\n}"
+      }
+    ]
+  },
+  "semantic_review": "unverified"
+}
