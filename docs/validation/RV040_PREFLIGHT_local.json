@@ -1,0 +1,55 @@
+{
+  "experiment": "RV-040",
+  "status": "dry_run",
+  "contract_version": "rv040/pipeline-experimental-1",
+  "question": "Quais cuidados a polÃ­tica exige antes de compartilhar dados com um fornecedor externo?",
+  "snapshot_id": "8ac5dc558483180a93dc9013e1ee4bc8169bcc57938ee32dcfaa533ebb390d70",
+  "snapshot_file_hash": "e8aafc393cae100e33c04ee1cefce72c163e1f6bc8034eccd6b3d0463924c477",
+  "embedding_cache_hash": "afbfb8309d8d63080a471f858dbadca431c2cc021e2bc7ffd2542d4737b6427b",
+  "config_file_hash": "10e115756cb7ffeb99de55bf8a99eec66df05efd1bdaa02793c88ea64d333d95",
+  "models": {
+    "embedding": "text-embedding-3-small",
+    "llm": "gpt-6.1-sol"
+  },
+  "prompts_and_schemas": {
+    "scope_v3": {
+      "schema_hash": "f9e23d3a6b9afb889ec2429517cba13c42e723d01f190ab6f634acd37b6a44b9",
+      "instructions_hash": "d9776c364ba09ec4e572e7122624c4dda407c867067c841ffac305118ed760f1"
+    },
+    "plan_v3": {
+      "schema_hash": "ad3bca69403a8a6fdd4b8ed5060aaeac2ac2fbf9f2470ca67dc94bd1cd5d859b",
+      "instructions_hash": "7080c14d5027768a0e580e808f8ff54ea5f3d216090ea2fe843da84258f5161d"
+    },
+    "inventory_v3": {
+      "schema_hash": "0fdbe8017ac09714951ae2a9f0227ed3b33c9100de8e21975c736eff2d17a255",
+      "instructions_hash": "47b1d3b26cef61fc1b6c12c5908b499343467b2f4645dbc671fdf67679ae504d"
+    },
+    "assurance_v3": {
+      "schema_hash": "ad7461769df665d508f9f4e16e10c7c017767696bd6382749b9d86e9845d8c8e",
+      "instructions_hash": "a7176f3be834383f0ab9a5d977748df8e0b73c808ed54f9b98554b3a73e14a83"
+    },
+    "generate_v3": {
+      "schema_hash": "9f2745765baa59ac7fcbf9316920b4b3fda004103cd43920cef7ea37b13f977a",
+      "instructions_hash": "b789519ff0ca652c818a8f02561f51d7dbe492a7f6b65d528ea55882953fed55"
+    },
+    "verify_v3": {
+      "schema_hash": "be75b681573d0c40c7ffae4b16961d453e2ef8695fd7023c411db1ff9dc22ad5",
+      "instructions_hash": "92300b54e050b76ce30978715e069fb99f5bf46ac6fc7e9fa335d805a516635c"
+    }
+  },
+  "limits": {
+    "max_input_tokens": 350000,
+    "max_output_tokens": 55000,
+    "max_calls": 12,
+    "deadline_seconds": 360,
+    "max_cost_usd": "1.50"
+  },
+  "per_call_output_tokens": 4500,
+  "normal_max_api_calls": 7,
+  "recovery_max_api_calls": 11,
+  "searchable_units": 107,
+  "dry_run": true,
+  "results": null,
+  "usage": null,
+  "semantic_review": "not_performed"
+}
