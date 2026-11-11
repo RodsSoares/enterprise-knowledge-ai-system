@@ -6,6 +6,7 @@ import json
 
 from app.orchestration.evidence_planner import SCOPE_SCHEMA, SCOPE_INSTRUCTIONS
 from app.orchestration.v3_planning_contract import PLAN_V3_SCHEMA, PLAN_V3_INSTRUCTIONS
+from app.orchestration.v3_replanning_contract import REPLAN_SCHEMA, REPLAN_INSTRUCTIONS
 from app.orchestration.v3_semantic_contracts import (
     INVENTORY_SCHEMA, ASSURANCE_SCHEMA, INVENTORY_INSTRUCTIONS, ASSURANCE_INSTRUCTIONS,
 )
@@ -14,11 +15,21 @@ from app.generation.v3_answer_contract import (
 )
 from app.orchestration.live_provider import BudgetedClient
 
+ASSURANCE_V3_ALIGN_INSTRUCTIONS = ASSURANCE_INSTRUCTIONS + "\n" + (
+    "Assess exactly one row for each item in payload.requirements, and NO "
+    "rows for payload.excluded_requirements. Excluded rows only delimit "
+    "the question scope; do not cite them as answer support. Never invent "
+    "requirement IDs or candidate unit IDs. If independent inventory "
+    "reveals a material unresolved dependency, RETRIEVE_MORE may target an "
+    "in-scope requirement even if its stated rule is already supported."
+)
+
 STAGES = {
     "scope_v3": (SCOPE_SCHEMA, SCOPE_INSTRUCTIONS),
     "plan_v3": (PLAN_V3_SCHEMA, PLAN_V3_INSTRUCTIONS),
+    "replan_v3": (REPLAN_SCHEMA, REPLAN_INSTRUCTIONS),
     "inventory_v3": (INVENTORY_SCHEMA, INVENTORY_INSTRUCTIONS),
-    "assurance_v3": (ASSURANCE_SCHEMA, ASSURANCE_INSTRUCTIONS),
+    "assurance_v3": (ASSURANCE_SCHEMA, ASSURANCE_V3_ALIGN_INSTRUCTIONS),
     "generate_v3": (ANSWER_SCHEMA, ANSWER_INSTRUCTIONS),
     "verify_v3": (VERIFICATION_SCHEMA, VERIFY_INSTRUCTIONS),
 }

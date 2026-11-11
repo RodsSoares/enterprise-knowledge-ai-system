@@ -186,9 +186,17 @@ def validate_assurance(raw, *, plan, inventory, candidates, recovery_used, allow
         targets = strings(lookup["target_requirement_ids"])
         gap_ids = {r["requirement_id"] for r in result["requirements"]
                    if r["entailment"] != "supported" or r["relevance"] != "applicable"}
-        gap_ids |= {x["requirement_id"] for x in plan.items if x["evidence_status"] != "supported"}
-        if any(t not in gap_ids for t in targets) or (not targets and not omissions and not inventory["unresolved_facets"]):
+        gap_ids |= {x["requirement_id"] for x in plan.items
+                    if x["relevance"] != "out_of_scope" and x["evidence_status"] != "supported"}
+        inventory_gaps = bool(omissions or inventory["unresolved_facets"])
+        if any(t not in active for t in targets):
+            raise V3SemanticError("Recovery targets must be in-scope requirements")
+        # Independent audit may detect a missing external dependency even if
+        # the planner's individual facet was correctly supported as worded.
+        if not inventory_gaps and any(t not in gap_ids for t in targets):
             raise V3SemanticError("Recovery targets do not match gaps")
+        if not targets and not inventory_gaps:
+            raise V3SemanticError("Recovery requires gap targets or independent omissions")
     elif result["lookup"] is not None:
         raise V3SemanticError("Unexpected recovery lookup")
     if decision == "ABSTAIN" and can_approve:

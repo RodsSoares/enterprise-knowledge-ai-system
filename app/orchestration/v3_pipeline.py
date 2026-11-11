@@ -12,6 +12,7 @@ from app.chunking.evidence_units import digest
 from app.orchestration.coordinator import BudgetExceeded
 from app.orchestration.evidence_planner import validate_scope
 from app.orchestration.v3_planning_contract import validate_v3_plan
+from app.orchestration.v3_replanning_contract import validate_v3_replan
 from app.orchestration.v3_semantic_contracts import (
     V3SemanticError, validate_inventory, validate_assurance, provenance_id,
 )
@@ -114,6 +115,7 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
             return result
 
         previous_plan = None
+        previous_decision = None
         for attempt in range(2):
             used = bool(attempt)
             result["recovery_used"] = used
@@ -122,18 +124,23 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
             planning_input = {"question": question, "scope": scope, "scope_hash": scope_hash,
                               "snapshot_id": snapshot_id, "recovery_used": used,
                               "candidates": [_source(u) for u in candidates]}
-            plan = validate_v3_plan(invoke("plan_v3", planning_input), question=question,
-                                     candidates=candidates, recovery_used=used)
+            if not used:
+                plan = validate_v3_plan(
+                    invoke("plan_v3", planning_input), question=question,
+                    candidates=candidates, recovery_used=False,
+                )
+            else:
+                # Preserve all previously declared requirement identities: no
+                # free-form second planning pass, only validated evidence deltas.
+                planning_input["previous_requirements"] = list(previous_plan.items)
+                planning_input["previous_assurance"] = previous_decision
+                plan = validate_v3_replan(
+                    invoke("replan_v3", planning_input),
+                    previous_plan=previous_plan, question=question, candidates=candidates,
+                )
             result["plan"] = {"items": list(plan.items), "action": plan.action,
                               "has_known_gap": plan.has_known_gap}
             record("plan", attempt=attempt, plan_hash=digest(result["plan"]))
-            if previous_plan is not None:
-                previous_needs = {x["need"].casefold().strip() for x in previous_plan.items
-                                  if x["relevance"] != "out_of_scope"}
-                next_needs = {x["need"].casefold().strip() for x in plan.items
-                              if x["relevance"] != "out_of_scope"}
-                if not previous_needs <= next_needs:
-                    raise V3SemanticError("Replanning silently dropped material requirements")
             if plan.action["kind"] == "clarify":
                 result.update(status="clarification_required", clarification=plan.action["question"])
                 return result
@@ -150,7 +157,14 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
             assurance_input = {
                 "question": question, "scope": scope, "snapshot_id": snapshot_id,
                 "scope_hash": scope_hash, "recovery_used": used,
-                "requirements": list(plan.items), "independent_inventory": inventory,
+                # Do not ask the semantic assessor to re-assess excluded items.
+                # Their IDs belong to planner bookkeeping, not the approval set.
+                "requirements": [x for x in plan.items if x["relevance"] != "out_of_scope"],
+                "excluded_requirements": [
+                    {"requirement_id": x["requirement_id"], "need": x["need"]}
+                    for x in plan.items if x["relevance"] == "out_of_scope"
+                ],
+                "independent_inventory": inventory,
                 "candidates": [_source(u) for u in candidates],
                 "provenance_id": provenance_id(question, snapshot_id, scope, candidates),
             }
@@ -192,6 +206,7 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
                     return result
                 candidates = _join(candidates, additions)
                 previous_plan = plan
+                previous_decision = decision
                 continue
             if decision["decision"] != "APPROVE" or plan.action["kind"] != "complete":
                 raise V3SemanticError("Inconsistent final approval and planning action")

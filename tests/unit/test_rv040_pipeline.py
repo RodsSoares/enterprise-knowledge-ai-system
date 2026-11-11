@@ -111,9 +111,16 @@ class Retriever:
 
 
 def provider(*, recovered=False, missing=False, reject=False, drop=False):
+    updates = [{"requirement_id":"C1", "evidence_status":"supported",
+                "additional_supports":[], "missing_aspects":[]}]
+    if not drop:
+        updates.append({"requirement_id":"C2", "evidence_status":"supported",
+                        "additional_supports":[{"unit_id":"u2", "quote":U2.reading_text}],
+                        "missing_aspects":[]})
+    delta = {"updates":updates,"new_items":[],"action":{"kind":"complete"}}
     return Provider({"scope_v3": [scope()],
-                     "plan_v3": [plan(missing=True), plan(recovered=True, drop=drop)] if missing
-                     else [plan()],
+                     "plan_v3": [plan(missing=True)] if missing else [plan()],
+                     "replan_v3": [delta] if missing else [],
                      "inventory_v3": [inventory(unresolved=True), inventory(recovered=True)] if missing
                      else [inventory()],
                      "assurance_v3": [review(missing=True), review(recovered=True)] if missing
@@ -146,7 +153,7 @@ def test_replanner_cannot_silently_drop_original_requirement():
     p, r = provider(missing=True, drop=True), Retriever()
     result = run_v3(Q, snapshot_id="verified", units=(U1,U2), retriever=r, provider=p)
     assert result["status"] == "execution_failed"
-    assert result["error_type"] == "V3SemanticError"
+    assert result["error_type"] == "V3PlanningContractError"
 
 
 def test_foreign_recovery_unit_blocked_before_replan():
