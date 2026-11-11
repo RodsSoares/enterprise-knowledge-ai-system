@@ -17,6 +17,8 @@ from app.orchestration.v3_semantic_contracts import (
     V3SemanticError, validate_inventory, validate_assurance, provenance_id,
 )
 from app.generation.v3_answer_contract import validate_answer, validate_verification
+from app.orchestration.v42_relevance_contract import apply_relevance
+from app.orchestration.v42_verification_contract import validate_v42_verification
 
 PIPELINE_V3 = "rv040/pipeline-experimental-1"
 
@@ -36,13 +38,15 @@ def _join(baseline, additional):
 
 def run_v3(question, *, snapshot_id, units, retriever, provider,
            max_candidates=20, max_units=40, max_context_chars=60000,
-           checkpoint=lambda state: None):
+           checkpoint=lambda state: None, relevance_mode=False):
     """Scope→discovery→plan→independent inventory→assure→optional recovery
     →replan→reinventorize→reassure→generate→verify. No silent retries.
 
     provider.invoke(stage, payload) -> strict JSON string; all live calls must
     use ONE BudgetedClient shared with the embedding provider in retriever.
     """
+    if type(relevance_mode) is not bool:
+        raise ValueError("Invalid relevance mode")
     if (not isinstance(question, str) or not question.strip() or len(question) > 4000
             or not isinstance(snapshot_id, str) or not snapshot_id
             or type(max_candidates) is not int or not 1 <= max_candidates <= 40
@@ -61,12 +65,15 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
         raise ValueError("Canonical catalog must contain unique units")
     known_doc_ids = {u.document_id for u in allowed}
     started = perf_counter()
-    result = {"contract_version": PIPELINE_V3, "status": "running",
+    result = {"contract_version": "rv042/pipeline-relevance-1" if relevance_mode else PIPELINE_V3, "status": "running",
               "question": question, "snapshot_id": snapshot_id, "stage": "scope",
               "scope": None, "plan": None, "inventory": None, "assurance": None,
               "answer": None, "verification": None, "rendered_answer": None,
               "recovery_used": False, "semantic_review": "not_performed",
               "trace": [], "elapsed_seconds": None}
+    if relevance_mode:
+        result["relevance_audits"] = []
+        result["effective_plan"] = None
 
     def record(stage, **details):
         result["stage"] = stage
@@ -116,6 +123,7 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
 
         previous_plan = None
         previous_decision = None
+        frozen_relevance = None
         for attempt in range(2):
             used = bool(attempt)
             result["recovery_used"] = used
@@ -141,10 +149,10 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
             result["plan"] = {"items": list(plan.items), "action": plan.action,
                               "has_known_gap": plan.has_known_gap}
             record("plan", attempt=attempt, plan_hash=digest(result["plan"]))
-            if plan.action["kind"] == "clarify":
+            if not relevance_mode and plan.action["kind"] == "clarify":
                 result.update(status="clarification_required", clarification=plan.action["question"])
                 return result
-            if plan.action["kind"] == "abstain":
+            if not relevance_mode and plan.action["kind"] == "abstain":
                 result.update(status="abstained", reason=plan.action["reason"])
                 return result
 
@@ -154,23 +162,63 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
             inventory = validate_inventory(invoke("inventory_v3", inventory_input), candidates)
             result["inventory"] = inventory
             record("inventory", independent=True, facet_count=len(inventory["facets"]))
+            effective_plan, effective_inventory = plan, inventory
+            if relevance_mode:
+                # Explicit, auditable *model* judgment; not semantic ground truth.
+                # Restrict which already validated requirements can be mandatory,
+                # never rewrite user scope, source quotes or the canonical catalog.
+                gate_source_ids = {
+                    link["unit_id"] for item in plan.items for link in item["supports"]
+                } | {
+                    uid for facet in inventory["facets"]
+                    for uid in facet["supporting_unit_ids"]
+                }
+                gate_input = {
+                    "question": question, "scope": scope, "scope_hash": scope_hash,
+                    "snapshot_id": snapshot_id, "recovery_used": used,
+                    "requirements": list(plan.items),
+                    "independent_inventory": inventory,
+                    # Source *subset* needed for relevance, not every retrieved hit.
+                    # Provenance is inherited from the already validated plan/inventory.
+                    "cited_evidence": [_source(u) for u in candidates
+                                       if u.unit_id in gate_source_ids],
+                    "frozen_classifications": frozen_relevance or {},
+                }
+                gate = apply_relevance(
+                    invoke("relevance_v42", gate_input), plan=plan,
+                    inventory=inventory, frozen=frozen_relevance, recovery_used=used,
+                )
+                frozen_relevance = gate.frozen
+                effective_plan, effective_inventory = gate.plan, gate.inventory
+                result["relevance_audits"].append(gate.audit)
+                result["effective_plan"] = {
+                    "items": list(effective_plan.items), "action": effective_plan.action,
+                    "has_known_gap": effective_plan.has_known_gap,
+                }
+                record("relevance", attempt=attempt,
+                       material_ids=gate.audit["material_requirements"],
+                       adjacent_ids=gate.audit["adjacent_requirements"],
+                       material_unresolved=gate.audit["material_unresolved_count"],
+                       model_declared_sufficient=gate.audit["sufficient_on_current_evidence"])
             assurance_input = {
                 "question": question, "scope": scope, "snapshot_id": snapshot_id,
                 "scope_hash": scope_hash, "recovery_used": used,
                 # Do not ask the semantic assessor to re-assess excluded items.
                 # Their IDs belong to planner bookkeeping, not the approval set.
-                "requirements": [x for x in plan.items if x["relevance"] != "out_of_scope"],
+                "requirements": [x for x in effective_plan.items if x["relevance"] != "out_of_scope"],
                 "excluded_requirements": [
                     {"requirement_id": x["requirement_id"], "need": x["need"]}
-                    for x in plan.items if x["relevance"] == "out_of_scope"
+                    for x in plan.items if x["relevance"] == "out_of_scope" or (
+                        relevance_mode and x["requirement_id"] not in {
+                            i["requirement_id"] for i in effective_plan.items})
                 ],
-                "independent_inventory": inventory,
+                "independent_inventory": effective_inventory,
                 "candidates": [_source(u) for u in candidates],
                 "provenance_id": provenance_id(question, snapshot_id, scope, candidates),
             }
             decision = validate_assurance(
-                invoke("assurance_v3", assurance_input), plan=plan,
-                inventory=inventory, candidates=candidates, recovery_used=used,
+                invoke("assurance_v3", assurance_input), plan=effective_plan,
+                inventory=effective_inventory, candidates=candidates, recovery_used=used,
                 allowed_document_ids=authorized_docs,
             )
             result["assurance"] = decision
@@ -208,29 +256,55 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
                 previous_plan = plan
                 previous_decision = decision
                 continue
-            if decision["decision"] != "APPROVE" or plan.action["kind"] != "complete":
+            if decision["decision"] != "APPROVE" or effective_plan.action["kind"] != "complete":
                 raise V3SemanticError("Inconsistent final approval and planning action")
             if digest({"question": question, "scope": scope}) != scope_hash:
                 raise V3SemanticError("Frozen scope changed")
             # Generation sees source text only for units anchored by planned supports.
-            supported_ids = {s["unit_id"] for row in plan.items
+            supported_ids = {s["unit_id"] for row in effective_plan.items
                              if row["relevance"] != "out_of_scope" for s in row["supports"]}
             selected = tuple(u for u in candidates if u.unit_id in supported_ids)
             generation_input = {"question": question, "scope": scope, "snapshot_id": snapshot_id,
-                                "requirements": list(plan.items),
-                                "independent_inventory": inventory,
+                                "requirements": list(effective_plan.items),
+                                "independent_inventory": effective_inventory,
                                 "evidence": [_source(u) for u in selected]}
-            answer = validate_answer(invoke("generate_v3", generation_input), plan, selected)
+            answer = validate_answer(invoke("generate_v3", generation_input), effective_plan, selected)
             result["answer"] = answer
             record("generation", status=answer["status"], claim_count=len(answer["claims"]))
             if answer["status"] == "abstained":
                 result.update(status="abstained", reason=answer["abstention_reason"])
                 return result
             verify_input = {"question": question, "scope": scope, "snapshot_id": snapshot_id,
-                            "requirements": list(plan.items), "independent_inventory": inventory,
+                            "requirements": list(effective_plan.items), "independent_inventory": effective_inventory,
                             "evidence": [_source(u) for u in selected], "answer": answer}
-            verification = validate_verification(
-                invoke("verify_v3", verify_input), answer, plan, inventory)
+            if relevance_mode:
+                retained_ids = {x["requirement_id"] for x in effective_plan.items}
+                suppressed = [x for x in plan.items if x["requirement_id"] not in retained_ids]
+                excluded_unresolved = [
+                    {"index": x["index"], "reason": x["reason"],
+                     "text": inventory["unresolved_facets"][x["index"]]}
+                    for x in gate.audit["unresolved_classifications"]
+                    if x["classification"] == "adjacent"
+                ]
+                suppressed_source_ids = {
+                    s["unit_id"] for x in suppressed for s in x["supports"]
+                }
+                verify_input["suppressed_requirements"] = suppressed
+                verify_input["excluded_unresolved"] = excluded_unresolved
+                verify_input["original_plan_action"] = plan.action
+                verify_input["suppressed_evidence"] = [
+                    _source(u) for u in candidates if u.unit_id in suppressed_source_ids]
+            raw_verify = invoke("verify_v3", verify_input)
+            if relevance_mode:
+                verification = validate_v42_verification(
+                    raw_verify, answer=answer, plan=effective_plan,
+                    inventory=effective_inventory,
+                    suppressed_ids=[x["requirement_id"] for x in suppressed],
+                    excluded_unresolved_indices=[x["index"] for x in excluded_unresolved],
+                )
+            else:
+                verification = validate_verification(
+                    raw_verify, answer, effective_plan, effective_inventory)
             result["verification"] = verification
             record("verification", decision=verification["decision"])
             if verification["decision"] != "PASS":
@@ -252,3 +326,10 @@ def run_v3(question, *, snapshot_id, units, retriever, provider,
     finally:
         result["elapsed_seconds"] = round(perf_counter() - started, 4)
         checkpoint(result)
+
+
+def run_v42(question, **kwargs):
+    """Opt-in RV-042; RV-040/RV-041 path remains run_v3() unchanged."""
+    if "relevance_mode" in kwargs:
+        raise ValueError("Do not override RV-042 relevance mode")
+    return run_v3(question, relevance_mode=True, **kwargs)
