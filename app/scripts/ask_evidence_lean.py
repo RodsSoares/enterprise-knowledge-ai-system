@@ -13,7 +13,7 @@ from pathlib import Path
 from app.chunking.evidence_snapshot import file_hash, verify_snapshot
 from app.orchestration.evidence_pipeline import validate_inputs
 from app.orchestration.lean_live_provider import LeanLiveProvider, STAGES
-from app.orchestration.lean_pipeline import VERSION, run_lean
+from app.orchestration.lean_pipeline import VERSION, run_lean, DEFAULT_TOP_K
 from app.orchestration.live_provider import BudgetedClient, RunBudget
 from app.retrieval.adaptive_evidence_retriever import AdaptiveEvidenceUnitRetriever
 from app.retrieval.openai_embeddings import OpenAIEmbeddingProvider
@@ -55,6 +55,8 @@ def main(argv=None, *, sdk_factory=None):
     p.add_argument("--max-input-tokens", type=int, default=160000)
     p.add_argument("--max-output-tokens", type=int, default=20000)
     p.add_argument("--max-per-call-output-tokens", type=int, default=4500)
+    p.add_argument("--top-k", type=int, choices=(12, 16, 20), default=DEFAULT_TOP_K,
+                   help="Initial and recovery retrieval candidate limit (default: 16)")
     p.add_argument("--deadline-seconds", type=int, default=300)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--execute", action="store_true")
@@ -108,6 +110,7 @@ def main(argv=None, *, sdk_factory=None):
                     for s, (schema, instructions) in STAGES.items()},
         "budget": asdict(budget), "max_output_tokens_per_call": a.max_per_call_output_tokens,
         "max_calls_normal": 3, "max_calls_recovery": 5,
+        "retrieval_top_k": a.top_k,
         "status_note": "Model review is not independent ground truth; human evaluation required.",
         "result": None, "usage": None,
     }
@@ -139,7 +142,8 @@ def main(argv=None, *, sdk_factory=None):
                         save()
                     answer = run_lean(question, snapshot_id=snapshot["snapshot_id"], units=units,
                                       retriever=retriever, provider=provider,
-                                      document_metadata=metadata, checkpoint=record)
+                                      document_metadata=metadata, top_k=a.top_k,
+                                      checkpoint=record)
                     report["result"] = answer
                     report["status"] = answer["status"]
             except Exception as exc:

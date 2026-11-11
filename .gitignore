@@ -1,7 +1,14 @@
-@"
 .venv/
 __pycache__/
 *.pyc
-.env
 .pytest_cache/
-"@ | Set-Content .gitignore
+.env
+.env.*
+!.env.example
+/_rv*_release/
+/_rv*_backup/
+/RV*_BUNDLE.zip
+/data/corpus_quarantine/
+/docs/validation/*_local.json
+/docs/validation/*_local.npz
+/docs/validation/*_local.csv

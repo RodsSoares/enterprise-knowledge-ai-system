@@ -12,6 +12,7 @@ import re
 from time import perf_counter
 
 VERSION = "rv043/lean-pipeline-1"
+DEFAULT_TOP_K = 16
 DOC_PATTERN = re.compile(r"\bDOC-\d{3,}\b", re.IGNORECASE)
 
 
@@ -131,7 +132,7 @@ def validate_review(raw, answer):
 
 
 def run_lean(question, *, snapshot_id, units, retriever, provider,
-             document_metadata=None, top_k=12, max_units=24, max_request_chars=65000,
+             document_metadata=None, top_k=DEFAULT_TOP_K, max_units=24, max_request_chars=65000,
              checkpoint=None):
     """Protocol-based dependency injection enables deterministic offline testing.
 
