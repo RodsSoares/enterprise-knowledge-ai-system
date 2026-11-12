@@ -47,6 +47,22 @@ jobs:
       - name: Run offline unit and integration regression
         run: python -m pytest tests/unit tests/integration -q
 
+      - name: Validate frontend syntax and deployment manifest
+        run: |
+          python -m py_compile app/frontend/main.py app/frontend/access.py
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          manifest = yaml.safe_load(Path("render.yaml").read_text(encoding="utf-8"))
+          service = manifest["services"][0]
+          assert service["branch"] == "claude/lean-mvp-hardening"
+          assert "requirements-deploy.txt" in service["buildCommand"]
+          assert "app/frontend/main.py" in service["startCommand"]
+          assert any(v.get("key") == "OPENAI_API_KEY" and v.get("sync") is False for v in service["envVars"])
+          assert any(v.get("key") == "APP_ACCESS_PASSWORD" and v.get("sync") is False for v in service["envVars"])
+          print("Render manifest and frontend syntax verified.")
+          PY
+
       - name: Ensure searchable evidence has no evaluation-harness leakage
         run: python -m app.scripts.audit_corpus_content --snapshot docs/validation/EVIDENCE_UNITS_SNAPSHOT_27DOC.json
 
