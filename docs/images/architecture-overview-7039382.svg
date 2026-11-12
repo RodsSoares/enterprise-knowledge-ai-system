@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 1370" width="1900" height="1370" role="img" aria-labelledby="title desc">
+<title id="title">Enterprise Knowledge AI System — Current Technical Architecture, Lean RAG MVP, RV-045</title>
+<desc id="desc">Dark navy and cyan technical architecture: offline enterprise sources, normalization, evidence units, verified catalog and embeddings; online private Streamlit UI through KnowledgeService, vector and BM25 retrieval, evidence assembly, generation, structural gates, independent LLM verification, Python post-checks and cited response. Cost and scope guards, and clearly excluded enterprise features.</desc>
+<defs>
+<radialGradient id="bg" cx="93%" cy="3%" r="120%"><stop stop-color="#0b3160"/><stop offset=".52" stop-color="#04192f"/><stop offset="1" stop-color="#020b1a"/></radialGradient>
+<linearGradient id="accent" x1="0" x2="1"><stop stop-color="#0ad1f9"/><stop offset="1" stop-color="#286eff"/></linearGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#316088" stroke-width=".75" opacity=".14"/></pattern>
+<filter id="shadow" x="-20%" y="-20%" width="150%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#000817" flood-opacity=".5"/></filter>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0ad1f9"/></marker>
+</defs>
+<rect width="1900" height="1370" fill="url(#bg)"/><rect width="1900" height="1370" fill="url(#grid)"/><rect width="1900" height="8" fill="url(#accent)"/>
+<rect x="64" y="45" width="73" height="73" rx="14" fill="#0c2d54" stroke="#1c84bf" stroke-width="1.6"/>
+<path d="M89 68h26v8H89z M89 87h26v8H89z" fill="#0ad1f9"/><circle cx="91" cy="105" r="3.4" fill="#0ad1f9"/><circle cx="113" cy="105" r="3.4" fill="#0ad1f9"/>
+<text x="160" y="87" text-anchor="start" font-size="43" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="820" letter-spacing="0.1" fill="#eff7ff">ENTERPRISE KNOWLEDGE AI SYSTEM</text>
+<text x="162" y="120" text-anchor="start" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="720" letter-spacing="2.2" fill="#0ad1f9">CURRENT TECHNICAL ARCHITECTURE  /  LEAN RAG MVP  /  RV-045</text>
+<rect x="1550" y="47" width="283" height="66" rx="31" fill="#0b3144" stroke="#0cb3dc" stroke-width="1.7"/>
+<text x="1692" y="90" text-anchor="middle" font-size="20" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="1.5" fill="#0ad1f9">IMPLEMENTED PATH</text>
+<text x="67" y="159" text-anchor="start" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="430" letter-spacing="0" fill="#adc7e1">Evidence-first architecture  •  Source provenance  •  Bounded execution  •  Explicit abstention</text>
+<rect x="44" y="185" width="1812" height="290" rx="23" fill="#06182e" stroke="#24638a" stroke-width="1.5"/>
+<text x="75" y="230" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="2" fill="#0ad1f9">01 / OFFLINE KNOWLEDGE PREPARATION</text>
+<text x="1825" y="230" text-anchor="end" font-size="17" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="710" letter-spacing="0.75" fill="#7f9ebc">BUILD-TIME  ·  NOT RUN FOR EACH QUESTION</text>
+<g filter="url(#shadow)">
+<rect x="72" y="255" width="328" height="171" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="73" y="256" width="6" height="169" rx="3" fill="#0ad1f9"/>
+<rect x="89" y="272" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="111" y="296" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">01</text>
+<text x="144" y="299" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Enterprise Sources</text>
+<text x="91" y="338" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">27 controlled documents</text>
+<text x="91" y="368" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">PDF / DOCX / XLSX / PPTX</text>
+<text x="91" y="398" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">MD / TXT + metadata</text>
+<path d="M403 343 L424 343" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="428" y="255" width="328" height="171" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="429" y="256" width="6" height="169" rx="3" fill="#0ad1f9"/>
+<rect x="445" y="272" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="467" y="296" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">02</text>
+<text x="500" y="299" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Parsing &amp; Canonical</text>
+<text x="447" y="338" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Docling + format adapters</text>
+<text x="447" y="368" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Preserve tables / structure</text>
+<text x="447" y="398" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">NormalizedContent</text>
+<path d="M759 343 L780 343" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="784" y="255" width="328" height="171" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="785" y="256" width="6" height="169" rx="3" fill="#0ad1f9"/>
+<rect x="801" y="272" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="823" y="296" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">03</text>
+<text x="856" y="299" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Evidence Units</text>
+<text x="803" y="338" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Source IDs + provenance</text>
+<text x="803" y="368" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Section / table-record units</text>
+<text x="803" y="398" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">236 total, 219 searchable</text>
+<path d="M1115 343 L1136 343" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1140" y="255" width="328" height="171" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="1141" y="256" width="6" height="169" rx="3" fill="#0ad1f9"/>
+<rect x="1157" y="272" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="1179" y="296" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">04</text>
+<text x="1212" y="299" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Verified Catalog</text>
+<text x="1159" y="338" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Versioned source snapshot</text>
+<text x="1159" y="368" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Document hash / identity</text>
+<text x="1159" y="398" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Rebuild integrity checks</text>
+<path d="M1471 343 L1492 343" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1496" y="255" width="328" height="171" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="1497" y="256" width="6" height="169" rx="3" fill="#0ad1f9"/>
+<rect x="1513" y="272" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="1535" y="296" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">05</text>
+<text x="1568" y="299" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Embedding Cache</text>
+<text x="1515" y="338" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">text-embedding-3-small</text>
+<text x="1515" y="368" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Precomputed document vectors</text>
+<text x="1515" y="398" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">No re-ingestion on query</text>
+<text x="77" y="454" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="500" letter-spacing="0" fill="#7f9ebc">Corpus revisions require a controlled offline rebuild; source integrity is verified when KnowledgeService loads.</text>
+<rect x="44" y="497" width="1812" height="664" rx="23" fill="#06162b" stroke="#205a87" stroke-width="1.5"/>
+<text x="75" y="540" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="2" fill="#0ad1f9">02 / ONLINE QUESTION → EVIDENCE → ANSWER</text>
+<text x="1825" y="540" text-anchor="end" font-size="17" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="710" letter-spacing="0.85" fill="#7f9ebc">QUERY-TIME  ·  LIVE STREAMLIT MVP</text>
+<g filter="url(#shadow)">
+<rect x="75" y="566" width="362" height="182" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="76" y="567" width="6" height="180" rx="3" fill="#0ad1f9"/>
+<rect x="92" y="583" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="114" y="607" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">06</text>
+<text x="147" y="610" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Private Streamlit UI</text>
+<text x="94" y="649" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Password-gated demo access</text>
+<text x="94" y="679" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Chat / model selection</text>
+<text x="94" y="709" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Session usage &amp; citations</text>
+<path d="M441 661 L467 661" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="473" y="566" width="362" height="182" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="474" y="567" width="6" height="180" rx="3" fill="#0ad1f9"/>
+<rect x="490" y="583" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="512" y="607" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">07</text>
+<text x="545" y="610" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">KnowledgeService</text>
+<text x="492" y="649" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Verified snapshot + vectors</text>
+<text x="492" y="679" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Per-query and session budgets</text>
+<text x="492" y="709" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Query embedding cache</text>
+<path d="M839 661 L865 661" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="871" y="566" width="425" height="182" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="872" y="567" width="6" height="180" rx="3" fill="#0ad1f9"/>
+<rect x="888" y="583" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="910" y="607" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">08</text>
+<text x="943" y="610" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Adaptive Hybrid Search</text>
+<text x="890" y="649" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Original question → vector cosine</text>
+<text x="890" y="679" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">BM25 + PT/EN expansion</text>
+<text x="890" y="709" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Fusion / vector-prefix protection</text>
+<path d="M1300 661 L1326 661" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1332" y="566" width="491" height="182" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="1333" y="567" width="6" height="180" rx="3" fill="#0ad1f9"/>
+<rect x="1349" y="583" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="1371" y="607" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">09</text>
+<text x="1404" y="610" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Evidence Assembly</text>
+<text x="1351" y="649" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">20 candidates; 3 docs expanded</text>
+<text x="1351" y="679" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Source scope and metadata</text>
+<text x="1351" y="709" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">E1…En → canonical unit IDs</text>
+<path d="M1578 750 V801" fill="none" stroke="#0ad1f9" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1470" y="820" width="353" height="217" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="1471" y="821" width="6" height="215" rx="3" fill="#0ad1f9"/>
+<rect x="1487" y="837" width="43" height="35" rx="8" fill="#0c3557" stroke="#0ad1f9" stroke-width="1.1"/>
+<text x="1509" y="861" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#0ad1f9">10</text>
+<text x="1542" y="864" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Answer LLM</text>
+<text x="1489" y="903" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Structured evidence triage</text>
+<text x="1489" y="933" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Answer / retrieve / clarify</text>
+<text x="1489" y="963" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Abstain; one extra search</text>
+<text x="1489" y="993" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Claims cite E aliases</text>
+<path d="M1463 926 L1450 926" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1109" y="820" width="334" height="217" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="1110" y="821" width="6" height="215" rx="3" fill="#286eff"/>
+<rect x="1126" y="837" width="43" height="35" rx="8" fill="#0c3557" stroke="#286eff" stroke-width="1.1"/>
+<text x="1148" y="861" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#286eff">11</text>
+<text x="1181" y="864" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Python Gates</text>
+<text x="1128" y="903" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Strict output + citation IDs</text>
+<text x="1128" y="933" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">No direct support → abstain</text>
+<text x="1128" y="963" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Drop background-only claims</text>
+<text x="1128" y="993" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Optional language repair</text>
+<path d="M1102 926 L1089 926" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="748" y="820" width="334" height="217" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="749" y="821" width="6" height="215" rx="3" fill="#286eff"/>
+<rect x="765" y="837" width="43" height="35" rx="8" fill="#0c3557" stroke="#286eff" stroke-width="1.1"/>
+<text x="787" y="861" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#286eff">12</text>
+<text x="820" y="864" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Verifier LLM</text>
+<text x="767" y="903" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Entailed / relevant checks</text>
+<text x="767" y="933" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Conditions preserved</text>
+<text x="767" y="963" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Completeness assessment</text>
+<text x="767" y="993" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Independent model call</text>
+<path d="M741 926 L728 926" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="387" y="820" width="334" height="217" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="388" y="821" width="6" height="215" rx="3" fill="#286eff"/>
+<rect x="404" y="837" width="43" height="35" rx="8" fill="#0c3557" stroke="#286eff" stroke-width="1.1"/>
+<text x="426" y="861" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#286eff">13</text>
+<text x="459" y="864" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Final Controls</text>
+<text x="406" y="903" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Python derives verdict</text>
+<text x="406" y="933" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Remove failed claims</text>
+<text x="406" y="963" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Reservation on omissions</text>
+<text x="406" y="993" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Fail-closed error outcomes</text>
+<path d="M380 926 L368 926" stroke="#0ad1f9" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="75" y="820" width="286" height="217" rx="16" fill="#0c2442" stroke="#1b5278" stroke-width="1.5"/>
+</g>
+<rect x="76" y="821" width="6" height="215" rx="3" fill="#34d399"/>
+<rect x="92" y="837" width="43" height="35" rx="8" fill="#0c3557" stroke="#34d399" stroke-width="1.1"/>
+<text x="114" y="861" text-anchor="middle" font-size="19" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="0" fill="#34d399">14</text>
+<text x="147" y="864" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="0" fill="#eff7ff">Cited Response</text>
+<text x="94" y="903" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Claims + evidence excerpts</text>
+<text x="94" y="933" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Source version / lifecycle</text>
+<text x="94" y="963" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Clarify / abstain / answer</text>
+<text x="94" y="993" text-anchor="start" font-size="17.5" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="450" letter-spacing="0" fill="#adc7e1">Token and cost report</text>
+<text x="79" y="1087" text-anchor="start" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="500" letter-spacing="0" fill="#adc7e1">Bounded: at most one additional retrieval; accepted citations must map to the authenticated catalog snapshot.</text>
+<text x="79" y="1118" text-anchor="start" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="650" letter-spacing="0" fill="#f7c86b">Model verification is a review signal, not a semantic or compliance certification.</text>
+<rect x="44" y="1184" width="1812" height="132" rx="20" fill="#071b2e" stroke="#28506b" stroke-width="1.4"/>
+<text x="75" y="1224" text-anchor="start" font-size="22" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="2" fill="#0ad1f9">03 / ENGINEERING BOUNDARIES</text>
+<rect x="77" y="1240" width="847" height="61" rx="12" fill="#092f34" stroke="#18848d" stroke-width="1.1"/>
+<text x="98" y="1265" text-anchor="start" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="1" fill="#34d399">CURRENTLY IMPLEMENTED</text>
+<text x="98" y="1290" text-anchor="start" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="500" letter-spacing="0" fill="#eff7ff">Canonical IDs • source hashes • budgets • bounded recovery • citations</text>
+<rect x="952" y="1240" width="871" height="61" rx="12" fill="#2a2534" stroke="#745976" stroke-width="1.1"/>
+<text x="974" y="1265" text-anchor="start" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="750" letter-spacing="1" fill="#f7c86b">NOT CLAIMED AS ENTERPRISE-READY</text>
+<text x="974" y="1290" text-anchor="start" font-size="18" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="500" letter-spacing="0" fill="#eff7ff">SSO / ACL • persistent store • REST API • semantic certification</text>
+<text x="72" y="1350" text-anchor="start" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="680" letter-spacing="1.4" fill="#7f9ebc">RODRIGO SOARES  /  ENTERPRISE RAG ENGINEERING</text>
+<text x="1827" y="1350" text-anchor="end" font-size="16" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="630" letter-spacing="1.4" fill="#7f9ebc">IMPLEMENTATION SNAPSHOT: 2026-11-12</text>
+</svg>
