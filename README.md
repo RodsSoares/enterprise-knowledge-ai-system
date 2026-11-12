@@ -17,6 +17,12 @@ Try the [live Streamlit application](https://enterprise-knowledge-ai-system.onre
 
 ![Enterprise Knowledge AI System — current MVP interface](docs/images/mvp-interface.png)
 
+### Live Demo
+
+![Enterprise Knowledge AI System — Live Demo](docs/images/enterprise-knowledge-demo.gif)
+
+*Animated walkthrough of the evidence-grounded question-answering experience.*
+
 The interactive demo supports questions against a **synthetic 27-document enterprise corpus**, displays grounded answers with citations and lets users inspect the supporting documents. A follow-up question can explore historical and current policy context.
 
 **Demo access and safety**
