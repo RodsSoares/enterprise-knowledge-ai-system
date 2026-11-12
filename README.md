@@ -26,32 +26,33 @@ A question is answered from the 27-document corpus by the lean pipeline (retriev
 
 ## Engineering Overview
 
-The architecture separates **offline knowledge processing and indexing** from **online retrieval and answer generation**. Enterprise documents are parsed and normalized into a canonical representation, transformed into structure-aware retrieval units, indexed for complementary retrieval strategies, and used as controlled evidence for grounded answers.
+The architecture separates **offline construction of a verified evidence catalog** from **online answering of one question**. Offline, enterprise documents are parsed, normalized into a canonical model, split into citable evidence units and frozen in a hashed catalog with its embeddings. Online, the lean pipeline retrieves, assembles the evidence, asks the model for cited claims, checks them in Python and has a second call verify every claim.
 
-| Layer | Implementation / Direction |
+| Layer | Implementation in the MVP |
 |---|---|
-| Enterprise Sources | PDF, DOCX, XLSX, PPTX, Markdown / Text |
-| Parsing | Docling, RapidOCR where applicable, and specialized format adapters |
-| Canonical Model | Structure-preserving document and block representation |
-| Chunking | `StructureAwareChunker`, source block identity and structural provenance |
-| Search Text | Retrieval-oriented representation derived from canonical chunks |
-| Embeddings | Real OpenAI `text-embedding-3-small` experiments |
-| Vector Retrieval | NumPy index and cosine similarity |
-| Lexical Retrieval | BM25 plus PT/EN function-word filtering; bilingual expansion tested offline/live |
-| Metadata Retrieval | Registry and metadata models; runtime enforcement not yet end-to-end |
-| Fusion & Reranking | RRF, document diversification; optional experimental cross-encoder and prefix protection |
-| Ground Truth | Canonical facts, document registry, 36-question Golden Set A |
-| Orchestration | Stage-1 bounded planning and Evidence Pipeline prototypes exist; not default CLI |
-| Evidence Assurance | **Proposed** independent sufficiency gate after evidence orchestration |
-| Generation | Real LLM integrations with structured answers and abstention contracts |
-| Citation Validation | Structural validation implemented; semantic entailment not yet approved |
-| Evaluation | Corpus checks, retrieval ranking, evidence coverage, local/saved experiments |
-| Validation | Pytest, smoke tests, replay traces, real-model experiments |
-| Application | Terminal demo; API/UI, persistence and multiuser ACL remain future work |
+| Enterprise Sources | 27 documents: PDF, DOCX, XLSX, PPTX, Markdown, text; registry with version, status and authority |
+| Corpus gate | `audit_corpus_content` blocks evaluation-harness text inside documents |
+| Parsing | Docling; native XLSX parser with declared headers; one ingestion router |
+| Canonical Model | Application-owned blocks with source location and document metadata |
+| Evidence Units | Section units and table-record units; titles and duplicates kept but not indexed |
+| Verified Catalog | Snapshot with content hashes (236 units, 219 searchable), verified on every load |
+| Embeddings | OpenAI `text-embedding-3-small`, cached and keyed to the units |
+| Retrieval | NumPy cosine + BM25 with PT→EN term expansion, RRF with protected vector prefix, top 20 |
+| Evidence Assembly | Best 3 documents sent in full; aliases E1…En; document status and authority rank |
+| Answer | One structured call: evidence triage, decision (answer / retrieve / clarify / abstain), cited claims; one bounded recovery |
+| Deterministic Gates | Citation mapping, no-direct-evidence refusal, background-only claims removed, answer-language check |
+| Verification | Independent call per claim (entailed, relevant, conditions preserved); verdict derived in Python |
+| Response | Verified answer, answer with reservations, clarification or abstention; sources with passage text |
+| Cost Control | Budgeted client; ceilings per question and per session |
+| Evaluation | `answer_criteria.yaml` (46 cases), deterministic scorer, batch runner; 45 of 46 pass with `gpt-6.1-sol`; semantic audit 40 of 46 at strict review |
+| CI | Offline GitHub Actions workflow: tests, corpus audit, frontend and deployment manifest checks |
+| Application | Streamlit interface over `KnowledgeService` (one per session); command line |
+| Deployment | `render.yaml` blueprint for a private demo behind a shared password; manual deploys |
+| Not in the MVP | SSO and user accounts, rate limiting, account-wide budget, REST API, persistent store, per-document access control |
 
 ![Enterprise Knowledge AI System — Engineering Architecture](docs/images/architecture-overview.png)
 
-The architecture overview is a product/engineering direction. Some depicted capabilities are not yet active in the default runtime. Refer to **Current Status**, **Orchestration & Evidence Pipeline**, and **Proposed Evidence Assurance** for an explicit implementation boundary.
+The diagram shows the architecture as implemented in the MVP (RV-045); its editable source is `docs/images/architecture-overview.html`. Earlier experimental pipelines (stage-1, v3, v4.2) remain in the repository for audit and are described in the later sections; they are not part of this flow.
 
 ## Trustworthy Enterprise RAG Principle
 
