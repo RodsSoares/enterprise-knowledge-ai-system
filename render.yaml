@@ -1,0 +1,19 @@
+# Create a Render Blueprint from this branch. Secrets are entered in the
+# Render Dashboard and must never be committed to GitHub.
+services:
+  - type: web
+    name: enterprise-knowledge-ai-demo
+    runtime: python
+    plan: free
+    branch: claude/lean-mvp-hardening
+    autoDeployTrigger: off
+    buildCommand: pip install -r requirements-deploy.txt
+    startCommand: streamlit run app/frontend/main.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.9
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_ACCESS_PASSWORD
+        sync: false
