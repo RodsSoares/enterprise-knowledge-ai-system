@@ -8,20 +8,20 @@
       "label": "gpt-4.1-mini (econômico)",
       "input_per_million": "0.40",
       "output_per_million": "1.60",
-      "measured_pass_rate": "78% (RV-044, 92 execuções)"
+      "measured_pass_rate": "78% (RV-044, corpus anterior)"
     },
     "gpt-6.1-sol": {
       "label": "gpt-6.1-sol (mais confiável)",
       "input_per_million": "2",
       "output_per_million": "10",
-      "measured_pass_rate": "97% (RV-044, 36 execuções)"
+      "measured_pass_rate": "45 de 46 casos (RV-045, corpus limpo)"
     }
   },
   "embedding_price_per_million": "0.02",
   "as_of": "2026-11-12",
   "top_k": 20,
   "expand_documents": 3,
-  "max_cost_per_question_usd": "0.10",
+  "max_cost_per_question_usd": "0.30",
   "max_cost_per_session_usd": "0.50",
   "max_output_tokens_per_call": 4500,
   "deadline_seconds": 120

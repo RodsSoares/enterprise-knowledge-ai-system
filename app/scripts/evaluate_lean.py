@@ -84,7 +84,7 @@ def main(argv=None, *, sdk_factory=None):
     p.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
     p.add_argument("--on-incomplete", choices=("flag", "withhold"), default="flag")
     p.add_argument("--expand-documents", type=int, choices=range(0, 7), default=3)
-    p.add_argument("--max-cost-per-run-usd", default="0.10")
+    p.add_argument("--max-cost-per-run-usd", default="0.30")
     p.add_argument("--max-total-cost-usd", default="0.50",
                    help="Hard ceiling for the whole batch (default: 0.50)")
     p.add_argument("--max-per-call-output-tokens", type=int, default=4500)

@@ -494,9 +494,10 @@ cases:
         any: ["information security", "seguranca da informacao"]
       - name: "aprovação de AI Governance"
         any: ["ai governance", "governanca de ia"]
-    forbidden:
-      - name: "autorização automática pela aquisição do produto"
-        any: ["(compra|aquisic)[^.]{0,60}(autoriza|permite) automaticamente"]
+    human_check: >-
+      The answer must not say that buying or approving a tool authorizes its use
+      with confidential data. A pattern cannot tell that statement from its
+      negation, so this is checked by reading.
 
   - id: ORC-004
     question: "Enviei acidentalmente dados confidenciais a um fornecedor. O que devo fazer agora?"

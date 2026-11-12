@@ -1,0 +1,12 @@
+# Colors taken from the project artwork (docs/images/art-*.png):
+# deep navy background, blue panels, cyan accent.
+[theme]
+base = "dark"
+primaryColor = "#38BDF8"
+backgroundColor = "#020B1A"
+secondaryBackgroundColor = "#071A33"
+textColor = "#EAF4FF"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
