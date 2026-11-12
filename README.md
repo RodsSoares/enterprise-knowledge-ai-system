@@ -1,8 +1,8 @@
 # Enterprise Knowledge AI System
 
-🚀 **Current Stage:** Experimental end-to-end enterprise RAG, evidence pipeline prototypes, and measured multi-format retrieval
-🧪 **Validation:** RV-001–016 foundations; bounded orchestration/evidence experiments; RV-032–036 corpus and retrieval benchmarks
-📋 **Next Stage:** RV-037 offline evidence-selection audit; proposed post-orchestration **Evidence Assurance**; semantic answer validation
+🚀 **Current Stage:** Functional lean RAG MVP with a private Streamlit interface; earlier orchestration experiments remain available
+🧪 **Validation:** RV-045 clean corpus (27 documents; 236 evidence units); 45/46 deterministic passes with `gpt-6.1-sol`; semantic review remains necessary
+📋 **Next Stage:** Semantic/human review, Q20 multi-policy coverage, and operational hardening of the private demo
 
 The **Enterprise Knowledge AI System** is an Enterprise Retrieval-Augmented Generation (RAG) system designed to transform heterogeneous and fragmented corporate information into a trustworthy, searchable, and evidence-grounded knowledge layer.
 
@@ -10,7 +10,7 @@ The project combines **multi-format ingestion, canonical normalization, structur
 
 > **Evidence before generation. Retrieval quality before answer fluency.**
 
-This README retains the project's evidence-first engineering scope while distinguishing **implemented components**, **experimental integrations**, **recorded measurements**, and **architecture proposals**. Its status reflects the development and local experiment reports available through **10 November 2026**. A successful local run does not, by itself, establish a production release or a committed GitHub artifact.
+This README retains the project's evidence-first engineering scope while distinguishing **implemented components**, **experimental integrations**, **recorded measurements**, and **architecture proposals**. The Engineering Overview and MVP diagram reflect the active branch as of **12 November 2026**. Later sections preserve dated research and experimental results; measured deterministic passes are not a production certification.
 
 ## Run the MVP
 
@@ -161,7 +161,7 @@ The objective is not to allow an LLM to answer from unsupported model knowledge.
 
 ## Current Status
 
-The project has moved beyond architecture and dataset design into a working **experimental end-to-end RAG system** with physical-document processing, unique chunk identities, retrieval, evidence context assembly, real-model generation, structured answers and a terminal interface. In addition, bounded orchestration and evidence-planning modules have undergone local tests and pilot experiments; these should not be confused with the default CLI path.
+The project has moved beyond architecture and dataset design into a **functional lean RAG MVP** with a private Streamlit interface, a verified evidence snapshot, cached embeddings, hybrid retrieval, controlled evidence assembly, structured generation, separate claim verification and cited answers. In addition, bounded orchestration and evidence-planning modules have undergone local tests and pilot experiments; these should not be confused with the default CLI path.
 
 A controlled synthetic enterprise repository of **27 physical documents** has been parsed into **158 chunks** in the RV-034/RV-035 experimental configuration. All **36 Golden Set A questions** have their expected document IDs present; this is document availability, **not** proof of complete semantic coverage.
 
@@ -192,15 +192,18 @@ A controlled synthetic enterprise repository of **27 physical documents** has be
 | Structured LLM generation | ✅ | Real generation; semantic correctness not approved |
 | Structural citation validation | ✅ | Citation IDs and schema; not entailment |
 | Explicit abstention contract | ✅ | Q29 behavior not yet established by RV-035/036 |
-| Stage-1 bounded orchestration | 🧪 | Code/tests and local proofs; not default CLI |
+| Lean MVP orchestration | ✅ | `run_lean`: retrieve → answer → verify; at most one additional retrieval |
+| Stage-1 bounded orchestration | 🧪 | Historical code/tests and local proofs; not the live MVP path |
 | Evidence planning/pipeline | 🧪 | Connected experimental paths, not production gate |
 | Evidence Assurance post-orchestrator | 📋 | New proposed evaluation/sufficiency stage |
-| Answer claim review with controlled repair | 📋 | Architecture proposed; independent acceptance pending |
+| Lean claim verification | ✅ | Separate LLM review and Python filtering; not semantic certification |
+| Deeper claim review and controlled repair | 📋 | Historical architectural proposal; independent acceptance pending |
 | Golden Set A | ✅ | 36 questions; 35 positive retrieval cases; Q29 abstention |
 | Corpus alignment checks | ✅ | RV-034D: 81/81 selected checks, 5 review flags |
 | Full semantic corpus approval | 📋 | Not established by targeted checks |
 | Document-level retrieval benchmarks | ✅ | RV-035 and RV-036 recorded |
-| API, frontend, persistence | 📋 | Later deliverables |
+| Streamlit frontend | ✅ | Password-gated private demo; no enterprise identity management |
+| REST API and persistence | 📋 | Future deliverables |
 | Multiuser ACL and operational security | 📋 | Not claimed as implemented |
 
 **Legend:** ✅ implemented in stated scope · 🧪 experimental / validation in progress · 📋 proposed / not delivered. Successful parsing, unit tests or API execution do not establish production readiness.
@@ -361,7 +364,7 @@ RV-035 and RV-036 show that an additional retrieval branch can **harm** coverage
 
 ### Current runtime context and generation
 
-`build_service` assembles the hybrid retriever and injects `ShortDocumentContextBuilder`; the baseline flow retrieves up to 20 fused candidates, selects five document-diverse anchors and expands evidence within bounded context limits.
+**Historical CLI pipeline, not the active Streamlit MVP:** `build_service` assembles a hybrid retriever and injects `ShortDocumentContextBuilder`, selecting five document-diverse anchors. The current MVP instead uses `KnowledgeService` → `AdaptiveEvidenceUnitRetriever` → `run_lean`, with top-20 retrieval and expansion of the top three documents.
 
 The project also has direct `RagService` construction with a different default `EvidenceContextBuilder`. These configurations are separate. Character limits do not constitute approved token budgets, and passage expansion does not guarantee that the right clause or evidence unit reaches the model.
 
@@ -1229,7 +1232,7 @@ The roadmap remains capability-driven. New infrastructure should be introduced o
 
 ## Current Development Stage
 
-The Enterprise Knowledge AI System has progressed from a conceptual design to a functioning **experimental end-to-end RAG**, accompanied by a substantial corpus/evaluation program and exploratory bounded-orchestration/evidence-pipeline components.
+The Enterprise Knowledge AI System now has a **functional, privately accessible lean RAG MVP**, backed by the cleaned 27-document corpus, while retaining a substantial corpus/evaluation program and historical bounded-orchestration/evidence-pipeline experiments. This status does not imply production security or independently certified semantic accuracy.
 
 What is demonstrated:
 
