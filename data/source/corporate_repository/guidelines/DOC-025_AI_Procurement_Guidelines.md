@@ -25,9 +25,3 @@ These guidelines do **not** authorize a new AI tool. Formal approval is governed
 ## 5. Supplier data
 
 The fact that an AI product is procured does not mean confidential supplier or customer data may automatically be entered into it. Data classification and approved-use requirements remain applicable.
-
-## 6. Evaluation role
-
-This document intentionally contains substantial AI, supplier, data, approval, and procurement terminology. It is a useful semantic neighbor, but it is not the primary authority for security controls or AI approval decisions.
-
-*Controlled synthetic document generated for the Enterprise Knowledge AI System evaluation corpus.*

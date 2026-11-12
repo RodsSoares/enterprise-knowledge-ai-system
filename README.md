@@ -12,6 +12,18 @@ The project combines **multi-format ingestion, canonical normalization, structur
 
 This README retains the project's evidence-first engineering scope while distinguishing **implemented components**, **experimental integrations**, **recorded measurements**, and **architecture proposals**. Its status reflects the development and local experiment reports available through **10 November 2026**. A successful local run does not, by itself, establish a production release or a committed GitHub artifact.
 
+## Run the MVP
+
+```powershell
+pip install -r requirements.txt
+$env:OPENAI_API_KEY = "..."
+streamlit run app/frontend/main.py
+```
+
+A question is answered from the 27-document corpus by the lean pipeline (retrieve → answer → verify), with a citation for every claim and a cost ceiling per question and per session. See [RV-044](docs/architecture/19_rv044_lean_v2_and_answer_criteria.md) for the measured results and [RV-045](docs/architecture/20_rv045_clean_corpus_and_mvp_interface.md) for the interface and the cleaned corpus. The sections below describe the earlier experimental stages.
+
+![MVP interface](docs/images/mvp-interface.png)
+
 ## Engineering Overview
 
 The architecture separates **offline knowledge processing and indexing** from **online retrieval and answer generation**. Enterprise documents are parsed and normalized into a canonical representation, transformed into structure-aware retrieval units, indexed for complementary retrieval strategies, and used as controlled evidence for grounded answers.

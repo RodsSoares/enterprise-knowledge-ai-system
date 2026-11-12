@@ -41,7 +41,7 @@ def test_doc_012_preserves_worksheet_ranges() -> None:
     content = _parse_doc_012()
 
     assert content.blocks[0].cell_range == "A1:E9"
-    assert content.blocks[1].cell_range == "A1:B9"
+    assert content.blocks[1].cell_range == "A1:B8"
 
 
 def test_doc_012_approval_matrix_preserves_headers() -> None:
@@ -105,7 +105,7 @@ def test_doc_012_cells_are_preserved_as_native_spreadsheet_cells() -> None:
 
     assert all(isinstance(block, SpreadsheetBlock) for block in content.blocks)
     assert len(content.blocks[0].cells) == 45
-    assert len(content.blocks[1].cells) == 18
+    assert len(content.blocks[1].cells) == 16
     assert all(
         cell.data_type == "s"
         for block in content.blocks

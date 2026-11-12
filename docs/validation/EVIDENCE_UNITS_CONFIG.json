@@ -2,7 +2,7 @@
   "max_chars": 1800,
   "documents": {
     "DOC-012": {
-      "source_sha256": "9cd962e55863c421a8a267e8aa0f67985e4d51c0a1285c2d3158259447fca0c5",
+      "source_sha256": "3f14dbeced64c242293e3b27ead0d7add77471372caa5b902b3cfeb7cf4cb0b1",
       "spreadsheet_headers": [
         {
           "block_id": "xlsx-sheet-1",
@@ -37,7 +37,7 @@
       ]
     },
     "DOC-013": {
-      "source_sha256": "cfe6ec7e395d160f55f703a7502c942ec6e76a67df5ee378d1f42650f3853ac6",
+      "source_sha256": "798d6b6cefaa6a51ae6aa19ecb9d650ef0a3dfd135860d8a21c1e45bd8e1459b",
       "spreadsheet_headers": [
         {
           "block_id": "xlsx-sheet-1",
@@ -50,8 +50,7 @@
             "E1",
             "F1",
             "G1",
-            "H1",
-            "I1"
+            "H1"
           ],
           "expected_labels": [
             "KPI ID",
@@ -61,8 +60,7 @@
             "Denominator",
             "Unit",
             "Cadence",
-            "Owner",
-            "Canonical status"
+            "Owner"
           ]
         },
         {
@@ -80,7 +78,7 @@
       ]
     },
     "DOC-021": {
-      "source_sha256": "e9144d50128f47f8b2368cc651802c9a7285bdf45276dc1dbd51ae7d51d7a799",
+      "source_sha256": "cf9bc0a2e480c8766683fe51f9b32ae2e818d4524a83f627ffdddaa7abb9fb59",
       "spreadsheet_headers": [
         {
           "block_id": "xlsx-sheet-1",

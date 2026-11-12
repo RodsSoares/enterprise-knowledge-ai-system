@@ -48,7 +48,6 @@ def test_doc_025_preserves_document_title(doc_025_content) -> None:
         "3. AI supplier due diligence",
         "4. Approval boundary",
         "5. Supplier data",
-        "6. Evaluation role",
     ],
 )
 def test_doc_025_preserves_expected_sections(

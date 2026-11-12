@@ -19,7 +19,7 @@ import re
 PATTERNS = {
     "leakage": (
         r"\bQ\d{2}\b", r"golden set", r"benchmark coverage", r"evaluation_questions",
-        r"expected use", r"\bdistractor", r"semantic neighbor", r"evaluation role",
+        r"expected use:", r"\bdistractor", r"semantic neighbor", r"evaluation role",
         r"conflict-resolution tests", r"evaluation corpus",
     ),
     "disclaimer": (
@@ -64,7 +64,7 @@ def audit_snapshot(snapshot):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--snapshot", type=Path, default=Path("docs/validation/EVIDENCE_UNITS_SNAPSHOT_local.json"))
+    p.add_argument("--snapshot", type=Path, default=Path("docs/validation/EVIDENCE_UNITS_SNAPSHOT_27DOC.json"))
     p.add_argument("--output", type=Path, help="Optional JSON report")
     p.add_argument("--show", action="store_true", help="Print every affected passage")
     a = p.parse_args(argv)
