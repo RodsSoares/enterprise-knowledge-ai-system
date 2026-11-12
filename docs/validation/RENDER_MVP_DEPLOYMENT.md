@@ -4,7 +4,7 @@
 
 This is a **private demonstration** of the Streamlit frontend, not an enterprise production deployment. The application uses the committed 27-document synthetic corpus, saved evidence units and embeddings. The source documents are verified at startup; the application does not ingest new user documents.
 
-The offline CI workflow must pass before deployment. Do not deploy the app publicly without the access gate.
+The offline CI workflow must pass before deployment. The default model is publicly reachable; keep the cost ceilings and set a hard usage limit on the OpenAI project.
 
 ## Deploy
 
@@ -12,8 +12,8 @@ The offline CI workflow must pass before deployment. Do not deploy the app publi
 2. Set `OPENAI_API_KEY` as a secret environment variable. **Never** paste it in GitHub or commit it.
 3. Set `APP_ACCESS_PASSWORD` to a unique random password of at least 16 characters, stored as a Render secret. Do not share it publicly. A blank/short password makes the app refuse access.
 4. Confirm the instance type, resource availability, expected charges and the deployment branch before applying the Blueprint. The Blueprint defaults to a free instance; available plans can vary.
-5. Deploy and open the Render URL. Confirm the login screen appears *before* any model calls.
-6. After logging in, test an answer with citations, a justified abstention, and the session cost ceiling. Review Render logs for startup or runtime errors.
+5. Deploy and open the Render URL. Confirm the chat opens without a login and that the protected model asks for the password.
+6. Test an answer with citations, a justified abstention, a referenced-document download and an attached document. Review Render logs for startup or runtime errors.
 
 **Deploy command:** `streamlit run app/frontend/main.py --server.address 0.0.0.0 --server.port $PORT --server.headless true`
 
@@ -25,19 +25,24 @@ The offline CI workflow must pass before deployment. Do not deploy the app publi
 
 ## Security and cost boundaries
 
-- Access is gated by a shared demonstration password. This is **not** SSO, MFA, user management or enterprise authorization.
-- Password checking happens before initializing the OpenAI client. Secrets are not stored in the repository.
-- Each Streamlit session has its own `KnowledgeService`, question embedding cache, and tracked cost ceiling. A separate browser session can have a separate budget; **this is not an account-wide billing cap**.
-- There is no robust IP rate limiting, user quotas, audit log or abuse prevention. Restrict access to a small trusted group and monitor API usage. For broader exposure, use an upstream identity-aware proxy and server-side shared budgets.
-- `autoDeployTrigger: off` prevents every commit from automatically redeploying the public service. Trigger subsequent deploys deliberately.
+Access model since RV-046: the default model is open; the password unlocks the protected model.
+
+- **Open access to `gpt-4.1-mini`.** Anyone with the URL can ask questions and attach documents. Every question spends the API credit of the deployment.
+- **Password only for protected models.** `protected_models` in `config/lean_runtime.json` (currently `gpt-6.1-sol`) require `APP_ACCESS_PASSWORD` in the sidebar. The service refuses a protected model without the unlock, independently of the interface. If the secret is unset or shorter than 16 characters, the protected model is unavailable.
+- **Three cost ceilings**, all enforced before each paid call: per question, per browser session, and **per day for the whole server process** (`max_cost_per_day_usd`, USD 1.00). The daily counter is kept in memory and resets when the instance restarts, so it limits abuse but **is not an account-wide billing cap**. Set a hard monthly limit on the OpenAI project as the real ceiling.
+- **Attached documents** (`.pdf`, `.docx`, `.xlsx`, `.pptx`, `.md`, `.txt`) are read in memory, embedded and searched for that session only; nothing is written to disk. Their text is sent to OpenAI. Limits: 5 files per session, 5 MB each, 300 passages. Scanned PDFs are refused. Parsing uses light libraries, not Docling, so layout-heavy files lose structure.
+- **Referenced documents** can be downloaded from the app (only files listed in the verified catalog are served) or opened on GitHub through `repository_blob_url`, which points to this branch and must be updated when the branch changes.
+- There is no IP rate limiting, user quota, audit log or abuse prevention beyond the ceilings above. This is **not** SSO, MFA, user management or enterprise authorization.
 - Streamlit session state is ephemeral and resets after restarts or disconnects. The cost estimate is not a billing guarantee.
 
 ## Release acceptance
 
 - [ ] GitHub Actions offline CI passed on the deployed commit.
 - [ ] Render build and startup succeeded.
-- [ ] Missing/wrong password cannot access the RAG or make API calls.
-- [ ] Correct password allows answering a known question with citations.
+- [ ] The default model answers a known question with citations without a password.
+- [ ] Missing/wrong password cannot select the protected model; the correct password unlocks it.
+- [ ] A referenced corpus document can be downloaded and opened on GitHub.
+- [ ] An attached document is indexed and answered from in its own scope.
 - [ ] A question without evidence abstains.
 - [ ] Two independent sessions do not share the question history or in-memory budget.
 - [ ] Confirm the API account's usage limits, model availability and price table.

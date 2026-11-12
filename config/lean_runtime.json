@@ -23,6 +23,12 @@
   "expand_documents": 3,
   "max_cost_per_question_usd": "0.30",
   "max_cost_per_session_usd": "0.50",
+  "max_cost_per_day_usd": "1.00",
+  "protected_models": ["gpt-6.1-sol"],
+  "max_upload_files": 5,
+  "max_upload_mb": 5,
+  "max_upload_units": 300,
+  "repository_blob_url": "https://github.com/RodsSoares/enterprise-knowledge-ai-system/blob/claude/lean-mvp-hardening/",
   "max_output_tokens_per_call": 4500,
   "deadline_seconds": 120
 }
