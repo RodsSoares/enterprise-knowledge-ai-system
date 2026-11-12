@@ -32,7 +32,12 @@ class RunBudget:
 
 
 class BudgetedClient:
-    def __init__(self, client, budget, prices, *, clock=monotonic, checkpoint=None):
+    def __init__(self, client, budget, prices, *, clock=monotonic, checkpoint=None, transport_retries=0):
+        # transport_retries: SDK-level retries of connection errors and 5xx/429 responses.
+        # They resend the identical request and are not billed; 0 keeps the original behaviour.
+        if type(transport_retries) is not int or not 0 <= transport_retries <= 3:
+            raise ValueError('transport_retries must be between 0 and 3')
+        self.transport_retries=transport_retries
         self.client,self.budget,self.prices,self.clock=client,budget,prices,clock
         self.started=clock()
         self.checkpoint=checkpoint
@@ -84,7 +89,7 @@ class BudgetedClient:
         if self.checkpoint:
             self.checkpoint(self.report())
         try:
-            response=getattr(self.client.with_options(timeout=min(60,self.remaining_seconds()),max_retries=0),kind).create(**kw)
+            response=getattr(self.client.with_options(timeout=min(60,self.remaining_seconds()),max_retries=self.transport_retries),kind).create(**kw)
             usage=response.usage
             actual_in=getattr(usage,'input_tokens' if kind=='responses' else 'prompt_tokens',None)
             actual_out=getattr(usage,'output_tokens',0) if kind=='responses' else 0

@@ -49,6 +49,18 @@ def file_hash(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def text_file_hashes(path):
+    """Hashes of a text input as stored, with LF endings and with CRLF endings.
+
+    Git may check the same committed text file out with either line ending,
+    so a hash recorded on one machine must still verify on another.
+    """
+    data = Path(path).read_bytes()
+    lf = data.replace(b"\r\n", b"\n")
+    return frozenset(hashlib.sha256(variant).hexdigest()
+                     for variant in (data, lf, lf.replace(b"\n", b"\r\n")))
+
+
 def relative_path(value):
     if not isinstance(value, str) or not value or "\\" in value or ":" in value:
         raise ValueError("Use repository-relative POSIX paths")
@@ -112,7 +124,8 @@ def verify_snapshot(envelope, *, root=None):
     if root is not None:
         for item in payload["provenance"].get("input_files", []):
             path = (Path(root) / relative_path(item["path"])).resolve()
-            if not path.is_relative_to(Path(root).resolve()) or file_hash(path) != item["sha256"]:
+            if (not path.is_relative_to(Path(root).resolve())
+                    or item["sha256"] not in text_file_hashes(path)):
                 raise ValueError("Preparation input changed")
     return tuple(all_units)
 

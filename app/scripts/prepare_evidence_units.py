@@ -22,7 +22,7 @@ def prepare(corpus, registry_path, config_path, *, parse=None):
         raise ValueError("Config requires max_chars and documents")
     UnitConfig(raw["max_chars"])
     paths = sorted(p for p in corpus.rglob("DOC-*") if p.is_file()
-        and p.suffix.lower() in {".pdf", ".docx", ".xlsx", ".pptx", ".md"}
+        and p.suffix.lower() in {".pdf", ".docx", ".xlsx", ".pptx", ".md", ".txt"}
         and re.match(r"^DOC-\d+_", p.name))
     ids = [p.stem.split("_", 1)[0] for p in paths]
     if not ids or len(ids) != len(set(ids)) or set(raw["documents"]) - set(ids):

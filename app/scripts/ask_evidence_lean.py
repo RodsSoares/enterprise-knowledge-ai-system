@@ -42,8 +42,8 @@ def _question(args):
 
 def main(argv=None, *, sdk_factory=None):
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--snapshot", type=Path, default=Path("docs/validation/EVIDENCE_UNITS_SNAPSHOT_local.json"))
-    p.add_argument("--embedding-cache", type=Path, default=Path("docs/validation/EVIDENCE_UNIT_EMBEDDINGS_local.json"))
+    p.add_argument("--snapshot", type=Path, default=Path("docs/validation/EVIDENCE_UNITS_SNAPSHOT_27DOC.json"))
+    p.add_argument("--embedding-cache", type=Path, default=Path("docs/validation/EVIDENCE_UNIT_EMBEDDINGS_27DOC.json"))
     p.add_argument("--config", type=Path, default=Path("docs/validation/STAGE1_RUN_CONFIG_local.json"))
     p.add_argument("--cases", type=Path, default=Path("docs/validation/RV041_CASES_FROZEN.json"))
     p.add_argument("--question")
@@ -56,7 +56,12 @@ def main(argv=None, *, sdk_factory=None):
     p.add_argument("--max-output-tokens", type=int, default=20000)
     p.add_argument("--max-per-call-output-tokens", type=int, default=4500)
     p.add_argument("--top-k", type=int, choices=(12, 16, 20), default=DEFAULT_TOP_K,
-                   help="Initial and recovery retrieval candidate limit (default: 16)")
+                   help="Initial and recovery retrieval candidate limit (default: 20)")
+    p.add_argument("--on-incomplete", choices=("flag", "withhold"), default="flag",
+                   help="flag: return verified claims with a reservation when the verifier "
+                        "reports an omission (default); withhold: hide the answer")
+    p.add_argument("--expand-documents", type=int, choices=range(0, 7), default=3,
+                   help="Best-ranked documents sent to the model in full (default: 3)")
     p.add_argument("--deadline-seconds", type=int, default=300)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--execute", action="store_true")
@@ -90,7 +95,7 @@ def main(argv=None, *, sdk_factory=None):
             raise ValueError("Model pricing missing; pass both price overrides")
         vectors = validate_inputs(snapshot, cache, config, question)[1]
         # Required only for the selected model; explicit pricing for cached embedding.
-        budget = RunBudget(a.max_input_tokens, a.max_output_tokens, 5,
+        budget = RunBudget(a.max_input_tokens, a.max_output_tokens, 6,
                            a.deadline_seconds, a.max_cost_usd)
         BudgetedClient(None, budget, prices)
         metadata = {d["document_id"]: {**d["metadata"], "as_of": config["as_of"]}
@@ -109,8 +114,8 @@ def main(argv=None, *, sdk_factory=None):
         "prompts": {s: {"schema_hash": digest(schema), "instructions_hash": digest(instructions)}
                     for s, (schema, instructions) in STAGES.items()},
         "budget": asdict(budget), "max_output_tokens_per_call": a.max_per_call_output_tokens,
-        "max_calls_normal": 3, "max_calls_recovery": 5,
-        "retrieval_top_k": a.top_k,
+        "max_calls_normal": 3, "max_calls_recovery": 5, "max_calls_with_language_repair": 6,
+        "retrieval_top_k": a.top_k, "on_incomplete": a.on_incomplete,
         "status_note": "Model review is not independent ground truth; human evaluation required.",
         "result": None, "usage": None,
     }
@@ -131,7 +136,7 @@ def main(argv=None, *, sdk_factory=None):
                     from openai import OpenAI
                     sdk_factory = OpenAI
                 with sdk_factory(timeout=60, max_retries=0) as sdk:
-                    client = BudgetedClient(sdk, budget, prices,
+                    client = BudgetedClient(sdk, budget, prices, transport_retries=2,
                                             checkpoint=lambda value: (report.update(usage=value), save()))
                     embed = OpenAIEmbeddingProvider(client, model=config["models"]["embedding"])
                     retriever = AdaptiveEvidenceUnitRetriever(units, vectors, embed)
@@ -143,7 +148,8 @@ def main(argv=None, *, sdk_factory=None):
                     answer = run_lean(question, snapshot_id=snapshot["snapshot_id"], units=units,
                                       retriever=retriever, provider=provider,
                                       document_metadata=metadata, top_k=a.top_k,
-                                      checkpoint=record)
+                                      on_incomplete=a.on_incomplete,
+                                      expand_documents=a.expand_documents, checkpoint=record)
                     report["result"] = answer
                     report["status"] = answer["status"]
             except Exception as exc:
@@ -156,6 +162,10 @@ def main(argv=None, *, sdk_factory=None):
     print("RV043:", report["status"], "| file:", a.output)
     if report["result"] and report["result"].get("rendered_answer"):
         print(report["result"]["rendered_answer"])
+        for note in report["result"].get("reservations", []):
+            print("Ressalva:", note)
+    elif report["result"] and report["result"].get("reason"):
+        print(report["result"]["reason"])
     if report["usage"]:
         print("Calls:", report["usage"]["calls"],
               "| estimated USD:", report["usage"]["estimated_cost_usd"])

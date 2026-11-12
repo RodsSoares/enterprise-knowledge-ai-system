@@ -1,0 +1,569 @@
+schema_version: "1.0"
+
+artifact:
+  name: answer_criteria
+  purpose: >-
+    Checkable answer criteria for Golden Set A (Q01-Q36) and the orchestration
+    cases (ORC-001..ORC-010). Replaces the "To be finalized" answer
+    specifications. Every fact below was taken from the text of the corpus
+    documents, not from general knowledge.
+  indexed_by_rag: false
+
+scoring:
+  rule: >-
+    A run passes when its outcome is one of the expected outcomes and, if it
+    answered, every citation group has at least one cited document, no
+    forbidden document is cited, every required fact pattern is found and no
+    forbidden pattern is found.
+  matching: >-
+    Patterns are regular expressions applied to the answer text after
+    lowercasing and removing accents. Write them lowercase without accents.
+  limits: >-
+    A pass is a lower bound: required facts and sources are present. It does
+    not prove that every sentence is correct. `human_check` states what a
+    reviewer must still confirm by reading the answer.
+
+cases:
+  - id: Q01
+    question: "Qual é o procedimento para substituir uma transportadora que não está cumprindo o SLA contratado?"
+    expected_outcome: answer
+    cite: [[DOC-003]]
+    required_facts:
+      - name: "Transportation Management documenta a falha e as alternativas"
+        any: ["transportation management", "gestao de transporte", "gerencia de transporte"]
+      - name: "Procurement verifica contrato, prazos de aviso e elegibilidade"
+        any: ["procurement", "compras", "suprimentos"]
+      - name: "plano de transição"
+        any: ["transic"]
+      - name: "aprovação conforme a matriz de alçadas (DOC-012)"
+        any: ["doc-012", "approval authority matrix", "matriz de (aprovac|autoridade|alcada)"]
+
+  - id: Q02
+    question: "Qual é o SLA de entrega estabelecido para cada categoria de transporte?"
+    expected_outcome: answer
+    cite: [[DOC-001]]
+    required_facts:
+      - name: "Standard: 5 dias úteis"
+        any: ["5 dias uteis", "cinco dias uteis", "5 business days"]
+      - name: "Express: 2 dias úteis"
+        any: ["2 dias uteis", "dois dias uteis", "2 business days"]
+      - name: "Critical: compromisso aprovado, meta de próximo dia útil"
+        any: ["proximo dia util", "dia util seguinte", "next business day"]
+    note: >-
+      The source labels these values "proposed synthetic definitions ... require
+      acceptance before benchmark freeze". A faithful model may hedge or
+      abstain for that reason. See the corpus content audit.
+
+  - id: Q03
+    question: "Quais documentos precisam ser apresentados para homologação de uma nova transportadora?"
+    expected_outcome: answer
+    cite: [[DOC-008]]
+    required_facts:
+      - name: "certificado de seguro"
+        any: ["seguro", "insurance"]
+      - name: "registro legal e situação fiscal"
+        any: ["fiscal", "tribut", "tax"]
+      - name: "acordo de confidencialidade / tratamento de dados"
+        any: ["confidencialidade", "confidentiality"]
+      - name: "cadastro bancário e de pagamento"
+        any: ["banc", "bank"]
+
+  - id: Q04
+    question: "Quem é responsável por aprovar a contratação emergencial de uma transportadora?"
+    expected_outcome: answer
+    cite: [[DOC-012]]
+    required_facts:
+      - name: "faixa até BRL 50.000"
+        any: ["50[.,]000"]
+      - name: "faixa até BRL 250.000"
+        any: ["250[.,]000"]
+      - name: "Logistics Manager + Procurement Manager na primeira faixa"
+        any: ["logistics manager", "gerente de logistica"]
+      - name: "Executive Director acima de BRL 250.000"
+        any: ["executive director", "diretor(a)? executiv"]
+
+  - id: Q05
+    question: "Qual é o limite financeiro para contratação sem aprovação da diretoria?"
+    expected_outcome: answer
+    cite: [[DOC-012]]
+    required_facts:
+      - name: "BRL 100.000 para contrato padrão de fornecedor"
+        any: ["100[.,]000"]
+    human_check: >-
+      "Diretoria" is ambiguous: the matrix has Procurement Director from BRL
+      100,001 and Executive Director above BRL 500,000. The answer should state
+      which reading it uses; BRL 50,000 applies to emergency carrier contracting.
+
+  - id: Q06
+    question: "Em quais situações uma entrega pode ser classificada como crítica?"
+    expected_outcome: answer
+    cite: [[DOC-009]]
+    required_facts:
+      - name: "interrupção iminente de operação crítica"
+        any: ["interrup"]
+      - name: "prazo contratual ou regulatório com consequência material"
+        any: ["regulat", "contratual"]
+      - name: "reposição emergencial de equipamento essencial"
+        any: ["equipamento"]
+      - name: "aprovação explícita do Operations Manager"
+        any: ["operations manager", "gerente de operac"]
+
+  - id: Q07
+    question: "Qual é o procedimento previsto para uma entrega crítica atrasada?"
+    expected_outcome: answer
+    cite: [[DOC-009]]
+    required_facts:
+      - name: "notificar a Control Tower e abrir registro de incidente"
+        any: ["control tower", "torre de controle"]
+      - name: "em 30 minutos notificar Operations Manager e contato da transportadora"
+        any: ["30 minutos", "trinta minutos"]
+      - name: "em 60 minutos obter ETA de recuperação"
+        any: ["60 minutos", "sessenta minutos", "1 hora", "uma hora"]
+
+  - id: Q08
+    question: "Quais KPIs são utilizados para avaliar o desempenho das transportadoras?"
+    expected_outcome: answer
+    cite: [[DOC-003, DOC-013]]
+    required_facts:
+      - name: "OTIF"
+        any: ["otif"]
+      - name: "taxa de avarias (damage rate)"
+        any: ["avaria", "dano", "damage"]
+      - name: "taxa de reclamações (claim rate)"
+        any: ["reclamac", "sinistro", "claim"]
+
+  - id: Q09
+    question: "Como é calculado o indicador OTIF segundo a documentação da empresa?"
+    expected_outcome: answer
+    cite: [[DOC-013, DOC-001]]
+    required_facts:
+      - name: "numerador: entregas no prazo e completas"
+        any: ["no prazo", "on time", "pontua"]
+      - name: "denominador: total de entregas"
+        any: ["total de entregas", "entregas totais", "total deliveries", "total das entregas"]
+
+  - id: Q10
+    question: "Qual é a meta vigente de OTIF para operações nacionais?"
+    expected_outcome: answer
+    cite: [[DOC-001]]
+    required_facts:
+      - name: "meta vigente de 97%"
+        any: ["97 ?%", "0[.,]97"]
+    human_check: "95% may appear only as the previous target, never as the current one."
+
+  - id: Q11
+    question: "A meta de OTIF mudou nos últimos dois anos? Se sim, quando e por quê?"
+    expected_outcome: answer
+    cite: [[DOC-001, DOC-002, DOC-019]]
+    required_facts:
+      - name: "meta anterior de 95%"
+        any: ["95 ?%"]
+      - name: "meta atual de 97%"
+        any: ["97 ?%"]
+      - name: "vigência a partir de 2026"
+        any: ["2026"]
+    human_check: >-
+      The corpus records who approved the change (Operations Committee, 2025)
+      but gives no business reason. A correct answer says the reason is not
+      documented; it must not invent one.
+
+  - id: Q12
+    question: "Quais transportadoras possuem cláusulas de penalidade por atraso em seus contratos?"
+    expected_outcome: answer
+    cite: [[DOC-014], [DOC-015]]
+    required_facts:
+      - name: "Atlas tem penalidade"
+        any: ["atlas"]
+      - name: "Nova tem penalidade"
+        any: ["nova"]
+    human_check: "Orion must be reported as having no delay penalty clause, if mentioned."
+
+  - id: Q13
+    question: "Compare as regras de penalidade dos contratos das transportadoras Atlas e Nova."
+    expected_outcome: answer
+    cite: [[DOC-014], [DOC-015]]
+    required_facts:
+      - name: "Atlas: 3% do faturamento mensal por evento"
+        any: ["3 ?%"]
+      - name: "Atlas: teto de 12% ao mês"
+        any: ["12 ?%"]
+      - name: "Nova: 2% do frete do embarque afetado"
+        any: ["2 ?%"]
+      - name: "Nova: teto de 10% da fatura mensal de frete"
+        any: ["10 ?%"]
+
+  - id: Q14
+    question: "Existe alguma exceção contratual às penalidades em caso de eventos de força maior?"
+    expected_outcome: answer
+    cite: [[DOC-014, DOC-015, DOC-016]]
+    required_facts:
+      - name: "exceção de força maior existe"
+        any: ["forca maior", "force majeure"]
+      - name: "notificação em até 24 horas"
+        any: ["24 ?h", "24 horas", "vinte e quatro horas"]
+
+  - id: Q15
+    question: "Quais são os critérios para classificar uma transportadora como de alto risco?"
+    expected_outcome: answer
+    cite: [[DOC-004]]
+    required_facts:
+      - name: "achado grave de segurança ou regulatório não resolvido"
+        any: ["regulat"]
+      - name: "violação material de segurança da informação"
+        any: ["seguranca da informacao", "information.security"]
+      - name: "insolvência ou incapacidade material de entrega"
+        any: ["insolv"]
+      - name: "violações críticas repetidas de SLA sem plano de recuperação"
+        any: ["sla"]
+
+  - id: Q16
+    question: "O que deve acontecer quando uma transportadora permanece abaixo do SLA durante três semanas consecutivas?"
+    expected_outcome: answer
+    cite: [[DOC-003]]
+    required_facts:
+      - name: "escalonamento obrigatório"
+        any: ["escal"]
+      - name: "para Transportation Management e Procurement"
+        any: ["procurement", "compras", "suprimentos"]
+      - name: "abertura de registro de ação corretiva"
+        any: ["corretiv", "corrective"]
+
+  - id: Q17
+    question: "Houve algum incidente semelhante anteriormente? Como ele foi tratado?"
+    expected_outcome: [answer, clarify]
+    cite: [[DOC-017, DOC-019]]
+    required_facts:
+      - name: "incidente da rota R001 em 2025"
+        any: ["r001"]
+    note: >-
+      The question depends on a previous turn ("semelhante" to what?). Asked
+      alone, a clarification request is a correct outcome.
+
+  - id: Q18
+    question: "Quais decisões foram tomadas após o último incidente grave de transporte?"
+    expected_outcome: answer
+    cite: [[DOC-020]]
+    required_facts:
+      - name: "checklist de verificação de despacho"
+        any: ["checklist", "lista de verificacao"]
+      - name: "cobertura de escalonamento crítico em dois canais"
+        any: ["escal"]
+      - name: "refere-se ao incidente R003 de 2026"
+        any: ["r003"]
+
+  - id: Q19
+    question: "Alguma recomendação daquele incidente ainda está pendente?"
+    expected_outcome: [answer, clarify]
+    cite: [[DOC-021, DOC-020]]
+    required_facts:
+      - name: "ação CA-2026-R003-02 (auditoria de cobertura de escalonamento) em aberto"
+        any: ["ca-2026-r003-02", "auditoria", "audit"]
+    note: >-
+      "Daquele incidente" refers to a previous turn. Asked alone, a
+      clarification request is a correct outcome.
+
+  - id: Q20
+    question: "Quais políticas internas se aplicam ao compartilhamento de dados com transportadoras?"
+    expected_outcome: answer
+    cite: [[DOC-005], [DOC-006]]
+    required_facts:
+      - name: "Data Sharing Policy"
+        any: ["data sharing policy", "politica de compartilhamento"]
+      - name: "Information Security Policy"
+        any: ["information security policy", "politica de seguranca da informacao"]
+    human_check: "DOC-011 (superseded SOP) must not be presented as a current rule."
+
+  - id: Q21
+    question: "Quais informações são classificadas como confidenciais nos documentos logísticos?"
+    expected_outcome: answer
+    cite: [[DOC-006]]
+    required_facts:
+      - name: "informações identificáveis de clientes"
+        any: ["client"]
+      - name: "credenciais e material de autenticação"
+        any: ["credenci", "autenticac"]
+      - name: "termos contratuais não públicos"
+        any: ["contrat"]
+
+  - id: Q22
+    question: "Um colaborador pode enviar dados de clientes por e-mail para uma transportadora?"
+    expected_outcome: answer
+    cite: [[DOC-005, DOC-006]]
+    required_facts:
+      - name: "restrição ao e-mail comum para dados confidenciais"
+        any: ["e-?mail"]
+      - name: "depende de os dados serem confidenciais"
+        any: ["confidenc"]
+      - name: "exige canal seguro aprovado ou plataforma controlada"
+        any: ["segur", "plataforma controlada", "canal aprovado"]
+    human_check: >-
+      The answer must not rely on DOC-011 (superseded) as permission to use
+      e-mail.
+
+  - id: Q23
+    question: "Qual é o procedimento correto caso dados confidenciais sejam enviados para um fornecedor por engano?"
+    expected_outcome: answer
+    cite: [[DOC-010]]
+    required_facts:
+      - name: "reportar imediatamente"
+        any: ["imediat"]
+      - name: "ao canal de incidentes de Information Security"
+        any: ["information security", "seguranca da informacao"]
+      - name: "preservar evidências / não pedir exclusão antes de orientação"
+        any: ["evidenc"]
+
+  - id: Q24
+    question: "Existem divergências entre o procedimento operacional e a política corporativa sobre compartilhamento de dados?"
+    expected_outcome: answer
+    cite: [[DOC-011], [DOC-006, DOC-007]]
+    required_facts:
+      - name: "o SOP legado permitia envio por e-mail corporativo"
+        any: ["e-?mail"]
+      - name: "a política corporativa prevalece"
+        any: ["preval"]
+
+  - id: Q25
+    question: "Qual documento deve prevalecer quando um SOP contradiz uma política corporativa?"
+    expected_outcome: answer
+    cite: [[DOC-007]]
+    required_facts:
+      - name: "a política corporativa prevalece"
+        any: ["politica corporativa", "corporate policy"]
+      - name: "regra de prevalência"
+        any: ["preval"]
+
+  - id: Q26
+    question: "Qual é atualmente a versão vigente da política de gestão de fornecedores?"
+    expected_outcome: answer
+    cite: [[DOC-022]]
+    required_facts:
+      - name: "versão 3.0"
+        any: ["3[.,]0"]
+
+  - id: Q27
+    question: "O procedimento descrito no documento de 2024 ainda é válido ou foi substituído?"
+    expected_outcome: [answer, clarify]
+    cite: [[DOC-011, DOC-002]]
+    required_facts:
+      - name: "o documento foi substituído e não é autoridade vigente"
+        any: ["substitu", "supersed", "obsolet", "nao e (mais )?(valid|vigente)"]
+    note: >-
+      Two 2024 documents exist (DOC-002 and DOC-011). The golden set expects
+      DOC-011; a clarification request is also correct.
+
+  - id: Q28
+    question: "Quais mudanças ocorreram entre a versão anterior e a versão atual da política de transportes?"
+    expected_outcome: answer
+    cite: [[DOC-001], [DOC-002, DOC-019]]
+    required_facts:
+      - name: "meta de OTIF anterior de 95%"
+        any: ["95 ?%"]
+      - name: "meta de OTIF atual de 97%"
+        any: ["97 ?%"]
+    human_check: >-
+      Historical category SLAs are not recorded in DOC-002. The answer must
+      not present the current SLAs as a change from known earlier values.
+
+  - id: Q29
+    question: "Qual é a política da empresa para transporte de material radioativo?"
+    expected_outcome: abstain
+    human_check: "The message must not describe any radioactive-transport rule."
+
+  - id: Q30
+    question: "Qual transportadora devemos contratar para a próxima operação?"
+    expected_outcome: [answer, clarify]
+    forbidden:
+      - name: "recomendação de uma transportadora específica"
+        any:
+          - "(recomend|sugir|sugiro|indic|melhor opcao|deve(m|mos)? contratar|contrate)[^.]{0,80}(atlas|nova logistica|orion)"
+    human_check: >-
+      The answer may present contract evidence and the decision process, and
+      must state that carrier selection is a human-authorized decision.
+
+  - id: Q31
+    question: "Posso usar IA para analisar contratos de fornecedores?"
+    expected_outcome: answer
+    cite: [[DOC-023]]
+    required_facts:
+      - name: "somente com ferramenta e caso de uso aprovados"
+        any: ["aprovad"]
+      - name: "requisitos de confidencialidade atendidos"
+        any: ["confidenc"]
+      - name: "resultado é apoio analítico, não interpretação jurídica"
+        any: ["analitic", "interpretacao (juridica|legal)"]
+
+  - id: Q32
+    question: "Quais aprovações são necessárias para usar IA com dados de fornecedores?"
+    expected_outcome: answer
+    cite: [[DOC-023, DOC-012]]
+    required_facts:
+      - name: "aprovação de Information Security para dados confidenciais"
+        any: ["information security", "seguranca da informacao"]
+      - name: "aprovação de AI Governance"
+        any: ["ai governance", "governanca de ia"]
+      - name: "ferramenta e caso de uso aprovados"
+        any: ["caso de uso", "use case"]
+
+  - id: Q33
+    question: "Quais requisitos de segurança se aplicam ao uso de IA?"
+    expected_outcome: answer
+    cite: [[DOC-024]]
+    required_facts:
+      - name: "identidade e acesso"
+        any: ["acesso", "autenticac"]
+      - name: "logs e rastreabilidade"
+        any: ["log", "rastreab", "auditoria"]
+      - name: "segredos e credenciais não entram em prompts"
+        any: ["credenci", "senha", "segredo"]
+
+  - id: Q34
+    question: "Quem aprova uma nova ferramenta de IA?"
+    expected_outcome: answer
+    cite: [[DOC-023, DOC-012]]
+    required_facts:
+      - name: "AI Governance Owner aprova"
+        any: ["ai governance owner", "governanca de ia"]
+      - name: "revisão de Information Security"
+        any: ["information security", "seguranca da informacao"]
+      - name: "revisão de Procurement"
+        any: ["procurement", "compras", "suprimentos"]
+
+  - id: Q35
+    question: "Posso inserir dados confidenciais em uma ferramenta de IA?"
+    expected_outcome: answer
+    cite: [[DOC-023, DOC-024, DOC-006]]
+    required_facts:
+      - name: "somente se ferramenta e caso de uso forem aprovados"
+        any: ["aprovad"]
+      - name: "para a classificação da informação"
+        any: ["classificac"]
+
+  - id: Q36
+    question: "Que treinamento é obrigatório para colaboradores que utilizam IA?"
+    expected_outcome: answer
+    cite: [[DOC-026]]
+    required_facts:
+      - name: "AI Fundamentals and Responsible Use"
+        any: ["fundament"]
+      - name: "Information Classification and Safe Prompting"
+        any: ["classificac", "classification"]
+      - name: "Human Accountability and Verification"
+        any: ["accountability", "responsabili", "prestacao de contas"]
+
+  - id: ORC-001
+    question: "Quais cuidados a política exige antes de compartilhar dados com um fornecedor externo?"
+    expected_outcome: answer
+    cite: [[DOC-005]]
+    required_facts:
+      - name: "regra para dados públicos"
+        any: ["public"]
+      - name: "regra para dados internos"
+        any: ["intern"]
+      - name: "regra para dados confidenciais"
+        any: ["confidenc"]
+      - name: "regra para dados restritos com autorização explícita"
+        any: ["restrit", "restricted"]
+      - name: "autorização explícita"
+        any: ["autorizacao explicita", "explicit authorization"]
+    human_check: >-
+      AI approvals may appear at most as a conditional remark ("if the data
+      will be processed by an AI tool"), never as a general sharing requirement.
+
+  - id: ORC-002
+    question: "Segundo a DOC-005, quais requisitos se aplicam antes de enviar dados a um fornecedor externo? Não estou perguntando sobre usar dados em IA."
+    expected_outcome: answer
+    cite: [[DOC-005]]
+    forbidden_documents: [DOC-006, DOC-010, DOC-012, DOC-023, DOC-024, DOC-025, DOC-026]
+    required_facts:
+      - name: "regra para dados confidenciais"
+        any: ["confidenc"]
+      - name: "regra para dados restritos"
+        any: ["restrit", "restricted"]
+      - name: "canal ou mecanismo aprovado"
+        any: ["canal", "mecanismo", "plataforma"]
+    forbidden:
+      - name: "requisitos de IA, excluídos pela pergunta"
+        any: ["\\bia\\b", "inteligencia artificial", "\\bai\\b"]
+
+  - id: ORC-003
+    question: "Quero usar dados confidenciais de um fornecedor em uma ferramenta de IA. Quais aprovações são exigidas?"
+    expected_outcome: answer
+    cite: [[DOC-023, DOC-012]]
+    required_facts:
+      - name: "aprovação de Information Security"
+        any: ["information security", "seguranca da informacao"]
+      - name: "aprovação de AI Governance"
+        any: ["ai governance", "governanca de ia"]
+    forbidden:
+      - name: "autorização automática pela aquisição do produto"
+        any: ["(compra|aquisic)[^.]{0,60}(autoriza|permite) automaticamente"]
+
+  - id: ORC-004
+    question: "Enviei acidentalmente dados confidenciais a um fornecedor. O que devo fazer agora?"
+    expected_outcome: answer
+    cite: [[DOC-010]]
+    required_facts:
+      - name: "reportar imediatamente"
+        any: ["imediat"]
+      - name: "Information Security coordena a contenção"
+        any: ["information security", "seguranca da informacao"]
+
+  - id: ORC-005
+    question: "Compare, segundo a DOC-005, o compartilhamento externo de dados públicos, internos, confidenciais e restritos."
+    expected_outcome: answer
+    cite: [[DOC-005]]
+    forbidden_documents: [DOC-006, DOC-010, DOC-012, DOC-023, DOC-024, DOC-025, DOC-026]
+    required_facts:
+      - name: "públicos: aprovados para uso público"
+        any: ["uso publico", "public use"]
+      - name: "internos: necessidade legítima de negócio"
+        any: ["necessidade legitima", "legitimate business need"]
+      - name: "confidenciais: destinatário autorizado"
+        any: ["destinatario autorizado", "authorized recipient"]
+      - name: "restritos: autorização explícita"
+        any: ["autorizacao explicita", "explicit authorization"]
+
+  - id: ORC-006
+    question: "Posso enviar agora este arquivo para o fornecedor?"
+    expected_outcome: clarify
+    human_check: "The clarification must ask for the data classification or sending conditions."
+
+  - id: ORC-007
+    question: "Qual política da empresa define o transporte de material radioativo?"
+    expected_outcome: abstain
+    human_check: "The message must not name or describe a policy for radioactive transport."
+
+  - id: ORC-008
+    question: "Uma instrução operacional pode abrir uma exceção à DOC-005 para compartilhar dados?"
+    expected_outcome: answer
+    cite: [[DOC-005]]
+    required_facts:
+      - name: "um SOP não cria exceção de forma independente"
+        any: ["nao pode", "nao cria", "nao e possivel", "cannot"]
+      - name: "justificativa de negócio documentada"
+        any: ["justificativa"]
+      - name: "aprovações dos controles aplicáveis"
+        any: ["aprovac"]
+
+  - id: ORC-009
+    question: "Na DOC-006, e-mail comum é permitido para informações confidenciais de clientes quando há aprovação explícita da proteção técnica e do processo para esse uso?"
+    expected_outcome: answer
+    cite: [[DOC-006]]
+    required_facts:
+      - name: "a exceção depende de aprovação explícita"
+        any: ["aprova"]
+      - name: "da proteção técnica e do processo"
+        any: ["protecao tecnica", "technical protection"]
+    forbidden:
+      - name: "negar a exceção em qualquer circunstância"
+        any: ["nunca", "em nenhuma (circunstancia|hipotese)"]
+
+  - id: ORC-010
+    question: "Ter adquirido um produto de IA permite inserir automaticamente dados confidenciais de fornecedores ou clientes nele?"
+    expected_outcome: answer
+    cite: [[DOC-025, DOC-023, DOC-006]]
+    required_facts:
+      - name: "a aquisição não autoriza automaticamente"
+        any: ["\\bnao\\b"]
+      - name: "classificação dos dados e uso aprovado continuam aplicáveis"
+        any: ["classificac", "aprovad"]
