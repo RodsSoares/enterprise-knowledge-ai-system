@@ -38,9 +38,9 @@ See [deployment and operating notes](docs/validation/RENDER_MVP_DEPLOYMENT.md).
 
 The implemented lean MVP separates **offline construction of a verifiable evidence catalog** from **online retrieval, answering and verification**.
 
-![Enterprise Knowledge AI System — approved lean MVP technical architecture](docs/images/Arquitetura MVP de IA Empresarial com RAG.png)
+![Enterprise Knowledge AI System — Current Lean MVP Architecture](docs/images/Arquitetura%20MVP%20de%20IA%20Empresarial%20com%20RAG.png)
 
-*Architecture snapshot preserved from [commit 7039382](https://github.com/RodsSoares/enterprise-knowledge-ai-system/commit/70393823493438659c916824c105f52da1e1ab98). The [technical specification](docs/architecture/21_current_lean_mvp_architecture.md) defines the contracts, execution sequence, invariants and current limitations. The historical Stage-1/v3/v4.2 designs are not the default live path.*
+*Updated visual overview of the implemented lean MVP, based on the [current technical specification](docs/architecture/21_current_lean_mvp_architecture.md). The previously approved [navy/cyan architecture from commit 7039382](docs/images/architecture-overview-7039382.svg) remains preserved for reference. Historical Stage-1/v3/v4.2 experiments are not part of the active live path.*
 
 | Layer | Implemented responsibility |
 |---|---|
