@@ -1,6 +1,7 @@
 # Enterprise Knowledge AI System
 
-🚀 **Current Stage:** Functional lean RAG MVP with a private Streamlit interface; earlier orchestration experiments remain available
+🌐 **Live Application:** [Launch Enterprise Knowledge AI System](https://enterprise-knowledge-ai-system.onrender.com/)
+🚀 **Current Stage:** Functional lean RAG MVP with a public Streamlit interface; earlier orchestration experiments remain available
 🧪 **Validation:** RV-045 clean corpus (27 documents; 236 evidence units); 45/46 deterministic passes with `gpt-6.1-sol`; semantic review remains necessary
 📋 **Next Stage:** Semantic/human review, Q20 multi-policy coverage, and operational hardening of the private demo
 
@@ -10,9 +11,23 @@ The project combines **multi-format ingestion, canonical normalization, structur
 
 > **Evidence before generation. Retrieval quality before answer fluency.**
 
-This README retains the project's evidence-first engineering scope while distinguishing **implemented components**, **experimental integrations**, **recorded measurements**, and **architecture proposals**. The Engineering Overview and MVP diagram reflect the active branch as of **12 November 2026**. Later sections preserve dated research and experimental results; measured deterministic passes are not a production certification.
+This README retains the project's evidence-first engineering scope while distinguishing **implemented components**, **experimental integrations**, **recorded measurements**, and **architecture proposals**. The Engineering Overview and MVP diagram reflect `main` as of **12 November 2026**. Later sections preserve dated research and experimental results; measured deterministic passes are not a production certification.
 
 ## Run the MVP
+
+### Online
+
+**[enterprise-knowledge-ai-system.onrender.com](https://enterprise-knowledge-ai-system.onrender.com/)**, deployed on Render from `main`.
+
+- Ask questions about the 27 corporate documents with `gpt-4.1-mini`; no login is required.
+- `gpt-6.1-sol` is unlocked with an access password in the sidebar.
+- Each answer lists the referenced documents, with a download button and a link to the file on GitHub.
+- Attach your own files (`.pdf`, `.docx`, `.xlsx`, `.pptx`, `.md`, `.txt`) with the **+** button. They are read in memory for that session only and their text is sent to OpenAI, so do not attach confidential documents.
+- Spending is capped per question, per session and per day. The free Render instance sleeps when idle: the first visit can take about a minute to start.
+
+Deployment details: [RENDER_MVP_DEPLOYMENT.md](docs/validation/RENDER_MVP_DEPLOYMENT.md).
+
+### Locally
 
 ```powershell
 pip install -r requirements.txt
@@ -20,7 +35,7 @@ $env:OPENAI_API_KEY = "..."
 streamlit run app/frontend/main.py
 ```
 
-A question is answered from the 27-document corpus by the lean pipeline (retrieve → answer → verify), with a citation for every claim and a cost ceiling per question and per session. See [RV-044](docs/architecture/19_rv044_lean_v2_and_answer_criteria.md) for the measured results and [RV-045](docs/architecture/20_rv045_clean_corpus_and_mvp_interface.md) for the interface and the cleaned corpus. The sections below describe the earlier experimental stages.
+A question is answered from the 27-document corpus by the lean pipeline (retrieve → answer → verify), with a citation for every claim and cost ceilings per question, per session and per day. See [RV-044](docs/architecture/19_rv044_lean_v2_and_answer_criteria.md) for the measured results and [RV-045](docs/architecture/20_rv045_clean_corpus_and_mvp_interface.md) for the interface and the cleaned corpus. The sections below describe the earlier experimental stages.
 
 ![MVP interface](docs/images/mvp-interface.png)
 
