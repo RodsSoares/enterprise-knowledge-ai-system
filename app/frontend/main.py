@@ -6,6 +6,7 @@ shows what was spent and the session stops at the configured ceiling.
 """
 from html import escape
 import os
+import time
 import sys
 from pathlib import Path
 
@@ -16,6 +17,7 @@ os.chdir(ROOT)
 
 import streamlit as st  # noqa: E402
 
+from app.frontend.access import password_is_configured, password_matches  # noqa: E402
 from app.service.knowledge_service import (  # noqa: E402
     KnowledgeService, SessionBudgetExceeded, load_runtime_config,
 )
@@ -107,10 +109,40 @@ EXAMPLES = (
 )
 
 
-@st.cache_resource(show_spinner="Carregando o catálogo de evidências...")
 def get_service():
-    from openai import OpenAI
-    return KnowledgeService(OpenAI(timeout=60, max_retries=0), load_runtime_config())
+    """A separate budget and query cache for each authenticated Streamlit session."""
+    if "knowledge_service" not in st.session_state:
+        from openai import OpenAI
+        st.session_state["knowledge_service"] = KnowledgeService(
+            OpenAI(timeout=60, max_retries=0), load_runtime_config()
+        )
+    return st.session_state["knowledge_service"]
+
+
+def require_demo_access():
+    """Fail closed: no public access or API calls without a deployment password."""
+    secret = os.getenv("APP_ACCESS_PASSWORD", "")
+    if not password_is_configured(secret):
+        st.error("Acesso indisponível: APP_ACCESS_PASSWORD deve ter pelo menos 16 caracteres.")
+        st.stop()
+    if st.session_state.get("demo_authenticated") is True:
+        return
+
+    st.title("Enterprise Knowledge AI")
+    st.caption("Demonstração privada • acesso autorizado")
+    with st.form("demo_login"):
+        supplied = st.text_input("Senha de acesso", type="password")
+        submitted = st.form_submit_button("Entrar")
+    if submitted:
+        attempts = st.session_state.get("demo_failed_attempts", 0)
+        if password_matches(supplied, secret):
+            st.session_state["demo_authenticated"] = True
+            st.session_state["demo_failed_attempts"] = 0
+            st.rerun()
+        st.session_state["demo_failed_attempts"] = attempts + 1
+        time.sleep(min(1 + attempts, 5))
+        st.error("Senha incorreta.")
+    st.stop()
 
 
 def show(answer):
@@ -153,6 +185,7 @@ def show(answer):
 def main():
     st.set_page_config(page_title="Enterprise Knowledge AI", page_icon="📚", layout="centered")
     st.markdown(CSS, unsafe_allow_html=True)
+    require_demo_access()
     st.markdown(
         '<div class="ek-kicker">Rodrigo Soares</div>'
         '<h1 class="ek-title">Enterprise <span>Knowledge AI System</span></h1>'
@@ -166,6 +199,9 @@ def main():
     service = get_service()
     config = service.config
     with st.sidebar:
+        if st.button("Encerrar sessão", use_container_width=True):
+            st.session_state.clear()
+            st.rerun()
         st.markdown('<div class="ek-brand"><b>RS</b><span>Enterprise Knowledge AI</span></div>'
                     '<div class="ek-brand-sub">Enterprise RAG • Evidence &amp; Citations</div>',
                     unsafe_allow_html=True)
