@@ -50,9 +50,9 @@ The architecture separates **offline construction of a verified evidence catalog
 | Deployment | `render.yaml` blueprint for a private demo behind a shared password; manual deploys |
 | Not in the MVP | SSO and user accounts, rate limiting, account-wide budget, REST API, persistent store, per-document access control |
 
-![Enterprise Knowledge AI System — Engineering Architecture](docs/images/architecture-overview.png)
+![Enterprise Knowledge AI System — Current Lean MVP Architecture](docs/images/architecture-overview.svg)
 
-The diagram shows the architecture as implemented in the MVP (RV-045); its editable source is `docs/images/architecture-overview.html`. Earlier experimental pipelines (stage-1, v3, v4.2) remain in the repository for audit and are described in the later sections; they are not part of this flow.
+The branded diagram depicts the **implemented lean MVP** (RV-045). Its version-controlled vector source is [`architecture-overview.svg`](docs/images/architecture-overview.svg), with a [standalone HTML preview](docs/images/architecture-overview.html). For the engineering contracts, operational sequence, invariants and limitations, see **[Current Lean MVP Architecture — Technical Specification](docs/architecture/21_current_lean_mvp_architecture.md)**. Earlier Stage-1/v3/v4.2 experiments remain available for audit and are **not** part of this live path.
 
 ## Trustworthy Enterprise RAG Principle
 
@@ -103,6 +103,7 @@ The engineering diagram above explains how the system is structured. The complem
 ## Table of Contents
 
 - [Engineering Overview](#engineering-overview)
+- [Current MVP Technical Specification](docs/architecture/21_current_lean_mvp_architecture.md)
 - [Trustworthy Enterprise RAG Principle](#trustworthy-enterprise-rag-principle)
 - [The Core Idea](#the-core-idea)
 - [Overview](#overview)

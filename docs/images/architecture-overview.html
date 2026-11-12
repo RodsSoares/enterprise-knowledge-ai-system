@@ -1,139 +1,17 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Enterprise Knowledge AI System — System Overview</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enterprise Knowledge AI System — Lean MVP Architecture</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{width:1700px;font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;background:#fff;color:#12233f;padding:14px 14px 16px}
-header{display:flex;align-items:center;gap:18px;margin-bottom:12px}
-.logo{width:72px;height:72px;border-radius:14px;background:#1565d8;display:flex;align-items:center;justify-content:center}
-h1{font-size:33px;font-weight:800;letter-spacing:.2px;color:#0b1f44}
-h2{font-size:21px;font-weight:700;color:#0b1f44;margin-top:1px}
-.sub{font-size:16px;color:#4a5b78;margin-top:3px}
-.badge{margin-left:auto;border:1.5px solid #9cc3f5;background:#eef5ff;border-radius:10px;padding:9px 20px;text-align:center}
-.badge b{display:block;font-size:22px;color:#0b1f44}.badge span{font-size:11px;font-weight:700;letter-spacing:.6px;color:#0b1f44}
-.band{font-size:12px;font-weight:800;letter-spacing:2px;color:#fff;border-radius:7px;padding:5px 12px;margin:9px 0 7px;display:flex;justify-content:space-between}
-.band small{font-weight:600;letter-spacing:.3px;opacity:.95;font-size:11.5px}
-.offline{background:#1565d8}.online{background:#0f8a5f}
-.row{display:grid;gap:9px}
-.r5{grid-template-columns:repeat(5,1fr)}.r6{grid-template-columns:repeat(6,1fr)}
-.col{border-radius:10px;border:1.5px solid;padding:0 0 8px;position:relative;min-height:232px}
-.col .hd{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px 8px 0 0;font-weight:800;font-size:14px;line-height:1.12;text-transform:uppercase;color:#0b1f44}
-.n{flex:none;width:32px;height:32px;border-radius:50%;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
-.lead{font-size:12.5px;color:#22344f;padding:7px 11px 3px;line-height:1.28}
-.box{margin:6px 9px 0;border:1.3px solid;border-radius:7px;background:#fff;padding:5px 9px}
-.box b{display:block;font-size:12.5px;color:#0b1f44}.box span{font-size:11.2px;color:#44556f;line-height:1.25;display:block}
-.col:not(:last-child)::after{content:"";position:absolute;right:-10px;top:104px;border:7px solid transparent;border-left-color:#1565d8;z-index:2}
-.blue{border-color:#bcd7f7;background:#f3f8ff}.blue .hd{background:#dcebfc}.blue .n{background:#1565d8}.blue .box{border-color:#bcd7f7}
-.teal{border-color:#b5e3d6;background:#f1fbf7}.teal .hd{background:#d6f1e8}.teal .n{background:#0f8a5f}.teal .box{border-color:#b5e3d6}
-.amber{border-color:#f6d9a8;background:#fff9ee}.amber .hd{background:#fdeccb}.amber .n{background:#e88a00}.amber .box{border-color:#f6d9a8}
-.violet{border-color:#d3c8f3;background:#f7f4ff}.violet .hd{background:#e6defa}.violet .n{background:#6b46c1}.violet .box{border-color:#d3c8f3}
-.pink{border-color:#f6c3d6;background:#fff4f8}.pink .hd{background:#fbdbe7}.pink .n{background:#e0245e}.pink .box{border-color:#f6c3d6}
-.sky{border-color:#b9def5;background:#f1f9ff}.sky .hd{background:#d9eefb}.sky .n{background:#0b84c6}.sky .box{border-color:#b9def5}
-.out{display:flex;gap:6px;align-items:center;font-size:11.6px;color:#22344f;margin:5px 10px 0}
-.dot{flex:none;width:15px;height:15px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.g{background:#16a34a}.y{background:#e88a00}.p{background:#6b46c1}
-.bottom{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.05fr;gap:9px;margin-top:11px}
-.panel{border:1.5px solid #bcd7f7;border-radius:10px;padding:8px 12px 9px;background:#fbfdff}
-.panel h3{font-size:13.5px;font-weight:800;color:#1565d8;text-transform:uppercase;letter-spacing:.4px}
-.panel p{font-size:11.6px;color:#44556f;margin:1px 0 5px}
-.panel ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:3px 12px}
-.panel li{font-size:11.6px;color:#12233f;line-height:1.25;padding-left:11px;position:relative}
-.panel li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:#1565d8}
-.panel li b{color:#0b1f44}
-.one ul{grid-template-columns:1fr}
-.foot{display:flex;justify-content:space-between;margin-top:9px;font-size:11.4px;color:#5a6b85}
-.foot b{color:#0b1f44}
-</style></head><body>
-<header>
-  <div class="logo"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
-  <div><h1>ENTERPRISE KNOWLEDGE AI SYSTEM</h1>
-  <h2>System Overview (MVP) — Lean Evidence Pipeline: retrieve → answer → verify</h2>
-  <div class="sub">From heterogeneous enterprise documents to cited answers, with explicit abstention and cost limits.</div></div>
-  <div class="badge"><b>MVP</b><span>RV-045 · AS IMPLEMENTED</span></div>
-</header>
-
-<div class="band offline"><span>OFFLINE · BUILD THE VERIFIED EVIDENCE CATALOG</span><small>zero model calls except embeddings · rebuilt when a document changes</small></div>
-<div class="row r5">
-  <div class="col blue"><div class="hd"><div class="n">1</div>Enterprise sources</div>
-    <div class="lead">27 controlled documents in six formats, registered with type, version, status and authority.</div>
-    <div class="box"><b>PDF · DOCX · XLSX · PPTX · MD · TXT</b><span>Policies, standards, SOPs, contracts, minutes, trackers</span></div>
-    <div class="box"><b>Document registry</b><span>Lifecycle: active, superseded, historical</span></div>
-    <div class="box"><b>Corpus content audit</b><span>Blocks test-harness text inside documents</span></div></div>
-  <div class="col teal"><div class="hd"><div class="n">2</div>Ingestion &amp; parsing</div>
-    <div class="lead">Each format is read by the parser that preserves its structure.</div>
-    <div class="box"><b>Docling</b><span>PDF, DOCX, PPTX, Markdown, text</span></div>
-    <div class="box"><b>Native XLSX parser</b><span>Sheets, ranges, cells, declared headers</span></div>
-    <div class="box"><b>Ingestion router</b><span>One contract for every format</span></div></div>
-  <div class="col amber"><div class="hd"><div class="n">3</div>Canonical normalization</div>
-    <div class="lead">Parser output becomes an application-owned document model.</div>
-    <div class="box"><b>Canonical blocks</b><span>Titles, headings, paragraphs, lists, tables, spreadsheets</span></div>
-    <div class="box"><b>Source location</b><span>Page, slide, sheet, section path</span></div>
-    <div class="box"><b>Document metadata</b><span>Version, effective date, status, authority</span></div></div>
-  <div class="col violet"><div class="hd"><div class="n">4</div>Evidence units</div>
-    <div class="lead">Small, citable passages that keep their context.</div>
-    <div class="box"><b>Section units</b><span>Heading with its paragraphs and tables</span></div>
-    <div class="box"><b>Table-record units</b><span>One spreadsheet row with its column labels</span></div>
-    <div class="box"><b>Searchable flag</b><span>Titles and duplicates kept, not indexed</span></div></div>
-  <div class="col sky"><div class="hd"><div class="n">5</div>Verified catalog</div>
-    <div class="lead">The single source the runtime trusts: 236 units, 219 searchable.</div>
-    <div class="box"><b>Catalog snapshot</b><span>Content hash of every source, unit and input file</span></div>
-    <div class="box"><b>Embedding cache</b><span>text-embedding-3-small, keyed to the units</span></div>
-    <div class="box"><b>Integrity check on load</b><span>Any drift stops the runtime</span></div></div>
-</div>
-
-<div class="band online"><span>ONLINE · ANSWER ONE QUESTION</span><small>3 API calls in the normal path (1 embedding, 1 answer, 1 verify) · at most 6</small></div>
-<div class="row r6">
-  <div class="col pink"><div class="hd"><div class="n">6</div>Hybrid retrieval</div>
-    <div class="lead">Top 20 units from two complementary rankings.</div>
-    <div class="box"><b>Vector search</b><span>NumPy cosine over cached embeddings</span></div>
-    <div class="box"><b>Lexical search</b><span>BM25 with PT→EN term expansion</span></div>
-    <div class="box"><b>Rank fusion</b><span>RRF; first vector hits protected</span></div>
-    <div class="box"><b>Document scope</b><span>A DOC-id in the question restricts sources</span></div></div>
-  <div class="col sky"><div class="hd"><div class="n">7</div>Evidence assembly</div>
-    <div class="lead">Deterministic context building, no model call.</div>
-    <div class="box"><b>Document completion</b><span>Best 3 documents sent in full, in source order</span></div>
-    <div class="box"><b>Evidence aliases</b><span>E1…En mapped to canonical unit ids</span></div>
-    <div class="box"><b>Document headers</b><span>Status and authority rank, stated once</span></div></div>
-  <div class="col teal"><div class="hd"><div class="n">8</div>Answer model</div>
-    <div class="lead">One structured call decides and writes.</div>
-    <div class="box"><b>Evidence triage</b><span>Each passage: direct, conditional, background, irrelevant</span></div>
-    <div class="box"><b>Decision</b><span>answer · retrieve · clarify · abstain</span></div>
-    <div class="box"><b>Cited claims</b><span>One claim per rule, each with its E-ids</span></div>
-    <div class="box"><b>One bounded recovery</b><span>A single extra search when a fact is missing</span></div></div>
-  <div class="col amber"><div class="hd"><div class="n">9</div>Deterministic gates</div>
-    <div class="lead">Python checks the model's own output.</div>
-    <div class="box"><b>Citation check</b><span>Unknown ids removed; uncited claims dropped</span></div>
-    <div class="box"><b>No direct evidence</b><span>The answer is refused: abstain</span></div>
-    <div class="box"><b>Background-only claims</b><span>Removed from the answer</span></div>
-    <div class="box"><b>Answer language</b><span>Detected; one repair call if wrong</span></div></div>
-  <div class="col violet"><div class="hd"><div class="n">10</div>Independent verify</div>
-    <div class="lead">A second call reviews every claim.</div>
-    <div class="box"><b>Per-claim checks</b><span>Entailed · relevant · conditions preserved</span></div>
-    <div class="box"><b>Completeness</b><span>Omitted rule reported by evidence id</span></div>
-    <div class="box"><b>Verdict derived in Python</b><span>Failed claims removed, the rest kept</span></div></div>
-  <div class="col blue"><div class="hd"><div class="n">11</div>Response</div>
-    <div class="lead">Every outcome is explicit.</div>
-    <div class="out"><span class="dot g">✓</span>Verified answer with citations</div>
-    <div class="out"><span class="dot y">!</span>Answer with reservations</div>
-    <div class="out"><span class="dot p">?</span>Clarification requested</div>
-    <div class="out"><span class="dot y">!</span>Abstention: insufficient evidence</div>
-    <div class="box"><b>Sources shown</b><span>Passage text, document, version, lifecycle</span></div>
-    <div class="box"><b>Human decides</b><span>Evidence informs; it does not approve</span></div></div>
-</div>
-
-<div class="bottom">
-  <div class="panel"><h3>Application &amp; deployment</h3><p>How people use it today.</p><ul>
-    <li><b>Streamlit interface</b>: chat, claims, citations, sources</li><li><b>Knowledge service</b>: one per session, catalog verified on load</li>
-    <li><b>Render blueprint</b>: private demo, manual deploys</li><li><b>Access gate</b>: shared demo password before any model call</li></ul></div>
-  <div class="panel"><h3>Cost control</h3><p>Every paid call is budgeted.</p><ul>
-    <li><b>Budgeted client</b>: reserves before each call</li><li>Ceiling per question</li>
-    <li>Ceiling per session</li><li>~5,600 input tokens per question</li></ul></div>
-  <div class="panel"><h3>Evaluation &amp; CI</h3><p>Measured, reproducible, free to rescore.</p><ul>
-    <li><b>Answer criteria</b>: 46 cases, deterministic scorer</li><li><b>45 of 46</b> pass (gpt-6.1-sol)</li>
-    <li><b>Semantic audit</b>: 40 of 46 at strict review</li><li><b>Offline CI</b>: tests, corpus audit, manifest</li></ul></div>
-  <div class="panel one"><h3>Not in the MVP</h3><p>Planned, not delivered.</p><ul>
-    <li>SSO, user accounts, rate limiting, account-wide budget</li><li>REST API, persistent vector store and run history</li>
-    <li>Access control per document; slide-level units for PPTX</li></ul></div>
-</div>
-<div class="foot"><span><b>Technologies:</b> Python · Docling · OpenAI (text-embedding-3-small, gpt-6.1-sol / gpt-4.1-mini) · NumPy · Streamlit · Pytest (1,102 tests)</span>
-<span>Experimental pipelines (stage-1, v3, v4.2) remain in the repository for audit and are not part of this flow.</span></div>
-</body></html>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#020b1a;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eaf4ff}
+main{max-width:1960px;margin:auto;padding:24px 22px 40px}
+img{display:block;width:100%;height:auto;box-shadow:0 12px 50px #0008;border:1px solid #173958;border-radius:14px}
+p{font-size:15px;line-height:1.55;color:#9fc1df;margin:16px 4px}
+a{color:#0ad1f9}
+</style>
+</head>
+<body><main><img src="architecture-overview.svg" alt="Current technical architecture: offline verified evidence catalog and online lean RAG pipeline"><p><strong>Architecture:</strong> current implemented lean MVP (RV-045), not a production certification. For contracts, provenance, invariants, limitations and exact components, see <a href="../architecture/21_current_lean_mvp_architecture.md">the technical architecture specification</a>. The SVG is the editable vector source, intentionally aligned with the project's dark navy, blue and cyan visual identity.</p></main></body></html>
