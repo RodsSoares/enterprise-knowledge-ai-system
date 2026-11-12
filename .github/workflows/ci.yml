@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/lean-mvp-hardening
   pull_request:
     branches:
       - main
@@ -55,7 +54,7 @@ jobs:
           import yaml
           manifest = yaml.safe_load(Path("render.yaml").read_text(encoding="utf-8"))
           service = manifest["services"][0]
-          assert service["branch"] == "claude/lean-mvp-hardening"
+          assert service["branch"] == "main"
           assert "requirements-deploy.txt" in service["buildCommand"]
           assert "app/frontend/main.py" in service["startCommand"]
           assert any(v.get("key") == "OPENAI_API_KEY" and v.get("sync") is False for v in service["envVars"])

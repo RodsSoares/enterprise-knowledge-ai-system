@@ -8,7 +8,7 @@ The offline CI workflow must pass before deployment. The default model is public
 
 ## Deploy
 
-1. In Render, create a new **Blueprint** from `RodsSoares/enterprise-knowledge-ai-system` using branch `claude/lean-mvp-hardening` and the root `render.yaml`.
+1. In Render, create a new **Blueprint** from `RodsSoares/enterprise-knowledge-ai-system` using branch `main` and the root `render.yaml`.
 2. Set `OPENAI_API_KEY` as a secret environment variable. **Never** paste it in GitHub or commit it.
 3. Set `APP_ACCESS_PASSWORD` to a unique random password of at least 16 characters, stored as a Render secret. Do not share it publicly. A blank/short password makes the app refuse access.
 4. Confirm the instance type, resource availability, expected charges and the deployment branch before applying the Blueprint. The Blueprint defaults to a free instance; available plans can vary.

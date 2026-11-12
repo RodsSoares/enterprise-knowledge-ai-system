@@ -2,7 +2,7 @@
 
 **System:** Enterprise Knowledge AI System  
 **Architectural snapshot:** 12 November 2026  
-**Target branch:** `claude/lean-mvp-hardening`  
+**Target branch:** `main`  
 **Status:** Functional, privately accessible **lean RAG MVP** (RV-045); **not** certified for production or semantic correctness  
 **Canonical runtime:** `app/frontend/main.py` → `app/service/knowledge_service.py` → `app/orchestration/lean_pipeline.py`  
 **Purpose:** Describe the *implemented* runtime and its contracts. Historical experiments are cited but explicitly excluded from this execution path.

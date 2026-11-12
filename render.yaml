@@ -5,7 +5,7 @@ services:
     name: enterprise-knowledge-ai-demo
     runtime: python
     plan: free
-    branch: claude/lean-mvp-hardening
+    branch: main
     autoDeployTrigger: off
     buildCommand: pip install -r requirements-deploy.txt
     startCommand: streamlit run app/frontend/main.py --server.address 0.0.0.0 --server.port $PORT --server.headless true

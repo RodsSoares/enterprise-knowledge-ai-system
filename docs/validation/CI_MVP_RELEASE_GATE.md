@@ -1,12 +1,12 @@
 # CI do MVP — validação antes do merge
 
-**Branch de implementação:** `claude/lean-mvp-hardening`  
+**Branch de implementação:** `main` (desenvolvido em `claude/lean-mvp-hardening`)  
 **Workflow:** `.github/workflows/ci.yml`  
 **Objetivo:** ter uma verificação reproduzível e sem custos de API antes de integrar o MVP à `main`.
 
 ## Gatilhos e execução
 
-- `push` na `main` ou em `claude/lean-mvp-hardening`.
+- `push` na `main`.
 - Pull Requests com destino à `main`.
 - Execução manual em **Actions → CI - Enterprise Knowledge MVP → Run workflow**.
 - Runner Ubuntu 24.04, Python 3.12, instalação de versões fixadas em `requirements.txt`.
