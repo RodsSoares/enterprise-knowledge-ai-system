@@ -1,8 +1,8 @@
 # Enterprise Knowledge AI System
 
-🌐 **Live Application:** [Launch Enterprise Knowledge AI System](https://enterprise-knowledge-ai-system.onrender.com/)
-🚀 **Current Stage:** Functional lean RAG MVP with a public Streamlit interface; earlier orchestration experiments remain available
-🧪 **Validation:** RV-045 clean corpus (27 documents; 236 evidence units); 45/46 deterministic passes with `gpt-6.1-sol`; semantic review remains necessary
+🌐 **Live Application:** [Launch Enterprise Knowledge AI System](https://enterprise-knowledge-ai-system.onrender.com/)  
+🚀 **Current Stage:** Functional lean RAG MVP with a public Streamlit interface; earlier orchestration experiments remain available  
+🧪 **Validation:** RV-045 clean corpus (27 documents; 236 evidence units); 45/46 deterministic passes with `gpt-6.1-sol`; semantic review remains necessary  
 📋 **Next Stage:** Semantic/human review, Q20 multi-policy coverage, and operational hardening of the private demo
 
 The **Enterprise Knowledge AI System** is an Enterprise Retrieval-Augmented Generation (RAG) system designed to transform heterogeneous and fragmented corporate information into a trustworthy, searchable, and evidence-grounded knowledge layer.
